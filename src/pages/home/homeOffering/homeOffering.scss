@@ -1,0 +1,76 @@
+@import "../../../source/mixin.scss";
+
+.HomeOffering {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+  .header{
+    text-align: center;
+    font-family: 'Inter-Bold', sans-serif;
+    font-size: 48px;
+    @include screen($tablet){
+      font-size: 40px;
+    }
+
+    span{
+      color: #266EFE;
+    }
+  }
+  .offers{
+    width: 100%;
+    margin-top: 64px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    @include screen($tablet){
+      margin-top: 32px;
+    }
+
+
+    .offer{
+      width: 25%;
+      padding: 35px 20px;
+      @include screen($wide-s){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      @include screen($tablet-l){
+        padding: 10px;
+      }
+      @include screen($tablet){
+        width: 45%;
+      }
+      @include screen($mobile-m){
+        width: 50%;
+        padding: 5px;
+      }
+
+
+
+      .offerLogo{
+        width: 62px;
+      }
+      .offerHeader{
+        margin: 24px 0;
+        font-family: 'Inter-SemiBold', sans-serif;
+        font-size: 16px;
+        @include screen($wide-s){
+          text-align: center;
+        }
+        @include screen($tablet-l){
+          margin: 20px 0;
+        }
+
+      }
+      .offerPrg{
+        font-size: 14px;
+        font-family: 'Inter-Regular', sans-serif;
+        @include screen($wide-s){
+          text-align: center;
+        }
+
+      }
+    }
+  }
+
+}

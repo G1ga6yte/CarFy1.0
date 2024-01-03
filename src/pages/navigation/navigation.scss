@@ -1,0 +1,525 @@
+@import "../../source/mixin.scss";
+
+.Navigation {
+  position: relative;
+
+  .notification {
+    background-color: #F39A31;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    .closeButton {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      cursor: pointer;
+      @include screen($wide){
+        top: 6px;
+      }
+      @include screen($wide-s){
+        top: 5px;
+      }
+      @include screen($tablet){
+        top: 2px;
+      }
+    }
+
+    .text {
+      margin: 8px auto;
+      font-family: 'Inter-SemiBold', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 140%;
+      @include screen($wide){
+        font-size: 15px;
+        margin: 6px auto;
+      }
+      @include screen($wide-s){
+        font-size: 14px;
+        margin: 5px auto;
+      }
+      @include screen($tablet){
+        font-size: 13px;
+        margin: 4px auto;
+      }
+    }
+  }
+
+  .NavCont {
+    padding: 25px 10px;
+
+    @include screen($wide-m) {
+      padding: 20px 10px;
+    }
+    @include screen($wide) {
+      padding: 15px;
+    }
+    @include screen($tablet-l){
+      padding: 15px 10px;
+    }
+    @include screen($tablet){
+      padding: 10px 0;
+    }
+
+
+    .menuBarLogo{
+      .menuLogo{
+        width: 0;
+        overflow: hidden;
+        display: none;
+        margin: 0 15px;
+        @include screen($tablet-l){
+          display: block;
+          width: 24px;
+        }
+      }
+      .LinkLogo {
+        img {
+          @include screen($wide) {
+            height: 75px;
+          }
+          @include screen($wide-s){
+            height: 60px;
+          }
+          @include screen($tablet-l){
+            height: 32px;
+          }
+        }
+      }
+    }
+
+
+
+    a {
+      font-family: 'Inter-Medium', sans-serif;
+      font-size: 20px;
+      color: #828282;
+      text-decoration: none !important;
+      @include screen($wide) {
+        font-size: 16px;
+      }
+      @include screen($wide-s) {
+        font-size: 15px;
+      }
+
+      &:hover {
+        color: black;
+      }
+    }
+
+    .activeLink {
+      color: black;
+    }
+
+    .pageLinks {
+      margin: 0 90px 0 30px;
+      @include screen($wide-m) {
+        margin: 0 30px 0 15px;
+      }
+      @include screen($wide) {
+        margin: 0 30px 0 15px;
+        font-size: 16px;
+      }
+      @include screen($wide-s) {
+        margin: 0 30px 0 15px;
+        font-size: 15px;
+      }
+      @include screen($tablet-l){
+        display: none;
+      }
+
+      .ProductsLink{
+        cursor: pointer;
+        font-family: 'Inter-Medium', sans-serif;
+        font-size: 20px;
+        color: #828282;
+        margin: 0 32px;
+        @include screen($wide-l){
+          margin: 0 26px;
+        }
+        @include screen($wide-m) {
+          margin: 0 22px;
+        }
+        @include screen($wide) {
+          margin: 0 18px;
+          font-size: 16px;
+        }
+        @include screen($wide-s) {
+          margin: 0 15px;
+          font-size: 15px;
+        }
+        &:hover{
+          color: black;
+        }
+      }
+
+      a {
+        margin: 0 32px;
+        @include screen($wide-l){
+          margin: 0 26px;
+        }
+        @include screen($wide-m) {
+          margin: 0 22px;
+        }
+        @include screen($wide) {
+          margin: 0 18px;
+          font-size: 16px;
+        }
+        @include screen($wide-s) {
+          margin: 0 15px;
+          font-size: 15px;
+        }
+      }
+    } ////
+
+    .loginCartBlock{
+      a{
+        margin: 0 10px;
+      }
+      .LinkToLogeIn {
+         color: #266EFE;
+         font-size: 16px;
+         @include screen($wide) {
+           font-size: 14px;
+         }
+        @include screen($tablet-l){
+          display: none !important;
+        }
+
+         img {
+           margin-right: 10px;
+         }
+
+         &:hover {
+           color: #266EFE;
+         }
+       }
+      .LinkToProfile{
+        margin: 0 10px;
+      }
+      .LinkToMessages{
+        margin: 0 10px;
+        position: relative;
+        .newMessage{
+          position: absolute;
+          top: -3px;
+          right: -3px;
+          width: 12px;
+          height: 12px;
+          background-color: #FF7373;
+          border-radius: 50%;
+          outline: 2px solid white;
+        }
+      }
+      .LinkToNotifications{
+        margin: 0 10px;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        .newMessage{
+          position: absolute;
+          top: -3px;
+          right: -3px;
+          width: 12px;
+          height: 12px;
+          background-color: #266EFE;
+          border-radius: 50%;
+          outline: 2px solid white;
+        }
+      }
+      .LinkToCart{
+        position: relative;
+        .newMessage{
+          position: absolute;
+          top: -3px;
+          right: -3px;
+          width: 12px;
+          height: 12px;
+          background-color: #00CC9A;
+          border-radius: 50%;
+          outline: 2px solid white;
+          font-size: 8px;
+          color: white;
+          text-align: center;
+          line-height: 150%;
+          font-family: 'Inter-Bold', sans-serif;
+        }
+      }
+      .LinkToService{
+        &:nth-child(2){
+          display: block;
+          @include screen($tablet-l){
+            display: none !important;
+          }
+        }
+        &:nth-child(7){
+          display: none;
+          @include screen($tablet-l){
+            display: block !important;
+          }
+        }
+      }
+    }
+
+
+
+  }
+
+  .menuBar{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    padding: 0 32px;
+    background-color: white;
+    .loginTextBlock{
+      margin: 20px 0;
+      @include screen($tablet){
+        margin: 10px 0;
+      }
+
+      .header{
+        font-size: 24px;
+        font-family: 'Inter-Medium', sans-serif;
+        @include screen($tablet){
+          font-size: 20px;
+        }
+
+      }
+      .desc{
+        font-size: 14px;
+        color: #AEAEAE;
+        font-family: 'Inter-Regular', sans-serif;
+        @include screen($tablet){
+          font-size: 12px;
+        }
+
+      }
+      a{
+        margin-top: 16px;
+        @include screen($tablet){
+          margin-top: 12px;
+          font-size: 14px !important;
+        }
+
+      }
+
+    }
+    .pageLinks{
+      margin-bottom: 80px;
+      .activeLink{
+        color: black !important;
+      }
+      a, .ProductsLink{
+        cursor: pointer;
+        font-family: 'Inter-Medium', sans-serif;
+        font-size: 20px;
+        color: #828282;
+        margin: 8px 0;
+        text-decoration: none;
+        @include screen($tablet){
+          font-size: 16px;
+          margin: 6px 0;
+        }
+
+      }
+      .productsLinks{
+        .activeLink{
+          color: black !important;
+        }
+        a{
+          margin: 8px 0;
+          text-decoration: none;
+          font-family:'Inter-Regular', sans-serif;
+          color: #AEAEAE;
+          @include screen($tablet){
+            margin: 6px 0;
+          }
+
+        }
+      }
+    }
+
+  }
+
+  .notificationsBlock{
+    width: 50%;
+    position: absolute;
+    z-index: 2;
+    top: 160px;
+    right: 10%;
+    padding: 25px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+
+    @include screen($wide){
+      width: 60%;
+      right: 5%;
+      top: 140px;
+    }
+    @include screen($wide-s){
+      width: 70%;
+      right: 2%;
+      top: 120px;
+    }
+    @include screen($tablet-l){
+      width: 100%;
+      right: 0;
+      top: 100px;
+    }
+
+
+    .buttons-block{
+      width: 100%;
+      font-family: 'Inter-Medium', sans-serif;
+      .spanNotification{
+        font-size: 16px;
+        margin: 0 15px;
+        @include screen($tablet){
+          font-size: 15px;
+        }
+      }
+      .num{
+        font-size: 16px;
+        color: #266EFE;
+        @include screen($tablet){
+          font-size: 15px;
+        }
+
+      }
+      .closeButton{
+        cursor: pointer;
+      }
+    }
+
+
+  }
+
+  .ProductsBlock{
+    padding: 40px 10px;
+    display: flex;
+    @include screen($wide-l){
+      justify-content: end;
+      padding: 30px 15px;
+    }
+    @include screen($wide){
+      padding: 25px 15px;
+    }
+
+
+
+    @include screen($tablet-l){
+      display: none !important;
+    }
+
+    a{
+      display: block;
+      text-decoration: none;
+      margin-left: 70px;
+      width: 300px;
+      @include screen($wide-l){
+        width: 260px;
+        margin-left: 50px;
+      }
+      @include screen($wide){
+        width: 230px;
+        margin-left: 40px;
+      }
+
+      .hProduct{
+        color: black;
+        font-size: 20px;
+        font-family: 'Inter-SemiBold', sans-serif;
+        @include screen($wide-l){
+          font-size: 18px;
+        }
+        @include screen($wide){
+          font-size: 17px;
+        }
+
+
+      }
+      .prgProduct{
+        margin-top: 10px;
+        color: #AEAEAE;
+        font-size: 20px;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 140%;
+        @include screen($wide-l){
+          font-size: 18px;
+        }
+        @include screen($wide){
+          font-size: 17px;
+        }
+
+
+      }
+    }
+
+    .salesBlock{
+      width: 222px;
+      background-color: #FF7373;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 8px;
+      position: relative;
+      @include screen($wide){
+        width: 220px;
+      }
+
+      p{
+        color: white;
+        font-size: 20px;
+        font-family: 'Inter-SemiBold', sans-serif;
+        margin-top: 25px;
+        line-height: 140%;
+        @include screen($wide-l){
+          font-size: 18px;
+        }
+        @include screen($wide){
+          font-size: 17px;
+        }
+
+
+      }
+      span{
+        line-height: 140%;
+        margin-top: 5px;
+        margin-bottom: 100px;
+        font-size: 16px;
+        color: white;
+        font-family: 'Inter-Regular', sans-serif;
+        @include screen($wide-l){
+          font-size: 15px;
+        }
+        @include screen($wide){
+          font-size: 14px;
+        }
+
+
+      }
+      .salesImg1{
+        position: absolute;
+        bottom: -10%;
+        right: -10%;
+        width: 60%;
+      }
+      .salesImg2{
+        position: absolute;
+        top: -5%;
+        right: 5%;
+        width: 20%;
+      }
+      .salesImg3{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 45%;
+      }
+    }
+
+  }
+}

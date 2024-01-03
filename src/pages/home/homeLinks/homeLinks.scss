@@ -1,0 +1,228 @@
+@import "../../../source/mixin.scss";
+.HomeLinks{
+  padding: 15px;
+  flex-wrap: wrap;
+
+  .LinkBlock{
+    padding: 12px 24px;
+    position: relative;
+    width: 24%;
+    height: 135px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+    border-radius: 16px;
+    @include screen($wide-l){
+      height: 120px;
+    }
+    @include screen($wide){
+      height: 110px;
+      padding: 10px 20px;
+    }
+    @include screen($tablet-l){
+      height: 100px;
+      padding: 10px 15px;
+    }
+    @include screen($tablet-w){
+      height: 75px;
+    }
+    @include screen($tablet){
+      width: 44%;
+      height: 120px;
+      margin: 0 auto 20px auto;
+    }
+    @include screen($tablet-m){
+      height: 100px;
+      width: 49%;
+    }
+    @include screen($mobile-m){
+      width: 95%;
+    }
+
+
+    &:nth-child(2){
+      background-color: #FFCBCB;
+      span{
+        @include screen($tablet-w){
+          max-width: 60%;
+        }
+
+      }
+    }
+    &:nth-child(3){
+      span{
+        &:nth-child(3){
+          color: #266EFE !important;
+        }
+      }
+    }
+    &:nth-child(4){
+      background-color: #266EFE;
+      span{
+        color: white;
+      }
+    }
+
+
+    .logo{
+      width: 32px;
+      margin-bottom: 10px;
+      @include screen($wide-l){
+        width: 28px;
+      }
+      @include screen($wide){
+        width: 24px;
+      }
+      @include screen($tablet-l){
+        width: 20px;
+      }
+      @include screen($tablet-w){
+        margin-bottom: 6px;
+        width: 16px;
+      }
+      @include screen($tablet){
+        margin-bottom: 10px;
+        width: 24px;
+      }
+      @include screen($tablet-m){
+        margin-bottom: 8px;
+      }
+      @include screen($mobile-m){
+        width: 28px;
+      }
+
+
+
+
+
+
+    }
+    span{
+      line-height: 120%;
+      font-family: 'Inter-Medium', sans-serif;
+      font-size: 28px;
+      color: black;
+      position: relative;
+      z-index: 2;
+      @include screen($wide-l){
+        font-size: 24px;
+      }
+      @include screen($wide){
+        font-size: 20px;
+      }
+      @include screen($tablet-l){
+        font-size: 18px;
+      }
+      @include screen($tablet-w){
+        font-size: 14px;
+        line-height: 1;
+      }
+      @include screen($tablet){
+        font-size: 20px;
+      }
+      @include screen($tablet-m){
+        font-size: 18px;
+        line-height: 120%;
+      }
+
+
+
+
+    }
+    .png1{
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      @include screen($tablet-m){
+        height: 70%;
+      }
+      @include screen($mobile-m){
+        height: 100%;
+      }
+
+
+    }
+    .png2{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 80%;
+      @include screen($tablet-m){
+        height: 60%;
+      }
+      @include screen($mobile-m){
+        height: 80%;
+      }
+
+
+    }
+    .png3{
+      position: absolute;
+      bottom: 0;
+      right: 25px;
+      height: 90%;
+      @include screen($tablet-w){
+        right: 10px;
+      }
+      @include screen($tablet-m){
+        height: 60%;
+      }
+      @include screen($mobile-m){
+        height: 90%;
+      }
+
+
+    }
+    .underLine{
+      width: 125px;
+      bottom: 10px;
+      position: absolute;
+      @include screen($wide){
+        width: 90px;
+        bottom: 12px;
+      }
+      @include screen($tablet-w){
+        width: 70px;
+      }
+      @include screen($tablet){
+        width: 90px;
+        bottom: 30px;
+      }
+      @include screen($tablet-m){
+        bottom: 14px;
+        width: 80px;
+      }
+      @include screen($mobile-m){
+        bottom: 10px;
+      }
+
+
+
+
+
+
+
+    }
+    .png4{
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      height: 70%;
+      @include screen($tablet-w){
+        top: 15px;
+        right: 15px;
+      }
+      @include screen($tablet-m){
+        height: 50%;
+        top: 30px;
+      }
+      @include screen($mobile-m){
+        height: 70%;
+        top: 20px;
+      }
+
+
+    }
+  }
+}

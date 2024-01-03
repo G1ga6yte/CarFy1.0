@@ -1,0 +1,174 @@
+@import "../../../source/mixin.scss";
+.HomeMaintenance{
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 15px;
+
+  @include screen($tablet-w){
+    margin: 60px auto;
+  }
+  @include screen($mobile-m){
+    margin: 35px auto;
+  }
+
+  .leftBlock{
+    width: 48%;
+    @include screen($wide){
+      width: 50%;
+    }
+    @include screen($tablet-l){
+      width: 52%;
+    }
+
+    @include screen($tablet-w){
+      width: 90%;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .header{
+      font-size: 48px;
+      line-height: 140%;
+      font-family: 'Inter-Bold', sans-serif;
+      color: black;
+      @include screen($desktop){
+        font-size: 40px;
+        line-height: 120%;
+      }
+      @include screen($tablet-w){
+        display: unset;
+        text-align: center;
+        flex-direction: row;
+      }
+      @include screen($tablet-m){
+        flex-direction: column;
+        align-items: center;
+      }
+
+      span{
+        &:nth-child(2){
+          color: #266EFE !important;
+          @include screen($tablet-w){
+            margin-left: 10px;
+          }
+
+        }
+      }
+    }
+    .carImgCenter{
+      display: none;
+      @include screen($tablet-w){
+        display: block;
+        width: 90%;
+        margin: 20px 0;
+      }
+      @include screen($tablet-m){
+        width: 100%;
+      }
+
+
+    }
+    .description{
+      margin-top: 12px;
+      font-size: 20px;
+      font-family: 'Inter-Regular', sans-serif;
+      line-height: 140%;
+      color: #0D172F;
+      @include screen($desktop){
+        font-size: 18px;
+      }
+      @include screen($tablet-w){
+        text-align: center;
+      }
+      @include screen($tablet){
+        font-size: 16px;
+      }
+
+
+    }
+    .acceptsBlock{
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: 10px 0;
+      @include screen($tablet-w){
+        justify-content: space-between;
+      }
+      @include screen($tablet){
+        justify-content: start;
+        margin-left: 10%;
+      }
+
+
+      .accept{
+        margin: 12px 0;
+        width: 40%;
+        @include screen($tablet-w){
+          width: unset;
+        }
+        @include screen($tablet){
+          width: 40%;
+        }
+
+
+        img{
+          margin-right: 20px;
+          @include screen($tablet-w){
+            margin-right: 10px;
+          }
+
+        }
+        span{
+          font-size: 16px;
+          font-family: 'Inter-Medium', sans-serif;
+          @include screen($tablet){
+            font-size: 15px;
+          }
+
+        }
+      }
+    }
+    .buttonsBlock{
+      margin-top: 40px;
+      @include screen($desktop){
+        margin-top: 30px;
+      }
+      @include screen($tablet-w){
+        display: block;
+        width: 80%;
+      }
+
+
+      a{
+        margin-right: 15px;
+        padding: 20px 50px;
+        font-size: 16px;
+        @include screen($desktop){
+          padding: 15px 35px;
+          font-size: 15px;
+        }
+        @include screen($tablet-w){
+          display: flex;
+          justify-content: center;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  .carImgCenter{
+    width: 50%;
+    @include screen($wide){
+      width: 50%;
+    }
+    @include screen($tablet-l){
+      width: 48%;
+    }
+
+    @include screen($tablet-w){
+      display: none;
+    }
+
+  }
+
+
+}

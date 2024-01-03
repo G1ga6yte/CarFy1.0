@@ -1,0 +1,134 @@
+@import "../../../source/mixin.scss";
+
+.HomePopularServices{
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 10px;
+  @include screen($tablet-l){
+    margin: 64px auto;
+  }
+  @include screen($tablet){
+    margin: 32px auto;
+  }
+
+  .header{
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    @include screen($tablet-l){
+      text-align: center;
+    }
+    @include screen($tablet){
+      font-size: 40px;
+    }
+
+    span{
+      color: #266EFE;
+    }
+  }
+  .contentBlock{
+    margin-top: 64px;
+
+    .servicesBlock{
+      width: 30%;
+      @include screen($wide-s){
+        width: 40%;
+      }
+      @include screen($tablet-l){
+        display: none;
+      }
+
+
+      &:nth-child(1){
+        align-items: end;
+        .service{
+          &:nth-child(2){
+            transform: translateX(-90px);
+            @include screen($wide){
+              transform: translateX(-50px);
+            }
+            @include screen($wide-s){
+              transform: translateX(-20px);
+            }
+          }
+          span{
+            margin-right: 30px;
+            @include screen($wide){
+              margin-right: 20px;
+            }
+            @include screen($wide-s){
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+      &:nth-child(3){
+        .service{
+          &:nth-child(2){
+            transform: translateX(90px);
+            @include screen($wide){
+             transform: translateX(50px);
+            }
+            @include screen($wide-s){
+              transform: translateX(20px);
+            }
+          }
+          span{
+            margin-left: 30px;
+            @include screen($wide){
+              margin-left: 20px;
+            }
+            @include screen($wide-s){
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+
+      .service{
+        font-size: 20px;
+        font-family: 'Inter-Medium', sans-serif;
+        margin: 60px 0;
+        @include screen($wide){
+          margin: 45px 0;
+          font-size: 18px;
+        }
+        @include screen($wide-s){
+          margin: 35px 0;
+        }
+
+
+
+      }
+    }
+
+    .serviceImg{
+      width: 40%;
+      @include screen($wide){
+        width: 35%;
+      }
+      @include screen($wide-s){
+        width: 30%;
+      }
+      @include screen($tablet-l){
+        width: 100%;
+      }
+
+
+    }
+  }
+  .ServiceCont {
+    display: none;
+    margin-top: 60px;
+    @include screen($tablet-l){
+      display: flex;
+    }
+
+    .servicePrg {
+      margin: 30px auto 50px auto;
+      font-size: 20px;
+      font-family: 'Inter-Medium', sans-serif;
+    }
+  }
+
+}
