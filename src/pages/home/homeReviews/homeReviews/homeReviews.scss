@@ -1,0 +1,167 @@
+@import "../../../../source/mixin.scss";
+
+.HomeReviews{
+    padding: 64px 10px;
+    @include screen($tablet){
+        padding: 32px 10px;
+    }
+    .header{
+        text-align: center;
+        font-size: 48px;
+        font-family: 'Inter-Bold', sans-serif;
+        @include screen($tablet){
+            font-size: 40px;
+        }
+        span{
+            color: #266EFE;
+        }
+    }
+    .underHeader{
+        text-align: center;
+        font-family: 'Inter-SemiBold', sans-serif;
+        font-size: 20px;
+        margin: 24px auto;
+        @include screen($tablet){
+            font-size: 18px;
+            margin: 20px auto;
+        }
+    }
+
+    .reviewsCont{
+        width: 100%;
+        margin: 0 auto;
+
+        .horizontalLine{
+            @include screen($tablet-l){
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .reviewBlock{
+                width: 280px;
+                padding: 25px 20px;
+                box-shadow: 0 4px 28px 12px rgba(194, 194, 194, 0.09);
+                border-radius: 16px;
+                cursor: pointer;
+                margin: 5px;
+                @include screen($wide-l){
+                    width: 250px;
+                    padding: 20px 15px;
+                }
+                @include screen($wide-s){
+                    width: 200px;
+                    padding: 15px 10px;
+                }
+                @include screen($tablet-l){
+                    width: 70%;
+                    margin: 10px auto;
+                    padding: 25px 20px;
+                }
+                @include screen($tablet){
+                    width: 90%;
+                }
+                @include screen($mobile-m){
+                    width: 96%;
+                }
+
+                &:nth-child(1), &:nth-child(5){
+                    transform: translateY(-50px);
+                    @include screen($tablet-l){
+                        transform: translateY(0);
+                    }
+
+                }
+                &:nth-child(3){
+                    transform: translateY(50px);
+                    @include screen($tablet-l){
+                        transform: translateY(0);
+                    }
+
+                }
+
+
+                &:hover{
+                    background-color: #266EFE;
+                    .name{
+                        color: white;
+                    }
+                    .typePrice{
+                        color: white;
+                    }
+                    .comment{
+                        color: white;
+                    }
+                    .classStars{
+                        p{
+                            color: white;
+                        }
+                        span{
+                            color: white;
+                        }
+                    }
+
+
+                }
+
+                .name{
+                    font-size: 16px;
+                    font-family: 'Inter-SemiBold', sans-serif;
+                    color: #0D172F;
+                    @include screen($wide-l){
+                        font-size: 15px;
+                    }
+                    @include screen($tablet-l){
+                        font-size: 16px;
+                    }
+
+                }
+                .typePrice{
+                    font-family: 'Inter-Regular', sans-serif;
+                    font-size: 16px;
+                    color: #0D172F;
+                    margin: 16px 0;
+                    @include screen($wide-l){
+                        font-size: 15px;
+                    }
+                    @include screen($tablet-l){
+                        font-size: 16px;
+                    }
+
+
+                    span{
+                        font-family: 'Inter-Medium', sans-serif;
+                    }
+                }
+                .comment{
+                    font-family: 'Inter-Regular', sans-serif;
+                    font-size: 16px;
+                    color: #9C9C9C;
+                    @include screen($wide-l){
+                        font-size: 15px;
+                    }
+                    @include screen($tablet-l){
+                        font-size: 16px;
+                    }
+
+
+                }
+                .classStars{
+                    margin-top: 16px;
+                    p{
+                        font-size: 14px;
+                        color: #0D172F;
+                        font-family: 'Inter-Medium', sans-serif;
+                    }
+                    span{
+                        font-family: 'Inter-Regular', sans-serif;
+                        font-size: 12px;
+                        color: #0D172F;
+                        img{
+                            margin-right: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

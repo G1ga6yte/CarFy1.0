@@ -5,6 +5,12 @@ import HomeOffering from "./homeOffering/homeOffering";
 import HomeMaintenance from "./homeMaintenance/homeMaintenance";
 import HomeBenefits from "./homeBenefits/homeBenefits";
 import HomePopularServices from "./homePopularServices/homePopularServices";
+import HomeReviews from "./homeReviews/homeReviews/homeReviews";
+import HomePlan from "./homePlan/homePlan";
+import HomeClients from "./homeClients/homeClients";
+import HomeBlog from "./homeBlog/homeBlog";
+import HomeWork from "./homeWork/homeWork";
+import HomeGetApp from "./homeGetApp/homeGetApp";
 
 function Home() {
   return (
@@ -15,6 +21,12 @@ function Home() {
        <HomeMaintenance/>
        <HomeBenefits/>
        <HomePopularServices/>
+       <HomeReviews/>
+       <HomePlan/>
+       <HomeClients/>
+       <HomeBlog/>
+       <HomeWork/>
+       <HomeGetApp/>
      </div>
   );
 }

@@ -1,0 +1,169 @@
+@import "../../source/mixin.scss";
+
+.Footer {
+  margin: 120px auto 0 auto;
+  padding: 0 10px;
+  flex-wrap: wrap;
+
+  .rightsText{
+    font-size: 14px;
+    color: #AEAEAE;
+    font-family: 'Inter-Regular', sans-serif;
+    margin: 120px 0 20px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .LinksCont{
+    width: 55%;
+    @include screen($wide-s){
+      width: 70%;
+    }
+    @include screen($tablet-w){
+      width: 100%;
+    }
+
+
+    .globalLinks{
+      @include screen($tablet-w){
+        width: 100%;
+      }
+
+      .LinkToHome{
+        img{
+          width: 150px;
+          @include screen($tablet-w){
+            width: 70px;
+          }
+        }
+      }
+      .logoUnderText{
+        font-size: 16px;
+        font-family: 'Inter-Medium', sans-serif;
+        color: #969696;
+        margin-top: 32px;
+      }
+
+      .MobileAppLinks{
+        width: 100% !important;
+        display: none;
+        @include screen($tablet-w){
+          display: flex;
+        }
+        a{
+          width: 48% !important;
+          display: block;
+          margin-top: 20px;
+          margin-right: 20px;
+          border: 1px solid black;
+          padding: 15px 40px;
+          border-radius: 14px;
+          @include screen($tablet-m){
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 49%;
+            margin-right: 0;
+          }
+
+          .logo{
+            margin-right: 8px;
+          }
+        }
+      }
+      .MobileLinksBlock{
+        display: none;
+        @include screen($tablet-w){
+          display: flex;
+        }
+        .LinksToPage{
+          display: flex !important;
+          width: 200px;
+          margin-top: 20px;
+          .headerLink{
+            margin: 4px 0;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            color: black;
+            font-family: 'Inter-SemiBold', sans-serif;
+          }
+          .pageLink{
+            text-decoration: none;
+            display: block;
+            margin: 4px 0;
+            font-size: 14px;
+            color: black;
+            font-family: 'Inter-Regular', sans-serif;
+          }
+        }
+      }
+      .webSites{
+        margin-top: 24px;
+        a{
+          margin: 0 8px;
+        }
+      }
+      .cardTypes{
+        width: 180px;
+        margin-top: 28px;
+      }
+    }
+    .LinksToPage{
+      margin-top: 50px !important;
+      @include screen($tablet-w){
+        display: none;
+      }
+      .headerLink{
+        margin-bottom: 26px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        color: black;
+        font-family: 'Inter-SemiBold', sans-serif;
+      }
+      .pageLink{
+        text-decoration: none;
+        display: block;
+        margin: 10px 0;
+        font-size: 14px;
+        color: black;
+        font-family: 'Inter-Regular', sans-serif;
+      }
+    }
+  }
+
+  .AppsCont{
+    margin-top: 50px;
+    width: 25%;
+    align-items: start;
+    @include screen($wide-s){
+      width: 25%;
+    }
+    @include screen($tablet-w){
+      display: none;
+    }
+
+
+
+    .header{
+      font-size: 16px;
+      font-family: 'Inter-SemiBold', sans-serif;
+      margin-bottom: 16px;
+
+    }
+    a{
+      margin-top: 20px;
+      width: 160px;
+      margin-right: 20px;
+      border: 1px solid black;
+      padding: 15px 40px;
+      border-radius: 14px;
+
+      .logo{
+        margin-right: 8px;
+      }
+    }
+  }
+}

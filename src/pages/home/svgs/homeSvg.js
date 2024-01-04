@@ -18,6 +18,15 @@ import speedometer from "./speedometer-01.svg"
 import certificate1 from "./certificate-01.svg"
 import certificate2 from "./certificate-02.svg"
 import saleIcon from "./sale-03.svg"
+import starGreen from "./starGreen.svg"
+import messageQuestion from "./message-question-square.svg"
+import clock1 from "./clock-check.svg"
+import thumbsUp from "./thumbs-up.svg"
+import vectorBlog from "./VectorBlog.svg"
+import googleText from "./Google Play.svg"
+import googleLogo from "./Google logo.svg"
+import appleText from "./App Store.svg"
+import appleLogo from "./Apple logo.svg"
 
 
 export const HomeSvg = {
@@ -40,5 +49,14 @@ export const HomeSvg = {
   certificate1,
   certificate2,
   speedometer,
-  saleIcon
+  saleIcon,
+  starGreen,
+  thumbsUp,
+  clock1,
+  messageQuestion,
+  vectorBlog,
+  googleText,
+  appleText,
+  googleLogo,
+  appleLogo
 }

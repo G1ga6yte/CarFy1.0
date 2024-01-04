@@ -55,8 +55,8 @@ function Navigation() {
                   alt=""/>
            </div>
            <Link class={`LinkToPage ${Call("/shops") ? "activeLink" : " "}`} to="/shops">Shops</Link>
-           <Link class={`LinkToPage ${Call("/Blog") ? "activeLink" : " "}`} to="/blog">Blog</Link>
-           <Link class={`LinkToPage ${Call("/For business") ? "activeLink" : " "}`} to="/forBusiness">For
+           <Link class={`LinkToPage ${Call("/blog") ? "activeLink" : " "}`} to="/blog">Blog</Link>
+           <Link class={`LinkToPage ${Call("/forBusiness") ? "activeLink" : " "}`} to="/forBusiness">For
              business</Link>
          </div>
          

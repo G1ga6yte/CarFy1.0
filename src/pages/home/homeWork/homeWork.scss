@@ -1,0 +1,78 @@
+@import "../../../source/mixin.scss";
+
+.HomeWork {
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 10px;
+  @include screen($tablet-l){
+    margin: 64px auto;
+  }
+  @include screen($tablet){
+    margin: 32px auto;
+  }
+  @include screen($tablet-l){
+    display: none;
+  }
+
+  .header{
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    text-align: center;
+    @include screen($tablet){
+      font-size: 40px;
+    }
+  }
+  .workingCont{
+
+    .workingLine{
+      margin: 0 60px;
+      &:nth-child(1){
+        .workingItem{
+          align-items: end;
+          .prg{
+            text-align: end;
+          }
+          .name{
+            text-align: end;
+          }
+        }
+      }
+
+      .workingItem{
+        margin: 60px 0;
+        cursor: pointer;
+        &:hover{
+          svg{
+            path{
+              fill: #23DDB3 !important;
+            }
+          }
+          .name{
+            color: #23DDB3;
+          }
+        }
+
+        svg{
+          margin: 12px;
+        }
+
+        .name{
+          font-size: 20px;
+          font-family: 'Inter-SemiBold', sans-serif;
+          margin: 12px 0;
+        }
+        .prg{
+          color: #9C9C9C;
+          font-family: 'Inter-Regular', sans-serif;
+          font-size: 16px;
+          line-height: 130%;
+          max-width: 200px;
+        }
+      }
+
+    }
+  }
+
+}
+
+//fill="#23DDB3"

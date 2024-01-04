@@ -1,0 +1,95 @@
+@import "../../../source/mixin.scss";
+
+.HomePlan{
+  max-width: 1100px;
+  margin: 120px auto;
+  padding: 0 10px;
+  @include screen($tablet-l){
+    margin: 64px auto;
+  }
+  @include screen($tablet){
+    margin: 32px auto;
+  }
+
+  .header{
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    text-align: center;
+    @include screen($tablet){
+      font-size: 40px;
+    }
+    span{
+      color: #266EFE;
+    }
+  }
+
+  .PlanCont{
+    width: 100%;
+    margin-top: 64px;
+    @include screen($tablet-w){
+      flex-direction: column;
+    }
+    @include screen($tablet){
+      margin-top: 32px;
+    }
+
+    .PlanBlock{
+      padding: 32px;
+      border-radius: 16px;
+      width: 33%;
+      background-color: white;
+      @include screen($tablet-w){
+        width: 80%;
+      }
+      @include screen($tablet){
+        width: 95%;
+        padding: 24px;
+      }
+
+      &:hover{
+        background-color: #266EFE;
+        .PlanHeader{
+          color: white;
+        }
+        .prg{
+          color: white;
+        }
+        a{
+          border-color: white;
+          color: white;
+        }
+      }
+
+      .ImgBlock{
+        width: 56px;
+        height: 56px;
+        background-color: white;
+        border-radius: 8px;
+        padding: 16px;
+      }
+      .PlanHeader{
+        margin: 16px 0 8px 0;
+        font-family: 'Inter-SemiBold', sans-serif;
+        font-size: 20px;
+        color: black;
+      }
+      .prg{
+        font-family: "Inter-Regular", sans-serif;
+        font-size: 16px;
+        color: black;
+        line-height: 130%;
+      }
+      a{
+        padding: 5px 25px;
+        margin: 50px auto 6px 0;
+        text-decoration: none;
+        font-family: 'Inter-Medium', sans-serif;
+        text-align: center;
+        color: #266EFE;
+        border: 1px solid #266EFE;
+        border-radius: 8px;
+      }
+    }
+  }
+
+}

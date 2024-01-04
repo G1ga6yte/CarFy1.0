@@ -1,0 +1,136 @@
+@import "../../../source/mixin.scss";
+
+.homeBlog {
+  padding: 0 10px;
+  margin: 120px auto;
+  @include screen($tablet-l) {
+    display: none;
+  }
+
+
+  .headerLink{
+    .header{
+      font-size: 48px;
+      font-family: 'Inter-Bold', sans-serif;
+      @include screen($tablet){
+        font-size: 40px;
+      }
+    }
+    a{
+      font-size: 24px;
+      font-family: 'Inter-Medium', sans-serif;
+      color: #266EFE;
+      text-decoration: none;
+      @include screen($tablet-l){
+        font-size: 22px;
+      }
+      @include screen($tablet){
+        font-size: 20px;
+      }
+    }
+  }
+
+  .BlogsCont{
+      margin-top: 64px;
+      flex-wrap: wrap;
+    @include screen($tablet){
+      margin-top: 32px;
+    }
+
+    .blogBlock{
+      display: block;
+      width: 24%;
+      position: relative;
+      padding: 34px 24px;
+      border-radius: 12px;
+      height: 190px;
+      text-decoration: none;
+      overflow: hidden;
+      @include screen($wide-s){
+        width: 49%;
+        height: 220px;
+        margin-top: 20px;
+      }
+      @include screen($tablet){
+        width: 80%;
+        margin: 10px auto;
+      }
+      @include screen($tablet-m){
+        width: 90%;
+        height: 200px;
+      }
+      @include screen($mobile-m){
+        width: 96%;
+        height: 160px;
+      }
+
+
+      .name{
+        font-family: 'Inter-Medium', sans-serif;
+        font-size: 24px;
+        color: white;
+        line-height: 120%;
+        max-width: 185px;
+        position: relative;
+        z-index: 2;
+        @include screen($tablet-m){
+          font-size: 20px;
+        }
+      }
+      &:nth-child(1){
+        background: linear-gradient(139deg, #6DCD4B -6.92%, #4C52EB 76.83%);
+        img{
+          right: 5%;
+          top: 10px;
+          height: 80%;
+        }
+      }
+      &:nth-child(2){
+        background: #25396B;
+        img{
+          &:nth-child(2){
+            right: 50%;
+            transform: translateX(50%);
+            bottom: 15px;
+            height: 35%;
+          }
+          &:nth-child(3){
+            right: 0;
+            top: 15px;
+            height: 50%;
+          }
+          &:nth-child(4){
+            bottom: 25px;
+            left: 0;
+            width: 100%;
+            @include screen($mobile-m){
+              bottom: 10px;
+            }
+          }
+        }
+      }
+      &:nth-child(3){
+        background: linear-gradient(139deg, #CD4B4B -6.92%, #4C52EB 76.83%);
+        img{
+          height: 70%;
+            right: 0;
+            bottom: 0;
+        }
+      }
+      &:nth-child(4){
+        background: linear-gradient(139deg, #A5A9FC -6.92%, #4C52EB 76.83%);
+        img{
+          height: 100%;
+          right: 0;
+          top: 0;
+        }
+      }
+      
+      img{
+        position: absolute;
+      }
+    }
+
+  }
+
+}

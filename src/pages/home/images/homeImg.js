@@ -8,8 +8,13 @@ import benefits1 from "./app1.png"
 import benefits2 from "./app2.png"
 import benefits3 from "./app3.png"
 import carImg3 from "./car3.png"
-
-
+import parkingIcon from "./parking-sign 1.png"
+import tools1 from "./two-open-end-wrench 1.png"
+import tools2 from "./tool-box 1.png"
+import carRepair from "./car-repair-shop 1.png"
+import mechanic from "./mechanic-analyzing-car-data 1.png"
+import workingImg from "./05 Date.png"
+import appImg from "./Free_Iphone_14_Pro_Mockup_5 1.png"
 
 export const HomeImg = {
   map,
@@ -21,5 +26,12 @@ export const HomeImg = {
   benefits1,
   benefits2,
   benefits3,
-  carImg3
+  carImg3,
+  parkingIcon,
+  tools1,
+  tools2,
+  carRepair,
+  mechanic,
+  workingImg,
+  appImg
 }

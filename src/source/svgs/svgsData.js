@@ -7,6 +7,11 @@ import notification from "./bell-01.svg"
 import message from "./message-chat-square.svg"
 import closeIcon from "./x-close.svg"
 import closeIconBlue from "./x-close (1).svg"
+import xLogo from "./X-0 1.svg"
+import instagram from "./instagram.svg"
+import facebook from "./facebook.svg"
+import youtube from "./youtube.svg"
+
 
 import personPic from "./Ellipse 1.svg"
 export const SvgData = {
@@ -19,5 +24,9 @@ export const SvgData = {
   message,
   personPic,
   closeIcon,
-  closeIconBlue
+  closeIconBlue,
+  xLogo,
+  instagram,
+  facebook,
+  youtube
 }

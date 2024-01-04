@@ -1,0 +1,122 @@
+@import "../../../source/mixin.scss";
+
+.HomeGetApp{
+  padding: 0 10px;
+  max-width: 1200px;
+  margin: 120px auto;
+  @include screen($tablet-w){
+    flex-direction: column;
+  }
+
+  .header1{
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    display: none;
+    @include screen($tablet){
+      font-size: 40px;
+    }
+    @include screen($tablet-w){
+      display: block !important;
+    }
+    @include screen($tablet-m){
+      text-align: center;
+    }
+    span{
+      color: #266EFE;
+    }
+  }
+
+  .ImgBlock{
+    width: 40%;
+    justify-content: end;
+    position: relative;
+
+    @include screen($tablet-l){
+      width: 40%;
+    }
+    @include screen($tablet-w){
+      margin-top: 32px;
+      width: 50%;
+    }
+    @include screen($tablet-m){
+      width: 85%;
+    }
+    @include screen($mobile-m){
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
+
+
+    .imgShadow{
+      width: 420px;
+      height: 64px;
+      border-radius: 50%;
+      opacity: 0.3;
+      background: #383838;
+      filter: blur(25px);
+      position: absolute;
+      bottom: 0;
+      right: 10%;
+    }
+  }
+
+  .TextBlock{
+    width: 50%;
+    @include screen($tablet-l){
+      width: 55%;
+    }
+    @include screen($tablet-w){
+      width: 90%;
+    }
+    @include screen($tablet){
+      width: 100%;
+    }
+
+
+    .header2{
+      font-size: 48px;
+      font-family: 'Inter-Bold', sans-serif;
+
+      @include screen($tablet){
+        font-size: 40px;
+      }
+      @include screen($tablet-w){
+        display: none;
+      }
+      span{
+        color: #266EFE;
+      }
+    }
+    .prg{
+      margin-top: 16px;
+      font-size: 20px;
+      font-family: 'Inter-Regular', sans-serif;
+      line-height: 140%;
+      @include screen($tablet-w){
+        text-align: center;
+      }
+      @include screen($tablet){
+        font-size: 16px;
+      }
+
+    }
+    .Links{
+      margin-top: 40px;
+      a{
+        margin-right: 20px;
+        border: 1px solid black;
+        padding: 15px 40px;
+        border-radius: 14px;
+        @include screen($tablet-w){
+          width: 46%;
+          margin: 0 auto;
+        }
+        .logo{
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
