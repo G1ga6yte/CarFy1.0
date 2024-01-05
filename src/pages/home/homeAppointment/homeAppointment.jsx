@@ -18,11 +18,11 @@ function HomeAppointment (){
           <p className="description">Our qualified technicians are ready to assist you with all your service needs, including oil changes, tire rotations, brake pads, and transmission problems.</p>
           
          <div className="buttonsBlock G-flex">
-           <Link class="G-button G-align-center" to="/">
+           <Link className="G-button G-align-center" to="/">
              <img src={HomeSvg.searchLogo} alt=""/>
              <span>Find service</span>
            </Link>
-           <Link class="G-button" to="/">Car details</Link>
+           <Link className="G-button" to="/">Car details</Link>
          </div>
 
 

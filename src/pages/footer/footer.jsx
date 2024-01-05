@@ -11,7 +11,7 @@ function Footer (){
      
        <div className="LinksCont G-justify-between">
          <div className="globalLinks G-flex-column">
-           <Link class="LinkToHome" to="/home"><img className="logo" src={SvgData.Logo} alt=""/></Link>
+           <Link className="LinkToHome" to="/home"><img className="logo" src={SvgData.Logo} alt=""/></Link>
            <p className="logoUnderText">CarFy product of Fy Technology OU</p>
   
            <div className="MobileAppLinks G-flex G-justify-between G-align-center">
@@ -26,20 +26,20 @@ function Footer (){
            </div>
            <div className="MobileLinksBlock G-flex">
              <div className="LinksToPage G-flex-column">
-               <Link class="headerLink" to="/home">Home</Link>
-               <Link class="pageLink" to="/blog">Blog</Link>
-               <Link class="pageLink" to="/products">Products</Link>
-               <Link class="pageLink" to="/shops">Shops</Link>
-               <Link class="pageLink" to="/service">Service</Link>
-               <Link class="pageLink" to="/forBusiness">For business</Link>
+               <Link className="headerLink" to="/home">Home</Link>
+               <Link className="pageLink" to="/blog">Blog</Link>
+               <Link className="pageLink" to="/products">Products</Link>
+               <Link className="pageLink" to="/shops">Shops</Link>
+               <Link className="pageLink" to="/service">Service</Link>
+               <Link className="pageLink" to="/forBusiness">For business</Link>
              </div>
   
              <div className="LinksToPage G-flex-column">
-               <Link class="headerLink" to="/home">Help</Link>
-               <Link class="pageLink" to="/">Customer Support</Link>
-               <Link class="pageLink" to="/">App Details</Link>
-               <Link class="pageLink" to="/">Terms & Conditions</Link>
-               <Link class="pageLink" to="/">Privacy Policy</Link>
+               <Link className="headerLink" to="/home">Help</Link>
+               <Link className="pageLink" to="/">Customer Support</Link>
+               <Link className="pageLink" to="/">App Details</Link>
+               <Link className="pageLink" to="/">Terms & Conditions</Link>
+               <Link className="pageLink" to="/">Privacy Policy</Link>
              </div>
            </div>
            
@@ -54,20 +54,20 @@ function Footer (){
          </div>
          
          <div className="LinksToPage G-flex-column">
-            <Link class="headerLink" to="/home">Home</Link>
-           <Link class="pageLink" to="/blog">Blog</Link>
-           <Link class="pageLink" to="/products">Products</Link>
-           <Link class="pageLink" to="/shops">Shops</Link>
-           <Link class="pageLink" to="/service">Service</Link>
-           <Link class="pageLink" to="/forBusiness">For business</Link>
+            <Link className="headerLink" to="/home">Home</Link>
+           <Link className="pageLink" to="/blog">Blog</Link>
+           <Link className="pageLink" to="/products">Products</Link>
+           <Link className="pageLink" to="/shops">Shops</Link>
+           <Link className="pageLink" to="/service">Service</Link>
+           <Link className="pageLink" to="/forBusiness">For business</Link>
          </div>
   
          <div className="LinksToPage G-flex-column">
-           <Link class="headerLink" to="/home">Help</Link>
-           <Link class="pageLink" to="/">Customer Support</Link>
-           <Link class="pageLink" to="/">App Details</Link>
-           <Link class="pageLink" to="/">Terms & Conditions</Link>
-           <Link class="pageLink" to="/">Privacy Policy</Link>
+           <Link className="headerLink" to="/home">Help</Link>
+           <Link className="pageLink" to="/">Customer Support</Link>
+           <Link className="pageLink" to="/">App Details</Link>
+           <Link className="pageLink" to="/">Terms & Conditions</Link>
+           <Link className="pageLink" to="/">Privacy Policy</Link>
          </div>
          
        </div>

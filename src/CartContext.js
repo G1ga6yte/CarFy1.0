@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from "react";
+import React, {createContext, useContext, useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
 const CartContext = createContext();
 
@@ -9,6 +9,13 @@ export const CartProvider = ({children}) => {
     return el === locat.pathname
   }
   const [dialog, setDialog] = useState(false)
+  
+  useEffect(()=>{
+    if (window.innerWidth <=992){
+      setDialog(true)
+    }
+  }, [window.innerWidth])
+  
   const handleDialog = () => {
     setDialog(!dialog)
   }

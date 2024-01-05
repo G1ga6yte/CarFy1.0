@@ -1,0 +1,158 @@
+@import "../../../source/mixin.scss";
+
+.BlogRecent{
+  padding: 0 10px;
+  margin: 120px auto;
+  flex-wrap: wrap;
+  @include screen($tablet) {
+    margin: 60px auto;
+  }
+
+  .textBlock {
+    width: 80%;
+
+    .header {
+      font-size: 48px;
+      font-family: 'Inter-Bold', sans-serif;
+      @include screen($tablet){
+        font-size: 40px;
+      }
+    }
+
+    .prg {
+      font-size: 20px;
+      font-family: 'Inter-Medium', sans-serif;
+      max-width: 700px;
+      margin: 15px 0;
+    }
+  }
+
+  .linkBlock {
+    width: 10%;
+    @include screen($tablet-w){
+      display: none;
+    }
+    a{
+      font-size: 24px;
+      font-family: 'Inter-Medium', sans-serif;
+      color: #266EFE;
+      text-decoration: none;
+    }
+  }
+
+  .recentBlock{
+    width: 33%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 24px;
+    margin-top: 40px;
+    @include screen($tablet-w){
+      width: 70%;
+      margin: 15px auto;
+    }
+    @include screen($tablet){
+      width: 90%;
+    }
+    @include screen($mobile-m){
+      width: 95%;
+    }
+
+    img{
+      width: 100%;
+      transform: scale(1.1);
+    }
+
+    .span {
+      position: absolute;
+      top: 50px;
+      left: 40px;
+      background-color: #FFFFFF;
+      display: block;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-family: 'Inter-Medium', sans-serif;
+      color: #00CC9A;
+      font-size: 20px;
+      line-height: 140%;
+      max-width: max-content;
+      @include screen($tablet-m){
+        font-size: 14px;
+      }
+      @include screen($tablet-l){
+        top: 20px;
+        left: 15px;
+        font-size: 18px;
+      }
+      @include screen($tablet-w){
+        top: 50px;
+        left: 40px;
+        font-size: 20px;
+      }
+      @include screen($mobile-m){
+        top: 20px;
+        left: 15px;
+        font-size: 16px;
+      }
+
+
+
+    }
+    .futureText{
+      width: 80%;
+      position: absolute;
+      bottom: 50px;
+      left: 40px;
+      @include screen($tablet-l){
+        left: 20px;
+        bottom: 30px;
+      }
+      @include screen($tablet-w){
+        left: 40px;
+        bottom: 50px;
+      }
+      @include screen($mobile-m){
+        left: 20px;
+        bottom: 30px;
+      }
+
+
+      .fHeader{
+        font-family: 'Inter-Medium', sans-serif;
+        font-size: 30px;
+        color: #FFFFFF;
+        @include screen($tablet-l){
+          font-size: 26px;
+        }
+        @include screen($tablet-w){
+          font-size: 30px;
+        }
+        @include screen($mobile-m){
+          font-size: 26px;
+        }
+
+
+      }
+      .fPrg{
+        margin-top: 45px;
+        font-family: 'Inter-Regular', sans-serif;
+        font-size: 20px;
+        color: white;
+        max-width: 100%;
+        @include screen($tablet-l){
+          font-size: 18px;
+        }
+        @include screen($tablet-w){
+          font-size: 20px;
+        }
+        @include screen($mobile-m){
+          font-size: 16px;
+          margin-top: 25px;
+        }
+
+
+      }
+    }
+
+  }
+
+}

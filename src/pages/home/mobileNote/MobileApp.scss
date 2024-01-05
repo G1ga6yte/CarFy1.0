@@ -1,0 +1,72 @@
+@import "../../../source/mixin.scss";
+
+
+.MobileApp{
+    width: 100% !important;
+  .dialog-box{
+    width: 100% !important;
+
+
+  }
+
+}
+
+.close{
+    color: white;
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 20px;
+  margin: 15px 20px;
+  @include screen($tablet-m){
+    margin-right: 36vw;
+  }
+}
+
+.dialog{
+  width: 100% !important;
+  border: none !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px !important;
+  .header{
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    color: white;
+    text-align: center;
+    margin: 100px 0 50px 0;
+    @include screen($tablet-m){
+      font-size: 40px;
+    }
+  }
+  .prg{
+    color: white;
+    font-family: 'Inter-Regular', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 140%;
+    margin-bottom: 30px;
+  }
+  .link{
+    display: block;
+    padding: 15px 20px;
+    width: 80%;
+    margin: 15px auto 0 auto;
+    border-radius: 14px;
+    border: 1px solid white;
+    .img1{
+      margin-right: 8px;
+    }
+  }
+}
+
+.MuiDialog-container{
+   width: 100% !important;
+
+  .MuiPaper-root{
+    margin: 0 !important;
+    width: 95% !important;
+    background-color: #266EFE;
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+    border-radius: 24px;
+  }
+}

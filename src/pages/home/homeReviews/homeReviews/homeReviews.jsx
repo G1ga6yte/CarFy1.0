@@ -10,17 +10,17 @@ function HomeReviews (){
         
        <div className="reviewsCont G-align-center G-flex-column ">
          <div className="horizontalLine G-flex G-justify-center G-align-center">
-           {Array.apply(null, Array(5)).map(function (){
+           {Array.apply(null, Array(5)).map(function (el, index){
              return(
-                <ReviewBlock/>
+                <ReviewBlock key={index}/>
              )
            })}
          </div>
   
          <div className="horizontalLine G-flex G-justify-between">
-           {Array.apply(null, Array(5)).map(function (){
+           {Array.apply(null, Array(5)).map(function (el, index){
              return(
-                <ReviewBlock/>
+                <ReviewBlock key={index}/>
              )
            })}
          </div>

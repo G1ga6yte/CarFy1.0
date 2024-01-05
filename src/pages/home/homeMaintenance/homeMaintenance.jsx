@@ -27,7 +27,7 @@ function HomeMaintenance() {
          </div>
          
          <div className="buttonsBlock">
-           <Link class="G-button" to="/">Learn more</Link>
+           <Link className="G-button" to="/">Learn more</Link>
          </div>
        </div>
        

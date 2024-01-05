@@ -43,39 +43,39 @@ function Navigation() {
                 src={SvgData.menuBar} alt=""/>
            <img style={{display: `${menuBar ? "block" : "none"}`}} onClick={() => setMenuBar(false)}
                 className="menuLogo" src={SvgData.closeIconBlue} alt=""/>
-           <Link class="LinkLogo" to="/"><img src={SvgData.Logo} alt=""/></Link>
+           <Link className="LinkLogo" to="/"><img src={SvgData.Logo} alt=""/></Link>
          </div>
          
          <div className="pageLinks G-justify-between G-align-center">
-           <Link class={`LinkToPage ${Call("/") ? "activeLink" : " "} ${Call("/home") ? "activeLink" : " "}`}
+           <Link className={`LinkToPage ${Call("/") ? "activeLink" : " "} ${Call("/home") ? "activeLink" : " "}`}
                  to="/home">Home</Link>
            <div onClick={() => setProducts(prev => !prev)} className="ProductsLink G-align-center">
              <span>Products</span>
              <img style={{transform: `${products ? "rotate(180deg)" : "rotate(0deg)"}`}} src={SvgData.arrowDown}
                   alt=""/>
            </div>
-           <Link class={`LinkToPage ${Call("/shops") ? "activeLink" : " "}`} to="/shops">Shops</Link>
-           <Link class={`LinkToPage ${Call("/blog") ? "activeLink" : " "}`} to="/blog">Blog</Link>
-           <Link class={`LinkToPage ${Call("/forBusiness") ? "activeLink" : " "}`} to="/forBusiness">For
+           <Link className={`LinkToPage ${Call("/shops") ? "activeLink" : " "}`} to="/shops">Shops</Link>
+           <Link className={`LinkToPage ${Call("/blog") ? "activeLink" : " "}`} to="/blog">Blog</Link>
+           <Link className={`LinkToPage ${Call("/forBusiness") ? "activeLink" : " "}`} to="/forBusiness">For
              business</Link>
          </div>
          
-         <div style={{display: `${menuBar ? "none" : "flex"}`}} className="loginCartBlock G-align-center">
-           <Link class="LinkToLogeIn G-align-center" to="/logIn"><img src={SvgData.userLogo} alt=""/>Log in</Link>
-           <Link class="LinkToService G-button" to="/findService">Find service</Link>
-           <Link style={{display: "none"}} class="LinkToMessages" to="/messages"><img src={SvgData.message} alt=""/>
+         <div style={{display: ` ${menuBar ? "none" : "flex"}`}} className="loginCartBlock G-align-center">
+           <Link className="LinkToLogeIn G-align-center" to="/logIn"><img src={SvgData.userLogo} alt=""/>Log in</Link>
+           <Link className="LinkToService G-button" to="/findService">Find service</Link>
+           <Link style={{display: "none"}} className="LinkToMessages" to="/messages"><img src={SvgData.message} alt=""/>
              <div className="newMessage"></div>
            </Link>
            <div style={{display: "none"}} onClick={handleNotesBlock} className="LinkToNotifications"><img
               src={SvgData.notification} alt=""/>
              <div className="newMessage"></div>
            </div>
-           <Link class="LinkToCart" to="/cart"><img src={SvgData.shopCart} alt=""/>
+           <Link style={{display: `${Call("/shops") || Call("/cart") ? "block":"none"}`}} className="LinkToCart" to="/cart"><img src={SvgData.shopCart} alt=""/>
              <div style={{display: "none"}} className="newMessage"></div>
            </Link>
-           <Link style={{display: "none"}} class="LinkToProfile" to="/profile"><img src={SvgData.personPic}
+           <Link style={{display: "none"}} className="LinkToProfile" to="/profile"><img src={SvgData.personPic}
                                                                                     alt=""/></Link>
-           <Link class="LinkToService G-button" to="/findService">Find service</Link>
+           <Link className="LinkToService G-button" to="/findService">Find service</Link>
 
          </div>
        
@@ -85,11 +85,11 @@ function Navigation() {
          <div className="loginTextBlock G-flex-column">
            <p className="header">Login to your profile</p>
            <p className="desc">You will receive bonuses for purchases</p>
-           <Link class="LinkToLogeIn G-button" to="logIn">Login | Registration</Link>
+           <Link className="LinkToLogeIn G-button" to="logIn">Login | Registration</Link>
          </div>
          
          <div className="pageLinks G-flex-column">
-           <Link onClick={()=> setMenuBar(false)} class={`LinkToPage ${Call("/") ? "activeLink" : " "} ${Call("/home") ? "activeLink" : " "}`}
+           <Link onClick={()=> setMenuBar(false)} className={`LinkToPage ${Call("/") ? "activeLink" : " "} ${Call("/home") ? "activeLink" : " "}`}
                  to="/home">Home</Link>
            <div onClick={()=>setProducts(prev => !prev)} className="ProductsLink G-justify-between G-align-center">
              <span>Products</span>
@@ -97,13 +97,13 @@ function Navigation() {
                   alt=""/>
            </div>
            <div style={{display: `${products ? "flex" : "none"}`}} className="productsLinks G-flex-column">
-             <Link class={`${Call("/carService") ? "activeLink" : " "}`} onClick={()=> setMenuBar(false)} to="/carService">Car service</Link>
-             <Link class={`${Call("/insurance") ? "activeLink" : " "}`} onClick={()=> setMenuBar(false)} to="/insurance">Insurance</Link>
-             <Link class={`${Call("/vignette") ? "activeLink" : " "}`} onClick={()=> setMenuBar(false)} to="/vignette">Vignette</Link>
+             <Link className={`${Call("/carService") ? "activeLink" : " "}`} onClick={()=> setMenuBar(false)} to="/carService">Car service</Link>
+             <Link className={`${Call("/insurance") ? "activeLink" : " "}`} onClick={()=> setMenuBar(false)} to="/insurance">Insurance</Link>
+             <Link className={`${Call("/vignette") ? "activeLink" : " "}`} onClick={()=> setMenuBar(false)} to="/vignette">Vignette</Link>
            </div>
-           <Link onClick={()=> setMenuBar(false)} class={`LinkToPage ${Call("/shops") ? "activeLink" : " "}`} to="/shops">Shops</Link>
-           <Link onClick={()=> setMenuBar(false)} class={`LinkToPage ${Call("/blog") ? "activeLink" : " "}`} to="/blog">Blog</Link>
-           <Link onClick={()=> setMenuBar(false)} class={`LinkToPage ${Call("/forBusiness") ? "activeLink" : " "}`} to="/forBusiness">For
+           <Link onClick={()=> setMenuBar(false)} className={`LinkToPage ${Call("/shops") ? "activeLink" : " "}`} to="/shops">Shops</Link>
+           <Link onClick={()=> setMenuBar(false)} className={`LinkToPage ${Call("/blog") ? "activeLink" : " "}`} to="/blog">Blog</Link>
+           <Link onClick={()=> setMenuBar(false)} className={`LinkToPage ${Call("/forBusiness") ? "activeLink" : " "}`} to="/forBusiness">For
              business</Link>
          </div>
        
@@ -129,7 +129,7 @@ function Navigation() {
          setNotes(false);
        }} style={{display: `${products ? "flex" : "none"}`}} className="ProductsBlock G-container">
          
-         <Link class="ProductLink" to="/carService">
+         <Link className="ProductLink" to="/carService">
            <span className="hProduct">Car service</span>
            <p className="prgProduct">
              Find a car service, with good reviews. Choose a reliable service provider to ensure your vehicle's safety
@@ -137,21 +137,21 @@ function Navigation() {
            </p>
          </Link>
          
-         <Link class="ProductLink" to="/carService">
+         <Link className="ProductLink" to="/carService">
            <span className="hProduct">Insurance</span>
            <p className="prgProduct">
              Car insurance provides financial protection in case of a car accident.
            </p>
          </Link>
          
-         <Link class="ProductLink" to="/carService">
+         <Link className="ProductLink" to="/carService">
            <span className="hProduct">Vignette</span>
            <p className="prgProduct">
              You can pay tolls online with a credit or debit card for a quicker and more convenient commute.
            </p>
          </Link>
          
-         <Link class="salesBlock" to="/Sales30">
+         <Link className="salesBlock" to="/Sales30">
            <p>Sales up to 30%</p>
            <span>for car parts</span>
            <img className="salesImg1" src={ImgData.productCarDamper} alt=""/>
