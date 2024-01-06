@@ -1,0 +1,273 @@
+@import "../../../source/mixin.scss";
+
+.BlogAllArticles{
+  padding: 0 10px 120px 10px;
+  margin: 120px auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  @include screen($tablet-l){
+    margin: 60px auto;
+    padding: 0 10px 64px 10px;
+  }
+  @include screen($tablet){
+    margin: 32px auto;
+    padding: 0 10px 32px 10px;
+  }
+
+
+  .textBlock {
+    width: 100%;
+
+    .header {
+      font-size: 48px;
+      font-family: 'Inter-Bold', sans-serif;
+      @include screen($tablet){
+        font-size: 40px;
+      }
+    }
+
+    .prg {
+      font-size: 20px;
+      font-family: 'Inter-Medium', sans-serif;
+      margin: 15px 0;
+    }
+  }
+
+  .Article {
+    display: block;
+    text-decoration: none;
+    width: 49%;
+    padding: 50px 40px;
+    margin-top: 25px;
+    height: 600px;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+    position: relative;
+    @include screen($wide){
+      height: 450px;
+    }
+    @include screen($tablet-l){
+      height: 400px;
+    }
+    @include screen($tablet-w){
+      width: 100%;
+      height: 600px;
+    }
+    @include screen($tablet){
+      height: 500px;
+    }
+    @include screen($tablet-m){
+      height: 250px;
+      padding: 35px;
+    }
+    @include screen($mobile-m){
+      height: 200px;
+    }
+
+
+    .span {
+      background-color: white;
+      display: block;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-family: 'Inter-Medium', sans-serif;
+      color: #00CC9A;
+      font-size: 20px;
+      line-height: 140%;
+      max-width: max-content;
+      @include screen($tablet-m){
+        font-size: 14px;
+      }
+    }
+
+    .prg {
+      font-size: 30px;
+      margin-top: 40px;
+      font-family: "Inter-Medium", sans-serif;
+      color: white;
+      max-width: 300px;
+      position: relative;
+      z-index: 2;
+      @include screen($tablet-m){
+        margin-top: 15px;
+      }
+      @include screen($tablet-m){
+        font-size: 20px;
+        max-width: 140px;
+      }
+
+    }
+
+    &:nth-child(2) {
+      background: linear-gradient(139deg, #6DCD4B -6.92%, #4C8BEB 76.83%), linear-gradient(180deg, rgba(24, 59, 86, 0.00) 0%, #152532 100%), #FFF;
+
+      img {
+        width: 70%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include screen($tablet-m){
+          width: unset;
+          height: 70%;
+        }
+      }
+
+    }
+
+    &:nth-child(3) {
+      background: linear-gradient(0deg, #25396B 0%, #25396B 100%), linear-gradient(139deg, #6DCD4B -6.92%, #4C8BEB 76.83%), linear-gradient(180deg, rgba(24, 59, 86, 0.00) 0%, #152532 100%), #FFF;
+
+      img{
+        &:nth-child(3){
+          width: 100%;
+          position: absolute;
+          bottom: 15%;
+          left: 0;
+          @include screen($tablet-m){
+            bottom: 5%;
+          }
+        }
+        &:nth-child(4){
+          width: 40%;
+          position: absolute;
+          top: 10%;
+          right: 0;
+          @include screen($tablet-m){
+            width: unset;
+            height: 50%;
+          }
+
+        }
+        &:nth-child(5){
+          width: 40%;
+          position: absolute;
+          bottom: 0;
+          left: 15%;
+          @include screen($tablet-m){
+            width: unset;
+            height: 40%;
+          }
+
+        }
+      }
+    }
+  }
+
+  .recentBlock{
+    width: 33%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 24px;
+    margin-top: 40px;
+    @include screen($tablet-w){
+      width: 70%;
+      margin: 15px auto;
+      display: none;
+    }
+    @include screen($tablet){
+      width: 90%;
+    }
+    @include screen($mobile-m){
+      width: 95%;
+    }
+
+    img{
+      width: 100%;
+      transform: scale(1.1);
+    }
+
+    .span {
+      position: absolute;
+      top: 50px;
+      left: 40px;
+      background-color: #FFFFFF;
+      display: block;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-family: 'Inter-Medium', sans-serif;
+      color: #00CC9A;
+      font-size: 20px;
+      line-height: 140%;
+      max-width: max-content;
+      @include screen($tablet-m){
+        font-size: 14px;
+      }
+      @include screen($tablet-l){
+        top: 20px;
+        left: 15px;
+        font-size: 18px;
+      }
+      @include screen($tablet-w){
+        top: 50px;
+        left: 40px;
+        font-size: 20px;
+      }
+      @include screen($mobile-m){
+        top: 20px;
+        left: 15px;
+        font-size: 16px;
+      }
+
+
+
+    }
+    .futureText{
+      width: 80%;
+      position: absolute;
+      bottom: 50px;
+      left: 40px;
+      @include screen($tablet-l){
+        left: 20px;
+        bottom: 30px;
+      }
+      @include screen($tablet-w){
+        left: 40px;
+        bottom: 50px;
+      }
+      @include screen($mobile-m){
+        left: 20px;
+        bottom: 30px;
+      }
+
+
+      .fHeader{
+        font-family: 'Inter-Medium', sans-serif;
+        font-size: 30px;
+        color: #FFFFFF;
+        @include screen($tablet-l){
+          font-size: 26px;
+        }
+        @include screen($tablet-w){
+          font-size: 30px;
+        }
+        @include screen($mobile-m){
+          font-size: 26px;
+        }
+
+
+      }
+      .fPrg{
+        margin-top: 45px;
+        font-family: 'Inter-Regular', sans-serif;
+        font-size: 20px;
+        color: white;
+        max-width: 100%;
+        @include screen($tablet-l){
+          font-size: 18px;
+        }
+        @include screen($tablet-w){
+          font-size: 20px;
+        }
+        @include screen($mobile-m){
+          font-size: 16px;
+          margin-top: 25px;
+        }
+
+
+      }
+    }
+
+  }
+
+}

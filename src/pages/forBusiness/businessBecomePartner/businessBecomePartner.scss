@@ -1,0 +1,101 @@
+@import "../../../source/mixin.scss";
+
+.businessBecomePartner {
+  max-width: 700px;
+  margin: 0 auto 120px;
+  padding: 0 10px;
+  @include screen($tablet) {
+    margin: 0 auto 64px;
+  }
+
+  .header{
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    text-align: center;
+    @include screen($tablet){
+      font-size: 40px;
+    }
+    span{
+      color: #266EFE;
+    }
+  }
+  .types{
+    padding: 100px 120px 120px;
+    background-color: white;
+    border-radius: 24px;
+    @include screen($tablet){
+      padding: 40px 50px 50px;
+    }
+    @include screen($mobile-m){
+      padding: 30px 20px 30px;
+    }
+
+    .typeBlock{
+      margin-bottom: 50px;
+
+      @include screen($tablet-m){
+        flex-direction: column;
+
+      }
+
+      &:nth-child(2){
+        .num{
+          background-color: #00CC9A !important;
+        }
+      }
+      &:nth-child(3){
+        .num{
+          background-color: #F39A31 !important;
+        }
+      }
+        .num{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          line-height: 150%;
+          height: 112px;
+          width: 112px;
+          font-family: 'Inter-Bold', sans-serif;
+          font-size: 48px;
+          color: white;
+          background-color: #FF7373;
+          border-radius: 24px;
+          margin-right: 40px;
+          @include screen($tablet-m){
+            margin: 0 0 40px 0;
+          }
+
+        }
+      .prg{
+        font-size: 20px;
+        font-family: 'Inter-Medium', sans-serif;
+        width: 60%;
+        @include screen($tablet-m){
+          text-align: center;
+          width: 100%;
+        }
+
+      }
+    }
+    .partnerBtn{
+      padding: 20px 0;
+      text-align: center;
+      border-radius: 14px;
+      border: 1px solid #266EFE;
+      color: white;
+      font-family: 'Inter-Medium', sans-serif;
+      width: 100%;
+      font-size: 16px;
+      background-color: #266EFE;
+      margin-top: 40px;
+      cursor: pointer;
+      @include screen($tablet){
+        margin-top: 20px;
+      }
+
+    }
+
+  }
+
+
+}

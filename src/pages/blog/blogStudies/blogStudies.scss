@@ -43,16 +43,64 @@
 
   .sliderCont{
     width: 100%;
+    overflow: hidden;
+    transition: 1s ease-in-out;
+
+    .slick-slider{
+      width: 100% !important;
+      .slick-dots{
+        width: 100%;
+        display: flex !important;
+        justify-content: center !important;
+        li{
+          display: block;
+          margin: 0 24px;
+          height: 24px;
+          width: 24px;
+          background-color: #F1F4F8;
+          border-radius: 50%;
+
+          @include screen($tablet-m){
+            height: 16px;
+            width: 16px;
+            margin: 0 20px;
+          }
+
+          button{
+            color: transparent;
+            border: none;
+            background-color: transparent;
+            position: relative;
+            z-index: 3;
+            height: 100%;
+            width: 100%;
+          }
+        }
+        .slick-active{
+          background-color: #266EFE;
+        }
+      }
+      .slick-list{
+        width: 100% !important;
+        .slick-track{
+          width: 100%;
+          display: flex;
+          justify-content: space-around !important;
+          align-items: center;
+        }
+      }
+    }
 
     .featureBlock{
+      display: flex !important;
       width: 100%;
       box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
       border-radius: 24px;
       background-color: white;
       margin: 60px auto;
       @include screen($tablet-w){
-        flex-wrap: wrap;
         margin: 30px auto;
+        flex-wrap: wrap !important;
       }
 
 
@@ -68,6 +116,9 @@
           height: 450px;
         }
         @include screen($tablet-m){
+          height: 300px;
+        }
+        @include screen($mobile-m){
           height: 200px;
         }
 

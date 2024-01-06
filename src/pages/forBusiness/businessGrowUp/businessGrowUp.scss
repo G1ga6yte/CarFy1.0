@@ -1,0 +1,126 @@
+@import "../../../source/mixin.scss";
+
+.BusinessGrowUp {
+  margin: 150px auto;
+  padding: 0 10px;
+
+  @include screen($tablet-l){
+    margin: 100px auto;
+  }
+
+  @include screen($tablet){
+    margin: 50px auto;
+  }
+
+  .header {
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    text-align: center;
+    @include screen($tablet){
+      font-size: 40px;
+    }
+    span{
+      color: #266EFE;
+    }
+  }
+  .underHeader{
+      max-width: 50%;
+    font-size: 20px;
+    font-family: 'Inter-Regular', sans-serif;
+    line-height: 140%;
+    text-align: center;
+    margin: 24px auto;
+  }
+
+  .TypeBlocks{
+    flex-wrap: wrap;
+    margin-top: 12px;
+
+    .typeBlock{
+      width: 49%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+      background-color: white;
+      margin-top: 25px;
+      @include screen($tablet){
+        width: 100%;
+      }
+
+
+      .textBlock{
+        padding: 60px 0;
+        @include screen($tablet-w){
+          padding: 40px 0;
+        }
+        .typeHeader{
+          font-size: 30px;
+          text-align: center;
+          font-family: 'Inter-Medium', sans-serif;
+          @include screen($tablet-l){
+            height: 80px;
+          }
+          @include screen($tablet){
+            height: 40px;
+          }
+          @include screen($tablet-m){
+            height: unset;
+            width: 90%;
+            margin: 0 auto;
+          }
+
+        }
+        .typePrg{
+          font-family: 'Inter-Regular', sans-serif;
+          text-align: center;
+          max-width: 60%;
+          height: 60px;
+          margin: 16px auto 0;
+          color: #AEAEAE;
+          @include screen($tablet-l){
+            max-width: 90%;
+            margin: 10px auto 0;
+          }
+          @include screen($tablet-w){
+            height: 80px;
+          }
+          @include screen($tablet){
+            height: 50px;
+          }
+          @include screen($tablet-m){
+            height: unset;
+          }
+
+
+        }
+      }
+    }
+    .imgBlock1 {
+      background: #D4E0FF;
+    }
+    .imgBlock2 {
+      background: #D4FFD6;
+    }
+    .imgBlock3 {
+      background: #FCFFD4;
+    }
+    .imgBlock4 {
+      background: #266EFE;
+    }
+
+
+      img{
+        display: block;
+        margin: 0 auto;
+        @include screen($tablet-w){
+          height: 140px;
+        }
+        @include screen($tablet){
+          height: 180px;
+        }
+
+      }
+
+
+  }
+}

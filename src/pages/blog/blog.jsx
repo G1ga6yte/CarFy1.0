@@ -4,6 +4,7 @@ import BlogFeatured from "./blogFeatured/blogFeatured";
 import BlogArticles from "./blogArticles/blogArticles";
 import BlogRecent from "./blogRecent/blogRecent";
 import BlogStudies from "./blogStudies/blogStudies";
+import BlogAllArticles from "./blogAllArticles/blogAllArticles";
 
 function Blog() {
   return (
@@ -13,6 +14,7 @@ function Blog() {
        <BlogArticles/>
        <BlogRecent/>
        <BlogStudies/>
+       <BlogAllArticles/>
      </div>
   );
 }

@@ -1,0 +1,71 @@
+@import "../../../source/mixin.scss";
+
+.businessSoftware{
+  padding: 0 10px;
+  flex-wrap: wrap;
+
+  .header{
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    @include screen($tablet){
+      font-size: 40px;
+    }
+    span{
+      color: #266EFE;
+    }
+  }
+
+  .softwareBlock{
+    width: 49%;
+    background-color: white;
+    border-radius: 24px;
+    padding: 40px;
+    @include screen($wide-s){
+      padding: 20px;
+    }
+    @include screen($tablet-w){
+      width: 95%;
+      margin: 12px auto;
+    }
+    @include screen($tablet-m){
+      width: 100%;
+      margin: 0;
+      padding: 15px;
+    }
+
+    .prg{
+      font-family: 'Inter-Medium', sans-serif;
+      font-size: 20px;
+      line-height: 140%;
+      @include screen($tablet-m){
+        font-size: 12px;
+      }
+
+
+      &:nth-child(2){
+        margin: 45px 0 20px;
+        @include screen($tablet-m){
+          margin: 20px 0 15px;
+        }
+
+      }
+      &:nth-child(1){
+        margin: 20px 0 45px;
+        @include screen($tablet-m){
+          margin: 15px 0 20px;
+        }
+
+      }
+      img{
+        margin-right: 32px;
+        @include screen($tablet-m){
+          width: 32px;
+        }
+
+      }
+    }
+  }
+}

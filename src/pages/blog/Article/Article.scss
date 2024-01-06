@@ -1,0 +1,202 @@
+@import "../../../source/mixin.scss";
+
+.ArticleCont {
+  margin: 64px auto;
+  padding: 0 10px;
+
+
+  .TopImgBlock {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    padding: 50px 40px;
+    margin-top: 25px;
+    height: 600px;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+    position: relative;
+    background: linear-gradient(139deg, #6DCD4B -6.92%, #4C8BEB 76.83%), linear-gradient(180deg, rgba(24, 59, 86, 0.00) 0%, #152532 100%), #FFF;
+    @include screen($tablet-l){
+      height: 500px;
+    }
+    @include screen($tablet){
+      height: 400px;
+    }
+    @include screen($tablet-m){
+      padding: 32px;
+      height: 300px;
+    }
+    @include screen($mobile-m){
+      height: 230px;
+    }
+
+    .span {
+      background-color: white;
+      display: block;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-family: 'Inter-Medium', sans-serif;
+      color: #00CC9A;
+      font-size: 20px;
+      line-height: 140%;
+      max-width: max-content;
+      @include screen($tablet-m){
+        font-size: 14px;
+      }
+    }
+
+    .prg {
+      font-size: 48px;
+      margin-top: 40px;
+      font-family: "Inter-Bold", sans-serif;
+      color: white;
+      position: relative;
+      z-index: 2;
+      @include screen($tablet-w){
+        font-size: 30px;
+      }
+      @include screen($tablet-m){
+        font-size: 20px;
+        max-width: 50%;
+        margin-top: 15px;
+      }
+      @include screen($mobile-m){
+        max-width: 60%;
+      }
+
+    }
+
+
+    img {
+      height: 80%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+
+  }
+
+  .header {
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    text-align: center;
+    margin: 50px auto;
+    @include screen($tablet-w){
+      text-align: left;
+    }
+    @include screen($tablet-m){
+      font-size: 40px;
+    }
+  }
+
+  .TextBlock {
+    max-width: 950px;
+    margin: 0 auto;
+
+    .textPrg{
+      font-size: 20px;
+      font-family: 'Inter-Regular', sans-serif;
+      line-height: 140%;
+    }
+    .headerPrg{
+      font-size: 24px;
+      font-family: 'Inter-Medium', sans-serif;
+      line-height: 120%;
+      margin: 28px auto 24px auto;
+      color: #0D172F;
+    }
+  }
+
+  .similarPosts{
+    margin-top: 96px;
+
+    .miniHeader{
+      font-size: 30px;
+      font-family: 'Inter-Medium', sans-serif;
+      color: #0D172F;
+    }
+
+    .posts{
+      margin: 20px auto;
+      width: 100%;
+      @include screen($tablet-l){
+        flex-wrap: wrap;
+      }
+
+      .post{
+        width: 24%;
+        margin-top: 20px;
+        box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+        background: linear-gradient(139deg, #6DCD4B -6.92%, #4C8BEB 76.83%), linear-gradient(180deg, rgba(24, 59, 86, 0.00) 0%, #152532 100%), #FFF;
+        border-radius: 24px;
+        position: relative;
+        height: 300px;
+        text-decoration: none;
+        display: block;
+        @include screen($wide-l){
+          height: 250px;
+        }
+        @include screen($tablet-l){
+          width: 49%;
+        }
+        @include screen($tablet){
+          height: 220px;
+        }
+        @include screen($tablet-m){
+          width: 100%;
+          &:nth-child(3), &:nth-child(4){
+            display: none;
+          }
+        }
+
+
+
+
+        .prg{
+          font-size: 30px;
+          font-family: 'Inter-Medium', sans-serif;
+          color: white;
+          padding: 24px;
+          position: relative;
+          z-index: 2;
+          @include screen($wide-s){
+            font-size: 24px;
+          }
+          @include screen($tablet-l){
+            font-size: 30px;
+          }
+          @include screen($tablet){
+            font-size: 24px;
+          }
+          @include screen($tablet-m){
+            max-width: 80%;
+          }
+
+
+
+        }
+
+
+        img{
+          height: 80%;
+          position: absolute;
+          right: 0;
+          bottom: -6%;
+          @include screen($wide-s){
+            height: 70%;
+          }
+          @include screen($tablet-l){
+            height: 80%;
+          }
+          @include screen($tablet){
+            height: 70%;
+          }
+
+        }
+      }
+    }
+
+  }
+
+}

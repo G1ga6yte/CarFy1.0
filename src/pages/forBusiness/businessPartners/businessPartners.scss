@@ -1,0 +1,66 @@
+@import "../../../source/mixin.scss";
+
+.BusinessPartners{
+    margin: 120px auto;
+  padding: 0 20px;
+  @include screen($tablet-l){
+    margin: 64px auto;
+  }
+  @include screen($tablet){
+    margin: 32px auto;
+  }
+
+  .header{
+    margin-bottom: 40px;
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    text-align: center;
+    @include screen($tablet){
+      font-size: 40px;
+    }
+    @include screen($mobile-m){
+      font-size: 30px;
+    }
+    span{
+      color: #266EFE;
+    }
+  }
+  .typesBlock{
+    @include screen($tablet-w){
+      flex-wrap: wrap;
+    }
+
+    .type{
+      width: 32.5%;
+      border-radius: 16px;
+      background-color: white;
+      box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+      padding: 36px 44px 80px;
+
+      @include screen($tablet-w){
+        width: 90%;
+        margin: 10px auto;
+      }
+      @include screen($tablet){
+        width: 96%;
+        padding: 25px 30px 40px;
+      }
+      @include screen($mobile-m){
+        width: 100%;
+      }
+
+      .miniHeader{
+        font-size: 20px;
+        font-family: 'Inter-SemiBold', sans-serif;
+        line-height: 140%;
+        margin: 24px 0 16px;
+      }
+      .prg{
+        font-size: 16px;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 130%;
+        color: #AEAEAE;
+      }
+    }
+  }
+}

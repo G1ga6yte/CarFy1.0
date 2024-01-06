@@ -1,0 +1,121 @@
+@import "../../../source/mixin.scss";
+
+.businessCities {
+  margin: 120px auto;
+  padding: 0 10px;
+  @include screen($tablet-l) {
+    margin: 64px auto;
+  }
+  @include screen($tablet) {
+    margin: 32px auto;
+  }
+
+  .CitiesCont {
+    padding: 60px 50px;
+    background-color: white;
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+    border-radius: 24px;
+    @include screen($wide-s){
+      padding: 30px 25px;
+    }
+
+
+    .textBlock {
+      margin-left: 60px;
+      max-width: 520px;
+      @include screen($wide-s){
+        margin-left: 0;
+      }
+      @include screen($tablet-w){
+        max-width: unset;
+        width: 100%;
+      }
+
+
+      .header {
+        font-size: 48px;
+        font-family: 'Inter-Bold', sans-serif;
+        @include screen($tablet) {
+          font-size: 40px;
+        }
+        @include screen($tablet-w){
+          text-align: center;
+        }
+
+
+        span {
+          color: #266EFE;
+        }
+      }
+      .prg {
+        font-size: 20px;
+        font-family: 'Inter-Medium', sans-serif;
+        margin: 25px 0;
+        @include screen($tablet-w){
+          text-align: center;
+        }
+
+      }
+      .mapImgInside{
+        display: none;
+        @include screen($tablet-w){
+          display: block;
+          width: 100%;
+        }
+      }
+      .input{
+        border-radius: 14px;
+        padding: 15px 20px;
+        border: 1px solid #D9D9D9;
+        outline: none;
+        font-size: 16px;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 130%;
+        width: 70%;
+        margin: 10px 0;
+        @include screen($tablet-w){
+          width: 100%;
+          margin-top: 30px;
+        }
+
+      }
+      .learnMoreBtn{
+        margin-top: 100px;
+        padding: 20px 50px;
+        background-color: #266EFE;
+        border: 1px solid #266EFE;
+        border-radius: 14px;
+        text-align: center;
+        line-height: 150%;
+        font-size: 16px;
+        font-family: 'Inter-Medium', sans-serif;
+        color: white;
+        cursor: pointer;
+        @include screen($wide-s){
+          margin-top: 40px;
+        }
+        @include screen($tablet-w){
+          width: 100%;
+          margin-top: 20px;
+        }
+        @include screen($tablet-m){
+          margin-top: 10px;
+        }
+
+
+      }
+
+    }
+    .mapImg{
+      width: 40%;
+      height: min-content;
+      @include screen($tablet-w){
+        display: none;
+      }
+
+    }
+
+
+  }
+
+}

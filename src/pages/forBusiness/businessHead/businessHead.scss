@@ -1,0 +1,198 @@
+@import "../../../source/mixin.scss";
+
+.BusinessHead {
+  padding-bottom: 30px;
+  box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+  background-color: white;
+  @include screen($tablet-l) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+
+  .TextBlock {
+    width: 50%;
+    padding-left: 10%;
+    position: relative;
+    z-index: 2;
+
+    @include screen($wide-l){
+      margin-left: 20px;
+      padding: 0;
+    }
+    @include screen($tablet-l){
+      width: 100%;
+    }
+    .textCont{
+      max-width: 450px;
+      @include screen($tablet-l){
+        width: 100%;
+        max-width: unset;
+        padding: 0 10px;
+      }
+
+      .header{
+        font-size: 48px;
+        font-family: 'Inter-Bold', sans-serif;
+        line-height: 140%;
+        @include screen($tablet-l){
+          display: none;
+        }
+        span{
+          color: #266EFE;
+        }
+      }
+      .prg{
+        font-family: 'Inter-Regular', sans-serif;
+        font-size: 20px;
+        line-height: 140%;
+        @include screen($tablet-l){
+          text-align: center;
+        }
+      }
+      .btnBlock{
+        width: 100%;
+        margin: 16px auto;
+        @include screen($tablet-l){
+          flex-direction: column;
+        }
+
+        .button{
+          width: 48%;
+          border-radius: 14px;
+          border: 1px solid #266EFE;
+          padding: 20px 0;
+          text-align: center;
+          line-height: 150%;
+          font-size: 16px;
+          font-family: 'Inter-Medium', sans-serif;
+          color: #266EFE;
+          cursor: pointer;
+          @include screen($tablet-l){
+            width: 96%;
+            margin: 10px auto;
+          }
+
+
+          &:nth-child(1){
+            color: white;
+            background-color: #266EFE;
+          }
+
+          img{
+            margin-right: 8px;
+          }
+        }
+      }
+      .underText{
+        font-size: 16px;
+        font-family: 'Inter-Regular', sans-serif;
+        color: #AEAEAE;
+        line-height: 130%;
+        margin: 16px 0;
+        @include screen($tablet-l){
+          text-align: center;
+        }
+
+      }
+      .partners{
+        flex-wrap: wrap;
+        width: 100%;
+        @include screen($tablet-l){
+          justify-content: center;
+        }
+
+        .partnerLogo{
+          margin: 0 20px 25px;
+          @include screen($tablet-m){
+            margin: 0 14px 20px;
+          }
+          @include screen($mobile-m){
+            width: 23%;
+          }
+        }
+      }
+
+
+    }
+
+  }
+
+  .BckBlock {
+    width: 50%;
+    position: relative;
+    height: 900px;
+    @include screen($wide-l) {
+      height: 700px;
+    }
+    @include screen($wide-s) {
+      height: 600px;
+    }
+    @include screen($tablet-l) {
+      width: 100%;
+      height: unset;
+    }
+
+    .header {
+      font-size: 48px;
+      font-family: 'Inter-Bold', sans-serif;
+      text-align: center;
+      display: none;
+      margin-top: 40px;
+      @include screen($tablet-l) {
+        display: block;
+      }
+      @include screen($tablet) {
+        font-size: 40px;
+      }
+
+      span {
+        color: #266EFE;
+      }
+    }
+
+    .BckVector {
+      height: 100%;
+      @include screen($tablet-l) {
+        display: none;
+      }
+    }
+
+    .dashboard1 {
+      height: 80%;
+      position: absolute;
+      top: 8%;
+      right: -5%;
+      @include screen($wide) {
+        right: -10%;
+      }
+      @include screen($tablet-l) {
+        display: none;
+      }
+    }
+
+    .dashboard2 {
+      height: 40%;
+      position: absolute;
+      bottom: 0;
+      right: 30%;
+      @include screen($wide) {
+        right: 25%;
+      }
+      @include screen($tablet-l) {
+        display: none;
+      }
+    }
+
+    .dashboard3 {
+      display: none;
+      width: 100%;
+      margin: 10px 0;
+      @include screen($tablet-l) {
+        display: block;
+      }
+
+    }
+  }
+
+}

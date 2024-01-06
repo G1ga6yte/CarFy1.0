@@ -1,9 +1,16 @@
 @import "../../source/mixin.scss";
 
-.Footer {
+
+.Footer{
+  background-color: white;
+  border-top: 1px solid #F1F4F8;
+  width: 100%;
+}
+.footerCont {
   margin: 120px auto 0 auto;
   padding: 0 10px;
   flex-wrap: wrap;
+
 
   .rightsText{
     font-size: 14px;
