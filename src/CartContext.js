@@ -20,9 +20,12 @@ export const CartProvider = ({children}) => {
     setDialog(!dialog)
   }
   
+  const [typeLogIn, setTypeLogIn] = useState("SignUp");
+  
+  
   
   return (<CartContext.Provider value={{
-    Call, dialog, setDialog, handleDialog
+    Call, dialog, setDialog, handleDialog, typeLogIn, setTypeLogIn
   }}>
     {children}
   </CartContext.Provider>);

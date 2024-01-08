@@ -36,7 +36,7 @@ function Footer (){
                </div>
         
                <div className="LinksToPage G-flex-column">
-                 <Link className="headerLink" to="/home">Help</Link>
+                 <Link className="headerLink" to="/help">Help</Link>
                  <Link className="pageLink" to="/">Customer Support</Link>
                  <Link className="pageLink" to="/">App Details</Link>
                  <Link className="pageLink" to="/">Terms & Conditions</Link>
@@ -64,7 +64,7 @@ function Footer (){
            </div>
     
            <div className="LinksToPage G-flex-column">
-             <Link className="headerLink" to="/home">Help</Link>
+             <Link className="headerLink" to="/help">Help</Link>
              <Link className="pageLink" to="/">Customer Support</Link>
              <Link className="pageLink" to="/">App Details</Link>
              <Link className="pageLink" to="/">Terms & Conditions</Link>

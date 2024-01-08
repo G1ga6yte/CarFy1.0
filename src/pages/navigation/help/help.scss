@@ -1,0 +1,184 @@
+@import "../../../source/mixin.scss";
+
+.HelpCont{
+  flex-wrap: wrap;
+  padding: 0 10px;
+
+  .header{
+    width: 100%;
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    text-align: center;
+    margin: 100px auto 80px;
+    @include screen($tablet){
+      font-size: 40px;
+      margin: 50px auto 40px;
+    }
+  }
+
+  .sideBar{
+    width: 34%;
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+    border: 1px solid #F1F4F8;
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    padding-bottom: 30px;
+    height: min-content;
+    margin-bottom: 120px;
+    position: relative;
+    @include screen($tablet-w){
+      width: 80%;
+      margin: 10px auto;
+    }
+    @include screen($tablet){
+      width: 100%;
+    }
+
+
+
+    .searchInput2{
+      border: none;
+      padding: 15px 30px;
+      font-size: 14px;
+      font-family: 'Inter-Regular', sans-serif;
+      line-height: 130%;
+      border-radius: 16px 16px 0 0;
+      outline: none;
+    }
+    .searchedBlock{
+      width: 100% !important;
+      padding: 15px 30px;
+      position: absolute;
+      z-index: 2;
+      background-color: white;
+      height: 100%;
+      top: 50px;
+      left: 0;
+      .listItem{
+        font-family: 'Inter-Regular', sans-serif;
+        font-size: 14px;
+        margin: 10px 0;
+        cursor: pointer;
+        &:hover{
+          color: #266EFE;
+        }
+      }
+    }
+    .itemBlock{
+      padding: 8px 15px;
+      border-top: 1px solid #F1F4F8;
+      border-bottom: 1px solid #F1F4F8;
+      .itemHeader{
+        cursor: pointer;
+        p{
+          font-size: 16px;
+          font-family: 'Inter-Medium', sans-serif;
+          line-height: 140%;
+        }
+      }
+      .itemLinks{
+        margin-bottom: 10px;
+        .link{
+          font-size: 13px;
+          font-family: 'Inter-Regular', sans-serif;
+          line-height: 130%;
+          cursor: pointer;
+          margin: 6px 0;
+          &:hover{
+            color: #266EFE;
+          }
+        }
+      }
+    }
+  }
+
+  .main{
+    width: 64%;
+    padding: 40px 30px;
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+    border: 1px solid #F1F4F8;
+    background-color: white;
+    border-radius: 16px;
+    height: min-content;
+    margin-bottom: 120px;
+    @include screen($tablet-w){
+      width: 80%;
+      margin: 10px auto 64px;
+    }
+    @include screen($tablet){
+      width: 100%;
+    }
+
+    .mainBlock{
+      flex-wrap: wrap;
+      width: 100%;
+      @include screen($tablet-w){
+        justify-content: space-between;
+      }
+
+      .MHeader{
+        font-size: 20px;
+        font-family: 'Inter-SemiBold', sans-serif;
+        line-height: 140%;
+        margin-bottom: 25px;
+      }
+      .text{
+        font-size: 14px;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 130%;
+      }
+      .WriteUs{
+        font-family: 'Inter-SemiBold', sans-serif;
+        font-size: 14px;
+        line-height: 140%;
+        margin: 10px 0;
+        span{
+          font-family: 'Inter-Regular', sans-serif !important;
+          span{
+            color: #266EFE;
+          }
+        }
+      }
+
+      .mainItem{
+        width: 45%;
+        align-items: start;
+        margin-top: 30px;
+        @include screen($wide-s){
+          width: 50%;
+        }
+        @include screen($tablet-w){
+          width: 45%;
+        }
+        @include screen($tablet-m){
+          width: 100%;
+        }
+        img{
+          width: 24px;
+          margin-right: 16px;
+        }
+        .links{
+          .name{
+            font-size: 16px;
+            font-family: 'Inter-Medium', sans-serif;
+            margin-bottom: 25px;
+          }
+          .link{
+            cursor: pointer;
+            font-size: 13px;
+            color: #266EFE;
+            font-family: 'Inter-Regular', sans-serif;
+            line-height: 130%;
+            margin-bottom: 8px;
+            &:hover{
+              color: #4C52EB;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+}

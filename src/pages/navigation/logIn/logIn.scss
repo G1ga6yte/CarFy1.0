@@ -1,0 +1,205 @@
+@import "../../../source/mixin.scss";
+
+.LogInCont{
+  margin: 120px auto;
+  width: 98%;
+  border: 1px solid #F1F4F8;
+  background-color: white;
+  box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+  border-radius: 24px;
+  position: relative;
+  padding: 64px 120px;
+
+  .backButton{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    cursor: pointer;
+  }
+
+  .ImgBlock{
+    width: 45%;
+
+    .headText{
+      font-size: 48px;
+      font-family: 'Inter-Bold', sans-serif;
+      line-height: 140%;
+      color: #0D172F;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .underText{
+      font-size: 30px;
+      font-family: 'Inter-Medium', sans-serif;
+      line-height: 130%;
+      color: #0D172F;
+      margin: 15px auto;
+    }
+  }
+  .loginBlock{
+      width: 40%;
+    .toggleBlock{
+      width: 80%;
+      margin: 0 auto 70px;
+      background-color: #F8FAFC;
+      border-radius: 12px;
+      padding: 3px;
+
+
+      .toggle{
+        border-radius: 12px;
+        font-size: 12px;
+        color: #828282;
+        font-family: 'Inter-SemiBold', sans-serif;
+        line-height: 140%;
+        padding: 15px 0;
+        text-align: center;
+        width: 50%;
+        cursor: pointer;
+        &:hover{
+          background-color: white;
+        }
+      }
+      .marked{
+        color: #266EFE;
+        background-color: white;
+      }
+    }
+    .message{
+      font-size: 20px;
+      font-family: 'Inter-Regular', sans-serif;
+      line-height: 140%;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .input{
+      padding: 15px 20px;
+      background-color: #FFFFFF;
+      border-radius: 14px;
+      border: 1px solid #D9D9D9;
+      font-family: 'Inter-Regular', sans-serif;
+      font-size: 16px;
+      line-height: 130%;
+      width: 100%;
+      outline: none;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+      &:hover{
+        border-color: #AEAEAE;
+      }
+      &:focus-visible{
+        border-color: #266EFE;
+      }
+      &:nth-child(2){
+        margin-top: 20px;
+      }
+    }
+    .continueBtn{
+      margin: 30px auto;
+      width: 100%;
+      padding: 16px 0;
+      line-height: 140%;
+      background-color: #266EFE;
+      border: 1px solid #266EFE;
+      border-radius: 14px;
+      color: white;
+      text-align: center;
+      font-family: 'Inter-Medium', sans-serif;
+      cursor: pointer;
+      &:disabled{
+        background-color: #F1F4F8;
+        border: 1px solid #F1F4F8;
+        color: #AEAEAE;
+        &:hover{
+          background-color: #F1F4F8 !important;
+        }
+      }
+      &:hover{
+        background-color: #4C52EB;
+      }
+    }
+    .line{
+      background-color: #D9D9D9;
+      height: 1px;
+      position: relative;
+      width: 100%;
+      .lineText{
+        font-size: 16px;
+        font-family: 'Inter-Regular', sans-serif;
+        color: #AEAEAE;
+        background-color: white;
+        padding: 0 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .authorizationSystems{
+      margin-top: 50px;
+      width: 100%;
+
+      .authBlock{
+        cursor: pointer;
+        width: 30%;
+        padding: 15px 0;
+        border-radius: 16px;
+        box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+        &:nth-child(1){
+          background-color: black;
+        }
+        &:nth-child(2){
+          border: 1px solid #D0D5DD;
+        }
+        &:nth-child(3){
+          background-color: #1877F2;
+        }
+      }
+    }
+    .becomeAPartner{
+      text-align: center;
+      margin-top: 80px;
+      color: #355ABC;
+      font-size: 16px;
+      font-family: 'Inter-Medium', sans-serif;
+      cursor: pointer;
+      &:hover{
+        color: #25396B;
+      }
+    }
+    .questPrg{
+      margin-bottom: 35px;
+      font-size: 28px;
+      font-family: 'Inter-Medium', sans-serif;
+      text-align: center;
+    }
+    .linkToPage{
+      text-decoration: none;
+      width: 100%;
+      padding: 24px;
+      margin-bottom: 15px;
+      border-radius: 16px;
+
+      &:hover{
+        background-color: #266EFE;
+        span{
+          color: white;
+        }
+        svg{
+          path{
+            fill: white !important;
+          }
+        }
+      }
+
+
+      span{
+        font-size: 20px;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 140%;
+      }
+    }
+  }
+}
