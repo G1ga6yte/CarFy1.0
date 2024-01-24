@@ -1,0 +1,984 @@
+@import "../../source/mixin.scss";
+
+.Vignette {
+padding-bottom: 100px;
+
+  .VignetteBlock {
+    padding: 120px 120px 60px;
+    margin: 120px auto;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+    background-color: white;
+    border: 1px solid #F1F4F8;
+    @include screen($wide) {
+      padding: 40px 60px;
+    }
+    @include screen($tablet-w) {
+      margin: 60px auto;
+      flex-direction: column-reverse;
+    }
+    @include screen($tablet-m) {
+      padding: 30px 20px;
+      margin: 30px auto;
+    }
+
+
+    .TextBlock {
+      width: 45%;
+      @include screen($wide-l) {
+        width: 50%;
+      }
+      @include screen($wide-m) {
+        width: 60%;
+      }
+      @include screen($tablet-w) {
+        width: 100%;
+      }
+
+      .header {
+        margin-bottom: 25px;
+        font-size: 48px;
+        font-family: 'Inter-Bold', sans-serif;
+        line-height: 140%;
+        color: #0D172F;
+        @include screen($tablet-w) {
+          text-align: center;
+        }
+
+        @include screen($tablet) {
+          font-size: 40px;
+        }
+
+        span {
+          color: #266EFE;
+        }
+      }
+
+      .prg {
+        font-size: 20px;
+        line-height: 140%;
+        font-family: 'Inter-Regular', sans-serif;
+        width: 80%;
+        margin-bottom: 40px;
+        @include screen($tablet-w) {
+          text-align: center;
+          width: 100%;
+        }
+
+      }
+
+      .btnBlock {
+        width: 70%;
+        @include screen($tablet-w) {
+          width: 100%;
+        }
+
+        .btnPay {
+          background-color: #266EFE;
+          color: white;
+          cursor: pointer;
+          width: 48%;
+          border-radius: 14px;
+          padding: 20px 0;
+          text-align: center;
+          border: 1px solid #266EFE;
+          font-family: 'Inter-Medium', sans-serif;
+          font-size: 16px;
+          @include screen($tablet-w) {
+            display: none;
+          }
+
+          &:hover {
+            background-color: #28448D;
+          }
+        }
+
+        .btnLearn {
+          background-color: white;
+          color: #266EFE;
+          cursor: pointer;
+          width: 48%;
+          border-radius: 14px;
+          padding: 20px 0;
+          text-align: center;
+          border: 1px solid #266EFE;
+          font-family: 'Inter-Medium', sans-serif;
+          font-size: 16px;
+          text-decoration: none;
+          @include screen($tablet-w) {
+            width: 100%;
+          }
+
+          &:hover {
+            border-color: #28448D;
+            color: #28448D;
+          }
+        }
+      }
+    }
+
+    .shieldImg {
+      width: 50%;
+      @include screen($wide-m) {
+        width: 45%;
+      }
+      @include screen($tablet-w) {
+        width: 60%;
+      }
+      @include screen($tablet-m) {
+        width: 80%;
+      }
+
+    }
+
+  }
+
+  .header {
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    text-align: center;
+    margin-bottom: 60px;
+    @include screen($tablet) {
+      font-size: 40px;
+    }
+    @include screen($tablet-w) {
+      margin-bottom: 16px;
+    }
+  }
+
+  .RegCont {
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+    border-radius: 24px;
+    background-color: #FFFFFF;
+    border: 1px solid #F1F4F8;
+    padding: 20px 40px 80px;
+    @include screen($wide-s){
+      padding: 20px 30px 60px;
+    }
+    @include screen($tablet) {
+      padding: 20px 16px 50px;
+    }
+    @include screen($tablet-m) {
+      padding: 0 8px 40px;
+    }
+
+    .pageInfo {
+      padding-bottom: 30px;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #F1F4F8;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      @include screen($tablet-m){
+        margin-top: 20px;
+      }
+
+      .clearRefresh {
+        font-size: 24px;
+        font-family: 'Inter-Medium', sans-serif;
+        line-height: 120%;
+        cursor: pointer;
+        margin-right: 80px;
+        @include screen($tablet-w) {
+          right: 30px;
+        }
+        @include screen($tablet-m) {
+          right: 0;
+          top: 0;
+          margin-right: 20px;
+        }
+        @include screen($mobile-m) {
+          font-size: 20px;
+        }
+
+        img {
+          margin-right: 12px;
+        }
+      }
+
+      .VehicleInfo {
+        font-size: 30px;
+        font-family: 'Inter-Medium', sans-serif;
+        line-height: 130%;
+        @include screen($tablet-m) {
+          width: min-content;
+        }
+        @include screen($mobile-m) {
+          font-size: 24px;
+        }
+
+      }
+    }
+
+    .MainCont {
+      width: 100%;
+      flex-wrap: wrap;
+
+      .miniHeader {
+        font-size: 20px;
+        font-family: 'Inter-SemiBold', sans-serif;
+        color: black;
+        line-height: 140%;
+        margin-bottom: 24px;
+      }
+
+      .LeftCont {
+        width: 55%;
+        @include screen($wide){
+          width: 65%;
+        }
+        @include screen($tablet-l){
+          width: 100%;
+        }
+
+
+
+        .vehicleDataBlock {
+          margin-bottom: 32px;
+          @include screen($tablet-m){
+            flex-direction: column;
+          }
+
+          .carNumberInput {
+            width: 48%;
+            @include screen($tablet-m){
+              width: 100%;
+              margin-bottom: 20px;
+            }
+
+            img {
+              padding: 6px 10px;
+              border-radius: 14px 0 0 14px;
+              background-color: rgba(40, 68, 141, 1);
+            }
+
+            .input1 {
+              width: 100%;
+              outline: none;
+              border: 1px solid #D9D9D9;
+              border-radius: 0 14px 14px 0;
+              font-size: 16px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 130%;
+              text-align: center;
+              text-transform: uppercase;
+
+              &::placeholder {
+                text-transform: none !important;
+              }
+            }
+          }
+
+          .input2 {
+            width: 48%;
+            outline: none;
+            border: 1px solid #D9D9D9;
+            border-radius: 14px;
+            font-size: 16px;
+            font-family: 'Inter-Regular', sans-serif;
+            line-height: 130%;
+            padding: 0 16px;
+            @include screen($tablet-m){
+              padding: 16px 20px;
+              width: 100%;
+            }
+
+          }
+        }
+
+        .vehicleTypeBlock {
+          margin-bottom: 16px;
+          flex-wrap: wrap;
+
+
+          .active {
+            border: 1px solid #266EFE !important;
+
+            svg {
+              path {
+                fill: #266EFE !important;
+              }
+            }
+          }
+
+          .vehicleType {
+            padding: 8px 16px;
+            border-radius: 8px;
+            background-color: #FBFDFF;
+            display: flex;
+            align-items: center;
+            width: min-content;
+            margin-right: 16px;
+            cursor: pointer;
+            border: 1px solid #FBFDFF;
+            margin-bottom: 16px;
+            @include screen($tablet-m){
+              width: 100%;
+              justify-content: center;
+            }
+
+
+            &:hover {
+              border: 1px solid #266EFE;
+            }
+
+            svg {
+              margin-right: 16px;
+
+              path {
+                fill: #0D172F;
+              }
+            }
+
+            span {
+              white-space: nowrap;
+              font-size: 14px;
+              font-family: 'Inter-Medium', sans-serif;
+            }
+          }
+
+        }
+
+        .vignetteTypeBlock {
+          flex-wrap: wrap;
+          max-width: 650px;
+
+
+          label:has(input:checked) {
+            border-color: #266EFE !important;
+          }
+
+          .VignetteEachBlock {
+            width: 185px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid #FBFDFF;
+            background-color: #FBFDFF;
+            cursor: pointer;
+            margin-right: 20px;
+            margin-bottom: 16px;
+            @include screen($wide-s){
+              margin-right: 12px;
+            }
+            @include screen($tablet-m){
+              width: 100%;
+            }
+
+
+            &:hover {
+              border-color: #266EFE !important;
+            }
+
+            .NameLine {
+              display: flex;
+              align-items: center;
+
+              input {
+                scale: 1.2;
+                opacity: 0.8;
+                margin-right: 12px;
+              }
+
+              span {
+                font-size: 16px;
+                line-height: 130%;
+                font-family: 'Inter-Regular', sans-serif;
+              }
+            }
+
+            .TimeSpan {
+              display: block;
+              margin-top: 8px;
+              font-family: 'Inter-Regular', sans-serif;
+              font-size: 12px;
+              color: #AEAEAE;
+              line-height: 130%;
+            }
+
+          }
+        }
+
+        .contactDataBlock {
+          @include screen($wide){
+            flex-direction: column;
+          }
+          @include screen($tablet-l){
+            flex-direction: row;
+          }
+          @include screen($tablet){
+            flex-direction: column;
+          }
+          .active{
+            border-color: #266EFE !important;
+          }
+          .inputNumber {
+            border-radius: 14px;
+            border: 1px solid #F1F4F8;
+            background-color: #FBFDFF;
+            position: relative;
+            height: 60px;
+            min-width: 350px;
+            width: 350px;
+            margin-right: 30px;
+            @include screen($wide){
+              margin-bottom: 20px;
+            }
+            @include screen($tablet-l){
+              margin-bottom: 0;
+              width: 290px;
+              min-width: 290px;
+            }
+            @include screen($tablet){
+              margin-bottom: 20px;
+            }
+            &:hover {
+              border-color: #D9D9D9;
+            }
+
+            .react-tel-input{
+              width: 100%;
+              height: 100%;
+              background-color: transparent;
+              border: none;
+              display: flex;
+              position: relative;
+
+
+              .flag-dropdown{
+                background-color: transparent;
+                border: none;
+                outline: none;
+                padding: 0 25px 0 20px;
+                //border-right: 1px solid #D9D9D9;
+                &:before{
+                  content: '';
+                  height: 40%;
+                  top: 30%;
+                  right: 0;
+                  width: 1px;
+                  background-color: #D9D9D9;
+                  position: absolute;
+                }
+                &:hover{
+                  background-color: transparent;
+                }
+                .country-list{
+                  width: 350px;
+                  left: 0;
+                  border-radius: 14px;
+                  border: 1px solid #266EFE;
+                  padding: 4px;
+                  @include screen($tablet-l){
+                    width: 290px;
+                  }
+
+
+                  .highlight{
+                    background-color: #266EFE !important;
+                    .country-name{
+                      color: white !important;
+                    }
+                  }
+                  .country{
+                    border-radius: 8px;
+                    padding: 12px 16px;
+                    position: relative;
+                    //border-bottom: 1px solid #8EAAF3;
+                    &:before{
+                      position: absolute;
+                      content: '';
+                      width: 90%;
+                      left: 5%;
+                      bottom: 0;
+                      height: 1px;
+                      background-color: #8EAAF3;
+                      z-index: -1;
+                    }
+                    .flag{
+                      scale: 1.2;
+                      border-radius: 2px;
+                    }
+                    .country-name{
+                      font-size: 16px;
+                      line-height: 130%;
+                      font-family: 'Inter-Regular', sans-serif;
+                      color: black;
+                    }
+                    .dial-code{
+                      display: none;
+                    }
+
+
+                    &:hover{
+                      background-color: #266EFE;
+                      .country-name{
+                        color: white;
+                      }
+                    }
+                  }
+                }
+                .selected-flag{
+                  background-color: transparent !important;
+
+                  .flag{
+                    scale: 1.4;
+                    border-radius: 2px;
+                    .arrow{
+                      left: 25px;
+                    }
+                  }
+                }
+              }
+
+              .form-control{
+                position: relative;
+                border: none;
+                background-color: transparent;
+                outline: none;
+                width: 100%;
+                height: 100%;
+                padding-left: 95px;
+                font-size: 16px;
+                font-family: 'Inter-Regular', sans-serif;
+                color: black;
+              }
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+
+            input[type=number] {
+              -moz-appearance: textfield;
+            }
+          }
+
+          .InputMail{
+            padding: 16px 20px;
+            font-size: 16px;
+            font-family: 'Inter-Regular', sans-serif;
+            line-height: 130%;
+            border-radius: 14px;
+            border: 1px solid #D9D9D9;
+            min-width: 350px;
+            outline: none;
+            width: 350px;
+            @include screen($tablet-l){
+              width: 290px;
+              min-width: 290px;
+            }
+
+
+
+            &:hover {
+              border-color: #AEAEAE;
+            }
+            &:focus-visible{
+              border-color: #266EFE !important;
+            }
+          }
+
+
+        }
+
+
+      }
+
+
+
+    }
+
+    .TotalCont {
+      max-width: 300px;
+      width: 100%;
+      @include screen($tablet-l){
+        display: none;
+      }
+
+      .tabletR{
+        display: none;
+        @include screen($tablet-l){
+          display: block !important;
+          p{
+            max-width: unset !important;
+          };
+        }
+      }
+      .reminder {
+        padding: 8px;
+        border-radius: 8px;
+        background: rgba(217, 227, 251, 0.30);
+        margin-bottom: 20px;
+        @include screen($tablet-l){
+          display: none;
+        }
+
+        .prg {
+          max-width: 280px;
+          margin: 0 auto;
+          text-align: center;
+          font-size: 12px;
+          font-family: 'Inter-Regular', sans-serif;
+          line-height: 130%;
+
+          span {
+            color: #266EFE;
+          }
+        }
+
+
+      }
+
+      .InputBlock {
+        width: 100%;
+        margin-bottom: 16px;
+        position: relative;
+
+        .Input {
+          width: 100%;
+          outline: none;
+          border-radius: 8px;
+          border: 1px solid #D9D9D9;
+          background: white;
+          padding: 8px 16px;
+          font-size: 16px;
+          color: black;
+          line-height: 20px;
+          font-family: 'Inter-Regular', sans-serif;
+
+          &:hover {
+            border-color: #AEAEAE;
+          }
+
+          &:focus-visible {
+            border-color: #266EFE;
+          }
+
+
+        }
+
+        span {
+          cursor: pointer;
+          position: absolute;
+          right: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 12px;
+          color: #266EFE;
+          font-family: 'Inter-Regular', sans-serif;
+
+          &:hover {
+            color: #355ABC;
+          }
+
+        }
+      }
+
+      .orderTextBlock {
+        width: 100%;
+
+        .headPrg {
+          font-size: 20px;
+          margin-bottom: 8px;
+          font-family: 'Inter-Medium', sans-serif;
+          line-height: 140%;
+        }
+
+        .descriptionLine {
+          margin-bottom: 12px;
+
+          span {
+            font-size: 16px;
+            font-family: 'Inter-Regular', sans-serif;
+            line-height: 130%;
+
+          }
+        }
+
+        .totalPrice {
+          margin: 8px 0;
+          width: 100%;
+          border-bottom: 1px solid #F1F4F8;
+          padding-bottom: 8px;
+
+          span {
+            font-size: 20px;
+            font-family: 'Inter-Medium', sans-serif;
+            line-height: 140%;
+          }
+        }
+
+
+      }
+
+      .CheckoutBtn {
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+        border-radius: 14px;
+        background-color: #266EFE;
+        color: white;
+        font-family: 'Inter-Medium', sans-serif;
+        font-size: 16px;
+        line-height: 140%;
+        border: none;
+        cursor: pointer;
+        margin-top: 16px;
+
+        &:hover {
+          background-color: #355ABC;
+        }
+      }
+
+    }
+
+
+    .PaymentMethodCont{
+      width: 100%;
+
+      .loadingCont{
+        width: 100%;
+        margin: 32px auto;
+        img{
+          -webkit-animation: rotating 2s linear infinite;
+        }
+      }
+
+      .PaymentBlock{
+        padding: 32px 0;
+        width: 100%;
+
+        .miniHeader{
+          font-size: 20px;
+          font-family: 'Inter-SemiBold', sans-serif;
+          color: black;
+          line-height: 140%;
+          margin-bottom: 24px;
+        }
+
+        .onlineInputBlock{
+          input{
+            transform: scale(1.2);
+            margin-right: 12px;
+          }
+          .onlineText{
+            font-size: 20px;
+            font-family: 'Inter-Medium', sans-serif;
+            line-height: 140%;
+            color: black;
+            display: block;
+            position: relative;
+            &:before{
+              width: max-content;
+              content: 'By bank card';
+              bottom: -15px;
+              position: absolute;
+              left: 0;
+              font-size: 14px;
+              color: #AEAEAE;
+              line-height: 130%;
+              font-family: 'Inter-Regular', sans-serif;
+            }
+          }
+        }
+
+        .CardBlock{
+          margin: 42px 0 16px;
+          flex-wrap: wrap;
+          @include screen($tablet-l){
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          @include screen($tablet){
+            align-items: center;
+          }
+          .Card{
+            border-radius: 16px;
+            background-color: #F9FDFF;
+            box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+            flex-wrap: wrap;
+            padding: 42px 35px 25px;
+            width: 420px;
+            margin-right: 40px;
+            @include screen($tablet-l){
+              margin-bottom: 20px;
+              margin-right: 0;
+            }
+            @include screen($tablet-m){
+              width: 100%;
+            }
+            @include screen($mobile-m){
+              padding: 20px 15px 15px;
+            }
+
+
+
+            .inputBlock100{
+              width: 100%;
+              margin-bottom: 40px;
+              position: relative;
+              &::before{
+                content: "Card number";
+                position: absolute;
+                z-index: 2;
+                left: 16px;
+                top: 10px;
+                font-size: 12px;
+                font-family: 'Inter-Regular', sans-serif;
+                line-height: 120%;
+                color: #AEAEAE;
+              }
+              .inputForCard16Num{
+                outline: none;
+                padding: 28px 16px 10px;
+                font-size: 16px;
+                font-family: 'Inter-Regular', sans-serif;
+                line-height: 130%;
+                border-radius: 14px;
+                border: 1px solid #D9D9D9;
+                background-color: white;
+                width: 100%;
+                position: relative !important;
+                &:hover{
+                  border-color: #AEAEAE;
+                }
+                &:focus-visible{
+                  border-color: #266EFE;
+                }
+                &::placeholder{
+                  color: #AEAEAE;
+                }
+              }
+
+            }
+            .inputBlock48{
+              width: 48%;
+              position: relative;
+              input{
+                padding: 28px 16px 10px;
+                font-size: 16px;
+                font-family: 'Inter-Regular', sans-serif;
+                line-height: 130%;
+                border-radius: 14px;
+                border: 1px solid #D9D9D9;
+                background-color: white;
+                width: 100%;
+                outline: none;
+                position: relative !important;
+                &:hover{
+                  border-color: #AEAEAE;
+                }
+                &:focus-visible{
+                  border-color: #266EFE;
+                }
+                &::placeholder{
+                  color: #AEAEAE;
+                }
+              }
+              &:nth-child(1){
+                &::before{
+                  content: "CVV Code";
+                  position: absolute;
+                  z-index: 2;
+                  left: 16px;
+                  top: 10px;
+                  font-size: 12px;
+                  font-family: 'Inter-Regular', sans-serif;
+                  line-height: 120%;
+                  color: #AEAEAE;
+                }
+              }
+              &:nth-child(2){
+                &::before{
+                  content: "Expitry";
+                  position: absolute;
+                  z-index: 2;
+                  left: 16px;
+                  top: 10px;
+                  font-size: 12px;
+                  font-family: 'Inter-Regular', sans-serif;
+                  line-height: 120%;
+                  color: #AEAEAE;
+                }
+              }
+
+
+
+
+
+            }
+          }
+          .paymentInfoBlock{
+            max-width: 400px;
+            align-items: flex-start;
+
+            .prgBlock{
+              img{
+                height: 24px;
+                margin-right: 8px;
+              }
+              .prg{
+                font-size: 12px;
+                font-family: 'Inter-Regular', sans-serif;
+                line-height: 130%;
+                color: #0D172F;
+              }
+            }
+            .paymentTypes{
+              margin-top: 24px;
+              img{
+                margin-right: 20px;
+              }
+            }
+
+          }
+        }
+        .saveCardBlock{
+          margin-top: 16px;
+          input{
+            height: 16px;
+            width: 16px;
+            margin-right: 12px;
+            cursor: pointer;
+          }
+          label{
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Inter-Regular', sans-serif;
+            color: black;
+            line-height: 130%;
+          }
+        }
+      }
+
+    }
+
+    .totalContTablet{
+      border-top: 1px solid #F1F4F8;
+      padding-top: 30px;
+      display: none;
+      width: 100%;
+      max-width: unset;
+      @include screen($tablet-l){
+        display: flex !important;
+
+      }
+    }
+
+
+
+  }
+}
+
+
+@keyframes rotating {
+  from{
+    -webkit-transform: rotate(0deg);
+  }
+  to{
+    -webkit-transform: rotate(360deg);
+  }
+}

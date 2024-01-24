@@ -9,16 +9,33 @@
   border-radius: 24px;
   position: relative;
   padding: 64px 120px;
+  @include screen($wide){
+    margin: 60px auto;
+    padding: 40px 60px;
+  }
+  @include screen($tablet-m){
+    padding: 80px 20px 30px;
+  }
+
 
   .backButton{
     position: absolute;
     top: 40px;
     left: 40px;
     cursor: pointer;
+    @include screen($tablet-m){
+      top: 20px;
+      left: 20px;
+    }
+
   }
 
   .ImgBlock{
     width: 45%;
+    @include screen($tablet-w){
+      display: none;
+    }
+
 
     .headText{
       font-size: 48px;
@@ -38,12 +55,65 @@
   }
   .loginBlock{
       width: 40%;
+    @include screen($wide-s){
+      width: 50%;
+    }
+    @include screen($tablet-w){
+      width: 90%;
+      margin: 0 auto;
+    }
+    @include screen($tablet-m){
+      width: 100%;
+    }
+
+    .account{
+      width: 100%;
+      background-color: #334155;
+      border-radius: 16px;
+      padding: 10px 16px;
+      position: relative;
+      margin-top: 130px;
+      @include screen($tablet-m){
+        margin-top: 50px;
+      }
+      .userImg{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin-right: 12px;
+        background-color: #828282;
+      }
+      .userName{
+        font-size: 20px;
+        line-height: 140%;
+        color: white;
+        font-family: 'Inter-Bold', sans-serif;
+      }
+      .mailPhone{
+        font-size: 12px;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 120%;
+        color: white;
+      }
+
+
+      .deleteAccount{
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    }
     .toggleBlock{
       width: 80%;
       margin: 0 auto 70px;
       background-color: #F8FAFC;
       border-radius: 12px;
       padding: 3px;
+      @include screen($mobile-m){
+        width: 100%;
+      }
 
 
       .toggle{
@@ -135,6 +205,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: max-content;
       }
     }
     .authorizationSystems{

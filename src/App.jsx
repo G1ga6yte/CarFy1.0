@@ -10,6 +10,11 @@ import Article from "./pages/blog/Article/article";
 import ForBusiness from "./pages/forBusiness/forBusiness";
 import Help from "./pages/navigation/help/help";
 import LogIn from "./pages/navigation/logIn/logIn";
+import Insurance from "./pages/insurance/insurance";
+import InsuranceStep2 from "./pages/insurance/InsuranceStep2/InsuranceStep2";
+import InsuranceStep3 from "./pages/insurance/InsuranceStep3/InsuranceStep3";
+import InsuranceVignette from "./pages/InsuranceVignette/insuranceVignette";
+import Vignette from "./pages/vignette/vignette";
 
 function App() {
   
@@ -29,8 +34,15 @@ function App() {
         <Route path="/blog" element={<Blog />}/> // Blog
         <Route path="/blog/article" element={<Article />} /> // blog - article - id
         <Route path="/forBusiness" element={<ForBusiness />} /> // For Business
-        {/*<Route path="/help" element={<Help />} /> // Help*/}
+        <Route path="/help" element={<Help />} /> // Help
         <Route path="/logIn" element={<LogIn />} /> // LogIn
+        <Route path="/insurance&vignette" element={<InsuranceVignette/>} /> // Insurance & Vignette Mutual +scroll
+        
+        <Route path="/vignette" element={<Vignette/>} /> // Vignette
+        
+        <Route path="/insurance/step1" element={<Insurance/>} /> // Insurances step1
+        <Route path="/insurance/step2" element={<InsuranceStep2/>} /> // Insurance step2
+        <Route path="/insurance/step3" element={<InsuranceStep3/>} /> // Insurance step3
       </Routes>
       
       <Footer/>

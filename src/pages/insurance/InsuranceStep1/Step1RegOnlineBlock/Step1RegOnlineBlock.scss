@@ -1,0 +1,431 @@
+@import "../../../../source/mixin.scss";
+
+
+.Step1RegOnlineBlock{
+    padding: 0 10px;
+  max-width: 1440px;
+  margin: 120px auto 150px;
+  width: 100%;
+  @include screen($tablet-l){
+    margin: 60px auto 100px;
+  }
+  @include screen($tablet){
+    margin: 32px auto 50px;
+  }
+
+  .header{
+    margin-bottom: 55px;
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    span{
+      color: #266EFE;
+    }
+  }
+
+  .regBlock{
+    border-radius: 24px;
+    border: 1px solid #F1F4F8;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+    width: 100%;
+    padding: 60px 40px 45px;
+    @include screen($tablet-w){
+      padding: 50px 25px 40px;
+    }
+    @include screen($mobile-m){
+      padding: 40px 10px 30px;
+    }
+
+    .pageInfo{
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #F1F4F8;
+      position: relative;
+
+      .clearRefresh{
+        position: absolute;
+        top: 10px;
+        right:  80px;
+        font-size: 24px;
+        font-family: 'Inter-Medium', sans-serif;
+        line-height: 120%;
+        cursor: pointer;
+        @include screen($tablet-w){
+          right: 30px;
+        }
+        @include screen($tablet-m){
+          right: 0;
+          top: 0;
+        }
+        @include screen($mobile-m){
+          font-size: 20px;
+        }
+        img{
+          margin-right: 12px;
+        }
+      }
+      .VehicleInfo{
+        font-size: 30px;
+        font-family: 'Inter-Medium', sans-serif;
+        line-height: 130%;
+        @include screen($tablet-m){
+          width: min-content;
+        }
+        @include screen($mobile-m){
+          font-size: 24px;
+        }
+
+      }
+      .pagesOrdinary{
+        margin-top: 45px;
+        @include screen($tablet-w){
+          width: 100%;
+          justify-content: space-between;
+        }
+        @include screen($tablet){
+          flex-direction: column;
+        }
+
+
+        .page{
+          font-size: 24px;
+          font-family: 'Inter-Medium', sans-serif;
+          line-height: 120%;
+          margin-right: 50px;
+          @include screen($tablet-w){
+            margin: 0;
+          }
+          @include screen($tablet){
+            margin: 20px 0;
+          }
+
+          span{
+            margin-right: 16px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            background-color: #266EFE;
+            font-size: 20px;
+            font-family: 'Inter-SemiBold', sans-serif;
+            line-height: 140%;
+            color: white;
+          }
+        }
+        .active{
+          color: #AEAEAE;
+          span{
+            background-color: #8EAAF3;
+            color: #FFFFFF;
+          }
+        }
+      }
+    }
+
+    .pageInputs{
+
+      .inputsBlock{
+        width: 74%;
+        @include screen($desktop){
+          width: 72%;
+        }
+        @include screen($tablet-l){
+          width: 100%;
+        }
+
+
+        .Select{
+          width: 35%;
+          position: relative;
+          margin-right: 25px;
+          @include screen($wide){
+            width: 45%;
+          }
+          @include screen($tablet-l){
+            margin: 0;
+            width: 48%;
+          }
+          @include screen($tablet-w){
+            width: 100%;
+            margin: 5px;
+          }
+          @include screen($tablet-m){
+            margin: 20px 0 0 0;
+          }
+          .selectBlock{
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid;
+            background-color: #FFFFFF;
+            border-radius: 14px;
+            cursor: pointer;
+            &:hover{
+              border-color: #AEAEAE;
+            }
+            span{
+              font-size: 16px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 130%;
+            }
+          }
+          .optionsBlock{
+            width: 100%;
+            max-height: 220px;
+            overflow: scroll;
+            border-radius: 14px;
+            border: 1px solid #266EFE;
+            background-color: #FFFFFF;
+            padding: 4px;
+            margin-top: 4px;
+            position: absolute;
+            z-index: 20;
+
+            &::-webkit-scrollbar {
+              width: 25px;
+              height: 90% !important;
+            }
+            &::-webkit-scrollbar-track {
+              background: rgba(204, 224, 255, 0.5);
+              border: 10px solid white;
+              border-radius: 20px;
+            }
+            &::-webkit-scrollbar-thumb {
+              background: #CCE0FF;
+              border: 10px solid white;
+              border-radius: 50px;
+            }
+            .option{
+              border-radius: 8px;
+              cursor: pointer;
+              padding: 12px 16px;
+              background-color: #FFFFFF;
+              font-size: 16px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 130%;
+              &:hover{
+                background-color: #266EFE;
+                color: #FFFFFF;
+              }
+            }
+          }
+        }
+        .line2{
+          width: 100%;
+          margin-top: 32px;
+          @include screen($tablet-l){
+            justify-content: space-between;
+          }
+          @include screen($tablet){
+            flex-direction: column;
+          }
+
+          .InputCarNumber{
+              width: 35%;
+              margin-right: 25px;
+              @include screen($wide){
+                width: 45%;
+              }
+            @include screen($tablet-l){
+              width: 48%;
+            }
+            @include screen($tablet){
+              width: 100%;
+            }
+
+            input{
+                padding: 16px 20px;
+                border: 1px solid #D9D9D9;
+                background-color: #FFFFFF;
+                width: 100%;
+                outline: none;
+                border-radius: 0 14px 14px 0;
+                text-align: center;
+                font-size: 16px;
+                line-height: 130%;
+                font-family: 'Inter-Regular', sans-serif;
+                color: black;
+                text-transform: uppercase;
+                &:hover{
+                  border-color: #AEAEAE;
+                }
+                &::placeholder{
+                  text-transform: none !important;
+                }
+                &:focus-visible{
+                  border-color: #266EFE;
+                }
+              }
+              img{
+                border-radius: 14px 0 0 14px;
+                padding: 7px 11px;
+                background-color: #28448D;
+              }
+            }
+          .inputPurpose{
+            padding: 16px 20px;
+            border: 1px solid #D9D9D9;
+            background-color: #FFFFFF;
+            width: 35%;
+            outline: none;
+            border-radius: 14px;
+            font-size: 16px;
+            line-height: 130%;
+            font-family: 'Inter-Regular', sans-serif;
+            color: black;
+            @include screen($wide){
+              width: 45%;
+            }
+            @include screen($tablet-l){
+              width: 48%;
+            }
+            @include screen($tablet){
+              width: 100%;
+              margin-top: 20px;
+            }
+
+
+
+            &:hover{
+              border-color: #AEAEAE;
+            }
+
+            &:focus-visible{
+              border-color: #266EFE;
+            }
+          }
+        }
+        .vehCharacter{
+
+          .vehCharacterHeader{
+            margin: 35px 0 25px;
+            font-size: 20px;
+            font-family: 'Inter-SemiBold', sans-serif;
+            line-height: 140%;
+            color: #0D172F;
+          }
+          .OptionBlocks{
+            @include screen($tablet-l){
+              justify-content: space-between;
+            }
+            @include screen($tablet-m){
+              flex-direction: column;
+            }
+
+          }
+          .vehCharacterInput{
+            margin-top: 20px;
+            border: 1px solid #D9D9D9;
+            padding: 16px 20px;
+            border-radius: 14px;
+            width: 100%;
+            font-size: 16px;
+            line-height: 130%;
+            font-family: 'Inter-Regular', sans-serif;
+            color: black;
+            outline: none;
+            &:hover{
+              border-color: #AEAEAE;
+            }
+            &:focus-visible{
+              border-color: #266EFE;
+            }
+          }
+          .continueBtnInside{
+            border-radius: 14px;
+            width: 100%;
+            background-color: #266EFE;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Inter-Medium', sans-serif;
+            font-size: 16px;
+            line-height: 140%;
+            border: none;
+            cursor: pointer;
+            margin-top: 40px;
+            display: none;
+            @include screen($tablet-l){
+              display: block;
+            }
+            &:hover{
+              background-color: #4C52EB;
+            }
+          }
+          .linkPolicy{
+            color: #266EFE;
+            font-size: 20px;
+            font-family: 'Inter-Medium', sans-serif;
+            line-height: 140%;
+            margin-top: 40px;
+            text-decoration: none;
+            display: block;
+          }
+
+        }
+      }
+
+      .needBlock{
+        width: 24%;
+        @include screen($wide){
+          width: 25%;
+        }
+        @include screen($tablet-l){
+          display: none;
+        }
+
+
+        .needHeader{
+          margin: 8px 0;
+          font-size: 20px;
+          font-family: 'Inter-SemiBold', sans-serif;
+          color: #0D172F;
+          line-height: 140%;
+        }
+        .needPrg{
+          margin-top: 16px;
+          font-size: 20px;
+          font-family: 'Inter-Medium', sans-serif;
+          line-height: 140%;
+          color: #AEAEAE;
+        }
+        .continueBtn{
+          border-radius: 14px;
+          width: 100%;
+          background-color: #266EFE;
+          color: #FFFFFF;
+          text-align: center;
+          font-family: 'Inter-Medium', sans-serif;
+          font-size: 16px;
+          line-height: 140%;
+          border: none;
+          margin-top: 40px;
+          padding: 20px 0;
+          cursor: pointer;
+          &:disabled{
+            background-color: #F1F4F8 !important;
+            color: #AEAEAE;
+          }
+          a{
+            text-decoration: none;
+            color: white;
+            display: block;
+            height: 100%;
+            width: 100%;
+          }
+          &:hover{
+            background-color: #4C52EB;
+          }
+        }
+
+      }
+
+
+    }
+
+  }
+
+
+}

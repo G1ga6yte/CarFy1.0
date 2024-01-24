@@ -162,6 +162,18 @@ function SignUpClient (){
   
   return(
      <div className="SignUpClient  G-justify-between G-align-center">
+  
+       <img style={{zIndex: 9999, display: `${step === "step1" ? "none" : "block"}`}} className="backButton" src={LoginImg.chevronLeft} onClick={(event)=>{
+         if (step === "step2"){
+            setStep("step1")
+         } else if (step === "step3"){
+           setStep("step2")
+         } else if (step === "finish"){
+           setStep("step3")
+         }
+       }} alt=""/>
+  
+  
        <div className="ImgBlock G-flex-column G-align-center">
          <img style={{display: `${step === "finish" ? "none" : "block"}`}} src={LoginImg.lockImg} alt=""/>
          <img style={{display: `${step === "finish" ? "block" : "none"}`}} src={LoginImg.trophy} alt=""/>

@@ -98,7 +98,7 @@ function Navigation() {
            </div>
            <div style={{display: `${products ? "flex" : "none"}`}} className="productsLinks G-flex-column">
              <Link className={`${Call("/carService") ? "activeLink" : " "}`} onClick={()=> setMenuBar(false)} to="/carService">Car service</Link>
-             <Link className={`${Call("/insurance") ? "activeLink" : " "}`} onClick={()=> setMenuBar(false)} to="/insurance">Insurance</Link>
+             <Link className={`${Call("/insurance/step1") ? "activeLink" : " "}`} onClick={()=> setMenuBar(false)} to="/insurance">Insurance</Link>
              <Link className={`${Call("/vignette") ? "activeLink" : " "}`} onClick={()=> setMenuBar(false)} to="/vignette">Vignette</Link>
            </div>
            <Link onClick={()=> setMenuBar(false)} className={`LinkToPage ${Call("/shops") ? "activeLink" : " "}`} to="/shops">Shops</Link>
@@ -137,14 +137,14 @@ function Navigation() {
            </p>
          </Link>
          
-         <Link className="ProductLink" to="/carService">
+         <Link className="ProductLink" to="/insurance/step1">
            <span className="hProduct">Insurance</span>
            <p className="prgProduct">
              Car insurance provides financial protection in case of a car accident.
            </p>
          </Link>
          
-         <Link className="ProductLink" to="/carService">
+         <Link className="ProductLink" to="/vignette">
            <span className="hProduct">Vignette</span>
            <p className="prgProduct">
              You can pay tolls online with a credit or debit card for a quicker and more convenient commute.

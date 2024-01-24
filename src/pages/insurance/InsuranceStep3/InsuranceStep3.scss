@@ -1,0 +1,330 @@
+@import "../../../source/mixin.scss";
+
+.InsuranceStep3{
+  margin: 120px auto 150px;
+  padding: 0 10px;
+  @include screen($tablet-l){
+    margin: 64px auto 100px;
+  }
+  @include screen($tablet){
+    margin: 32px auto 50px;
+  }
+  @include screen($tablet-m){
+    padding: 0;
+  }
+
+  .header{
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    color: black;
+    text-align: center;
+    span{
+      color: #266EFE;
+    }
+    @include screen($tablet){
+      font-size: 40px;
+    }
+
+  }
+
+  .RegCont{
+    margin-top: 55px;
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+    border-radius: 24px;
+    background-color: #FFFFFF;
+    border: 1px solid #F1F4F8;
+    padding: 20px 40px;
+    @include screen($tablet){
+      padding: 20px 16px;
+    }
+    @include screen($tablet-m){
+      padding: 20px 8px;
+    }
+
+
+    .pageInfo{
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #F1F4F8;
+      position: relative;
+      .linkToSTep1{
+        margin-right: 8px;
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        font-family: 'Inter-Medium', sans-serif;
+        line-height: 140%;
+        width: min-content;
+        margin-bottom: 12px;
+      }
+      .clearRefresh{
+        position: absolute;
+        top: 40px;
+        right:  80px;
+        font-size: 24px;
+        font-family: 'Inter-Medium', sans-serif;
+        line-height: 120%;
+        cursor: pointer;
+        @include screen($tablet-w){
+          right: 30px;
+        }
+        @include screen($tablet-m){
+          right: 0;
+          top: 0;
+        }
+        @include screen($mobile-m){
+          font-size: 20px;
+        }
+        img{
+          margin-right: 12px;
+        }
+      }
+      .VehicleInfo{
+        font-size: 30px;
+        font-family: 'Inter-Medium', sans-serif;
+        line-height: 130%;
+        @include screen($tablet-m){
+          width: min-content;
+        }
+        @include screen($mobile-m){
+          font-size: 24px;
+        }
+
+      }
+      .pagesOrdinary{
+        margin-top: 45px;
+        @include screen($tablet-w){
+          width: 100%;
+          justify-content: space-between;
+        }
+        @include screen($tablet){
+          flex-direction: column;
+        }
+
+
+        .page{
+          font-size: 24px;
+          font-family: 'Inter-Medium', sans-serif;
+          line-height: 120%;
+          margin-right: 50px;
+          @include screen($tablet-w){
+            margin: 0;
+          }
+          @include screen($tablet){
+            margin: 20px 0;
+          }
+
+          span{
+            margin-right: 16px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            background-color: #266EFE;
+            font-size: 20px;
+            font-family: 'Inter-SemiBold', sans-serif;
+            line-height: 140%;
+            color: white;
+          }
+        }
+        .active{
+          color: #AEAEAE;
+          span{
+            background-color: #8EAAF3;
+            color: #FFFFFF;
+          }
+        }
+      }
+    }
+
+    .TableBlock{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 0 50px;
+      @include screen($wide){
+        padding: 0;
+      }
+      @include screen($tablet-l){
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .headersBlocks{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        @include screen($tablet-l){
+          display: none;
+        }
+
+        .headerBlock{
+          width: 20%;
+          padding: 0 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .type{
+            text-align: center;
+            font-size: 20px;
+            line-height: 140%;
+            color: black;
+            font-family: 'Inter-Medium', sans-serif;
+            margin-bottom: 14px;
+          }
+          .desc1{
+            color: #AEAEAE;
+            font-family: 'Inter-Regular', sans-serif;
+            font-size: 16px;
+            text-align: center;
+          }
+          .desc2{
+            color: #00CC9A;
+            font-family: 'Inter-Regular', sans-serif;
+            font-size: 16px;
+            text-align: center;
+          }
+        }
+      }
+
+      .companyBlock{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        @include screen($tablet-l){
+          width: 33%;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 50px;
+          display: none;
+          &:nth-child(7){
+            display: flex;
+          }
+          &:nth-child(2){
+            display: flex;
+          }
+          &:nth-child(3){
+            display: flex;
+          }
+          &:nth-child(4){
+            display: flex;
+          }
+          &:nth-child(5){
+            display: flex;
+          }
+          &:nth-child(6){
+            display: flex;
+          }
+
+        }
+        @include screen($tablet-m){
+          width: 100%;
+          display: none !important;
+          &:nth-child(1){
+            display: flex !important;
+          }
+          &:nth-child(2){
+            display: flex !important;
+          }
+          &:nth-child(3){
+            display: flex !important;
+          }
+          &:nth-child(4){
+            display: flex !important;
+          }
+        }
+        .eachBlock{
+          &:nth-child(1){
+            padding: 0 10px 0 !important;
+          }
+          padding: 20px 10px 0;
+          width: 20%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          @include screen($tablet-l){
+            width: 100%;
+          }
+          span{
+            text-align: center;
+            img{
+              margin-left: 4px;
+            }
+          }
+
+          .CompanyName{
+            font-size: 22px;
+            font-family: 'Inter-Bold', sans-serif;
+            color: black;
+            line-height: 27px;
+            margin-bottom: 8px;
+          }
+          .Details{
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-family: 'Inter-Medium', sans-serif;
+            line-height: 140%;
+            color: #828282;
+          }
+          .des1{
+            font-size: 16px;
+            font-family: 'Inter-Regular', sans-serif;
+            line-height: 130%;
+            color: #0D172F;
+          }
+          .desc2{
+            font-size: 16px;
+            font-family: 'Inter-Bold', sans-serif;
+            line-height: 140%;
+            color: #0D172F;
+            @include screen($tablet-l){
+              margin: 10px auto;
+            }
+          }
+          .link{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: #266EFE;
+            font-size: 16px;
+            font-family: 'Inter-Medium', sans-serif;
+          }
+          .typeTablet{
+            margin-bottom: 10px;
+            color: #00CC9A;
+            font-size: 16px;
+            font-family: 'Inter-Medium', sans-serif;
+            line-height: 140%;
+            text-decoration-line: underline;
+            text-align: center;
+            display: none;
+            @include screen($tablet-l){
+              display: block;
+            }
+          }
+
+
+        }
+      }
+
+
+
+
+
+
+    }
+
+
+
+  }
+
+
+}

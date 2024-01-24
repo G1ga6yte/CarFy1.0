@@ -29,7 +29,7 @@ function HomeLinks() {
          <img className="png3" src={HomeImg.contract} alt=""/>
        </Link>
        
-       <Link className="LinkBlock G-flex-column" to="/">
+       <Link className="LinkBlock G-flex-column" to="/insurance&vignette">
          <img className="logo" src={HomeSvg.shield} alt=""/>
          <span>Insurance </span>
          <span>& vignette</span>

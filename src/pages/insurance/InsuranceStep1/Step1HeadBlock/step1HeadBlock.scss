@@ -1,0 +1,109 @@
+@import "../../../../source/mixin.scss";
+
+.step1HeadBlock{
+  padding: 50px 120px;
+  margin: 120px auto;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+  background-color: white;
+  border: 1px solid #F1F4F8;
+  @include screen($wide){
+    padding: 40px 60px;
+  }
+  @include screen($tablet-w){
+    margin: 60px auto;
+    flex-direction: column-reverse;
+  }
+  @include screen($tablet-m){
+    padding: 30px 20px;
+    margin: 30px auto;
+  }
+
+
+    .TextBlock{
+      width: 50%;
+      @include screen($wide-l){
+        width: 55%;
+      }
+      @include screen($wide-m){
+        width: 60%;
+      }
+      @include screen($tablet-w){
+        width: 100%;
+      }
+
+      .header{
+        margin-bottom: 25px;
+        font-size: 48px;
+        font-family: 'Inter-Bold', sans-serif;
+        line-height: 140%;
+        color: #0D172F;
+        @include screen($tablet-w){
+          text-align: center;
+        }
+
+        @include screen($tablet){
+          font-size: 40px;
+        }
+        span{
+          color: #266EFE;
+        }
+      }
+      .prg{
+        font-size: 20px;
+        line-height: 140%;
+        font-family: 'Inter-Regular', sans-serif;
+        width: 80%;
+        margin-bottom: 40px;
+        @include screen($tablet-w){
+          text-align: center;
+          width: 100%;
+        }
+
+      }
+      .btnBlock{
+        width: 70%;
+        @include screen($tablet-w){
+          display: none;
+        }
+
+        button{
+          cursor: pointer;
+          width: 48%;
+          border-radius: 14px;
+          padding: 20px 0;
+          text-align: center;
+          border: 1px solid #266EFE;
+          font-family: 'Inter-Medium', sans-serif;
+          font-size: 16px;
+        }
+        .btnPay{
+          background-color: #266EFE;
+          color: white;
+          &:hover{
+            background-color: #28448D;
+          }
+        }
+        .btnLearn{
+          background-color: white;
+          color: #266EFE;
+          &:hover{
+            border-color: #28448D;
+            color: #28448D;
+          }
+        }
+      }
+    }
+
+  .shieldImg{
+    width: 45%;
+    @include screen($wide-m){
+      width: 40%;
+    }
+    @include screen($tablet-m){
+      width: 80%;
+    }
+
+  }
+
+}
