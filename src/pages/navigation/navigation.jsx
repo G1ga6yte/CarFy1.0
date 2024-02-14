@@ -33,7 +33,7 @@ function Navigation() {
   return (
      <div className="Navigation">
        <div style={{height: `${notBar ? "auto" : "0"}`}} className="notification">
-         <p className="text">🧨 35% off on your first order!</p>
+         <p className="text">🧨 {t('navigator.sms')}</p>
          
          <svg onClick={handleNotBar} className="closeButton" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
               viewBox="0 0 24 24" fill="none">
