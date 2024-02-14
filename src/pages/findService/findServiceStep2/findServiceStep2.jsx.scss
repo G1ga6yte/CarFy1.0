@@ -1,0 +1,162 @@
+@import "../../../source/mixin.scss";
+
+.Step2{
+  border-radius: 24px;
+  border: 1px solid var(--Grayscale-400, #F1F4F8);
+  background: var(--Shades-White, #FFF);
+  box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+  margin: 128px auto;
+  padding: 20px 40px 64px;
+
+
+  .headerBlock{
+    padding-bottom: 40px;
+    border-bottom: 1px solid #F1F4F8;
+    margin-bottom: 32px;
+    .backBtnBlock{
+      cursor: pointer;
+      margin-bottom: 35px;
+      span{
+        margin-left: 16px;
+        font-size: 20px;
+        font-family: 'Inter-Medium', sans-serif;
+        line-height: 140%;
+      }
+    }
+    .requestBlock{
+      width: 100%;
+      .header{
+        font-size: 30px;
+        font-family: 'Inter-Medium', sans-serif;
+      }
+      .clearBlock{
+        margin-right: 80px;
+        cursor: pointer;
+        span{
+          font-size: 24px;
+          font-family: 'Inter-Medium',sans-serif;
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+
+  .MainCont{
+
+
+    .fillingBlock{
+      width: 74%;
+
+      .InputCarNumber{
+        width: 35%;
+        margin-right: 25px;
+        @include screen($wide){
+          width: 45%;
+        }
+        @include screen($tablet-l){
+          width: 48%;
+        }
+        @include screen($tablet){
+          width: 100%;
+        }
+
+        input{
+          padding: 16px 20px;
+          border: 1px solid #D9D9D9;
+          background-color: #FFFFFF;
+          width: 100%;
+          outline: none;
+          border-radius: 0 14px 14px 0;
+          text-align: center;
+          font-size: 16px;
+          line-height: 130%;
+          font-family: 'Inter-Regular', sans-serif;
+          color: black;
+          text-transform: uppercase;
+          &:hover{
+            border-color: #AEAEAE;
+          }
+          &::placeholder{
+            text-transform: none !important;
+          }
+          &:focus-visible{
+            border-color: #266EFE;
+          }
+        }
+        img{
+          border-radius: 14px 0 0 14px;
+          padding: 7px 11px;
+          background-color: #28448D;
+        }
+      }
+
+
+
+    }
+
+
+    .advantagesBlock{
+      width: 24%;
+
+      .miniHeader{
+        margin-bottom: 32px;
+        font-size: 24px;
+        font-family: 'Inter-Medium', sans-serif;
+      }
+      .advantageBlock{
+        margin-top: 16px;
+        img{
+          margin-right: 20px;
+        }
+        .prg{
+          font-size: 16px;
+          line-height: 130%;
+          font-family: 'Inter-Regular', sans-serif;
+          color: black;
+        }
+      }
+      .continueBtn {
+        font-size: 16px;
+        height: min-content;
+        padding: 20px 0;
+        margin-top: 40px;
+        width: 100%;
+        color: white;
+        background-color: #266EFE;
+        font-family: 'Inter-Regular', sans-serif;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        border-radius: 14px;
+        line-height: 140%;
+        @include screen($tablet-l) {
+          width: 48%;
+          margin: 20px 1%;
+          padding: 20px 0;
+        }
+
+        &:hover {
+          background-color: #355ABC;
+        }
+      }
+      .prgTerms{
+        font-size: 12px;
+        font-family: 'Inter-Regular', sans-serif;
+        color: black;
+        width: 90%;
+        margin: 24px auto;
+        text-align: center;
+        white-space: pre-wrap;
+        a{
+          color: #266EFE;
+          text-decoration: none;
+          &:hover{
+            color: #355ABC;
+          }
+        }
+      }
+
+    }
+  }
+
+}

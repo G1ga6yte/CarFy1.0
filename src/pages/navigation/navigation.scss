@@ -5,6 +5,55 @@
   background-color: white;
   border-bottom: 1px solid #F1F4F8;
 
+
+  .lngBlock{
+    position: relative;
+    margin-right: 20px;
+    .mainLng{
+      font-family: 'Inter-Medium', sans-serif;
+      font-size: 16px;
+      padding: 5px;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #266EFE;
+      svg{
+        margin-right: 6px;
+      }
+      &:hover{
+        color: #355ABC;
+        path{
+          fill: #355ABC;
+        }
+      }
+    }
+    .lngMenu{
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      background-color: white;
+      z-index: 10;
+      border: 1px solid #266EFE;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+      button{
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        text-align: start;
+        cursor: pointer;
+        width: 100%;
+        font-family: 'Inter-Medium', sans-serif;
+        margin: 5px 0;
+        &:hover{
+          color: #266EFE;
+        }
+      }
+    }
+  }
+
+
   .notification {
     background-color: #F39A31;
     display: flex;
@@ -348,7 +397,7 @@
   .notificationsBlock{
     width: 50%;
     position: absolute;
-    z-index: 2;
+    z-index: 5;
     top: 160px;
     right: 10%;
     padding: 25px;

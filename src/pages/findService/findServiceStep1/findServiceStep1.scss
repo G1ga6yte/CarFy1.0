@@ -1,0 +1,468 @@
+@import "../../../source/mixin.scss";
+
+.Step1 {
+  padding: 0 15px 100px;
+
+  .backButton {
+    margin: 32px 0;
+    @include screen($tablet-l) {
+      display: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      path {
+        fill: #355ABC !important;
+      }
+
+      span {
+        color: #355ABC !important;
+      }
+    }
+
+    span {
+      margin-left: 24px;
+      font-family: 'Inter-Regular', sans-serif;
+      color: #266EFE;
+    }
+  }
+
+  .header {
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    color: black;
+    text-align: center;
+    margin: 40px;
+    @include screen($tablet) {
+      font-size: 40px;
+    }
+
+    span {
+      color: #266EFE;
+    }
+  }
+
+  .inputBlock {
+    width: 100%;
+    position: relative;
+
+    .searchIcon {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+    }
+
+    .searchInput {
+      outline: none;
+      border: 1px solid #D9D9D9;
+      border-radius: 14px;
+      background-color: white;
+      font-size: 16px;
+      font-family: 'Inter-Regular', sans-serif;
+      color: black;
+      padding: 16px 60px;
+      line-height: 20px;
+      width: 100%;
+
+      &:focus-visible {
+        border: 1px solid #266EFE;
+      }
+    }
+
+    .closeIcon {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      cursor: pointer;
+    }
+  }
+
+  .fastSearch {
+    @include screen($tablet-m) {
+      display: none;
+    }
+
+    .fastSearchLink {
+      width: min-content;
+      white-space: nowrap;
+      padding: 4px 8px;
+      border: 1px solid #AEAEAE;
+      font-size: 12px;
+      color: #AEAEAE;
+      font-family: 'Inter-Regular', sans-serif;
+      margin: 8px 8px 0 0;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  }
+
+  .mainBlock {
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+    border: 1px solid #F1F4F8;
+    background-color: white;
+    border-radius: 24px;
+    margin-top: 20px;
+    overflow: hidden;
+
+    .services {
+      width: 25%;
+      border-right: 1px solid #F1F4F8;
+      padding-bottom: 100px;
+      @include screen($wide) {
+        width: 30%;
+      }
+      @include screen($tablet-l) {
+        width: 100%;
+        padding-bottom: 0;
+      }
+
+      .activeService {
+        .serviceName {
+          color: #266EFE !important;
+        }
+
+        path {
+          fill: #266EFE !important;
+        }
+      }
+
+      .serviceBlock {
+        width: 100%;
+        border-top: 1px solid #F1F4F8;
+        padding: 16px;
+
+        &:hover {
+          cursor: pointer;
+
+          .serviceName {
+            color: #266EFE !important;
+          }
+
+          path {
+            fill: #266EFE !important;
+          }
+        }
+
+        .searchIcon {
+          width: 40px;
+        }
+
+        .searchName {
+          margin: 0 24px;
+          font-size: 20px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #266EFE;
+          line-height: 140%;
+          text-align: start;
+          width: 100%;
+          @include screen($wide) {
+            font-size: 18px;
+            margin: 0 20px;
+          }
+
+        }
+
+        .serviceLogo {
+          width: 24px;
+        }
+
+        .serviceName {
+          margin: 0 24px;
+          font-size: 20px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: black;
+          line-height: 140%;
+          text-align: start;
+          width: 100%;
+          @include screen($wide) {
+            font-size: 18px;
+            margin: 0 20px;
+          }
+
+        }
+      }
+
+    }
+
+    .serviceMain {
+      justify-content: space-between;
+      width: 75%;
+      @include screen($tablet-l) {
+        width: 100%;
+      }
+
+      .tabletHeader {
+        width: 100%;
+        display: none;
+        @include screen($tablet-l) {
+          display: block;
+        }
+
+        .backLink {
+          width: 100%;
+          padding: 16px;
+          display: flex;
+          align-items: center;
+
+          .searchImg {
+            margin: 0 24px;
+            @include screen($tablet-m){
+              margin: 0 12px;
+            }
+
+          }
+
+          .serviceImg {
+            margin: 0 24px;
+            @include screen($tablet-m){
+              margin: 0 12px;
+            }
+          }
+
+          span {
+            font-size: 20px;
+            color: black;
+            font-family: 'Inter-Regular', sans-serif;
+            @include screen($tablet-m){
+              font-size: 18px;
+            }
+
+          }
+        }
+      }
+
+      .headBlock {
+        margin: 55px 0 0 48px;
+        max-height: 500px;
+        overflow: scroll;
+        flex-wrap: wrap;
+        -ms-overflow-style: auto; /* IE 10+ */
+        scrollbar-width: 20px; /* Firefox */
+        @include screen($wide) {
+          max-height: 400px;
+        }
+        @include screen($tablet) {
+          margin: 20px;
+          flex-wrap: nowrap;
+          max-height: unset;
+
+        }
+
+        &::-webkit-scrollbar { /* chrome based */
+          width: 6px;
+          height: 0; /* ширина scrollbar'a */
+          background: transparent; /* опционально */
+
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: #266EFE;
+          border-radius: 20px;
+          cursor: pointer;
+        }
+
+        .notification{
+          font-size: 20px;
+          font-family: "Inter-Medium", sans-serif;
+        }
+
+        .serviceItem {
+          margin-bottom: 24px;
+          cursor: pointer;
+          width: max-content;
+          @include screen($tablet-m){
+            width: 100%;
+          }
+
+
+          &:hover {
+            .addImg {
+              scale: 1.01;
+            }
+
+            .serviceName {
+              color: #266EFE;
+            }
+          }
+
+          .checkImg {
+            background-color: #266EFE;
+            border-radius: 5px;
+            padding: 4px;
+            width: 32px;
+            @include screen($wide) {
+              width: 28px;
+            }
+
+          }
+
+          .addImg {
+            border: 1px solid #266EFE;
+            padding: 4px;
+            border-radius: 5px;
+            width: 32px;
+            @include screen($wide) {
+              width: 28px;
+            }
+
+          }
+
+          .serviceName {
+            color: black;
+            font-family: 'Inter-Medium', sans-serif;
+            font-size: 20px;
+            margin-left: 24px;
+            @include screen($wide) {
+              margin-left: 20px;
+              font-size: 18px;
+            }
+            @include screen($tablet-m){
+              font-size: 16px;
+              margin-left: 12px;
+              white-space: pre-wrap;
+            }
+
+
+          }
+        }
+      }
+
+      .bottomCont {
+        margin-top: 20px;
+
+        .checkedItems {
+          flex-wrap: wrap;
+          margin: 0 48px;
+          max-height: 200px;
+          overflow: auto;
+          -ms-overflow-style: auto; /* IE 10+ */
+          scrollbar-width: 20px; /* Firefox */
+          @include screen($wide) {
+            margin: 0 15px;
+            max-height: 150px;
+          }
+          @include screen($tablet-l) {
+            max-height: unset;
+          }
+
+
+          &::-webkit-scrollbar { /* chrome based */
+            width: 6px;
+            border-radius: 5px;
+            height: 0; /* ширина scrollbar'a */
+            background: lightblue; /* опционально */
+
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: #266EFE;
+            border-radius: 20px;
+            cursor: pointer;
+          }
+
+          .checkedItem {
+            border: 1px solid #266EFE;
+            margin: 0 16px 16px 0;
+            border-radius: 8px;
+            padding: 8px;
+            @include screen($wide) {
+              padding: 5px;
+              margin: 0 12px 12px 0;
+            }
+
+
+            img {
+              cursor: pointer;
+              @include screen($wide) {
+                width: 20px;
+              }
+
+              &:hover {
+                scale: 1.1;
+              }
+            }
+
+            .itemName {
+              margin-right: 8px;
+              font-size: 20px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 140%;
+              color: black;
+              @include screen($wide) {
+                font-size: 16px;
+              }
+
+            }
+          }
+        }
+
+        .bottomBlock {
+          padding-top: 50px;
+          display: flex;
+          justify-content: end;
+          align-items: end;
+          border-top: 1px solid #F1F4F8;
+          @include screen($tablet-l) {
+            border: none;
+            padding: 0;
+          }
+
+          .backBtn {
+            width: 48%;
+            margin: 20px 1%;
+            padding: 19px 0;
+            color: #334155;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            background-color: #F1F4F8;
+            height: min-content;
+            border-radius: 14px;
+            border: 1px solid #F1F4F8;
+            font-family: 'Inter-Regular', sans-serif;
+            display: none;
+            @include screen($tablet-l) {
+              display: flex;
+            }
+
+            &:hover {
+              border: 1px solid #AEAEAE;
+            }
+
+            img {
+              margin-right: 8px;
+            }
+
+          }
+
+          .continueBtn {
+            font-size: 16px;
+            width: min-content;
+            height: min-content;
+            margin: 48px 32px;
+            padding: 20px 120px;
+            color: white;
+            background-color: #266EFE;
+            font-family: 'Inter-Regular', sans-serif;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            border-radius: 14px;
+            line-height: 140%;
+            @include screen($tablet-l) {
+              width: 48%;
+              margin: 20px 1%;
+              padding: 20px 0;
+            }
+
+            &:hover {
+              background-color: #355ABC;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

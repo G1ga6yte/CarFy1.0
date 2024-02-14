@@ -136,19 +136,23 @@ function Vignette () {
     
     let formattedValue = limitedValue.replace(/^(\d{0,2})(\d{0,2})/, (match, p1, p2) => {
       if (!p1 && !p2) {
+        // Если оба блока пусты, возвращаем пустую строку
         return '';
       } else if (p1 && !p2) {
-        return p1.length > 1 ? '12' : p1;
+        // Если первый блок не пустой, оставляем его
+        return p1;
       } else if (!p1 && p2) {
-        return `0${p2}`;
+        // Если второй блок не пустой, добавляем 0 перед ним
+        return `0${p2 > 12 ? '12' : p2}`;
       } else {
-        return `${p1.slice(0, 2)}/${p2}`;
+        // Оба блока не пусты
+        const limitedMonth = p1 <= 12 ? p1 : '12';
+        return `${limitedMonth}/${p2}`;
       }
     });
     
     setExpiryValue(formattedValue);
   };
-  
   return(
      <div className="Vignette G-container">
        <div className="VignetteBlock G-flex G-justify-between G-align-center">

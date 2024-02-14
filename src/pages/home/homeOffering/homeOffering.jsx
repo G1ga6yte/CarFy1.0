@@ -1,35 +1,39 @@
 import React from "react";
 import "./homeOffering.scss"
 import {HomeSvg} from "../svgs/homeSvg";
+import {useTranslation} from "react-i18next";
 
 function HomeOffering (){
+  const {t, i18n} = useTranslation()
+  
+  
   return(
      <div className="HomeOffering">
-        <p className="header">What we are <span>offering</span></p>
+        <p className="header">{t('home.header3')}<span> {t('home.header31')}</span></p>
        
        <div className="offers G-justify-between G-align-top">
           <div className="offer">
             <img className="offerLogo" src={HomeSvg.offer1} alt=""/>
-            <p className="offerHeader">COVID-19 BARRIERS</p>
-            <p className="offerPrg">We use weather-seal during installation to ensure an airtight fit.</p>
+            <p className="offerHeader">{t('home.miniHeader1')}</p>
+            <p className="offerPrg">{t('home.miniPrg1')}</p>
           </div>
   
          <div className="offer">
            <img className="offerLogo" src={HomeSvg.offer2} alt=""/>
-           <p className="offerHeader">COVID-19 DEEP CLEANING</p>
-           <p className="offerPrg">We eradicate bacteria and viruses on virtually all surfaces of the vehicle and the air inside.</p>
+           <p className="offerHeader">{t('home.miniHeader2')}</p>
+           <p className="offerPrg">{t('home.miniPrg2')}</p>
          </div>
   
          <div className="offer">
            <img className="offerLogo" src={HomeSvg.offer3} alt=""/>
-           <p className="offerHeader">PREVENTIVE MAINTENANCE</p>
-           <p className="offerPrg">We provide scheduled maintenance for your vehicle to keep it in top condition.</p>
+           <p className="offerHeader">{t('home.miniHeader3')}</p>
+           <p className="offerPrg">{t('home.miniPrg3')}</p>
          </div>
   
          <div className="offer">
            <img className="offerLogo" src={HomeSvg.offer4} alt=""/>
-           <p className="offerHeader">PM LUBE PACKAGE</p>
-           <p className="offerPrg">Our oil change service is designed to meet the needs of your vehicle</p>
+           <p className="offerHeader">{t('home.miniHeader4')}</p>
+           <p className="offerPrg">{t('home.miniPrg4')}</p>
          </div>
        </div>
      </div>

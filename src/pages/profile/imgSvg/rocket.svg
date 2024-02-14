@@ -1,0 +1,9 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="rocket">
+<path id="Vector" d="M21.7267 12.871L18.6654 22.6673L13.332 22.6673L10.2707 12.871C9.68289 10.99 10.0562 8.94038 11.2694 7.38747L15.5259 1.93919C15.7661 1.6317 16.2313 1.6317 16.4715 1.93919L20.728 7.38747C21.9412 8.94038 22.3145 10.99 21.7267 12.871Z" fill="#F39A31" stroke="#F39A31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M13.3346 26.666C13.3346 29.3327 16.0013 30.666 16.0013 30.666C16.0013 30.666 18.668 29.3327 18.668 26.666" stroke="#F39A31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M11.332 16.6673C6.66536 20.0007 9.33203 25.334 9.33203 25.334L13.332 22.6673" stroke="#F39A31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M21.2422 16.6673C25.9089 20.0007 23.2422 25.334 23.2422 25.334L19.2422 22.6673" stroke="#F39A31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M16.0013 14.6673C14.5285 14.6673 13.3346 13.4734 13.3346 12.0007C13.3346 10.5279 14.5285 9.33398 16.0013 9.33398C17.4741 9.33398 18.668 10.5279 18.668 12.0007C18.668 13.4734 17.4741 14.6673 16.0013 14.6673Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

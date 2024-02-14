@@ -1,0 +1,739 @@
+@import "../../source/mixin.scss";
+
+
+.ProfileCont{
+  padding: 0 10px;
+
+  .header{
+    font-family: 'Inter-Bold', sans-serif;
+    font-size: 48px;
+    color: black;
+    margin: 30px 0;
+    @include screen($tablet){
+      font-size: 40px;
+    }
+  }
+
+  .MainCont{
+    @include screen($tablet-l){
+      flex-direction: column;
+    }
+    .ProfileAccLine{
+      width: 33%;
+      @include screen($tablet-l){
+        width: 100%;
+      }
+      .accountInfoBlock{
+        padding: 32px 16px;
+        border-radius: 24px;
+        box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+        background-color: white;
+        margin-bottom: 24px;
+
+        .prg20{
+          font-size: 20px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: black;
+          margin-bottom: 16px;
+        }
+        .AccountBlock{
+          margin-bottom: 24px;
+          position: relative;
+          .userImg{
+            border-radius: 50%;
+            margin-right: 16px;
+            width: 46px;
+            height: 46px;
+          }
+          .userText{
+            .userName{
+              font-size: 16px;
+              font-family: 'Inter-Bold', sans-serif;
+              line-height: 140%;
+            }
+            .userMail{
+              font-size: 12px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 130%;
+            }
+          }
+          .settingsLogo{
+            position: absolute;
+            right: 0;
+            top: 0;
+            text-decoration: none;
+            img{
+              width: 22px;
+            }
+          }
+        }
+        .accountLevel{
+          margin-bottom: 24px;
+          .statusBlock{
+            padding: 12px 16px;
+            background-color: #F1F4F8;
+            border-radius: 14px;
+            .statusIcon{
+              margin-right: 16px;
+            }
+            .prgBold{
+              font-size: 20px;
+              font-family: 'Inter-SemiBold', sans-serif;
+              line-height: 140%;
+              color: black;
+            }
+            .prgUpgrade{
+              font-size: 20px;
+              font-family: 'Inter-SemiBold', sans-serif;
+              line-height: 140%;
+              color: #266EFE;
+              svg{
+                path{
+                  fill: #266EFE;
+                }
+              }
+              &:hover{
+                cursor: pointer;
+                color: #355ABC;
+                svg{
+                  path{
+                    fill: #355ABC;
+                  }
+                }
+              }
+            }
+          }
+
+        }
+        .CarCont{
+          margin-bottom: 24px;
+          .CarBlock{
+            padding: 16px;
+            border-radius: 14px;
+            background-color: #266EFE;
+            .carInfoLine{
+              position: relative;
+              img{
+                padding: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 8px;
+                background-color: white;
+                margin-right: 16px;
+              }
+              .carName{
+                font-size: 16px;
+                font-family: 'Inter-SemiBold', sans-serif;
+                color: white;
+              }
+              .carFavorite{
+                font-size: 14px;
+                font-family: 'Inter-Regular', sans-serif;
+                color: white;
+                position: absolute;
+                right: 0;
+              }
+            }
+            .carDataLine{
+              margin: 12px 0;
+              .desc{
+                line-height: 130%;
+                font-size: 12px;
+                font-family: 'Inter-Regular', sans-serif;
+                color: white;
+              }
+            }
+            .progressBlock{
+              .active{
+                background-color: white !important;
+              }
+              .progressLine{
+                height: 6px;
+                width: 24%;
+                background-color: #8EAAF3;
+                border-radius: 5px;
+              }
+            }
+          }
+        }
+        .requestBlock{
+          .requestBtn{
+            background-color: #266EFE;
+            width: 100%;
+            padding:12px 8px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: white;
+            cursor: pointer;
+            border: none;
+            &:hover{
+              background-color: #355ABC;
+            }
+          }
+        }
+      }
+      .locationBlock{
+        padding: 32px 20px;
+        border-radius: 24px;
+        box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+        background-color: white;
+        margin-bottom: 24px;
+
+        .prg16{
+          font-size: 16px;
+          font-family: 'Inter-Medium', sans-serif;
+          color: black;
+          margin-bottom: 18px;
+          line-height: 140%;
+        }
+        .inputCity{
+          margin-bottom: 18px;
+          padding: 16px;
+          border-radius: 14px;
+          width: 100%;
+          outline: none;
+          border: 1px solid #D9D9D9;
+          background-color: white;
+          font-size: 16px;
+          line-height: 130%;
+          font-family: 'Inter-Regular', sans-serif;
+          &:hover{
+            border-color: #AEAEAE;
+          }
+          &:focus-visible{
+            border-color: #266EFE;
+          }
+
+        }
+        .distancePrg{
+          margin-bottom: 18px;
+          .prg16{
+            margin: 0;
+          }
+          .distance{
+            padding: 4px 16px;
+            border-radius: 24px;
+            background-color: #00CC9A;
+            color: white;
+            font-size: 16px;
+            font-family: 'Inter-Medium', sans-serif;
+            line-height: 140%;
+          }
+        }
+        .rangeBlock{
+          position: relative;
+          overflow: hidden;
+          .line{
+            background-color: #00CC9A;
+            left: 2%;
+            top: 6px;
+            height: 18px;
+            border-radius: 50px 0 0 50px;
+            position: absolute;
+          }
+          input[type="range"]{
+            width: 100%;
+            height: 30px;
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+          }
+          input[type="range"]::-webkit-slider-runnable-track{
+            height: 18px !important;
+            border-radius: 17px !important;
+            background-color: #F9FDFF !important;
+            -webkit-appearance: none;
+
+          }
+          input[type="range"]::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            background-color: white !important;
+            height: 30px;
+            border: 8px solid #00CC9A;
+            margin-top: -6px;
+            border-radius: 50%;
+            width: 30px;
+            position: relative;
+
+          }
+        }
+
+      }
+      .referralBlock{
+        @include screen($tablet-l){
+          display: none;
+        }
+      }
+      .statisticsBlock{
+        @include screen($tablet-l){
+          display: none;
+        }
+      }
+
+
+    }
+
+    .referralBlock{
+      background-color: #00CC9A;
+      padding: 32px 20px;
+      border-radius: 24px;
+      margin-bottom: 24px;
+
+      .referralHeader{
+        font-size: 30px;
+        color: white;
+        font-family: 'Inter-Medium', sans-serif;
+        line-height: 130%;
+        @include screen($tablet-m){
+          font-size: 26px;
+        }
+      }
+      .earnedMoney{
+        margin: 26px 0;
+        color: white;
+        font-size: 24px;
+        font-family: 'Inter-Regular', sans-serif;
+        @include screen($tablet-m){
+          font-size: 20px;
+        }
+        span{
+          font-family: 'Inter-Bold', sans-serif;
+        }
+      }
+      .linkBlock{
+        padding: 16px;
+        border-radius: 14px;
+        background-color: white;
+        position: relative;
+        overflow: hidden;
+        .link{
+          color: #AEAEAE;
+          font-size: 16px;
+          font-family: 'Inter-Regular', sans-serif;
+          margin-right: 16px;
+          @include screen($tablet-m){
+            word-break: break-word;
+            max-width: 80%;
+          }
+          @include screen($mobile-m){
+            max-width: 70%;
+          }
+        }
+        .copyBtn{
+          font-size: 20px;
+          font-family: 'Inter-SemiBold', sans-serif;
+          color: #00CC9A;
+          cursor: pointer;
+          border: none;
+          background-color: white;
+          padding: 0 10px;
+          position: absolute;
+          right: 0;
+        }
+        .copied{
+          font-size: 12px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #AEAEAE;
+          position: absolute;
+          right: 16px;
+          top: 4px;
+        }
+
+      }
+
+
+
+    }
+    .statisticsBlock{
+      padding: 32px 20px;
+      border-radius: 24px;
+      border: 1px solid #F1F4F8;
+      background-color: white;
+      margin-bottom: 24px;
+
+      .miniHeader{
+        font-size: 24px;
+        line-height: 120%;
+        font-family: 'Inter-Medium', sans-serif;
+      }
+      .desc1{
+        margin-top: 8px;
+        font-size: 20px;
+        line-height: 140%;
+        font-family: 'Inter-Regular', sans-serif;
+      }
+      .num{
+        margin-top: 4px;
+        font-size: 32px;
+        line-height: 24px;
+        font-family: 'Inter-Medium', sans-serif;
+      }
+
+    }
+
+    .ProfileServicesLine{
+      width: 65%;
+      @include screen($tablet-l){
+        width: 100%;
+      }
+
+      .servicesBlock{
+        @include screen($tablet-l){
+          display: flex;
+          flex-direction: column-reverse;
+        }
+        .services{
+          flex-wrap: wrap;
+          .serviceHeader{
+            font-size: 28px;
+            font-family: 'Inter-Medium', sans-serif;
+            line-height: 140%;
+            color: black;
+            margin-bottom: 20px;
+            width: 100%;
+            @include screen($wide-m){
+
+            }
+          }
+          .ServiceBlock{
+            padding: 28px 20px 24px;
+            border-radius: 24px;
+            border: 1px solid #F1F4F8;
+            background-color: white;
+            width: 24%;
+            margin-bottom: 24px;
+            @include screen($wide){
+              padding: 25px 15px 20px;
+              margin-bottom: 16px;
+            }
+            @include screen($tablet){
+              width: 49%;
+            }
+            @include screen($tablet-m){
+              width: 100%;
+            }
+
+            .textBlock{
+              height: 80%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            }
+
+            img{
+              width: 40px;
+              margin-bottom: 16px;
+              @include screen($wide){
+                margin-bottom: 10px;
+              }
+            }
+            .serviceName{
+              font-size: 20px;
+              font-family: 'Inter-Medium', sans-serif;
+              color: black;
+              line-height: 140%;
+              margin-bottom: 2px;
+
+              @include screen($wide-m){
+                font-size: 18px;
+              }
+            }
+            .desc{
+              color: #AEAEAE;
+              font-family: 'Inter-Regular', sans-serif;
+              font-size: 16px;
+              line-height: 130%;
+              margin-bottom: 20px;
+              @include screen($wide-m){
+                font-size: 15px;
+              }
+              @include screen($wide){
+                font-size: 13px;
+                margin-bottom: 10px;
+              }
+              @include screen($wide-s){
+                font-size: 12px;
+              }
+            }
+            .serviceBtn{
+              padding: 8px;
+              text-align: center;
+              border-radius: 8px;
+              border: 1px solid #266EFE;
+              color: #266EFE;
+              font-size: 14px;
+              font-family: 'Inter-Medium', sans-serif;
+              cursor: pointer;
+              width: 100%;
+              background-color: white;
+              &:hover{
+                color: #355ABC;
+                border-color: #355ABC;
+              }
+            }
+
+          }
+
+        }
+
+        .searchOnMap{
+          width: 100%;
+          margin-bottom: 24px;
+          .mapBlock{
+            width: 74.75%;
+            padding: 16px 20px;
+            border-radius: 24px;
+            background-color: white;
+            border: 1px solid #F1F4F8;
+            @include screen($tablet-l){
+              width: 100%;
+            }
+            @include screen($tablet){
+              flex-direction: column;
+            }
+
+            .textBlock{
+              width: 49%;
+              height: 100%;
+              @include screen($tablet){
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+              }
+
+              .text{
+                .searchPrg{
+                  font-size: 20px;
+                  font-family: 'Inter-Medium', sans-serif;
+                  color: black;
+                  line-height: 140%;
+                  @include screen($tablet){
+                    text-align: center;
+                  }
+                }
+                .descPrg{
+                  margin-top: 2px;
+                  font-size: 16px;
+                  font-family: 'Inter-Regular', sans-serif;
+                  line-height: 130%;
+                  color: #AEAEAE;
+                  @include screen($tablet){
+                    margin: 16px auto;
+                  }
+                }
+              }
+              .viewBtn{
+                background-color: white;
+                width: 80%;
+                padding: 8px;
+                border-radius: 8px;
+                border: 1px solid #266EFE;
+                font-size: 14px;
+                color: #266EFE;
+                font-family: 'Inter-Medium', sans-serif;
+                line-height: 140%;
+                cursor: pointer;
+                &:hover{
+                  color: #355ABC;
+                  border-color: #355ABC;
+                }
+              }
+            }
+            .mapImgBlock{
+              width: 320px;
+              position: relative;
+              @include screen($tablet){
+                width: 80%;
+                .mapImg{
+                  width: 100%;
+                }
+              }
+              @include screen($mobile-m){
+                width: 100%;
+              }
+              .markerImg{
+                position: absolute;
+                z-index: 2;
+                &:nth-child(1){
+                  left: 10%;
+                  top: 40%;
+                }
+                &:nth-child(2){
+                  left: 35%;
+                  top: 10%;
+                }
+                &:nth-child(3){
+                  right: 20%;
+                  bottom: 10%;
+                }
+              }
+
+            }
+
+          }
+
+          .becomePartnerBlock{
+            width: 24%;
+            padding: 25px 20px;
+            background-color: #F9FDFF;
+            border: 1px solid #F1F4F8;
+            border-radius: 24px;
+            @include screen($tablet-l){
+              display: none;
+            }
+
+            img{
+              width: 40px;
+              margin-bottom: 14px;
+
+            }
+            .name{
+              font-size: 20px;
+              font-family: 'Inter-Medium', sans-serif;
+              color: black;
+              margin-bottom: 14px;
+              line-height: 140%;
+            }
+            .desc{
+              color: #AEAEAE;
+              font-size: 16px;
+              line-height: 130%;
+              font-family: 'Inter-Regular', sans-serif;
+              margin-bottom: 14px;
+            }
+            .learnMoreLink{
+              color: #266EFE;
+              font-size: 12px;
+              line-height: 130%;
+              text-decoration: none;
+              font-family: 'Inter-Regular', sans-serif;
+              &:hover{
+                color: #355ABC;
+              }
+            }
+
+          }
+
+
+
+        }
+
+        .autoFavoritesCont{
+          flex-wrap: wrap;
+          @include screen($tablet-l){
+            display: none;
+          }
+          .flex-end{
+            justify-content: flex-end;
+          }
+          .favoriteBlock{
+            margin-bottom: 20px;
+            width: 24%;
+            border-radius: 24px;
+            background-color: white;
+            border: 1px solid #F1F4F8;
+            padding: 20px;
+
+            .imgBlock{
+              width: 100%;
+              margin-bottom: 14px;
+              position: relative;
+              .favoriteImg{
+                border-radius: 8px;
+                width: 100%;
+              }
+              .raiting{
+                position: absolute;
+                bottom: 12px;
+                left: 8px;
+                padding: 6px 12px;
+                font-size: 14px;
+                font-family: 'Inter-SemiBold', sans-serif;
+                color: black;
+                border-radius: 24px;
+                opacity: 0.8;
+                background-color: white;
+                img{
+                  margin-right: 6px;
+                }
+              }
+            }
+            .nameLike{
+              margin-bottom: 8px;
+              .name{
+                font-size: 20px;
+                font-family: 'Inter-Medium', sans-serif;
+                color: black;
+                line-height: 140%;
+              }
+              img{
+                width: 24px;
+              }
+            }
+            .placeOrderBtn{
+              padding: 8px;
+              width: 100%;
+              text-align: center;
+              background-color: #F1F4F8;
+              border: 1px solid #F1F4F8;
+              font-size: 14px;
+              font-family: 'Inter-Medium', sans-serif;
+              line-height: 140%;
+              color: #334155;
+              cursor: pointer;
+              border-radius: 8px;
+              &:hover{
+                border-color: #AEAEAE;
+              }
+            }
+            .showMorePrg{
+              width: 100%;
+              text-align: center;
+              color: #266EFE;
+              font-size: 20px;
+              font-family: 'Inter-Medium', sans-serif;
+              line-height: 140%;
+              margin-bottom: 26px;
+              cursor: pointer;
+              &:hover{
+                color: #355ABC;
+              }
+            }
+            .images{
+              .showMoreImg{
+                width: 20%;
+                margin-bottom: 45px;
+                border-radius: 6px;
+              }
+            }
+
+          }
+        }
+
+
+      }
+
+      .referralBlock{
+        display: none;
+        @include screen($tablet-l){
+          display: block;
+        }
+      }
+      .statisticsBlock{
+        display: none;
+        @include screen($tablet-l){
+          display: block;
+        }
+      }
+
+    }
+
+  }
+
+
+}

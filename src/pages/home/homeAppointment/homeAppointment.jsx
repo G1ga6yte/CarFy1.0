@@ -3,26 +3,29 @@ import "./homeAppointment.scss"
 import {Link} from "react-router-dom";
 import {HomeImg} from "../images/homeImg";
 import {HomeSvg} from "../svgs/homeSvg"
+import {useTranslation} from "react-i18next";
 
 function HomeAppointment (){
+  const {t, i18n} = useTranslation()
+  
   return(
      <div className="HomeAppointment G-justify-between G-align-center">
         <div className="leftBlock G-flex-column">
           <p className="header G-flex-column">
-            <span>Auto car</span>
-            <span> Maintenance</span>
+            <span>{t('home.autoCar')}</span>
+            <span>{t('home.Maintenance')}</span>
           </p>
           
-          <p className="underHeader">Book Your Appointment Now</p>
+          <p className="underHeader">{t('home.bookAppointment')}</p>
           <img className="carImgCenter" src={HomeImg.carImg1} alt=""/>
-          <p className="description">Our qualified technicians are ready to assist you with all your service needs, including oil changes, tire rotations, brake pads, and transmission problems.</p>
+          <p className="description">{t('home.home2prg1')}</p>
           
          <div className="buttonsBlock G-flex">
            <Link className="G-button G-align-center" to="/">
              <img src={HomeSvg.searchLogo} alt=""/>
-             <span>Find service</span>
+             <span>{t('home.findService')}</span>
            </Link>
-           <Link className="G-button" to="/">Car details</Link>
+           <Link className="G-button" to="/">{t('home.carDetails')}</Link>
          </div>
 
 

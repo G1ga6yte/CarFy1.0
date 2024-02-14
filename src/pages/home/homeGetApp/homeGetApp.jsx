@@ -2,12 +2,16 @@ import React from "react";
 import "./homeGetApp.scss"
 import {HomeImg} from "../images/homeImg";
 import {HomeSvg} from "../svgs/homeSvg";
+import {useTranslation} from "react-i18next";
 
 function HomeGetApp (){
+  const {t, i18n} = useTranslation()
+  
+  
   return(
      <div className="HomeGetApp G-align-center G-justify-between">
-       <p className="header1">Get the <span>Free</span> </p>
-       <p className="header1">Online appointment App!</p>
+       <p className="header1">{t('home.header12')} <span>{t('home.header121')}</span> </p>
+       <p className="header1">{t('home.header122')}</p>
        
         <div className="ImgBlock G-flex">
           <img src={HomeImg.appImg} alt=""/>
@@ -15,9 +19,9 @@ function HomeGetApp (){
         </div>
        
        <div className="TextBlock">
-          <p className="header2">Get the <span>Free</span> </p>
-         <p className="header2">Online appointment App!</p>
-         <p className="prg">Our team of qualified service technicians are standing by to help you with any of your service related needs. From oil changes, tire rotations, brake pads or transmission problems, we've got trained technicians who are able to help.</p>
+          <p className="header2">{t('home.header12')} <span>{t('home.header121')}</span> </p>
+         <p className="header2">{t('home.header122')}</p>
+         <p className="prg">{t('home.prg12')}</p>
          
           <div className="Links G-align-center">
             <a className="G-align-center G-justify-center" href="">

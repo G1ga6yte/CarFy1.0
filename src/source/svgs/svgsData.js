@@ -11,6 +11,7 @@ import xLogo from "./X-0 1.svg"
 import instagram from "./instagram.svg"
 import facebook from "./facebook.svg"
 import youtube from "./youtube.svg"
+import glob from "./globe-02.svg"
 
 
 import personPic from "./Ellipse 1.svg"
@@ -28,5 +29,6 @@ export const SvgData = {
   xLogo,
   instagram,
   facebook,
-  youtube
+  youtube,
+  glob
 }

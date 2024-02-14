@@ -4,8 +4,10 @@ import {Link} from "react-router-dom";
 import {ImgData} from "../../source/images/imgData";
 import {SvgData} from "../../source/svgs/svgsData";
 import {HomeSvg} from "../home/svgs/homeSvg";
+import {useTranslation} from "react-i18next";
 
 function Footer (){
+  const {t, i18n} = useTranslation()
   return(
      <div className="Footer">
        
@@ -27,20 +29,20 @@ function Footer (){
              </div>
              <div className="MobileLinksBlock G-flex">
                <div className="LinksToPage G-flex-column">
-                 <Link className="headerLink" to="/home">Home</Link>
-                 <Link className="pageLink" to="/blog">Blog</Link>
-                 <Link className="pageLink" to="/products">Products</Link>
-                 <Link className="pageLink" to="/shops">Shops</Link>
-                 <Link className="pageLink" to="/service">Service</Link>
-                 <Link className="pageLink" to="/forBusiness">For business</Link>
+                 <Link className="headerLink" to="/home">{t('navigator.link1')}</Link>
+                 <Link className="pageLink" to="/blog">{t('navigator.link4')}</Link>
+                 <Link className="pageLink" to="/products">{t('navigator.link2')}</Link>
+                 <Link className="pageLink" to="/shops">{t('navigator.link3')}</Link>
+                 <Link className="pageLink" to="/service">{t('navigator.service')}</Link>
+                 <Link className="pageLink" to="/forBusiness">{t('navigator.link5')}</Link>
                </div>
         
                <div className="LinksToPage G-flex-column">
-                 <Link className="headerLink" to="/help">Help</Link>
-                 <Link className="pageLink" to="/">Customer Support</Link>
-                 <Link className="pageLink" to="/">App Details</Link>
-                 <Link className="pageLink" to="/">Terms & Conditions</Link>
-                 <Link className="pageLink" to="/">Privacy Policy</Link>
+                 <Link className="headerLink" to="/help">{t('navigator.help')}</Link>
+                 <Link className="pageLink" to="/">{t('navigator.support')}</Link>
+                 <Link className="pageLink" to="/">{t('navigator.details')}</Link>
+                 <Link className="pageLink" to="/">{t('navigator.conditions')}</Link>
+                 <Link className="pageLink" to="/">{t('navigator.privacy')}</Link>
                </div>
              </div>
       
@@ -55,26 +57,26 @@ function Footer (){
            </div>
     
            <div className="LinksToPage G-flex-column">
-             <Link className="headerLink" to="/home">Home</Link>
-             <Link className="pageLink" to="/blog">Blog</Link>
-             <Link className="pageLink" to="/products">Products</Link>
-             <Link className="pageLink" to="/shops">Shops</Link>
-             <Link className="pageLink" to="/service">Service</Link>
-             <Link className="pageLink" to="/forBusiness">For business</Link>
+             <Link className="headerLink" to="/home">{t('navigator.link1')}</Link>
+             <Link className="pageLink" to="/blog">{t('navigator.link4')}</Link>
+             <Link className="pageLink" to="/products">{t('navigator.link2')}</Link>
+             <Link className="pageLink" to="/shops">{t('navigator.link3')}</Link>
+             <Link className="pageLink" to="/service">{t('navigator.service')}</Link>
+             <Link className="pageLink" to="/forBusiness">{t('navigator.link5')}</Link>
            </div>
     
            <div className="LinksToPage G-flex-column">
-             <Link className="headerLink" to="/help">Help</Link>
-             <Link className="pageLink" to="/">Customer Support</Link>
-             <Link className="pageLink" to="/">App Details</Link>
-             <Link className="pageLink" to="/">Terms & Conditions</Link>
-             <Link className="pageLink" to="/">Privacy Policy</Link>
+             <Link className="headerLink" to="/help">{t('navigator.help')}</Link>
+             <Link className="pageLink" to="/">{t('navigator.support')}</Link>
+             <Link className="pageLink" to="/">{t('navigator.details')}</Link>
+             <Link className="pageLink" to="/">{t('navigator.conditions')}</Link>
+             <Link className="pageLink" to="/">{t('navigator.privacy')}</Link>
            </div>
   
          </div>
   
          <div className="AppsCont G-flex-column">
-           <p className="header">Download App</p>
+           <p className="header">{t('navigator.download')}</p>
            <a className="G-align-center G-justify-center" href="">
              <img className="logo" src={HomeSvg.googleLogo} alt=""/>
              <img src={HomeSvg.googleText} alt=""/>

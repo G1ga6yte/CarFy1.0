@@ -8,6 +8,7 @@ import './source/Global.scss'
 import './source/mixin.scss'
 import './source/variables.scss'
 import App from './App.jsx';
+import './i18n'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
