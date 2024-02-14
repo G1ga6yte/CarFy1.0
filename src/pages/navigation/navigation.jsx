@@ -144,10 +144,10 @@ function Navigation() {
                   alt=""/>
            </div>
            <div style={{display: `${products ? "flex" : "none"}`}} className="productsLinks G-flex-column">
-             <Link className={`${Call("/carService") ? "activeLink" : " "}`} onClick={() => setMenuBar(false)}
-                   to="/carService">{t('navigator.product1Header')}</Link>
+             <Link className={`${Call("/findService") ? "activeLink" : " "}`} onClick={() => setMenuBar(false)}
+                   to="/findService">{t('navigator.product1Header')}</Link>
              <Link className={`${Call("/insurance/step1") ? "activeLink" : " "}`} onClick={() => setMenuBar(false)}
-                   to="/insurance">{t('navigator.product2Header')}</Link>
+                   to="/insurance/step1">{t('navigator.product2Header')}</Link>
              <Link className={`${Call("/vignette") ? "activeLink" : " "}`} onClick={() => setMenuBar(false)}
                    to="/vignette">{t('navigator.product3Header')}</Link>
            </div>
@@ -181,7 +181,7 @@ function Navigation() {
          setNotes(false);
        }} style={{display: `${products ? "flex" : "none"}`}} className="ProductsBlock G-container">
          
-         <Link className="ProductLink" to="/carService">
+         <Link className="ProductLink" to="/findService">
            <span className="hProduct">{t('navigator.product1Header')}</span>
            <p className="prgProduct">
              {t('navigator.product1Prg')}
