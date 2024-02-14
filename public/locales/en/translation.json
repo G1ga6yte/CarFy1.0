@@ -128,5 +128,35 @@
     "header122": "Online appointment App!",
     "prg12": "Our team of qualified service technicians are standing by to help you with any of your service related needs. From oil changes, tire rotations, brake pads or transmission problems, we've got trained technicians who are able to help."
 
+  },
+  "blog": {
+    "header1": "Our ",
+    "header12": "Newsroom",
+    "prg1": "Your go-to source for informative and engaging content on the latest trends, news, and insights in your industry",
+    "placeHolder1": "Write something",
+    "fastLink1" : "How to change tires",
+    "fastLink2" : "Best service EU 2023",
+    "fastLink3" : "How to change oil",
+    "search": "Search",
+
+    "featured" : "FEATURED",
+    "header2": "Cheap Airline Tickets Great Ways ",
+    "header21": "To Save",
+    "prg2": "In this digital generation where information can be easily obtained within seconds, business cards ...",
+
+    "header3": "Popular Articles",
+    "prg3": "We share common trends, strategies ideas, opinions, short & long stories from the team behind company.",
+    "seeAll": "See all",
+    "pay3": "How to pay for parking?",
+    "order3": "How to order a wrecker?",
+
+    "header4": "Recent Articles",
+    "prg4": "Here’s what we've been up to recently.",
+    "miniHeader41": "Future of Work",
+    "miniHeader42": "Future of Data",
+    "miniHeader43": "Future of Learning",
+    "miniPrg41": "Majority of peole will work in jobs that don’t exist today.",
+    "miniPrg42": "Majority of peole will work in jobs that don’t exist today.",
+    "miniPrg43": "Majority of peole will work in jobs that don’t exist today."
   }
 }

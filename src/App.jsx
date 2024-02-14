@@ -19,11 +19,13 @@ import Profile from "./pages/profile/profile";
 import {useCartContext} from "./CartContext";
 import Shops from "./pages/Shops/shops";
 import FindService from "./pages/findService/findService";
+import {useTranslation} from "react-i18next";
 // import { withTranslation } from 'react-i18next';
 
 
 function App() {
   const {authorization} = useCartContext()
+  const {t, i18n} = useTranslation()
   
   useEffect(()=>{
   }, [])

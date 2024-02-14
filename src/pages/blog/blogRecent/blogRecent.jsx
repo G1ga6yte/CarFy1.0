@@ -2,44 +2,46 @@ import React from "react";
 import "./blogRecent.scss"
 import {Link} from "react-router-dom";
 import {BlogImg} from "../images/blogImg";
+import {useTranslation} from "react-i18next";
 
 function BlogRecent (){
+  const {t, i18n} = useTranslation()
   
   return(
      <div className="BlogRecent G-container G-flex G-justify-between">
        <div className="textBlock">
-         <p className="header">Recent Articles</p>
-         <p className="prg">Here’s what we've been up to recently.</p>
+         <p className="header">{t('blog.')}</p>
+         <p className="prg">{t('blog.')}</p>
        </div>
   
        <div className="linkBlock">
-         <Link to="/blog/article">See all</Link>
+         <Link to="/blog/article">{t('blog.seeAll')}</Link>
        </div>
        
        <div className="recentBlock">
          <img src={BlogImg.artImg1} alt=""/>
-         <span className="span">FEATURED</span>
+         <span className="span">{t('blog.featured')}</span>
           <div className="futureText">
-            <p className="fHeader">Future of Work</p>
-            <p className="fPrg">Majority of peole will work in jobs that don’t exist today.</p>
+            <p className="fHeader">{t('blog.miniHeader41')}</p>
+            <p className="fPrg">{t('blog.miniPrg41')}</p>
           </div>
        </div>
   
        <div  className="recentBlock">
          <img src={BlogImg.artImg2} alt=""/>
-         <span className="span">FEATURED</span>
+         <span className="span">{t('blog.featured')}</span>
          <div className="futureText">
-           <p className="fHeader">Future of Data</p>
-           <p className="fPrg">Majority of peole will work in jobs that don’t exist today.</p>
+           <p className="fHeader">{t('blog.miniHeader42')}</p>
+           <p className="fPrg">{t('blog.miniPrg42')}</p>
          </div>
        </div>
   
        <div  className="recentBlock">
          <img src={BlogImg.artImg3} alt=""/>
-         <span className="span">FEATURED</span>
+         <span className="span">{t('blog.featured')}</span>
          <div className="futureText">
-           <p className="fHeader">Future of Learning</p>
-           <p className="fPrg">Majority of peole will work in jobs that don’t exist today.</p>
+           <p className="fHeader">{t('blog.miniHeader43')}</p>
+           <p className="fPrg">{t('blog.miniPrg43')}</p>
          </div>
        </div>
      </div>

@@ -1,8 +1,10 @@
 import React from "react";
 import {BlogImg} from "../images/blogImg";
 import "./blogFeatured.scss"
+import {useTranslation} from "react-i18next";
 
 function BlogFeatured (){
+  const {t, i18n} = useTranslation()
   return(
      <div className="BlogFeatured G-container">
        <div className="featureBlock G-justify-between G-align-center">
@@ -10,9 +12,9 @@ function BlogFeatured (){
             <img src={BlogImg.carRepair} className="carRepairImg" alt=""/>
           </div>
           <div className="textBlock">
-            <span className="span">FEATURED</span>
-            <p className="header">Cheap Airline Tickets Great Ways <span>To Save </span></p>
-            <p className="prg">In this digital generation where information can be easily obtained within seconds, business cards ...</p>
+            <span className="span">{t('blog.featured')}</span>
+            <p className="header">{t('blog.header2')} <span>{t('blog.header21')} </span></p>
+            <p className="prg">{t('blog.prg2')}</p>
           </div>
        </div>
      </div>

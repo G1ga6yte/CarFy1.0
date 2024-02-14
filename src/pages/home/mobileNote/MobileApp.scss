@@ -5,7 +5,7 @@
     width: 100% !important;
   .dialog-box{
     width: 100% !important;
-
+    margin-top: -200px !important;
 
   }
 
@@ -21,13 +21,24 @@
   }
 }
 
+.closeBtn{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100vw;
+  height: 150vh;
+}
+
 .dialog{
+
   width: 100% !important;
   border: none !important;
   display: flex !important;
   flex-direction: column;
   align-items: center;
   padding-bottom: 20px !important;
+  position: relative;
   .header{
     font-size: 48px;
     font-family: 'Inter-Bold', sans-serif;
@@ -53,6 +64,8 @@
     margin: 15px auto 0 auto;
     border-radius: 14px;
     border: 1px solid white;
+    position: relative;
+    z-index: 10;
     .img1{
       margin-right: 8px;
     }
@@ -60,7 +73,9 @@
 }
 
 .MuiDialog-container{
-   width: 100% !important;
+  margin-top: -100px !important;
+
+  width: 100% !important;
 
   .MuiPaper-root{
     margin: 0 !important;
