@@ -129,7 +129,7 @@ function FindServiceStep2() {
   
   useEffect(() => {
     
-    if (new Date().getHours() >= 18) {
+    if (new Date().getHours() >= 18 || new Date().getHours() <9) {
       value.setDate(new Date().getDate() + 1);
       setActiveTime(9);
       setRender(prev => !prev);
