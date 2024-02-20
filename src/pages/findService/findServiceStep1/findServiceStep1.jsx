@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import "./findServiceStep1.scss";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {ImgSvg} from "./images/imgSvg";
 import {ServicesData} from "./servicesData";
 import {useCartContext} from "../../../CartContext";
@@ -8,7 +8,7 @@ import {useCartContext} from "../../../CartContext";
 
 function FindServiceStep1() {
   const navigate = useNavigate();
-  const {changeFindServiceStep, checkedServices, setCheckedServices} = useCartContext()
+  const {changeFindServiceStep, checkedServices, setCheckedServices, handleDeleteCheck} = useCartContext()
   
   const [searchVal, setSearchVal] = useState("");
   const [clearBtn, setClearBtn] = useState(false);
@@ -84,15 +84,7 @@ function FindServiceStep1() {
     
   }
   
-  function handleDeleteCheck (el){
-    let x = checkedServices.filter((elem)=>{
-      return el !== elem
-    })
-    setCheckedServices(x)
-    if (x.length === 0){
-      setContinueBtn(true)
-    }
-  }
+ 
   
   return (
      <div className="Step1 G-container">
@@ -233,9 +225,7 @@ function FindServiceStep1() {
                  <img src={ImgSvg.backArrow} alt=""/>
                  <span>Back</span>
                </button>
-               <button onClick={()=>{
-                 changeFindServiceStep(2)
-               }}  className="continueBtn">Continue</button>
+               <Link to="/findService/newRequest"  className="continueBtn">Continue</Link>
              </div>
            </div>
          </div>

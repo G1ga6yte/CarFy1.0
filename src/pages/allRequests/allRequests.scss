@@ -1,0 +1,573 @@
+@import "../../source/mixin.scss";
+
+.AllRequests {
+  position: relative;
+
+
+  .headerBlock {
+    padding: 30px 10px 0;
+    background-color: white;
+
+
+    .backToDashboardBlock {
+      cursor: pointer;
+      width: max-content;
+      margin-bottom: 35px;
+
+      &:hover {
+        path {
+          fill: #355ABC;
+        }
+
+        span {
+          color: #355ABC;
+        }
+      }
+
+      span {
+        margin-left: 10px;
+        font-family: 'Inter-Regular', sans-serif;
+        color: #266EFE;
+        font-size: 20px;
+      }
+    }
+
+    .btnCont{
+      @include screen($tablet-m){
+        width: 100%;
+        overflow: auto !important;
+      }
+      &::-webkit-scrollbar-track{
+        background-color: transparent;
+        height: 0;
+      }
+      &::-webkit-scrollbar-thumb{
+        background-color: transparent;
+      }
+    }
+    .tabsBlock {
+      padding: 0 10px;
+      @include screen($tablet-m){
+        width: 550px;
+      }
+
+
+
+      .link {
+        width: max-content;
+        text-align: center;
+        padding: 8px;
+        font-size: 20px;
+        font-family: 'Inter-Regular', sans-serif;
+        color: black;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        @include screen($tablet){
+          font-size: 12px;
+          padding: 4px;
+        }
+
+        &:hover {
+          font-family: 'Inter-Medium', sans-serif;
+        }
+      }
+
+      .activeLink {
+        font-family: 'Inter-Medium', sans-serif;
+        border-bottom: 2px solid #266EFE !important;
+      }
+    }
+
+  }
+
+  .listBlock {
+    padding: 40px 10px 150px;
+
+    .requestBlock {
+      width: 100%;
+      padding: 30px 40px;
+      border-radius: 24px;
+      background: #FFF;
+      box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+      margin-bottom: 24px;
+      @include screen($tablet-l){
+        padding: 16px;
+      }
+
+      .requestHeadBlock {
+        align-items: start;
+
+        .numberTimeBlock {
+          @include screen($tablet){
+            flex-wrap: wrap;
+          }
+          .requestID {
+            font-size: 16px;
+            font-family: 'Inter-SemiBold', sans-serif;
+            color: black;
+            margin-right: 24px;
+            line-height: 140%;
+            @include screen($tablet-l){
+              margin-right: 15px;
+            }
+            @include screen($tablet){
+              font-size: 14px;
+            }
+
+          }
+          .requestRegTime {
+            font-size: 16px;
+            font-family: 'Inter-Regular', sans-serif;
+            color: #AEAEAE;
+            line-height: 130%;
+            @include screen($tablet){
+              font-size: 14px;
+            }
+
+          }
+          .reportLink{
+            margin-left: 24px;
+            font-size: 16px;
+            color: #FF7373;
+            line-height: 130%;
+            font-family: 'Inter-Regular', sans-serif;
+            text-decoration: none;
+            @include screen($tablet-l){
+              margin-left: 15px;
+            }
+            @include screen($tablet){
+              font-size: 14px;
+            }
+
+
+          }
+        }
+
+
+        .headCont{
+          @include screen($tablet-l){
+            flex-direction: column;
+          }
+        }
+
+        .headImgBlock{
+          display: none;
+          .mapBlock{
+            width: 150px;
+          }
+          @include screen($tablet-l){
+            display: flex;
+          }
+          @include screen($tablet){
+            display: none !important;
+          }
+        }
+      }
+
+      .buttonsBlock {
+        @include screen($tablet-l){
+          margin-top: 20px;
+        }
+        @include screen($tablet){
+          display: none;
+        }
+
+        .button-g {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 16px 0;
+          margin: 0 10px;
+          width: 225px;
+          border-radius: 14px;
+          cursor: pointer;
+          outline: none;
+          background-color: transparent;
+          font-size: 16px;
+          font-family: 'Inter-Medium', sans-serif;
+          border: 1px solid transparent;
+          @include screen($tablet-l){
+            width: 180px;
+          }
+          @include screen($tablet){
+            width: 100%;
+            margin-bottom: 12px;
+          }
+
+        }
+
+        .cancelBtn {
+          span {
+            color: #AEAEAE;
+            margin-left: 8px;
+          }
+
+          &:hover {
+            border-color: #355ABC;
+
+            path {
+              fill: #355ABC;
+            }
+
+            span {
+              color: #355ABC;
+            }
+          }
+        }
+
+        .editBtn {
+          &:hover {
+            border-color: #355ABC;
+            color: #355ABC;
+
+          }
+        }
+
+        .loadBtn {
+          padding: 5px 0;
+          background-color: #266EFE;
+
+          &:hover {
+            background-color: #355ABC;
+          }
+
+          img {
+            animation: laoding linear 5s infinite;
+          }
+        }
+
+        .responsesBtn {
+          background-color: #266EFE;
+
+          &:hover {
+            background-color: #355ABC;
+          }
+
+          span {
+            color: white;
+          }
+        }
+
+        .manageBtn {
+          border-color: #266EFE;
+
+          &:hover {
+            border-color: #355ABC;
+
+            span {
+              color: #355ABC;
+            }
+          }
+
+          span {
+            color: #266EFE;
+          }
+        }
+
+        .chatBtn {
+          border-color: #266EFE;
+
+          &:hover {
+            border-color: #355ABC;
+
+            path {
+              fill: #355ABC;
+            }
+
+            span {
+              color: #355ABC;
+            }
+          }
+
+          span {
+            margin-left: 8px;
+            color: #266EFE;
+          }
+        }
+
+        .leaveReviewBtn {
+          border-color: #266EFE;
+
+          &:hover {
+            border-color: #355ABC;
+
+            span {
+              color: #355ABC;
+            }
+          }
+
+          span {
+            color: #266EFE;
+          }
+        }
+
+        .reapplyBtn {
+          border-color: #266EFE;
+
+          &:hover {
+            border-color: #355ABC;
+
+            span {
+              color: #355ABC;
+            }
+          }
+
+          span {
+            color: #266EFE;
+          }
+        }
+
+      }
+      .mapBlock{
+        height: 120px;
+        width: 40%;
+        border-radius: 8px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        img{
+          left: 32%;
+          top: 30%;
+          position: absolute;
+        }
+      }
+      .imgBlock{
+        min-width: 150px;
+        width: 150px;
+        height: 120px;
+        border-radius: 8px;
+        margin-right: 25px;
+        position: relative;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        span{
+          background-color: white;
+          border-radius: 30px;
+          position: absolute;
+          bottom: 8px;
+          left: 8px;
+          padding: 4px 12px;
+          font-size: 14px;
+          font-family: 'Inter-SemiBold', sans-serif;
+          line-height: 140%;
+          img{
+            margin-right: 6px;
+          }
+        }
+      }
+
+
+      .requestStatusBlock {
+
+        .headerBlock {
+          align-items: start;
+          margin-bottom: 16px;
+
+          img {
+            width: 32px;
+            height: 32px;
+            padding: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+          }
+          .headerTextBlock{
+            .header{
+              font-size: 20px;
+              font-family: 'Inter-Medium', sans-serif;
+              margin-bottom: 8px;
+              @include screen($tablet){
+                font-size: 16px;
+              }
+
+            }
+            .underHeader{
+              font-size: 20px;
+              font-family: 'Inter-Regular', sans-serif;
+              @include screen($tablet){
+                font-size: 16px;
+              }
+
+            }
+          }
+
+
+        }
+        .progressBlock{
+          margin-bottom: 10px;
+          .line{
+            width: 24%;
+            height: 8px;
+            border-radius: 16px;
+
+          }
+        }
+        .reqInfoBlock{
+          margin-top: 40px;
+          @include screen($tablet-l){
+            flex-direction: column;
+          }
+
+          .infoBlock{
+            min-width: 350px;
+            margin-right: 45px;
+            @include screen($tablet-l){
+              width: 100%;
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0;
+            }
+            @include screen($tablet){
+              display: block;
+              margin: 0;
+              min-width: unset;
+            }
+            .line{
+              margin-bottom: 5px;
+              font-size: 20px;
+              font-family: 'Inter-Regular', sans-serif;
+              color: #AEAEAE;
+              line-height: 140%;
+              @include screen($tablet-l){
+                margin-right: 20px;
+              }
+              @include screen($tablet){
+                font-size: 16px;
+              }
+              span{
+                color: black;
+              }
+            }
+          }
+          .smsBlock{
+            max-width: 750px;
+            @include screen($tablet-l){
+              max-width: unset;
+              display: flex;
+              flex-direction: column-reverse;
+            }
+            .smsPrg{
+              margin-bottom: 12px;
+              color: #AEAEAE;
+              font-size: 20px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 140%;
+              @include screen($tablet-l){
+                font-size: 14px;
+              }
+            }
+            .linksBlock{
+              @include screen($tablet-l){
+                margin: 20px 0;
+              }
+              @include screen($tablet){
+                flex-wrap: wrap;
+                margin: 10px 0;
+              }
+
+              .link{
+                border-radius: 50px;
+                padding: 8px;
+                line-height: 130%;
+                font-size: 12px;
+                font-family: 'Inter-Regular', sans-serif;
+                border: 1px solid black;
+                margin-right: 8px;
+                @include screen($tablet){
+                  margin-top: 10px;
+                }
+
+                &:nth-child(3){
+                  background-color: #FFEDED;
+                  color: #FF7373;
+                  border: none;
+                }
+              }
+            }
+          }
+
+        }
+        .serviceInfoBlock{
+          margin-top: 40px;
+
+          .mapBlock{
+            @include screen($tablet-l){
+              display: none;
+            }
+          }
+          .imgBlock{
+            @include screen($tablet-l){
+              display: none;
+            }
+          }
+          .infoBlock{
+            width: 45%;
+            margin-right: 50px;
+            @include screen($tablet-l){
+              width: 100%;
+              margin: 0;
+            }
+            .serviceTextLine{
+              margin-bottom: 8px;
+              color: black;
+              font-size: 20px;
+              font-family: 'Inter-Medium', sans-serif;
+              line-height: 140%;
+              @include screen($tablet){
+                font-size: 16px;
+              }
+              span{
+                margin-right: 8px;
+                color: #AEAEAE;
+              }
+            }
+          }
+
+        }
+        .underMobile{
+          display: none;
+          @include screen($tablet){
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+        .mobileImagesBlock{
+          display: none;
+          @include screen($tablet){
+            display: flex ;
+            justify-content: center;
+            .imgBlock{
+              width: 140px !important;
+              min-width: unset;
+            }
+            .mapBlock{
+              width: 140px !important;
+              min-width: unset;
+            }
+          }
+
+        }
+
+
+      }
+
+
+    }
+
+  }
+
+}
+
+
+@keyframes laoding {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 360deg;
+  }
+
+}

@@ -5,8 +5,11 @@ import BlogArticles from "./blogArticles/blogArticles";
 import BlogRecent from "./blogRecent/blogRecent";
 import BlogStudies from "./blogStudies/blogStudies";
 import BlogAllArticles from "./blogAllArticles/blogAllArticles";
+import {useTranslation} from "react-i18next";
 
 function Blog() {
+  const {t, i18n} = useTranslation()
+  
   return (
      <div className="Blog">
        <BlogNewsroom/>

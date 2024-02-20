@@ -28,6 +28,20 @@ export const CartProvider = ({children}) => {
   /////////////////Find Service //////////////////////////////
   const [findServiceStep, changeFindServiceStep] = useState(1)
   const [checkedServices, setCheckedServices] = useState([])
+  function handleDeleteCheck (el){
+    let x = checkedServices.filter((elem)=>{
+      return el !== elem
+    })
+    setCheckedServices(x)
+    if (x.length === 0){
+    
+    }
+  }
+  
+  //////////////////Log In For Request //////////////////////////////
+  const [logInStep, setLogInStep] = useState(1)
+  
+  
   
   
   
@@ -35,7 +49,8 @@ export const CartProvider = ({children}) => {
     Call, dialog, setDialog, handleDialog, typeLogIn,
     setTypeLogIn,authorization, setAuthorization,
     findServiceStep, changeFindServiceStep,
-    checkedServices, setCheckedServices
+    checkedServices, setCheckedServices, handleDeleteCheck,
+    logInStep, setLogInStep
   }}>
     {children}
   </CartContext.Provider>);

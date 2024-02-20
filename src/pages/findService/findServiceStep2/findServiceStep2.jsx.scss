@@ -1,66 +1,94 @@
 @import "../../../source/mixin.scss";
 
-.Step2{
+.Step2 {
   border-radius: 24px;
   border: 1px solid var(--Grayscale-400, #F1F4F8);
   background: var(--Shades-White, #FFF);
   box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
   margin: 128px auto;
   padding: 20px 40px 64px;
+  @include screen($tablet){
+    padding: 15px 10px 25px;
+  }
 
 
-  .headerBlock{
+  .headerBlock {
     padding-bottom: 40px;
     border-bottom: 1px solid #F1F4F8;
     margin-bottom: 32px;
-    .backBtnBlock{
+
+    .backBtnBlock {
+      text-decoration: none;
+      color: black;
       cursor: pointer;
       margin-bottom: 35px;
-      span{
+      width: max-content;
+
+      span {
         margin-left: 16px;
         font-size: 20px;
         font-family: 'Inter-Medium', sans-serif;
         line-height: 140%;
       }
     }
-    .requestBlock{
+
+    .requestBlock {
       width: 100%;
-      .header{
+
+      .header {
         font-size: 30px;
         font-family: 'Inter-Medium', sans-serif;
+        @include screen($tablet-m){
+          font-size: 24px;
+        }
       }
-      .clearBlock{
+
+      .clearBlock {
         margin-right: 80px;
         cursor: pointer;
-        span{
+        align-items: center;
+        @include screen($tablet){
+          margin-right: 20px;
+        }
+
+        span {
           font-size: 24px;
-          font-family: 'Inter-Medium',sans-serif;
+          font-family: 'Inter-Medium', sans-serif;
           margin-left: 12px;
+          @include screen($tablet-m){
+            font-size: 20px;
+          }
         }
       }
     }
   }
 
-  .MainCont{
+  .MainCont {
 
 
-    .fillingBlock{
+    .fillingBlock {
       width: 74%;
+      @include screen($wide){
+        width: 70%;
+      }
+      @include screen($tablet-l){
+        width: 100%;
+      }
 
-      .InputCarNumber{
+      .InputCarNumber {
         width: 35%;
         margin-right: 25px;
-        @include screen($wide){
+        @include screen($wide) {
           width: 45%;
         }
-        @include screen($tablet-l){
+        @include screen($tablet-l) {
           width: 48%;
         }
-        @include screen($tablet){
+        @include screen($tablet) {
           width: 100%;
         }
 
-        input{
+        input {
           padding: 16px 20px;
           border: 1px solid #D9D9D9;
           background-color: #FFFFFF;
@@ -73,88 +101,721 @@
           font-family: 'Inter-Regular', sans-serif;
           color: black;
           text-transform: uppercase;
-          &:hover{
+
+          &:hover {
             border-color: #AEAEAE;
           }
-          &::placeholder{
+
+          &::placeholder {
             text-transform: none !important;
           }
-          &:focus-visible{
+
+          &:focus-visible {
             border-color: #266EFE;
           }
         }
-        img{
+
+        img {
           border-radius: 14px 0 0 14px;
           padding: 7px 11px;
           background-color: #28448D;
         }
       }
 
+      .miniHeader {
+        font-size: 24px;
+        font-family: 'Inter-Medium', sans-serif;
+        line-height: 120%;
+        color: black;
+        margin: 32px 0 24px;
+        @include screen($tablet-m){
+          font-size: 20px;
+        }
+      }
 
+      .carCharacteristic {
+        flex-wrap: wrap;
+
+        .Select {
+          width: 35%;
+          position: relative;
+          margin-right: 2%;
+          @include screen($wide) {
+            width: 45%;
+          }
+          @include screen($tablet-l) {
+            margin: 1%;
+            width: 48%;
+          }
+          @include screen($tablet-m){
+            width: 100%;
+          }
+
+
+
+          .selectBlock {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid;
+            background-color: #FFFFFF;
+            border-radius: 14px;
+            cursor: pointer;
+
+            &:hover {
+              border-color: #AEAEAE;
+            }
+
+            span {
+              font-size: 16px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 130%;
+            }
+          }
+
+          .optionsBlock {
+            width: 100%;
+            max-height: 220px;
+            overflow: scroll;
+            border-radius: 14px;
+            border: 1px solid #266EFE;
+            background-color: #FFFFFF;
+            padding: 4px;
+            margin-top: 4px;
+            position: absolute;
+            z-index: 20;
+
+            &::-webkit-scrollbar {
+              width: 25px;
+              height: 90% !important;
+            }
+
+            &::-webkit-scrollbar-track {
+              background: rgba(204, 224, 255, 0.5);
+              border: 10px solid white;
+              border-radius: 20px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              background: #CCE0FF;
+              border: 10px solid white;
+              border-radius: 50px;
+            }
+
+            .option {
+              border-radius: 8px;
+              cursor: pointer;
+              padding: 12px 16px;
+              background-color: #FFFFFF;
+              font-size: 16px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 130%;
+
+              &:hover {
+                background-color: #266EFE;
+                color: #FFFFFF;
+              }
+            }
+          }
+        }
+
+        .textArea {
+          min-width: 72%;
+          max-width: 72%;
+          min-height: 200px;
+          max-height: 200px;
+          resize: none;
+          padding: 12px 16px;
+          border-radius: 14px;
+          border: 1px solid #D9D9D9;
+          background: #FFF;
+          color: black;
+          font-family: 'Inter-Regular', sans-serif;
+          line-height: 130%;
+          font-size: 16px;
+          margin-top: 16px;
+          outline: none;
+          @include screen($wide){
+            max-width: 92%;
+            min-width: 92%;
+          }
+          @include screen($tablet-l){
+            max-width: 98%;
+            min-width: 98%;
+            margin: 16px 1% 0;
+          }
+
+          &:focus-visible {
+            border-color: #266EFE;
+          }
+        }
+
+      }
+
+      .checkedItems {
+        flex-wrap: wrap;
+        max-height: 200px;
+        overflow: auto;
+        -ms-overflow-style: auto; /* IE 10+ */
+        scrollbar-width: 20px; /* Firefox */
+        @include screen($wide) {
+          margin: 0 15px;
+          max-height: 150px;
+        }
+        @include screen($tablet-l) {
+          max-height: unset;
+        }
+
+
+        &::-webkit-scrollbar { /* chrome based */
+          width: 6px;
+          border-radius: 5px;
+          height: 0; /* ширина scrollbar'a */
+          background: lightblue; /* опционально */
+
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: #266EFE;
+          border-radius: 20px;
+          cursor: pointer;
+        }
+
+        .checkedItem {
+          border: 1px solid #266EFE;
+          margin: 16px 16px 0 0;
+          border-radius: 8px;
+          padding: 8px;
+          @include screen($wide) {
+            padding: 5px;
+            margin: 0 12px 12px 0;
+          }
+
+
+          img {
+            cursor: pointer;
+            @include screen($wide) {
+              width: 20px;
+            }
+
+            &:hover {
+              scale: 1.1;
+            }
+          }
+
+          .itemName {
+            margin-right: 8px;
+            font-size: 20px;
+            font-family: 'Inter-Regular', sans-serif;
+            line-height: 140%;
+            color: black;
+            @include screen($wide) {
+              font-size: 16px;
+            }
+
+          }
+        }
+      }
+
+      .picturesBlock {
+        @include screen($tablet-m){
+          flex-wrap: wrap;
+          justify-content: start;
+          align-items: start;
+        }
+        .imgBlock {
+          width: 104px;
+          height: 94px;
+          border-radius: 12px;
+          position: relative;
+          background-color: #FBFDFF;
+          cursor: pointer !important;
+          margin-right: 16px;
+          @include screen($tablet-m){
+            margin: 10px;
+          }
+
+          &:hover {
+            background-color: #D0D5DD;
+          }
+
+          input {
+            display: none;
+          }
+
+          .deleteBtn {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            top: -12px;
+            right: -12px !important;
+            cursor: pointer;
+            background-color: #FF7373;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            z-index: 4;
+          }
+
+          .selectedImage {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: white;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 12px;
+            cursor: auto;
+          }
+
+          label {
+            border-radius: 12px;
+            cursor: pointer !important;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+              width: 40px;
+            }
+          }
+        }
+      }
+
+      .pickupQuestion {
+        color: #F39A31 !important;
+      }
+
+      .switchersCont {
+
+        .switcherBlock {
+          width: 60%;
+          margin-bottom: 16px;
+          @include screen($tablet){
+            width: 100%;
+          }
+
+          .miniPrg {
+            font-size: 16px;
+            line-height: 130%;
+            color: black;
+            font-family: 'Inter-Regular', sans-serif;
+          }
+
+          .switcher {
+            transition: 0.2s ease-in-out all;
+            width: 50px;
+            height: 30px;
+            background-color: #787880;
+            opacity: 0.16;
+            border-radius: 50px;
+            padding: 2px;
+            justify-content: start;
+            cursor: pointer;
+
+            .circle {
+              transition: 0.2s ease-in-out all;
+              height: 26px;
+              width: 26px;
+              border-radius: 50%;
+              background-color: white;
+            }
+          }
+
+          .activeSwitch {
+            background-color: #266EFE;
+            opacity: 1;
+            transition: 0.2s ease-in-out all;
+
+            .circle {
+              transform: translateX(20px);
+            }
+          }
+        }
+      }
+
+      .locationBlock {
+        width: 100%;
+
+        .inputMap {
+          width: 100%;
+          line-height: 130%;
+          padding: 16px;
+          border-radius: 14px;
+          border: 1px solid #D9D9D9;
+          background: #FFF;
+          outline: none;
+          font-family: 'Inter-Regular', sans-serif;
+          font-size: 16px;
+          margin-bottom: 16px;
+
+          &::placeholder {
+            color: black;
+          }
+
+          &:focus-visible {
+            border-color: #266EFE;
+
+            &::placeholder {
+              color: #AEAEAE !important;
+            }
+          }
+        }
+
+        .mapBlock {
+          width: 100%;
+
+          img {
+            width: 100%;
+            border-radius: 12px;
+          }
+        }
+      }
+
+      .dateBlock {
+        .tableBlock {
+          border-radius: 16px;
+          border: 1px solid #D9D9D9;
+          background: #FFF;
+          padding: 16px;
+          @include screen($tablet){
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            border: none;
+          }
+          .activeTime{
+            .timePrg{
+              color: #266EFE !important;
+            }
+            path{
+              fill: #266EFE !important;
+            }
+          }
+
+          .meetingTime {
+            margin: 0 10px;
+            @include screen($tablet){
+              margin: 10px;
+            }
+            &:hover {
+              cursor: pointer;
+
+              path {
+                fill: #266EFE !important;
+              }
+
+              .timePrg {
+                color: #266EFE;
+              }
+            }
+
+            .timePrg {
+              color: black;
+              font-size: 16px;
+              font-family: 'Inter-Medium', sans-serif;
+              margin-left: 8px;
+            }
+          }
+        }
+
+        .calendarCont {
+          border-radius: 16px;
+          border: 1px solid #D9D9D9;
+          background: #FFF;
+          width: max-content;
+          overflow: hidden;
+          display: flex;
+          margin-top: 5px;
+          @include screen($tablet-m){
+            flex-direction: column;
+            margin: 0 auto;
+            width: 100%;
+          }
+
+          .react-calendar {
+            border: none;
+            padding: 15px 10px;
+            position: relative;
+            border-right: 1px solid #D9D9D9;
+            @include screen($tablet-m){
+              border: none;
+              margin: 0 auto;
+            }
+
+            .react-calendar__navigation__label {
+              font-size: 15px;
+              font-family: 'Inter-Medium', sans-serif;
+              color: black;
+              pointer-events: none;
+
+              span {
+                width: 100%;
+                display: block;
+                text-align: start;
+              }
+            }
+            .react-calendar__month-view__weekdays__weekday{
+              margin-bottom: 15px !important;
+              abbr{
+                text-decoration: none;
+                font-family: 'Inter-Regular', sans-serif !important;
+                font-size: 12px !important;
+                font-weight: 400 !important;
+                color: black;
+              }
+            }
+            .react-calendar__month-view__days__day--weekend{
+              color: black;
+              font-size: 14px;
+              font-family: 'Inter-Regular', sans-serif;
+            }
+            .react-calendar__tile--now{
+              background-color: transparent;
+              color: black !important;
+            }
+            .react-calendar__tile--active{
+              color: white !important;
+              background-color: #266EFE !important;
+            }
+            .react-calendar__tile{
+              border-radius: 8px;
+            }
+            .react-calendar__month-view__days__day--neighboringMonth, .react-calendar__decade-view__years__year--neighboringDecade, .react-calendar__century-view__decades__decade--neighboringCentury{
+              color: rgba(24, 24, 25, 0.32) !important;
+            }
+            .react-calendar__navigation__prev-button {
+              position: absolute;
+              right: 50px;
+              top: 20px;
+              background-color: #FBFDFF;
+              border-radius: 8px;
+              width: 32px !important;
+              height: 32px !important;
+              line-height: 19% !important;
+              rotate: -90deg;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-family: 'Inter-Regular', sans-serif;
+              font-size: 24px;
+              min-width: unset !important;
+              &:hover{
+                background-color: #266EFE;
+                color: white;
+              }
+            }
+            .react-calendar__navigation__next-button {
+              position: absolute;
+              right: 15px;
+              top: 20px;
+              background-color: #FBFDFF;
+              border-radius: 8px;
+              width: 32px !important;
+              height: 32px !important;
+              line-height: 19% !important;
+              rotate: -90deg;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-family: 'Inter-Regular', sans-serif;
+              font-size: 24px;
+              min-width: unset !important;
+              &:hover{
+                background-color: #266EFE;
+                color: white;
+              }
+
+            }
+            .react-calendar__navigation__prev2-button, .react-calendar__navigation__next2-button {
+              display: none;
+            }
+
+          }
+          .calendarSideBlock{
+            width: 220px;
+            @include screen($tablet-m){
+              width: 320px;
+              margin: 0 auto;
+            }
+            @include screen($mobile-m){
+              width: 100%;
+            }
+
+            .timeBlock{
+              width: 100%;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              border-bottom: 1px solid #D9D9D9;
+              padding: 20px 8px 10px;
+              @include screen($tablet-m){
+                align-items: start;
+                justify-content: start;
+              }
+
+
+              .timePrg{
+                font-size: 15px;
+                font-family: 'Inter-Medium', sans-serif;
+                color: black;
+                line-height: 140%;
+                margin: 5px 0 12px;
+                width: 100%;
+              }
+              .timeItem{
+                width: 30%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 6px;
+                color: black;
+                margin-top: 10px;
+                padding: 8px;
+                font-family: 'Inter-Regular', sans-serif;
+                font-size: 14px;
+                cursor: pointer;
+                @include screen($tablet-m){
+                  width: 24%;
+                  margin-right: 1%;
+
+                }
+                &:hover{
+                  background-color: #e6e6e6;
+                }
+              }
+              .active{
+                background-color: #266EFE !important;
+                color: white !important;
+              }
+
+            }
+            .meetingTimeBlock{
+              padding: 14px 26px;
+              @include screen($tablet-m){
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+              .meetingPrg{
+                font-size: 10px;
+                font-family: 'Inter-Bold', sans-serif;
+                color: black;
+                margin-bottom: 5px;
+                @include screen($tablet-m){
+                  font-size: 16px;
+                  margin-right: 10px;
+                  font-family: 'Inter-Medium', sans-serif;
+                }
+                @include screen($mobile-m){
+                  font-size: 14px;
+                }
+              }
+              .data{
+                font-size: 18px;
+                color: #266EFE;
+                font-family: 'Inter-Medium', sans-serif;
+                line-height: 140%;
+                @include screen($tablet-m){
+                  font-size: 16px;
+                }
+                @include screen($mobile-m){
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+
+      }
+
+      .tabletButton{
+        display: none;
+        @include screen($tablet-l){
+          display: block;
+        }
+      }
 
     }
 
+    .continueBtn {
+      font-size: 16px;
+      height: min-content;
+      padding: 20px 0;
+      margin-top: 40px;
+      width: 100%;
+      color: white;
+      background-color: #266EFE;
+      font-family: 'Inter-Regular', sans-serif;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      border-radius: 14px;
+      line-height: 140%;
 
-    .advantagesBlock{
+
+      &:hover {
+        background-color: #355ABC;
+      }
+    }
+    .prgTerms {
+      font-size: 12px;
+      font-family: 'Inter-Regular', sans-serif;
+      color: black;
+      width: 90%;
+      margin: 24px auto;
+      text-align: center;
+      white-space: pre-wrap;
+
+      a {
+        color: #266EFE;
+        text-decoration: none;
+
+        &:hover {
+          color: #355ABC;
+        }
+      }
+    }
+
+
+    .advantagesBlock {
       width: 24%;
+      @include screen($wide){
+        width: 30%;
+      }
+      @include screen($tablet-l){
+        display: none;
+      }
 
-      .miniHeader{
+      .miniHeader {
         margin-bottom: 32px;
         font-size: 24px;
         font-family: 'Inter-Medium', sans-serif;
       }
-      .advantageBlock{
+
+      .advantageBlock {
         margin-top: 16px;
-        img{
+
+        img {
           margin-right: 20px;
         }
-        .prg{
+
+        .prg {
           font-size: 16px;
           line-height: 130%;
           font-family: 'Inter-Regular', sans-serif;
           color: black;
         }
       }
-      .continueBtn {
-        font-size: 16px;
-        height: min-content;
-        padding: 20px 0;
-        margin-top: 40px;
-        width: 100%;
-        color: white;
-        background-color: #266EFE;
-        font-family: 'Inter-Regular', sans-serif;
-        text-align: center;
-        border: none;
-        cursor: pointer;
-        border-radius: 14px;
-        line-height: 140%;
-        @include screen($tablet-l) {
-          width: 48%;
-          margin: 20px 1%;
-          padding: 20px 0;
-        }
 
-        &:hover {
-          background-color: #355ABC;
-        }
-      }
-      .prgTerms{
-        font-size: 12px;
-        font-family: 'Inter-Regular', sans-serif;
-        color: black;
-        width: 90%;
-        margin: 24px auto;
-        text-align: center;
-        white-space: pre-wrap;
-        a{
-          color: #266EFE;
-          text-decoration: none;
-          &:hover{
-            color: #355ABC;
-          }
-        }
-      }
+
 
     }
   }

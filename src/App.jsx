@@ -20,6 +20,11 @@ import {useCartContext} from "./CartContext";
 import Shops from "./pages/Shops/shops";
 import FindService from "./pages/findService/findService";
 import {useTranslation} from "react-i18next";
+import FindServiceStep1 from "./pages/findService/findServiceStep1/findServiceStep1";
+import FindServiceStep2 from "./pages/findService/findServiceStep2/findServiceStep2";
+import InsuranceStep1 from "./pages/insurance/InsuranceStep1/InsuranceStep1";
+import AllRequests from "./pages/allRequests/allRequests";
+import LogInReq from "./pages/findService/logInReq/logInReq";
 // import { withTranslation } from 'react-i18next';
 
 
@@ -48,15 +53,22 @@ function App() {
         <Route path="/help" element={<Help />} /> // Help
         <Route path="/shops" element={<Shops/>} /> // Shops
         
-        <Route path="/profile" element={authorization ? <Profile/> : <LogIn/>} /> // Profile
+        <Route path="/profile" element={authorization ? <Profile/> : <LogIn/>} /> // Profile - Dashboard
         <Route path="/logIn" element={<LogIn />} /> // LogIn
         
         <Route path="/insurance&vignette" element={<InsuranceVignette/>} /> // Insurance & Vignette Mutual +scroll
         <Route path="/vignette" element={<Vignette/>} /> // Vignette
-        <Route path="/insurance/step1" element={<Insurance/>} /> // Insurances step1
+        <Route path="/insurance/step1" element={<InsuranceStep1/>} /> // Insurances step1
         <Route path="/insurance/step2" element={<InsuranceStep2/>} /> // Insurance step2
         <Route path="/insurance/step3" element={<InsuranceStep3/>} /> // Insurance step3
-        <Route path="/findService" element={<FindService/>} /> // Find Service
+       
+        <Route path="/findService" element={<FindServiceStep1/>} /> // Find Service Step 1
+        <Route path="/findService/newRequest" element={<FindServiceStep2/>} /> // Find Service Step 2
+        <Route path="/findService/logIn" element={<LogInReq/>} /> // Find Service Log In ?
+        {/*<Route path="/findService/request" element={} /> // Sending Request... */}
+        
+        <Route path="/allRequests" element={<AllRequests/>} /> // All Requests
+        
       </Routes>
       
       <Footer/>

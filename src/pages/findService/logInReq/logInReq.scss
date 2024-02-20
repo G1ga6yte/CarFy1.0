@@ -1,0 +1,295 @@
+@import "../../../source/mixin.scss";
+
+.LogInReq{
+  max-width: 1420px;
+  margin: 120px auto;
+  border-radius: 24px;
+  border: 1px solid #F1F4F8;
+  background: #FFF;
+  box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 10px;
+  position: relative;
+  @include screen($tablet-l){
+    padding: 60px 10px;
+    margin: 60px auto;
+  }
+  @include screen($tablet){
+    padding: 30px 10px;
+    margin: 50px auto;
+  }
+  .backBtnBlock{
+    position: absolute;
+    left: 5%;
+    top: 50px;
+    cursor: pointer;
+    &:hover{
+      path{
+        fill: #355ABC;
+      }
+      span{
+        color: #355ABC;
+      }
+    }
+    span{
+      margin-left: 10px;
+      color: #266EFE;
+      font-size: 16px;
+      font-family: 'Inter-Regular', sans-serif;
+    }
+  }
+
+  .logInStep{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header{
+    text-align: center;
+    font-size: 48px;
+    line-height: 140%;
+    font-family: 'Inter-Bold', sans-serif;
+    margin-bottom: 10px;
+    @include screen($tablet){
+      font-size: 40px;
+    }
+  }
+  .underHeader{
+    text-align: center;
+    font-size: 30px;
+    line-height: 130%;
+    font-family: 'Inter-SemiBold', sans-serif;
+    margin-bottom: 40px;
+    @include screen($tablet){
+      font-size: 24px;
+    }
+  }
+  .desc{
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Inter-Regular', sans-serif;
+    line-height: 140%;
+    margin-bottom: 25px;
+    @include screen($tablet){
+      font-size: 16px;
+    }
+  }
+
+  .loginBlock{
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+
+    .account{
+      width: 100%;
+      background-color: #334155;
+      border-radius: 16px;
+      padding: 10px 16px;
+      position: relative;
+      margin-top: 130px;
+      @include screen($tablet-m){
+        margin-top: 50px;
+      }
+      .userImg{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin-right: 12px;
+        background-color: #828282;
+      }
+      .userName{
+        font-size: 20px;
+        line-height: 140%;
+        color: white;
+        font-family: 'Inter-Bold', sans-serif;
+      }
+      .mailPhone{
+        font-size: 12px;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 120%;
+        color: white;
+      }
+
+
+      .deleteAccount{
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    }
+    .toggleBlock{
+      width: 80%;
+      margin: 0 auto 50px;
+      background-color: #F8FAFC;
+      border-radius: 12px;
+      padding: 3px;
+      @include screen($mobile-m){
+        width: 100%;
+      }
+
+
+      .toggle{
+        border-radius: 12px;
+        font-size: 12px;
+        color: #828282;
+        font-family: 'Inter-SemiBold', sans-serif;
+        line-height: 140%;
+        padding: 15px 0;
+        text-align: center;
+        width: 50%;
+        cursor: pointer;
+        &:hover{
+          background-color: white;
+        }
+      }
+      .marked{
+        color: #266EFE;
+        background-color: white;
+      }
+    }
+    .message{
+      font-size: 20px;
+      font-family: 'Inter-Regular', sans-serif;
+      line-height: 140%;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .input{
+      padding: 15px 20px;
+      background-color: #FFFFFF;
+      border-radius: 14px;
+      border: 1px solid #D9D9D9;
+      font-family: 'Inter-Regular', sans-serif;
+      font-size: 16px;
+      line-height: 130%;
+      width: 100%;
+      outline: none;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+      &:hover{
+        border-color: #AEAEAE;
+      }
+      &:focus-visible{
+        border-color: #266EFE;
+      }
+      &:nth-child(2){
+        margin-top: 20px;
+      }
+    }
+    .continueBtn{
+      margin: 30px auto;
+      width: 100%;
+      padding: 16px 0;
+      line-height: 140%;
+      background-color: #266EFE;
+      border: 1px solid #266EFE;
+      border-radius: 14px;
+      color: white;
+      text-align: center;
+      font-family: 'Inter-Medium', sans-serif;
+      cursor: pointer;
+      &:disabled{
+        background-color: #F1F4F8;
+        border: 1px solid #F1F4F8;
+        color: #AEAEAE;
+        &:hover{
+          background-color: #F1F4F8 !important;
+        }
+      }
+      &:hover{
+        background-color: #4C52EB;
+      }
+    }
+    .line{
+      background-color: #D9D9D9;
+      height: 1px;
+      position: relative;
+      width: 100%;
+      .lineText{
+        font-size: 16px;
+        font-family: 'Inter-Regular', sans-serif;
+        color: #AEAEAE;
+        background-color: white;
+        padding: 0 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: max-content;
+      }
+    }
+    .authorizationSystems{
+      margin-top: 50px;
+      width: 100%;
+
+      .authBlock{
+        cursor: pointer;
+        width: 30%;
+        padding: 15px 0;
+        border-radius: 16px;
+        box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+        &:nth-child(1){
+          background-color: black;
+        }
+        &:nth-child(2){
+          border: 1px solid #D0D5DD;
+        }
+        &:nth-child(3){
+          background-color: #1877F2;
+        }
+      }
+    }
+    .becomeAPartner{
+      text-align: center;
+      margin-top: 80px;
+      color: #355ABC;
+      font-size: 16px;
+      font-family: 'Inter-Medium', sans-serif;
+      cursor: pointer;
+      &:hover{
+        color: #25396B;
+      }
+    }
+    .questPrg{
+      margin-bottom: 35px;
+      font-size: 28px;
+      font-family: 'Inter-Medium', sans-serif;
+      text-align: center;
+    }
+    .linkToPage{
+      text-decoration: none;
+      width: 100%;
+      padding: 24px;
+      margin-bottom: 15px;
+      border-radius: 16px;
+
+      &:hover{
+        background-color: #266EFE;
+        span{
+          color: white;
+        }
+        svg{
+          path{
+            fill: white !important;
+          }
+        }
+      }
+
+
+      span{
+        font-size: 20px;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 140%;
+      }
+    }
+  }
+
+}

@@ -10,8 +10,8 @@ function BlogRecent (){
   return(
      <div className="BlogRecent G-container G-flex G-justify-between">
        <div className="textBlock">
-         <p className="header">{t('blog.')}</p>
-         <p className="prg">{t('blog.')}</p>
+         <p className="header">{t('blog.header4')}</p>
+         <p className="prg">{t('blog.prg4')}</p>
        </div>
   
        <div className="linkBlock">

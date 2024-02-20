@@ -3,8 +3,11 @@ import {Link} from "react-router-dom";
 import "./blogStudies.scss";
 import Slider from "react-slick"
 import {BlogImg} from "../images/blogImg";
+import {useTranslation} from "react-i18next";
 
 function BlogStudies (){
+  const {t, i18n} = useTranslation()
+  
   let settings = {
     infinite: true,
     speed: 1000,
@@ -21,12 +24,12 @@ function BlogStudies (){
   return(
      <div className="BlogStudies G-container G-flex G-justify-between">
        <div className="textBlock">
-         <p className="header">Case Studies</p>
-         <p className="prg">Here’s what we've been up to recently.</p>
+         <p className="header">{t('blog.header5')}</p>
+         <p className="prg">{t('blog.prg5')}</p>
        </div>
   
        <div className="linkBlock">
-         <Link to="/blog/article">See all</Link>
+         <Link to="/blog/article">{t('blog.seeAll')}</Link>
        </div>
        
        <div className="sliderCont">
@@ -36,9 +39,9 @@ function BlogStudies (){
                <img src={BlogImg.carRepair} className="carRepairImg" alt=""/>
              </div>
              <div className="textBlock">
-               <span className="span">1FEATURED</span>
-               <p className="header">Cheap Airline Tickets Great Ways <span>To Save </span></p>
-               <p className="prg">In this digital generation where information can be easily obtained within seconds, business cards ...</p>
+               <span className="span">{t('blog.featured')}</span>
+               <p className="header"> {t('blog.miniHeader5')}<span>{t('blog.miniHeader51')} </span></p>
+               <p className="prg">{t('blog.miniPrg')}</p>
              </div>
            </div>
   
@@ -47,9 +50,9 @@ function BlogStudies (){
                <img src={BlogImg.carRepair} className="carRepairImg" alt=""/>
              </div>
              <div className="textBlock">
-               <span className="span">2FEATURED</span>
-               <p className="header">Cheap Airline Tickets Great Ways <span>To Save </span></p>
-               <p className="prg">In this digital generation where information can be easily obtained within seconds, business cards ...</p>
+               <span className="span">{t('blog.featured')}</span>
+               <p className="header">{t('blog.miniHeader5')} <span>{t('blog.miniHeader51')} </span></p>
+               <p className="prg">{t('blog.miniPrg')}</p>
              </div>
            </div>
   
@@ -58,9 +61,9 @@ function BlogStudies (){
                <img src={BlogImg.carRepair} className="carRepairImg" alt=""/>
              </div>
              <div className="textBlock">
-               <span className="span">3FEATURED</span>
-               <p className="header">Cheap Airline Tickets Great Ways <span>To Save </span></p>
-               <p className="prg">In this digital generation where information can be easily obtained within seconds, business cards ...</p>
+               <span className="span">{t('blog.featured')}</span>
+               <p className="header">{t('blog.miniHeader5')}<span>{t('blog.miniHeader51')}</span></p>
+               <p className="prg">{t('blog.miniPrg')}</p>
              </div>
            </div>
          </Slider>
