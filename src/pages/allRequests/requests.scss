@@ -1,0 +1,88 @@
+@import "../../source/mixin.scss";
+
+.AllRequests {
+  position: relative;
+
+
+  .headerBlock {
+    padding: 30px 10px 0;
+    background-color: white;
+
+
+    .backToDashboardBlock {
+      cursor: pointer;
+      width: max-content;
+      margin-bottom: 35px;
+
+      &:hover {
+        path {
+          fill: #355ABC;
+        }
+
+        span {
+          color: #355ABC;
+        }
+      }
+
+      span {
+        margin-left: 10px;
+        font-family: 'Inter-Regular', sans-serif;
+        color: #266EFE;
+        font-size: 20px;
+      }
+    }
+
+    .btnCont{
+      @include screen($tablet-m){
+        width: 100%;
+        overflow: auto !important;
+      }
+      &::-webkit-scrollbar-track{
+        background-color: transparent;
+        height: 0;
+      }
+      &::-webkit-scrollbar-thumb{
+        background-color: transparent;
+      }
+    }
+    .tabsBlock {
+      padding: 0 10px;
+      @include screen($tablet-m){
+        width: 550px;
+      }
+
+
+
+      .link {
+        width: max-content;
+        text-align: center;
+        padding: 8px;
+        font-size: 20px;
+        font-family: 'Inter-Regular', sans-serif;
+        color: black;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        @include screen($tablet){
+          font-size: 12px;
+          padding: 4px;
+        }
+
+        &:hover {
+          font-family: 'Inter-Medium', sans-serif;
+        }
+      }
+
+      .activeLink {
+        font-family: 'Inter-Medium', sans-serif;
+        border-bottom: 2px solid #266EFE !important;
+      }
+    }
+
+  }
+
+
+
+}
+
+

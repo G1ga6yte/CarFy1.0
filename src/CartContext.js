@@ -40,6 +40,10 @@ export const CartProvider = ({children}) => {
   
   //////////////////Log In For Request //////////////////////////////
   const [logInStep, setLogInStep] = useState(1)
+  const [activeLink, setActiveLink] = useState("AllRequests");
+  //////////// sending, gotResp, scheduled, inWork, finished, cancelled /////////////
+  const [reqStatus, setReqStatus] = useState("gotResp");
+  
   
   
   
@@ -50,7 +54,8 @@ export const CartProvider = ({children}) => {
     setTypeLogIn,authorization, setAuthorization,
     findServiceStep, changeFindServiceStep,
     checkedServices, setCheckedServices, handleDeleteCheck,
-    logInStep, setLogInStep
+    logInStep, setLogInStep,
+    activeLink, setActiveLink,reqStatus, setReqStatus
   }}>
     {children}
   </CartContext.Provider>);

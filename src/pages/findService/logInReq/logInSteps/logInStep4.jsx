@@ -9,7 +9,7 @@ function LogInStep4 (){
        <img className="approveImg" src={ApprovedImg} alt=""/>
        <p className="underHeader">You need to sign in</p>
        <div className="loginBlock">
-         <button  onClick={()=>{navigate("/allRequests")}}  id="MailBtn" className="continueBtn">To requests</button>
+         <button  onClick={()=>{navigate("/requests")}}  id="MailBtn" className="continueBtn">To requests</button>
        </div>
      </div>
   )

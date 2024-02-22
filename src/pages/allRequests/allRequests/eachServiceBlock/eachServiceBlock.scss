@@ -1,0 +1,316 @@
+@import "../../../../source/mixin.scss";
+
+.EachServiceBlock {
+  padding: 100px 10px;
+  @include screen($tablet-l){
+    padding: 40px 10px;
+  }
+
+  .serviceCont {
+    border-radius: 24px;
+    border: 1px solid #F1F4F8;
+    background: #FFF;
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+    padding: 40px 40px 60px;
+    @include screen($tablet-l){
+      flex-direction: column;
+      padding: 16px 16px 60px;
+    }
+
+    .mainCont {
+      width: 62%;
+      @include screen($tablet-l){
+        width: 100%;
+      }
+
+      .miniHeader{
+        margin-bottom: 16px;
+        font-size: 20px;
+        line-height: 140%;
+        font-family: 'Inter-Medium', sans-serif;
+        color: #0D172F;
+      }
+
+      .headerBlock {
+        margin: 0 0 24px 0;
+        padding: 0;
+        @include screen($tablet){
+          flex-direction: column;
+        }
+
+        .imgBlock {
+          min-width: 185px;
+          height: 185px;
+          border-radius: 8px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          margin-right: 16px;
+          @include screen($tablet){
+            margin: 0 0 20px 0;
+          }
+        }
+        .textBlock {
+          max-width: 450px;
+          .prgHeaderBlock{
+            margin-bottom: 16px;
+            @include screen($tablet){
+              flex-direction: column;
+              align-items: start;
+            }
+            .miniHeader{
+              font-size: 30px;
+              font-family: 'Inter-Medium', sans-serif;
+              line-height: 130%;
+              color: #0D172F;
+              margin: 0;
+              @include screen($tablet){
+                margin-bottom: 12px;
+              }
+              img{
+                margin-left: 16px;
+              }
+            }
+            .ratingBlock{
+              font-size: 20px;
+              font-family: 'Inter-Medium', sans-serif;
+              line-height: 140%;
+              color: #0D172F;
+              img{
+                margin-right: 8px;
+              }
+            }
+          }
+          .servicePrg{
+            font-size: 16px;
+            line-height: 130%;
+            font-family: 'Inter-Regular', sans-serif;
+            color: #828282;
+          }
+        }
+      }
+      .skillsBlock{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        .skillItem{
+          margin: 0 8px 8px 0;
+          padding: 4px 8px;
+          border-radius: 8px;
+          background-color: #F1F4F8;
+          text-align: center;
+          font-size: 12px;
+          font-family: 'Inter-Regular', sans-serif;
+          line-height: 130%;
+          color: #334155;
+        }
+      }
+      .photosBlock{
+        margin-top: 40px;
+
+        .photos{
+          flex-wrap: wrap;
+          margin: -20px -10px;
+          .imgItem{
+            margin: 20px 10px;
+            border-radius: 8px;
+            width: 140px;
+            height: 140px;
+            @include screen($tablet-l){
+              width: 130px;
+              height: 130px;
+            }
+            @include screen($tablet){
+              margin: 10px 5px;
+            }
+          }
+          .showMoreBlock{
+            width: 140px;
+            height: 140px;
+            border-radius: 8px;
+            background-color: #F9FDFF;
+            margin: 20px 10px;
+            cursor: pointer;
+            @include screen($tablet-l) {
+              width: 130px;
+              height: 130px;
+            }
+            @include screen($tablet){
+              margin: 10px 5px;
+            }
+            &:hover{
+              border: 1px solid #266EFE;
+            }
+            span{
+              line-height: 140%;
+              color: #266EFE;
+              font-size: 16px;
+              font-family: 'Inter-Medium', sans-serif;
+            }
+          }
+        }
+      }
+      .specializationBlock{
+        margin-top: 40px;
+
+        .modelsCont{
+          flex-wrap: wrap;
+          margin: -10px;
+          .modelImg{
+            margin: 10px;
+          }
+        }
+      }
+      .feedbackCont{
+        margin-top: 50px;
+        .headerCont{
+         margin-bottom: 25px;
+          @include screen($tablet){
+            flex-direction: column;
+          }
+          .header{
+            font-size: 20px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: black;
+            @include screen($tablet){
+              width: 100%;
+              justify-content: start !important;
+              align-items: start !important;
+            }
+          }
+          .ratingBlock{
+            font-size: 20px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: black;
+            @include screen($tablet){
+              width: 100%;
+              justify-content: start !important;
+              align-items: start !important;
+            }
+            img{
+              margin-left: 8px;
+            }
+          }
+        }
+        .feedbackList{
+          border-bottom: 1px solid #F1F4F8;
+          width: 100%;
+          .feedbackBlock{
+            margin-bottom: 20px;
+            .feedbackHeaderBlock{
+              .name{
+                font-size: 20px;
+                font-family: 'Inter-Medium', sans-serif;
+                line-height: 140%;
+                color: #0D172F;
+                img{
+                  margin-right: 20px;
+                  width: 48px;
+                }
+              }
+              .rating{
+                font-size: 20px;
+                font-family: 'Inter-Medium', sans-serif;
+                color: #0D172F;
+                img{
+                  margin-left: 8px;
+                }
+              }
+            }
+            .feedbackPrg{
+              padding: 16px 0;
+              font-size: 16px;
+              font-family: 'Inter-Regular', sans-serif;
+              color: #828282;
+              line-height: 130%;
+            }
+
+          }
+        }
+      }
+
+
+    }
+
+
+    .priceCont {
+      width: 35%;
+      @include screen($tablet-l){
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .costBlock{
+        width: 100%;
+        margin-bottom: 24px;
+        p{
+          font-size: 16px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #0D172F;
+        }
+      }
+      .totalBlock{
+        padding-bottom: 8px;
+        border-bottom: 1px solid #F1F4F8;
+        p{
+          font-size: 24px;
+          font-family: 'Inter-Medium', sans-serif;
+          color: #0D172F;
+        }
+      }
+      .buttonsCont{
+        margin-top: 40px;
+        width: 100%;
+        button{
+          width: 48%;
+          padding: 16px 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 14px;
+          font-family: 'Inter-Medium', sans-serif;
+          line-height: 140%;
+          cursor: pointer;
+          border: none;
+          img{
+            margin-right: 8px;
+          }
+        }
+        .chatBtn{
+          border: 1px solid #266EFE;
+          background-color: white;
+          color: #266EFE;
+          &:hover{
+            border-color: #355ABC;
+            color: #355ABC;
+          }
+        }
+        .responsesBtn{
+          background-color: #266EFE;
+          color: white;
+          &:hover{
+            background-color: #355ABC;
+          }
+        }
+      }
+      .mapImg{
+        margin-top: 24px;
+        border-radius: 8px;
+        width: 100%;
+        height: 190px;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        img{
+          position: absolute;
+          left: 20%;
+          top: 50%;
+        }
+      }
+
+    }
+
+
+  }
+
+}

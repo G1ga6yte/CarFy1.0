@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router";
 import './App.scss';
 import Home from "./pages/home/home";
 import Navigation from "./pages/navigation/navigation";
@@ -23,8 +23,11 @@ import {useTranslation} from "react-i18next";
 import FindServiceStep1 from "./pages/findService/findServiceStep1/findServiceStep1";
 import FindServiceStep2 from "./pages/findService/findServiceStep2/findServiceStep2";
 import InsuranceStep1 from "./pages/insurance/InsuranceStep1/InsuranceStep1";
-import AllRequests from "./pages/allRequests/allRequests";
+import AllRequests from "./pages/allRequests/allRequests/allRequests";
 import LogInReq from "./pages/findService/logInReq/logInReq";
+import Requests from "./pages/allRequests/requests";
+import ResponsesBlock from "./pages/allRequests/allRequests/responsesBlock/responsesBlock";
+import EachServiceBlock from "./pages/allRequests/allRequests/eachServiceBlock/eachServiceBlock";
 // import { withTranslation } from 'react-i18next';
 
 
@@ -67,7 +70,11 @@ function App() {
         <Route path="/findService/logIn" element={<LogInReq/>} /> // Find Service Log In ?
         {/*<Route path="/findService/request" element={} /> // Sending Request... */}
         
-        <Route path="/allRequests" element={<AllRequests/>} /> // All Requests
+        <Route path="/requests" element={<Requests/>} >
+          <Route exact path="/requests/" element={<AllRequests/>} />
+          <Route path="/requests/responses/:id" element={<ResponsesBlock/>}/>
+          <Route path="/requests/response/:id" element={<EachServiceBlock/>}/>
+        </Route> // All Requests
         
       </Routes>
       

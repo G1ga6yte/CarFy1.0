@@ -458,7 +458,7 @@ function FindServiceStep2() {
         <div className="tabletButton">
           <button onClick={()=>{
             if (authorization){
-              navigate("/allRequests")
+              navigate("/requests")
             } else {
               navigate("/findService/logIn")
             }
@@ -500,7 +500,7 @@ function FindServiceStep2() {
         
         <button onClick={()=>{
           if (authorization){
-            navigate("/allRequests")
+            navigate("/requests")
           } else {
             navigate("/findService/logIn")
           }
