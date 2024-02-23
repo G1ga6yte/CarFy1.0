@@ -91,21 +91,13 @@ function Vignette () {
   
   const [formattedValue, setFormattedValue] = useState('');
   
-  const formatBankAccount = (inputValue) => {
+  const formatBankAccount = (e) => {
     // Удаляем все нецифровые символы из введенного значения
-    const unformattedValue = inputValue.replace(/[^\d]/g, '');
-    
-    // Добавляем пробелы после каждых 4 цифр
-    const formattedValue = unformattedValue.replace(/(\d{4})/g, '$1 ').trim();
-    
+    const input = e.target.value.replace(/\D/g, ''); // Remove non-digit characters
+    const formattedInput = input.replace(/(\d{4})/g, '$1 ').trim(); // Add space every 4 digits
+  
     // Обновляем значение в состоянии
-    setFormattedValue(formattedValue);
-  };
-  const handleKeyDown = (e) => {
-    // Разрешаем только цифры и пробел
-    if (!((e.key >= '0' && e.key <= '9') || e.key === ' ')) {
-      e.preventDefault();
-    }
+    setFormattedValue(formattedInput);
   };
   
   const [cvcValue, setCvcValue] = useState('');
@@ -120,38 +112,20 @@ function Vignette () {
     // Обновляем значение в состоянии
     setCvcValue(limitedValue);
   };
-  const handleKeyDown2 = (e) => {
-    // Разрешаем только цифры и клавишу Backspace
-    if (!((e.key >= '0' && e.key <= '9') || e.key === 'Backspace')) {
-      e.preventDefault();
-    }
-  };
-  
   
   const [expiryValue, setExpiryValue] = useState('');
   
-  const handleInputChange2 = (event) => {
-    const cleanedValue = event.target.value.replace(/[^\d]/g, '');
-    const limitedValue = cleanedValue.slice(0, 4);
-    
-    let formattedValue = limitedValue.replace(/^(\d{0,2})(\d{0,2})/, (match, p1, p2) => {
-      if (!p1 && !p2) {
-        // Если оба блока пусты, возвращаем пустую строку
-        return '';
-      } else if (p1 && !p2) {
-        // Если первый блок не пустой, оставляем его
-        return p1;
-      } else if (!p1 && p2) {
-        // Если второй блок не пустой, добавляем 0 перед ним
-        return `0${p2 > 12 ? '12' : p2}`;
-      } else {
-        // Оба блока не пусты
-        const limitedMonth = p1 <= 12 ? p1 : '12';
-        return `${limitedMonth}/${p2}`;
-      }
-    });
-    
-    setExpiryValue(formattedValue);
+  const handleInputChange2 = (e) => {
+    let input = e.target.value.replace(/\D/g, ''); // Remove non-digit characters
+  
+    // Format expiration date MM/YY
+    if (input.length > 2) {
+      const month = Math.min(parseInt(input.slice(0, 2), 10), 12); // Ensure month is between 1 and 12
+      const year = input.slice(2, 4);
+      input = `${String(month).padStart(2, '0')}/${year}`;
+    }
+  
+    setExpiryValue(input);
   };
   return(
      <div className="Vignette G-container">
@@ -363,10 +337,8 @@ function Vignette () {
                       className="inputForCard16Num"
                       value={formattedValue}
                       maxLength={19} // Максимальная длина ввода 19 символов (16 цифр и 3 пробела)
-                      pattern="\d{4}\s?\d{4}\s?\d{4}\s?\d{4}" // Регулярное выражение для валидации
                       placeholder="0000 0000 0000 0000"
-                      onChange={(e) => formatBankAccount(e.target.value)}
-                      onKeyDown={handleKeyDown} // Обработчик события для ограничения ввода
+                      onChange={formatBankAccount}
                       inputMode="numeric" // Указываем, что ожидается ввод чисел
                    />
                  </div>
@@ -379,7 +351,6 @@ function Vignette () {
                         pattern="\d{3}"
                         placeholder="000"
                         onChange={handleInputChange}
-                        onKeyDown={handleKeyDown2}
                         inputMode="numeric"
                      />
                    </div>
@@ -389,15 +360,9 @@ function Vignette () {
                         type="text"
                         value={expiryValue}
                         maxLength={5}
-                        pattern="\d{2}/\d{2}"
                         placeholder="ММ/ГГ"
                         onChange={handleInputChange2}
-                        onKeyDown={(e) => {
-                          if (!((e.key >= '0' && e.key <= '9') || e.key === 'Backspace')) {
-                            e.preventDefault();
-                          }
-                        }}
-                        inputMode="numeric"
+                        
                      />
                    </div>
                  </div>

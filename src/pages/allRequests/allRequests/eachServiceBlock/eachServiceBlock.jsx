@@ -2,13 +2,21 @@ import React from "react";
 import {Images} from "./images/images";
 import "./eachServiceBlock.scss";
 import {CarModelsData} from "./carModels/carModelsData";
+import {useNavigate} from "react-router-dom";
+import {useCartContext} from "../../../../CartContext";
 
 function EachServiceBlock() {
+  const navigate = useNavigate()
+  const {confirmationDialog, setConfirmationDialog} = useCartContext()
+  
   const skillsData = ["ABS repair", "ABS repair", "ESR repair", "ESR repair", "Cylinder head repair",
                       "Cylinder head repair", "Clearance repair", "Clearance repair", "Tire mounting and balancing",
                       "Tire mounting and balancing", "Engine diagnostic", "Engine diagnostic", "Exhaust system repair",
                       "Exhaust system repair"];
   const imgData = [Images.serviceImg, Images.photos1, Images.photos2, Images.photos3, Images.photos3, Images.photos4, Images.photos5, Images.photos6, Images.photos6]
+  const id = 111223
+  
+  
   
   return (
      <div className="EachServiceBlock G-container">
@@ -99,7 +107,14 @@ function EachServiceBlock() {
            </div>
            <div className="buttonsCont G-flex G-justify-between">
              <button className="chatBtn"><img src={Images.messageIcon} alt=""/>Chat</button>
-             <button className="responsesBtn">Enroll</button>
+             <button onClick={()=>{
+               if (window.innerWidth <=995){
+                 navigate(`/request/confirmation/:${id}`)
+               } else {
+                  setConfirmationDialog(true)
+               }
+               window.scrollTo(0, 0)
+             }} className="responsesBtn">Enroll</button>
            </div>
            
            <div style={{backgroundImage: `url("${Images.mapImg}")`}} className="mapImg">

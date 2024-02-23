@@ -28,6 +28,8 @@ import LogInReq from "./pages/findService/logInReq/logInReq";
 import Requests from "./pages/allRequests/requests";
 import ResponsesBlock from "./pages/allRequests/allRequests/responsesBlock/responsesBlock";
 import EachServiceBlock from "./pages/allRequests/allRequests/eachServiceBlock/eachServiceBlock";
+import ConfirmationBlock from "./pages/allRequests/allRequests/confirmationBlock/confirmationBlock";
+import ErrorBlock from "./pages/errorBlock/errorBlock";
 // import { withTranslation } from 'react-i18next';
 
 
@@ -48,6 +50,7 @@ function App() {
       
       
       <Routes>
+        <Route path="*" element={<ErrorBlock/>}/>
         <Route path="/" element={<Home />}/>  // Main (Home)
         <Route path="/home" element={<Home />}/> // Home
         <Route path="/blog" element={<Blog />}/> // Blog
@@ -75,6 +78,7 @@ function App() {
           <Route path="/requests/responses/:id" element={<ResponsesBlock/>}/>
           <Route path="/requests/response/:id" element={<EachServiceBlock/>}/>
         </Route> // All Requests
+        <Route path="/request/confirmation/:id" element={<ConfirmationBlock/>} />
         
       </Routes>
       

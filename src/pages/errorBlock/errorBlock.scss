@@ -1,0 +1,39 @@
+@import "../../source/mixin.scss";
+
+.ErrorBlock {
+  padding: 180px 10px;
+  max-width: 700px;
+  margin: 0 auto;
+  @include screen($tablet-l){
+    padding: 120px 10px;
+  }
+  @include screen($tablet){
+    padding: 50px 10px;
+  }
+
+  img{
+    width: 100%;
+  }
+  .header{
+    font-size: 48px;
+    font-family: 'Inter-Bold', sans-serif;
+    line-height: 140%;
+    color: #0D172F;
+    margin: 20px auto 40px;
+    width: 100%;
+    text-align: center;
+    @include screen($tablet){
+      font-size: 36px;
+    }
+  }
+  .homeLink{
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #266EFE;
+    font-family: 'Inter-Medium', sans-serif;
+    @include screen($tablet){
+      font-size: 24px;
+    }
+  }
+}

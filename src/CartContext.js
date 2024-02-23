@@ -44,6 +44,9 @@ export const CartProvider = ({children}) => {
   //////////// sending, gotResp, scheduled, inWork, finished, cancelled /////////////
   const [reqStatus, setReqStatus] = useState("gotResp");
   
+  ///////////////////request Confirmation ///////////////////////
+  const [confirmationDialog, setConfirmationDialog] = useState(false)
+  
   
   
   
@@ -55,7 +58,8 @@ export const CartProvider = ({children}) => {
     findServiceStep, changeFindServiceStep,
     checkedServices, setCheckedServices, handleDeleteCheck,
     logInStep, setLogInStep,
-    activeLink, setActiveLink,reqStatus, setReqStatus
+    activeLink, setActiveLink,reqStatus, setReqStatus,
+    confirmationDialog, setConfirmationDialog
   }}>
     {children}
   </CartContext.Provider>);

@@ -1,0 +1,533 @@
+@import "../../../../source/mixin.scss";
+
+.ConfirmationBlock{
+  padding: 40px 10px;
+}
+
+
+.confirmationCont{
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #F1F4F8;
+  background: #FFF;
+  box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+  position: relative;
+
+
+  .cont{
+    flex-wrap: wrap;
+    @include screen($tablet-l){
+      padding: 16px;
+    }
+    .idCloseBtn{
+      position: absolute;
+      right: 40px;
+      top: 40px;
+      @include screen($tablet-l){
+        top: 8px;
+        right: 16px;
+      }
+      span{
+        font-size: 16px;
+        font-family: 'Inter-SemiBold', sans-serif;
+        color: #0D172F;
+        margin-right: 16px;
+      }
+      img{
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        background-color: white;
+        border-radius: 50%;
+        cursor: pointer;
+        &:hover{
+          background-color: #F1F4F8;
+        }
+      }
+    }
+
+    .mainCont{
+      width: 60%;
+      padding: 40px 16px 40px 40px;
+      @include screen($tablet-l){
+        padding: 0;
+        width: 100%;
+      }
+
+      .header{
+        font-size: 24px;
+        font-family: 'Inter-Medium', sans-serif;
+        color: #0D172F;
+        line-height: 120%;
+        margin-bottom: 16px;
+        @include screen($tablet-m){
+          font-size: 20px;
+        }
+      }
+      .headerBlock{
+        padding: 8px 0;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #F1F4F8;
+        .headerPrg{
+          font-size: 20px;
+          font-family: 'Inter-Medium',sans-serif;
+          color: #0D172F;
+          @include screen($tablet-m){
+            font-size: 16px;
+          }
+        }
+        .headerName{
+          font-size: 20px;
+          font-family: 'Inter-Regular',sans-serif;
+          color: #0D172F;
+          line-height: 140%;
+          @include screen($tablet-m){
+            font-size: 16px;
+          }
+        }
+      }
+      .itemInfo{
+        margin-bottom: 8px;
+        .itemPrg{
+          font-size: 20px;
+          color: #AEAEAE;
+          font-family: 'Inter-Regular', sans-serif;
+          @include screen($tablet-m){
+            font-size: 16px;
+          }
+        }
+        .itemName{
+          text-align: end;
+          font-size: 20px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: black;
+          max-width: 350px;
+          @include screen($tablet-m){
+            font-size: 16px;
+            max-width: 250px;
+          }
+        }
+      }
+      .description{
+        font-size: 20px;
+        line-height: 140%;
+        color: #AEAEAE;
+        font-family: 'Inter-Regular', sans-serif !important;
+        margin-bottom: 24px;
+        @include screen($tablet-m){
+          font-size: 16px;
+        }
+      }
+      .linksBlock{
+        margin-bottom: 32px;
+        @include screen($tablet-l){
+          margin: 20px 0;
+        }
+        @include screen($tablet){
+          flex-wrap: wrap;
+          margin: 10px 0;
+        }
+
+        .link{
+          border-radius: 50px;
+          padding: 8px;
+          line-height: 130%;
+          font-size: 12px;
+          font-family: 'Inter-Regular', sans-serif;
+          border: 1px solid black;
+          margin-right: 8px;
+          @include screen($tablet){
+            margin-top: 10px;
+          }
+
+          &:nth-child(3){
+            background-color: #FFEDED;
+            color: #FF7373;
+            border: none;
+          }
+        }
+      }
+      .paymentBlock{
+        width: 100%;
+        .paymentHeader{
+          margin: 24px 0 16px;
+          font-size: 20px;
+          font-family: 'Inter-Medium', sans-serif;
+          color: #0D172F;
+          line-height: 140%;
+        }
+
+        .radioBlock{
+          display: flex;
+          margin-bottom: 16px;
+          @include screen($tablet){
+            margin-bottom: 15px;
+            width: 100%;
+          }
+
+
+
+          .radio{
+            &:nth-child(1){
+              margin-right: 100px;
+            }
+            @include screen($tablet-l){
+              margin-right: 20px;
+            }
+            @include screen($mobile-m){
+              margin-right: 14px;
+            }
+
+            label{
+              white-space: nowrap;
+              font-family: 'Inter-Regular', sans-serif;
+              font-size: 16px;
+              cursor: pointer;
+              position: relative;
+              @include screen($tablet){
+                font-size: 15px;
+              }
+
+              span{
+                position: absolute;
+                bottom: -100%;
+                left: 0;
+                font-size: 14px;
+                color: #AEAEAE;
+                font-family: 'Inter-Regular', sans-serif;
+              }
+
+            }
+            input{
+              cursor: pointer;
+              margin-right: 12px;
+              scale: 1.2;
+              height: 20px;
+              width: 20px;
+              @include screen($tablet){
+                margin-right: 8px;
+                scale: 1.1;
+              }
+
+            }
+          }
+
+        }
+        .CardBlock{
+          margin: 42px 0 16px;
+          flex-wrap: wrap;
+          @include screen($tablet-l){
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          @include screen($tablet){
+            align-items: center;
+          }
+          .Card{
+            margin-bottom: 16px;
+            border-radius: 16px;
+            background-color: #F9FDFF;
+            box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);            flex-wrap: wrap;
+            padding: 42px 35px 25px;
+            width: 420px;
+            margin-right: 40px;
+            @include screen($tablet-l){
+              margin-bottom: 20px;
+              margin-right: 0;
+            }
+            @include screen($tablet-m){
+              width: 100%;
+            }
+            @include screen($mobile-m){
+              padding: 20px 15px 15px;
+            }
+
+
+
+            .inputBlock100{
+              width: 100%;
+              margin-bottom: 40px;
+              position: relative;
+              &::before{
+                content: "Card number";
+                position: absolute;
+                z-index: 2;
+                left: 16px;
+                top: 10px;
+                font-size: 12px;
+                font-family: 'Inter-Regular', sans-serif;
+                line-height: 120%;
+                color: #AEAEAE;
+              }
+              .inputForCard16Num{
+                outline: none;
+                padding: 28px 16px 10px;
+                font-size: 16px;
+                font-family: 'Inter-Regular', sans-serif;
+                line-height: 130%;
+                border-radius: 14px;
+                border: 1px solid #D9D9D9;
+                background-color: white;
+                width: 100%;
+                position: relative !important;
+                &:hover{
+                  border-color: #AEAEAE;
+                }
+                &:focus-visible{
+                  border-color: #266EFE;
+                }
+                &::placeholder{
+                  color: #AEAEAE;
+                }
+              }
+
+            }
+            .inputBlock48{
+              width: 48%;
+              position: relative;
+              input{
+                padding: 28px 16px 10px;
+                font-size: 16px;
+                font-family: 'Inter-Regular', sans-serif;
+                line-height: 130%;
+                border-radius: 14px;
+                border: 1px solid #D9D9D9;
+                background-color: white;
+                width: 100%;
+                outline: none;
+                position: relative !important;
+                &:hover{
+                  border-color: #AEAEAE;
+                }
+                &:focus-visible{
+                  border-color: #266EFE;
+                }
+                &::placeholder{
+                  color: #AEAEAE;
+                }
+              }
+              &:nth-child(1){
+                &::before{
+                  content: "CVV Code";
+                  position: absolute;
+                  z-index: 2;
+                  left: 16px;
+                  top: 10px;
+                  font-size: 12px;
+                  font-family: 'Inter-Regular', sans-serif;
+                  line-height: 120%;
+                  color: #AEAEAE;
+                }
+              }
+              &:nth-child(2){
+                &::before{
+                  content: "Expitry";
+                  position: absolute;
+                  z-index: 2;
+                  left: 16px;
+                  top: 10px;
+                  font-size: 12px;
+                  font-family: 'Inter-Regular', sans-serif;
+                  line-height: 120%;
+                  color: #AEAEAE;
+                }
+              }
+
+
+
+
+
+            }
+          }
+          .paymentInfoBlock{
+            max-width: 400px;
+            align-items: flex-start;
+
+            .prgBlock{
+              img{
+                height: 24px;
+                margin-right: 8px;
+
+              }
+              .prg{
+                font-size: 12px;
+                font-family: 'Inter-Regular', sans-serif;
+                line-height: 130%;
+                color: #0D172F;
+              }
+            }
+            .paymentTypes{
+              margin-top: 24px;
+              img{
+                margin-right: 20px;
+                @include screen($tablet-m){
+                  height: auto;
+                  width: 30%;
+                }
+              }
+            }
+
+          }
+        }
+        .saveCardBlock{
+          margin-top: 16px;
+          input{
+            height: 16px;
+            width: 16px;
+            margin-right: 12px;
+            cursor: pointer;
+          }
+          label{
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Inter-Regular', sans-serif;
+            color: black;
+            line-height: 130%;
+          }
+        }
+
+
+      }
+
+
+    }
+    .promoCont{
+      width: 40%;
+      padding:100px 40px 40px 40px;
+      background-color: #F9FDFF;
+      @include screen($tablet-l){
+        background-color: white;
+        width: 100%;
+        padding: 0;
+        margin-top: 24px;
+      }
+
+      .promoBlock{
+        padding: 30px 16px;
+        background-color: #00CC9A;
+        border-radius: 16px;
+        margin-bottom: 16px;
+        @include screen($tablet-m){
+          padding: 25px 8px;
+        }
+        .miniHeader{
+          margin-bottom: 24px;
+          color: white;
+          font-size: 24px;
+          font-family: 'Inter-Medium', sans-serif;
+        }
+        .inputBlock{
+          width: 100%;
+          position: relative;
+          .ApplyBtn{
+            border: none;
+            background: transparent;
+            color: #266EFE;
+            font-family: 'Inter-Regular', sans-serif;
+            font-size: 12px;
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            &:hover{
+              cursor: pointer;
+              color: #355ABC;
+            }
+          }
+          input{
+            outline: none;
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #D9D9D9;
+            border-radius: 8px;
+            background-color: white;
+            font-size: 16px;
+            font-family: 'Inter-Regular', sans-serif;
+            line-height: 130%;
+            &:focus-visible{
+              border-color: #266EFE;
+            }
+          }
+        }
+      }
+      .totalPriceBlock{
+
+        .itemBlock{
+          width: 100%;
+          margin-bottom: 16px;
+          .itemName{
+            text-align: start;
+            font-size: 16px;
+            font-family: 'Inter-Regular', sans-serif;
+            color: #0D172F;
+          }
+          .itemValue{
+            text-align: end;
+            font-size: 16px;
+            font-family: 'Inter-Regular', sans-serif;
+            color: #0D172F;
+          }
+        }
+        .totalPrice{
+          padding-bottom: 24px;
+          margin-bottom: 40px;
+          border-bottom: 1px solid #F1F4F8;
+          .totalName{
+            font-size: 24px;
+            text-align: start;
+            font-family: 'Inter-Medium', sans-serif;
+            color: #0D172F;
+          }
+          .totalValue{
+            font-size: 24px;
+            text-align: end;
+            font-family: 'Inter-Medium', sans-serif;
+            color: #0D172F;
+          }
+
+        }
+      }
+
+      .enrollBtn{
+        margin-bottom: 16px;
+        width: 100%;
+        padding: 20px 10px;
+        background-color: #266EFE;
+        border-radius: 14px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        font-family: "Inter-Regular", sans-serif;
+        line-height: 140%;
+
+
+        &:hover{
+          background-color: #355ABC;
+        }
+      }
+      .privacyTextPrg{
+        font-size: 12px;
+        color: #0D172F;
+        line-height: 130%;
+        font-family: 'Inter-Regular', sans-serif;
+        text-align: center;
+        a{
+          color: #266EFE;
+          cursor: pointer;
+          text-decoration: none;
+          &:hover{
+            color: #355ABC;
+          }
+        }
+      }
+
+
+    }
+  }
+
+
+}
+
+
