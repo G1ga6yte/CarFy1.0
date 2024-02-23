@@ -202,10 +202,10 @@ function RequestBlock (props){
              <img src={ImgSvg.loadIcon} className="loadImg" alt=""/>
            </button>
          
-           <button style={{display: `${reqStatus === "gotResp" ? "flex" : "none"}`}}
+           <Link to={`/requests/responses/:${id}`} style={{display: `${reqStatus === "gotResp" ? "flex" : "none"}`}}
                    className="responsesBtn button-g">
              <span>44 responses</span>
-           </button>
+           </Link>
          
            <button style={{display: `${reqStatus === "scheduled" ? "flex" : "none"}`}}
                    className="manageBtn button-g">
