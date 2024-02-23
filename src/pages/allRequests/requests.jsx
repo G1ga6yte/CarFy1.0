@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Outlet } from "react-router";
+import { Outlet } from "react-router-dom";
 import "./requests.scss";
 import {useNavigate} from "react-router-dom";
 import {ImgSvg} from "./images/imgSvg";

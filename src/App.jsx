@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Route, Routes} from "react-router";
+import {Route, Routes} from "react-router-dom";
 import './App.scss';
 import Home from "./pages/home/home";
 import Navigation from "./pages/navigation/navigation";
