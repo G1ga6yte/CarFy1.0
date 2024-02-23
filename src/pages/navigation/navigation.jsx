@@ -79,9 +79,9 @@ function Navigation() {
                          fill="#266EFE"/>
                  </g>
                </svg>
-               {Object.keys(locales).map((el) => {
+               {Object.keys(locales).map((el, index) => {
                  if (i18n.resolvedLanguage === el) {
-                   return <span>{el.toUpperCase()}</span>;
+                   return <span key={index}>{el.toUpperCase()}</span>;
                  }
                })}
              </div>
