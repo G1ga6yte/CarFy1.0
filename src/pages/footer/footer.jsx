@@ -1,15 +1,16 @@
 import React from "react";
 import "./footer.scss"
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import {ImgData} from "../../source/images/imgData";
 import {SvgData} from "../../source/svgs/svgsData";
 import {HomeSvg} from "../home/svgs/homeSvg";
 import {useTranslation} from "react-i18next";
 
 function Footer (){
+  const location = useLocation()
   const {t, i18n} = useTranslation()
   return(
-     <div className="Footer">
+     <div style={{display: `${location.pathname === "/profile/map" ? "none" : "block"}`}} className="Footer">
        
        <div className="footerCont G-container G-justify-between">
          <div className="LinksCont G-justify-between">

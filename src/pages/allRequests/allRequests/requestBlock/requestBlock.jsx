@@ -1,16 +1,19 @@
 import React from "react";
 import {ImgSvg} from "../../images/imgSvg";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {useCartContext} from "../../../../CartContext";
 
 
 function RequestBlock (props){
+  const {setReviewBlock, activeRequestId, setActiveRequestId} = useCartContext()
   const reqStatus = props.reqstatus
+  const navigate = useNavigate()
   function generateRandomNumber() {
     const min = 10000;
     const max = 99999;
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  const id = 11223
+  const id = 111223
   
   return(
      <div className="requestBlock">
@@ -103,11 +106,20 @@ function RequestBlock (props){
          
            <div className="headerTextBlock">
              <p className="header">{reqStatus === "sending" ? "Sending request" : reqStatus === "gotResp" ? "We got responses from the services" : reqStatus === "scheduled" ? "Scheduled 23 March, 11:00 " : reqStatus === "inWork" ? "In work" : reqStatus === "finished" ? "Finished" : reqStatus === "cancelled" ? "Cancelled" : "Sending request"}</p>
-             <p style={{
+             <p onClick={()=>{
+               if (reqStatus === "finished"){
+                 setActiveRequestId(id)
+                 if (window.innerWidth <= 992){
+                   navigate(`/request/review/:${id}`)
+                 } else {
+                   setReviewBlock(true)
+                 }
+               }
+             }} style={{
                color         : `${reqStatus === "sending" ? "#AEAEAE" : reqStatus === "gotResp" ? "#00CC9A" : reqStatus === "scheduled" ? "#F39A31" : reqStatus === "inWork" ? "#F39A31" : reqStatus === "finished" ? "#00CC9A" : reqStatus === "cancelled" ? "#FF7373" : "#AEAEAE"}`,
                textDecoration: `${reqStatus === "finished" ? "underline" : "none"}`,
              }}
-                className="underHeader">{reqStatus === "sending" ? "Waiting for a reply from the car service" : reqStatus === "gotResp" ? "Average price ~100€ " : reqStatus === "scheduled" ? "Appointment is scheduled " : reqStatus === "inWork" ? "Completion in 2 days" : reqStatus === "finished" ? "Leave a review" : reqStatus === "cancelled" ? "The request was canceled" : "Waiting for a reply from the car service"}</p>
+                className={`underHeader ${reqStatus === "finished" ? "leaveReview" : ""}`}>{reqStatus === "sending" ? "Waiting for a reply from the car service" : reqStatus === "gotResp" ? "Average price ~100€ " : reqStatus === "scheduled" ? "Appointment is scheduled " : reqStatus === "inWork" ? "Completion in 2 days" : reqStatus === "finished" ? "Leave a review" : reqStatus === "cancelled" ? "The request was canceled" : "Waiting for a reply from the car service"}</p>
            </div>
          </div>
          <div style={{display: `${reqStatus === "cancelled" ? "none" : "flex"}`}}

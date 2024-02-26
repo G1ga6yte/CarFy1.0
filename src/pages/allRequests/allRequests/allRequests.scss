@@ -312,6 +312,12 @@
             }
 
           }
+          .leaveReview{
+            cursor: pointer;
+            &:hover{
+              color: darkgreen !important;
+            }
+          }
         }
 
 

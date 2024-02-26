@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import "./navigation.scss";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import {SvgData} from "../../source/svgs/svgsData";
 import {useCartContext} from "../../CartContext";
 import {ImgData} from "../../source/images/imgData";
@@ -14,13 +14,14 @@ const locales = {
 
 function Navigation() {
   const {t, i18n} = useTranslation();
+  const location = useLocation()
   const {Call, handleDialog, authorization} = useCartContext();
   const [notBar, setNotBar] = useState(true);
   const [products, setProducts] = useState(false); //false
   const [notes, setNotes] = useState(false); // false
   const [menuBar, setMenuBar] = useState(false);
   const [lngMenu, setLngMenu] = useState(false);
-  
+  console.log(location.pathname);
   function handleNotBar() {
     setNotBar(false);
   }
@@ -31,7 +32,7 @@ function Navigation() {
   
   
   return (
-     <div className="Navigation">
+     <div style={{display: `${location.pathname === "/profile/map" ? "none" : "block"}`}} className="Navigation">
        <div style={{height: `${notBar ? "auto" : "0"}`}} className="notification">
          <p className="text">🧨 {t('navigator.sms')}</p>
          

@@ -23,6 +23,7 @@ export const CartProvider = ({children}) => {
   ///////////////Authorization Settings ///////////////////////
   const [authorization, setAuthorization] = useState(true)
   const [typeLogIn, setTypeLogIn] = useState("SignUp");
+  const [mapDialog, setMapDialog] = useState(false)
   
   
   /////////////////Find Service //////////////////////////////
@@ -39,6 +40,7 @@ export const CartProvider = ({children}) => {
   }
   
   //////////////////Log In For Request //////////////////////////////
+  const [activeRequestId, setActiveRequestId] = useState()
   const [logInStep, setLogInStep] = useState(1)
   const [activeLink, setActiveLink] = useState("AllRequests");
   //////////// sending, gotResp, scheduled, inWork, finished, cancelled /////////////
@@ -46,7 +48,7 @@ export const CartProvider = ({children}) => {
   
   ///////////////////request Confirmation ///////////////////////
   const [confirmationDialog, setConfirmationDialog] = useState(false)
-  
+  const [reviewBlock, setReviewBlock] = useState(false)
   
   
   
@@ -59,7 +61,10 @@ export const CartProvider = ({children}) => {
     checkedServices, setCheckedServices, handleDeleteCheck,
     logInStep, setLogInStep,
     activeLink, setActiveLink,reqStatus, setReqStatus,
-    confirmationDialog, setConfirmationDialog
+    confirmationDialog, setConfirmationDialog,
+    reviewBlock, setReviewBlock,
+    activeRequestId, setActiveRequestId,
+    mapDialog, setMapDialog
   }}>
     {children}
   </CartContext.Provider>);

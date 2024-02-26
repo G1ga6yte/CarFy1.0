@@ -3,6 +3,7 @@ import {Outlet, useLocation, useNavigate} from "react-router-dom";
 import "./requests.scss";
 import {useCartContext} from "../../CartContext";
 import ConfirmationDialog from "./allRequests/confirmationBlock/confirmationDialog";
+import ReviewBlock from "./allRequests/reviewBlock/reviewBlock";
 
 function Requests() {
   const location = useLocation();
@@ -27,6 +28,7 @@ function Requests() {
   return (
      <div className="AllRequests">
        <ConfirmationDialog/>
+       {window.innerWidth <= 992 ? "" : <ReviewBlock/>}
   
        <div className="headerBlock">
          <div className="G-container">

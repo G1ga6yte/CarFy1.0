@@ -1,14 +1,16 @@
 import React, {useState} from "react";
 import {ImgSvg} from "./imgSvg/ImgSvg";
+import {useCartContext} from "../../CartContext";
+import {useNavigate} from "react-router-dom";
 
 
 
 
 function  ProfileServicesLine (){
-  
+  const {mapDialog, setMapDialog} = useCartContext()
   const Arr = new Array(20).fill('')
   const referralLink = "https://carfy.com/ref32749823hg239872"
-  
+  const navigate = useNavigate()
   const [copied, setCopied] = useState(false)
   const copyToClipboard = () => {
     setCopied(true)
@@ -75,7 +77,13 @@ function  ProfileServicesLine (){
                   <p className="descPrg">Search for car services on the map</p>
                 </div>
                 
-                <button className="viewBtn">View on the map</button>
+                <button onClick={()=>{
+                  if (window.innerWidth <= 992){
+                    navigate("/profile/map")
+                  }else{
+                    setMapDialog(true)
+                  }
+                }} className="viewBtn">View on the map</button>
                 
               </div>
               <div className="mapImgBlock">

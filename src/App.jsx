@@ -30,6 +30,8 @@ import ResponsesBlock from "./pages/allRequests/allRequests/responsesBlock/respo
 import EachServiceBlock from "./pages/allRequests/allRequests/eachServiceBlock/eachServiceBlock";
 import ConfirmationBlock from "./pages/allRequests/allRequests/confirmationBlock/confirmationBlock";
 import ErrorBlock from "./pages/errorBlock/errorBlock";
+import ReviewBlock from "./pages/allRequests/allRequests/reviewBlock/reviewBlock";
+import SearchOnMap from "./pages/profile/searchOnMap/searchOnMap";
 // import { withTranslation } from 'react-i18next';
 
 
@@ -60,6 +62,7 @@ function App() {
         <Route path="/shops" element={<Shops/>} /> // Shops
         
         <Route path="/profile" element={authorization ? <Profile/> : <LogIn/>} /> // Profile - Dashboard
+        <Route path="/profile/map" element={<SearchOnMap/>}/>
         <Route path="/logIn" element={<LogIn />} /> // LogIn
         
         <Route path="/insurance&vignette" element={<InsuranceVignette/>} /> // Insurance & Vignette Mutual +scroll
@@ -79,6 +82,7 @@ function App() {
           <Route path="/requests/response/:id" element={<EachServiceBlock/>}/>
         </Route> // All Requests
         <Route path="/request/confirmation/:id" element={<ConfirmationBlock/>} />
+        <Route path="/request/review/:id" element={<ReviewBlock/>}/>
         
       </Routes>
       
