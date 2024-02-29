@@ -4,6 +4,7 @@ import "./searchOnMap.scss";
 import {ImagesData} from "./images/imagesData";
 import ServiceMapBlock from "./serviceMapBlock/serviceMapBlock";
 import ServiceFilterBlock from "./serviceFilterBlock/serviceFilterBlock";
+import {Link} from "react-router-dom";
 
 function SearchOnMap() {
   const {mapDialog, setMapDialog} = useCartContext();
@@ -91,7 +92,7 @@ function SearchOnMap() {
   
          <div className="servicesContt">
            <div className="contt">
-             <div className="serviceBB G-flex G-align-center">
+             <Link to={`/requests/response/:${111223}`} className="serviceBB G-flex G-align-center">
                <p className="serviceHeader">Autofavorīts</p>
                <img src={ImagesData.heartUnfilled} alt=""/>
                <p className="rating G-flex G-align-center">
@@ -99,9 +100,9 @@ function SearchOnMap() {
                  4.9
                </p>
                <span>8km</span>
-             </div>
+             </Link>
       
-             <div className="serviceBB G-flex G-align-center">
+             <Link to={`/requests/response/:${111223}`} className="serviceBB G-flex G-align-center">
                <p className="serviceHeader">Autofavorīts</p>
                <img src={ImagesData.heartUnfilled} alt=""/>
                <p className="rating G-flex G-align-center">
@@ -109,9 +110,9 @@ function SearchOnMap() {
                  4.9
                </p>
                <span>8km</span>
-             </div>
+             </Link>
       
-             <div className="serviceBB G-flex G-align-center">
+             <Link to={`/requests/response/:${111223}`} className="serviceBB G-flex G-align-center">
                <p className="serviceHeader">Autofavorīts</p>
                <img src={ImagesData.heartUnfilled} alt=""/>
                <p className="rating G-flex G-align-center">
@@ -119,7 +120,7 @@ function SearchOnMap() {
                  4.9
                </p>
                <span>8km</span>
-             </div>
+             </Link>
            </div>
          </div>
 

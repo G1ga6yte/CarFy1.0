@@ -238,6 +238,9 @@
                 }
               }
               .orderBtn{
+                display: block;
+                text-align: center;
+                text-decoration: none;
                 cursor: pointer;
                 font-size: 14px;
                 color: white;
@@ -563,6 +566,7 @@
         align-items: center;
 
         .serviceBB{
+          text-decoration: none;
           margin-right: 30px;
           padding: 8px;
           background-color: white;

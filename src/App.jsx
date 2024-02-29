@@ -32,6 +32,7 @@ import ConfirmationBlock from "./pages/allRequests/allRequests/confirmationBlock
 import ErrorBlock from "./pages/errorBlock/errorBlock";
 import ReviewBlock from "./pages/allRequests/allRequests/reviewBlock/reviewBlock";
 import SearchOnMap from "./pages/profile/searchOnMap/searchOnMap";
+import ProfileSettings from "./pages/profile/profileSettings/profileSettings";
 // import { withTranslation } from 'react-i18next';
 
 
@@ -64,6 +65,7 @@ function App() {
         <Route path="/profile" element={authorization ? <Profile/> : <LogIn/>} /> // Profile - Dashboard
         <Route path="/profile/map" element={<SearchOnMap/>}/>
         <Route path="/logIn" element={<LogIn />} /> // LogIn
+        <Route path="/profile/settings" element={<ProfileSettings/>}/> // Settings
         
         <Route path="/insurance&vignette" element={<InsuranceVignette/>} /> // Insurance & Vignette Mutual +scroll
         <Route path="/vignette" element={<Vignette/>} /> // Vignette

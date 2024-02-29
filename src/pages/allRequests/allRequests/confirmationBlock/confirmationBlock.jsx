@@ -4,7 +4,7 @@ import ConfirmationGlobalBlock from "./confirmationGlobalBlock";
 
 function ConfirmationBlock (){
   return(
-     <div className="ConfirmationBlock">
+     <div className="ConfirmationBlock G-container">
        
        <div className="confirmationCont confirmationRoute">
        <ConfirmationGlobalBlock/>

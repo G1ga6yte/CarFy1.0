@@ -15,6 +15,9 @@ import mapMarker from "./marker-pin-01.svg"
 import greenStar from "./star-01.svg"
 import likeIcon from "./heart.svg"
 import img1 from "./Rectangle 12.png"
+import visa from "./Visa.svg"
+import master from "./Mastercard.svg"
+import greenCheck from "./check.svg"
 
 
 
@@ -22,5 +25,6 @@ import img1 from "./Rectangle 12.png"
 export const ImgSvg = {
   userImg, settingsIcon, statusRocket, statusCrown, statusArrowUp, carLogo,
   shieldService, passportService,speedometerService,searchService,
-  starsService, mapImg, mapMarker, greenStar, likeIcon, img1
+  starsService, mapImg, mapMarker, greenStar, likeIcon, img1, visa, master,
+  greenCheck
 }

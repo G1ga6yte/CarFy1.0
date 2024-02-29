@@ -1,6 +1,7 @@
 import React from "react";
 import {CarModelsData} from "../../../allRequests/allRequests/eachServiceBlock/carModels/carModelsData";
 import {ImagesData} from "../images/imagesData";
+import {Link} from "react-router-dom";
 
 function ServiceMapBlock() {
   const skills = ["ABS repair", "ESR repair", "Cylinder head repair", "Clearance repair",
@@ -24,7 +25,7 @@ function ServiceMapBlock() {
            Chat
          </button>
          
-         <button className="orderBtn">Place an order</button>
+         <Link to={`/requests/response/:${111223}`} className="orderBtn">Place an order</Link>
        
        </div>
        

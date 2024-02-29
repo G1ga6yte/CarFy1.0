@@ -1,0 +1,588 @@
+@import "../../../source/mixin.scss";
+
+
+.ProfileSettings{
+
+  .backBtnCont{
+    padding: 35px 10px;
+    background-color: white;
+    width: 100%;
+    .backBtnBlock{
+      font-size: 20px;
+      font-family: 'Inter-Regular', sans-serif;
+      color: #266EFE;
+      cursor: pointer;
+      &:hover{
+        color: #355ABC;
+        path{
+          fill: #355ABC !important;
+        }
+      }
+      svg{
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .settingsCont{
+    padding: 45px 10px;
+    position: relative;
+    @include screen($tablet-l){
+      padding: 45px 10px 250px;
+      min-height: 900px;
+    }
+    @include screen($tablet){
+      min-height: 1100px;
+    }
+
+    .accountLine{
+      width: 25%;
+      @include screen($wide){
+        width: 34%;
+      }
+      @include screen($tablet-l){
+        width: 100%;
+      }
+      .buttonsBlock{
+        border-radius: 24px;
+        border: 1px solid #F1F4F8;
+        background: #FFF;
+        box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+        .userBlock{
+          padding: 40px 32px 24px;
+          border-bottom: 1px solid #F1F4F8;
+          .useImg{
+            border-radius: 50%;
+            width: 45px;
+          }
+          .userNameBlock{
+            margin-left: 16px;
+            .name{
+              font-size: 20px;
+              font-family: 'Inter-Bold', sans-serif;
+              color: #0D172F;
+              line-height: 140%;
+            }
+            .mail{
+              font-size: 12px;
+              font-family: 'Inter-Regular', sans-serif;
+              color: #0D172F;
+              line-height: 120%;
+            }
+          }
+        }
+        .buttons{
+          padding: 24px 0;
+
+          .settingsBtn{
+            padding: 16px 32px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            width: 100%;
+            span{
+              font-size: 20px;
+              font-family: 'Inter-Medium', sans-serif;
+              color: #0D172F;
+              line-height: 140%;
+            }
+            &:hover{
+              span{
+                color: #266EFE !important;
+              }
+              path{
+                fill: #266EFE !important;
+              }
+            }
+          }
+          .activeBtn{
+            span{
+              color: #266EFE !important;
+            }
+            path{
+              fill: #266EFE !important;
+            }
+          }
+
+
+        }
+      }
+
+      .profileCompleteBlock{
+        margin-top: 30px;
+        border-radius: 24px;
+        border: 1px solid #F1F4F8;
+        background: #FFF;
+        box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+        padding: 30px;
+
+        .header{
+          font-size: 20px;
+          font-family: 'Inter-Medium', sans-serif;
+          color: #0D172F;
+          line-height: 140%;
+          .circle{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #266EFE;
+            margin-right: 8px;
+          }
+        }
+
+        .progressBlock{
+          width: 100%;
+          height: 16px;
+          border-radius: 20px;
+          background-color: #F9FDFF;
+          margin: 16px 0;
+          .progressLine{
+            width: 20%;
+            border-radius: 20px;
+            height: 100%;
+            background-color: #266EFE;
+
+          }
+        }
+
+        .underHeader{
+          font-size: 16px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #AEAEAE;
+          line-height: 130%;
+        }
+
+
+      }
+
+    }
+
+    .settingsBlock{
+      width: 74%;
+      @include screen($wide){
+        width: 65%;
+      }
+      @include screen($tablet-l){
+        width: 98%;
+        position: absolute;
+        z-index: 2;
+        top: 45px;
+        left: 1%;
+      }
+
+      .settings{
+        box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+        width: 100%;
+        border-radius: 24px;
+        border: 1px solid #F1F4F8;
+        background: #FFF;
+        padding: 40px 32px;
+        @include screen($tablet-m){
+          padding: 30px 10px;
+        }
+
+
+
+        .headerBlock{
+          margin-bottom: 32px;
+
+          .saved{
+            color: #266EFE;
+            cursor: pointer;
+            font-family: 'Inter-Medium', sans-serif;
+            font-size: 20px;
+            line-height: 140%;
+            &:hover{
+              color: #355ABC;
+            }
+          }
+        }
+        .subHeader{
+          @include screen($tablet-m){
+            flex-direction: column !important;
+            align-items: start !important;
+          }
+        }
+
+        .miniHeader{
+          font-size: 28px;
+          font-family: 'Inter-Medium', sans-serif;
+          color: #0D172F;
+          line-height: 140%;
+        }
+        .miniHeaderSpan{
+          font-size: 20px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #AEAEAE;
+          line-height: 140%;
+        }
+
+        .imgInputCont{
+          margin-bottom: 40px;
+          @include screen($tablet){
+            flex-direction: column;
+            align-items: center;
+          }
+          .profileImg{
+            min-width: 184px;
+            margin-right: 56px;
+            width: 184px;
+            height: 184px;
+            border-radius: 50%;
+            overflow-x: hidden;
+            background-color: #F9FDFF;
+            position: relative;
+            cursor: pointer !important;
+            @include screen($tablet){
+              margin: 0;
+            }
+
+            &:hover{
+              opacity: 0.9;
+            }
+
+            label{
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 5;
+              cursor: pointer;
+            }
+            .emptyBlock{
+              width: 100%;
+              height: 100%;
+              position: relative;
+              z-index: 2;
+            }
+            input{
+              display: none;
+            }
+            .selectedImage{
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 4;
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+
+          }
+
+        }
+
+        .planCont{
+          width: 100%;
+          align-items: start;
+          margin-bottom: 40px;
+          @include screen($tablet){
+            flex-direction: column;
+          }
+
+          .planBlock{
+            min-width: 180px;
+
+            .miniPrg{
+              font-size: 20px;
+              font-family: 'Inter-SemiBold', sans-serif;
+              line-height: 140%;
+              color: #0D172F;
+              margin-bottom: 8px;
+              img{
+                margin-right: 16px;
+              }
+            }
+
+            .advantage{
+              margin-bottom: 2px;
+              font-size: 14px;
+              font-family: 'Inter-Regular', sans-serif;
+              color: #AEAEAE;
+              line-height: 130%;
+              img{
+                margin-right: 16px;
+              }
+            }
+
+          }
+          .paymentBlock{
+            @include screen($wide){
+              display: flex;
+              flex-direction: column;
+              text-align: start;
+            }
+            @include screen($tablet){
+              align-items: start;
+              margin-top: 30px;
+            }
+
+            .paymentCont{
+              margin-right: 150px;
+              @include screen($wide){
+                margin-right: 20px;
+                display: flex;
+              }
+              @include screen($tablet){
+                max-width: 200px;
+                flex-wrap: wrap;
+                justify-content: start;
+              }
+              .priceMonth{
+                text-align: end;
+                font-size: 20px;
+                font-family: 'Inter-SemiBold', sans-serif;
+                line-height: 140%;
+                color: #0D172F;
+                margin-bottom: 8px;
+                @include screen($wide){
+                  margin: 0 10px;
+                }
+
+                .priceMonthSpan{
+                  display: block;
+                  margin-left: 6px;
+                  font-size: 12px;
+                  font-family: 'Inter-Regular', sans-serif;
+                  color: #AEAEAE;
+                }
+              }
+              .paidUp{
+                font-size: 16px;
+                font-family: 'Inter-Medium', sans-serif;
+                color: #0D172F;
+                line-height: 140%;
+              }
+            }
+
+            .changeCont{
+              @include screen($tablet){
+                margin-top: 20px;
+              }
+              .changePrg{
+                font-size: 16px;
+                font-family: 'Inter-Medium', sans-serif;
+                color: #266EFE;
+                line-height: 140%;
+                cursor: pointer;
+                margin-right: 24px;
+                &:hover{
+                  color: #355ABC;
+                }
+              }
+              .cancelPrg{
+                font-size: 16px;
+                font-family: 'Inter-Medium', sans-serif;
+                color: #AEAEAE;
+                height: 140%;
+              }
+            }
+          }
+
+          .miniSpan{
+            display: block;
+            font-size: 16px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: #AEAEAE;
+            line-height: 140%;
+            margin-bottom: 16px;
+          }
+        }
+
+        .paymentMethod{
+          margin-bottom: 80px;
+
+          .activePayment{
+            background-color: #F9FDFF !important;
+          }
+
+          .card{
+            padding: 8px 16px;
+            border-radius: 6px;
+            &:hover{
+              background-color: #F1F4F8;
+            }
+
+            .leftSide{
+              cursor: pointer;
+              input{
+                scale: 1.2;
+              }
+              img{
+                margin: 0 28px;
+                @include screen($mobile-m){
+                  margin: 0 10px;
+                }
+              }
+              .textBlock{
+                .cardName{
+                  font-size: 16px;
+                  font-family: 'Inter-Regular', sans-serif;
+                  color: #0D172F;
+                  line-height: 130%;
+                }
+                .cardPrg{
+                  font-size: 12px;
+                  font-family: 'Inter-Regular', sans-serif;
+                  color: #AEAEAE;
+                  line-height: 130%;
+                }
+              }
+            }
+            svg{
+              cursor: pointer;
+              &:hover{
+                scale: 1.1;
+                path{
+                  stroke: #D0D5DD !important;
+                }
+              }
+            }
+
+
+          }
+        }
+
+
+
+        .Select{
+          position: relative;
+          margin-bottom: 40px;
+          max-width: 340px;
+          .selectBlock{
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid;
+            background-color: #FFFFFF;
+            border-radius: 14px;
+            cursor: pointer;
+            &:hover{
+              border-color: #AEAEAE;
+            }
+            span{
+              font-size: 16px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 130%;
+            }
+          }
+          .optionsBlock{
+            width: 100%;
+            max-height: 220px;
+            overflow: scroll;
+            border-radius: 14px;
+            border: 1px solid #266EFE;
+            background-color: #FFFFFF;
+            padding: 4px;
+            margin-top: 4px;
+            position: absolute;
+            z-index: 20;
+
+            &::-webkit-scrollbar {
+              width: 25px;
+              height: 90% !important;
+            }
+            &::-webkit-scrollbar-track {
+              background: rgba(204, 224, 255, 0.5);
+              border: 10px solid white;
+              border-radius: 20px;
+            }
+            &::-webkit-scrollbar-thumb {
+              background: #CCE0FF;
+              border: 10px solid white;
+              border-radius: 50px;
+            }
+            .option{
+              border-radius: 8px;
+              cursor: pointer;
+              padding: 12px 16px;
+              background-color: #FFFFFF;
+              font-size: 16px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 130%;
+              &:hover{
+                background-color: #266EFE;
+                color: #FFFFFF;
+              }
+            }
+
+            .active{
+              color: #266EFE;
+              &:hover{
+                color: white !important;
+              }
+            }
+
+          }
+        }
+        .saveBtn{
+          max-width: 300px;
+          width: 100%;
+          padding: 16px;
+          background-color: #266EFE;
+          color: white;
+          border-radius: 14px;
+          font-family: 'Inter-Medium', sans-serif;
+          font-size: 16px;
+          outline: none;
+          border:none;
+          margin-top: 35px;
+          @include screen($mobile-m){
+            width: 100%;
+            max-width: unset;
+            display: block;
+          }
+          &:hover{
+            cursor: pointer;
+            background-color: #355ABC;
+          }
+        }
+        .inputsBlock{
+          flex-wrap: wrap;
+          height: max-content;
+          @include screen($tablet){
+            align-items: center;
+            width: 100%;
+            flex-direction: column;
+            margin-top: 50px;
+          }
+
+          input[type='number'] {
+            -moz-appearance:textfield;
+          }
+
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+          }
+
+          .profileInput{
+            width: 300px;
+            padding: 16px;
+            border-radius: 14px;
+            outline: none;
+            border: 1px solid #D9D9D9;
+            margin-right: 24px;
+            height: max-content;
+            margin-bottom: 16px;
+            font-size: 16px;
+            color: #0D172F;
+            font-family: 'Inter-Regular', sans-serif;
+            @include screen($mobile-m){
+              width: 100%;
+            }
+            &:focus-visible{
+              border-color: #266EFE;
+            }
+          }
+        }
+
+
+      }
+
+    }
+
+  }
+}

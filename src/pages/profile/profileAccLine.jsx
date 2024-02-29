@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {ImgSvg} from "./imgSvg/ImgSvg";
+import {Link} from "react-router-dom";
 
 function ProfileAccLine() {
   const [accountStatus, setAccountStatus] = useState("premium+"); // premium+ , premium , basic
@@ -29,9 +30,9 @@ function ProfileAccLine() {
              <p className="userName">Hi, Kris!</p>
              <p className="userMail">kris@gmail.com</p>
            </div>
-           <a className="settingsLogo" href="">
+           <Link to="/profile/settings" className="settingsLogo" >
              <img src={ImgSvg.settingsIcon} alt=""/>
-           </a>
+           </Link>
          </div>
          <div className="accountLevel">
            <p className="prg20">Account level</p>
