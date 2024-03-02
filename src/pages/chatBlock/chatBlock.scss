@@ -1,0 +1,564 @@
+@import "../../source/mixin.scss";
+
+
+.ChatBlock {
+  padding: 0 1%;
+  flex-wrap: wrap;
+  max-height: 100vh;
+  height: 100vh;
+  position: relative;
+
+  .headerBlock1 {
+    width: 100%;
+    height: 8vh;
+    margin-top: 20px;
+    .header{
+      font-size: 28px;
+      font-family: 'Inter-Medium', sans-serif;
+      color: #0D172F;
+      line-height: 140%;
+    }
+    .backBtn{
+      font-size: 20px;
+      font-family: 'Inter-Medium', sans-serif;
+      color: #266EFE;
+      img{
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .usersCont {
+    max-height: 85vh;
+    width: 25%;
+    margin-right: 1%;
+    @include screen($wide-m){
+      width: 30%;
+    }
+    @include screen($wide-s){
+      width: 35%;
+    }
+    @include screen($tablet-l){
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      margin: 0;
+    }
+
+    .searchInputBlock {
+      width: 100%;
+      position: relative;
+      margin-bottom: 24px;
+
+      .searchIcon {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .searchInput {
+        outline: none;
+        width: 100%;
+        border-radius: 14px;
+        border: 1px solid #D9D9D9;
+        background: #FFF;
+        padding: 16px 16px 16px 55px;
+        font-size: 16px;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 130%;
+
+        &:focus-visible {
+          border-color: #266EFE;
+        }
+      }
+    }
+
+    .allUsersBlock {
+      height: available;
+      overflow: scroll;
+      border-radius: 24px;
+      border: 1px solid #F1F4F8;
+      background: #FFF;
+
+      .userBlock {
+        padding: 12px;
+        width: 100%;
+        justify-content: space-between;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #F9FDFF;
+        }
+
+        .serviceImg {
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 70px;
+          height: 70px;
+          min-width: 70px;
+          border-radius: 8px;
+          @include screen($tablet-l){
+            margin-right: 24px;
+          }
+          @include screen($tablet-m){
+            margin: 0;
+          }
+        }
+
+        .textBlock {
+          width: 70%;
+          @include screen($tablet-l){
+            width: 100%;
+          }
+          @include screen($tablet-m){
+            width: 75%;
+          }
+          @include screen($mobile-m){
+            width: 70%;
+          }
+
+          .headText {
+            margin-bottom: 15px;
+            @include screen($tablet-l){
+              justify-content: start;
+              position: relative;
+            }
+
+
+            .serviceName {
+              font-size: 20px;
+              font-family: 'Inter-Medium', sans-serif;
+              line-height: 140%;
+              color: #0D172F;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+
+            .messageCount {
+              width: 16px;
+              height: 16px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #AEAEAE;
+              border-radius: 50%;
+              font-size: 10px;
+              font-family: 'Inter-Bold', sans-serif;
+              color: white;
+              margin: 0 5px;
+            }
+
+            .date {
+              font-size: 12px;
+              font-family: 'Inter-Regular', sans-serif;
+              color: #AEAEAE;
+              line-height: 130%;
+              @include screen($tablet-l){
+                position: absolute;
+                right: 20px;
+              }
+              @include screen($mobile-m){
+                display: none;
+              }
+
+            }
+          }
+
+          .lastMessage {
+            white-space: nowrap;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-family: 'Inter-Regular', sans-serif;
+            color: #AEAEAE;
+            font-size: 14px;
+            line-height: 130%;
+          }
+        }
+
+      }
+
+      .activeBlock {
+        background-color: #F9FDFF !important;
+
+        .messageCount {
+          background-color: #266EFE !important;
+        }
+
+        .lastMessage {
+          color: #266EFE !important;
+        }
+
+      }
+
+
+    }
+
+
+  }
+
+  .chatCont {
+    max-height: 85vh;
+    width: 74%;
+    border-radius: 24px;
+    border: 1px solid #F1F4F8;
+    background: #FFF;
+    position: relative !important;
+    overflow: hidden;
+    @include screen($wide-m){
+      width: 69%;
+    }
+    @include screen($wide-s){
+      width: 64%;
+    }
+    @include screen($tablet-l){
+      width: 98%;
+      position: absolute !important;
+      z-index: 5;
+      top: 12vh;
+      height: 85vh;
+    }
+
+
+    .headerBlock {
+      width: 100%;
+      position: absolute;
+      align-items: end;
+      top: 0;
+      left: 0;
+      padding: 16px 32px;
+      border-bottom: 1px solid #F1F4F8;
+      background-color: white !important;
+      z-index: 10;
+      @include screen($tablet-m){
+        padding: 16px;
+      }
+
+      .serviceInfo {
+        .serviceImg {
+          border-radius: 8px;
+          width: 55px;
+          height: 55px;
+          margin-right: 16px;
+        }
+
+        .textBlock {
+          margin-right: 20px;
+          .serviceName {
+            font-size: 20px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: #0D172F;
+            margin-bottom: 8px;
+            line-height: 140%;
+          }
+
+          .statusTyping {
+            font-size: 14px;
+            font-family: 'Inter-Regular', sans-serif;
+            color: #00CC9A;
+            line-height: 130%;
+          }
+        }
+      }
+
+      .enrollBtn {
+        width: 180px;
+        text-align: center;
+        padding: 8px;
+        border-radius: 8px;
+        background-color: #266EFE;
+        color: white;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        font-family: 'Inter-Medium', sans-serif;
+        font-size: 14px;
+        line-height: 140%;
+
+        &:hover {
+          background-color: #355ABC;
+        }
+
+        &:disabled {
+          cursor: unset !important;
+          background-color: #F1F4F8 !important;
+          color: #AEAEAE !important;
+        }
+      }
+    }
+
+    .messagesBlock {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding-bottom: 100px;
+      padding-top: 90px;
+      height: 100%;
+      overflow: scroll !important;
+      scroll-behavior: smooth !important;
+      @include screen($tablet){
+        padding: 90px 10px 100px;
+      }
+
+      .dateBlock {
+        padding: 8px 24px;
+        border-radius: 25px;
+        border: 1px solid #F1F4F8;
+        text-align: center;
+        margin: 15px auto;
+        font-size: 10px;
+        font-family: 'Inter-Regular', sans-serif;
+        color: #828282;
+        width: max-content;
+        line-height: 130%;
+      }
+
+      .messageStyle {
+        width: 100%;
+        display: flex;
+        margin-bottom: 24px;
+        .messageBlock{
+          max-width: 280px;
+          padding: 8px 16px;
+          font-family: 'Inter-Regular', sans-serif;
+          font-size: 12px;
+          line-height: 130%;
+          @include screen($tablet-m){
+            max-width: 220px;
+          }
+        }
+      }
+
+      .userMessage {
+        justify-content: end;
+        .messageBlock{
+          border-radius: 16px 0 16px 16px;
+          background-color: #266EFE !important;
+          color: white !important;
+        }
+      }
+      .partnerMessage{
+        justify-content: start;
+        align-items: start;
+        .serviceImg{
+          width: 55px;
+          min-width: 55px;
+          height: 55px;
+          margin-right: 16px;
+          border-radius: 8px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          @include screen($tablet-m){
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            border-radius: 5px;
+            margin-right: 12px;
+          }
+        }
+        .messageBlock{
+          border-radius: 0 16px 16px 16px;
+          background-color: #F9FDFF !important;
+          color: black;
+        }
+        .request{
+          background-color: #F9FDFF !important;
+          border-radius: 0 16px 16px 16px;
+          max-width: 450px;
+          width: 100%;
+          .requestHeaderBlock{
+            padding: 12px 16px;
+            border-bottom: 1px solid #F1F4F8;
+            @include screen($mobile-m){
+              padding: 10px 12px;
+            }
+
+            .serviceImgReq{
+              min-width: 40px;
+              height: 40px;
+              width: 40px;
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+              margin-right: 8px;
+              border-radius: 8px;
+            }
+            .textBlockReq{
+              .serviceName{
+                font-size: 14px;
+                font-family: 'Inter-Medium', sans-serif;
+                color: #0D172F;
+                margin-bottom: 5px;
+              }
+              .serviceAddress{
+                color: #AEAEAE;
+                font-family: 'Inter-Regular', sans-serif;
+                font-size: 12px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                @include screen($mobile-m){
+                  max-width: 90%;
+                }
+              }
+            }
+          }
+          .requestMainBlock{
+            padding: 16px 16px 28px;
+            .typeOfWork{
+              font-size: 12px;
+              font-family: 'Inter-Regular', sans-serif;
+              color: #266EFE;
+              line-height: 130%;
+              margin-bottom: 16px;
+            }
+            .infoLine{
+              margin-bottom: 8px;
+              .reqSpan{
+                font-size: 14px;
+                font-family: 'Inter-Regular', sans-serif;
+                color: #0D172F;
+                line-height: 130%;
+              }
+              .reqVal{
+                font-family: 'Inter-Medium', sans-serif !important;
+              }
+            }
+            .buttonsBlock{
+              @include screen($tablet-m){
+                flex-direction: column;
+              }
+
+              .cancelBtn{
+                background-color: white;
+                border: 1px solid #F1F4F8;
+                border-radius: 8px;
+                width: 49%;
+                cursor: pointer;
+                padding: 8px;
+                text-align: center;
+                color: #334155;
+                font-family: 'Inter-Medium', sans-serif;
+                font-size: 14px;
+                line-height: 140%;
+                @include screen($tablet-m){
+                  width: 100%;
+                }
+                &:hover{
+                  border-color: #334155;
+                }
+              }
+              .bookBtn{
+                background-color: #266EFE;
+                border: 1px solid #266EFE;
+                border-radius: 8px;
+                width: 49%;
+                cursor: pointer;
+                padding: 8px;
+                text-align: center;
+                font-family: 'Inter-Medium', sans-serif;
+                font-size: 14px;
+                line-height: 140%;
+                color: white;
+                @include screen($tablet-m){
+                  width: 100%;
+                  margin-top: 8px;
+                }
+                &:hover{
+                  border-color: #355ABC;
+                  background-color: #355ABC;
+                }
+              }
+
+            }
+          }
+        }
+      }
+      .messageReq{
+        @include screen($tablet-m){
+          .serviceImg{
+            display: none;
+          }
+        }
+      }
+
+
+    }
+
+    .inputCont {
+      position: absolute;
+      z-index: 10;
+      background-color: white;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 24px 10px;
+      background-color: white;
+
+      .inputBlock {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        position: relative;
+
+        .setFile {
+          position: absolute;
+          z-index: 3;
+          left: 16px;
+          top: 50%;
+          transform: translateY(-40%);
+          cursor: pointer;
+
+          &:hover {
+            path {
+              fill: #355ABC !important;
+            }
+          }
+        }
+
+        .chatInput {
+          padding: 16px 56px;
+          position: relative;
+          z-index: 1;
+          outline: none;
+          width: 100%;
+          border-radius: 14px;
+          border: 1px solid #D9D9D9;
+          background: #FFF;
+          font-size: 16px;
+          font-family: 'Inter-Regular', sans-serif;
+          line-height: 130%;
+
+          &:focus-visible {
+            border-color: #266EFE;
+          }
+        }
+
+        .sendBtn {
+          border: none;
+          background-color: transparent;
+          outline: none;
+          cursor: pointer;
+          position: absolute;
+          z-index: 3;
+          right: 16px;
+          top: 50%;
+          transform: translateY(-40%);
+
+          &:hover {
+            path {
+              fill: #355ABC !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+}

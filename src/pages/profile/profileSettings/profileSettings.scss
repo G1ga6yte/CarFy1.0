@@ -529,7 +529,7 @@
           outline: none;
           border:none;
           margin-top: 35px;
-          @include screen($mobile-m){
+          @include screen($tablet-m){
             width: 100%;
             max-width: unset;
             display: block;

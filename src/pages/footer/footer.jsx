@@ -10,7 +10,7 @@ function Footer (){
   const location = useLocation()
   const {t, i18n} = useTranslation()
   return(
-     <div style={{display: `${location.pathname === "/profile/map" ? "none" : "block"}`}} className="Footer">
+     <div style={{display: `${location.pathname === "/profile/map" ? "none" : location.pathname === "/chat" ? "none" : "block"}`}} className="Footer">
        
        <div className="footerCont G-container G-justify-between">
          <div className="LinksCont G-justify-between">

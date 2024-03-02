@@ -32,7 +32,7 @@ function Navigation() {
   
   
   return (
-     <div style={{display: `${location.pathname === "/profile/map" ? "none" : "block"}`}} className="Navigation">
+     <div style={{display: `${location.pathname === "/profile/map" ? "none" : location.pathname === "/chat" ? "none" : "block"}`}} className="Navigation">
        <div style={{height: `${notBar ? "auto" : "0"}`}} className="notification">
          <p className="text">🧨 {t('navigator.sms')}</p>
          
