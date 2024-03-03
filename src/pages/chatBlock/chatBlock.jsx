@@ -32,7 +32,7 @@ function ChatBlock (){
            setTabletChat(false)
            setActiveChat(999)
            scrollToBottom()
-         }} style={{display: `${tabletChat ? "flex" : "none"}`}} className="backBtn G-flex G-align-center">
+         }} style={{display: `${window.innerWidth <=992 ? tabletChat ? "flex" : "none" : "none"}`}} className="backBtn G-flex G-align-center">
            <img src={Images.chevronLeft} alt=""/>
            Back
          </div>
