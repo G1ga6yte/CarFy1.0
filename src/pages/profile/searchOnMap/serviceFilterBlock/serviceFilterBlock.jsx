@@ -1,17 +1,19 @@
 import React, {useState} from "react";
 import {ImagesData} from "../images/imagesData";
+import {useTranslation} from "react-i18next";
 
 function ServiceFilterBlock (){
+  const {t, i18n} = useTranslation()
   const [filtersType, setFiltersType] = useState(false)
   
   return(
      <div className="ServiceFilterBlock">
-      <p className="filtersPrg">Filters</p>
+      <p className="filtersPrg">{t("map.filters")}</p>
        
        <div className="filtersCont">
         
         <div className="filterC">
-          <p className="filterHeader">Price range</p>
+          <p className="filterHeader">{t("map.priceRange")}</p>
           <div className="filtersB G-flex">
             <span>Premium</span>
             <span>Econom</span>
@@ -20,8 +22,8 @@ function ServiceFilterBlock (){
   
          <div className="filterC">
            <div className="filterHeader G-flex G-align-center G-justify-between">
-             <p className="filterHeader">Car brand</p>
-             <p onClick={()=>{setFiltersType(true)}} className="seeAllBtn">see all</p>
+             <p className="filterHeader">{t("map.carBrand")}</p>
+             <p onClick={()=>{setFiltersType(true)}} className="seeAllBtn">{t("map.seeAll")}</p>
            </div>
            <div className="filtersB G-flex">
              <span>BMW</span>
@@ -36,8 +38,8 @@ function ServiceFilterBlock (){
   
          <div className="filterC">
            <div className="filterHeader G-flex G-align-center G-justify-between">
-             <p className="filterHeader">Tire fitting</p>
-             <p onClick={()=>{setFiltersType(true)}} className="seeAllBtn">see all</p>
+             <p className="filterHeader">{t("map.tireFitting")}</p>
+             <p onClick={()=>{setFiltersType(true)}} className="seeAllBtn">{t("map.seeAll")}</p>
            </div>
            <div className="filtersB G-flex">
              <span>Wheel balancing</span>
@@ -49,8 +51,8 @@ function ServiceFilterBlock (){
   
          <div className="filterC">
            <div className="filterHeader G-flex G-align-center G-justify-between">
-             <p className="filterHeader">Type of work</p>
-             <p onClick={()=>{setFiltersType(true)}} className="seeAllBtn">see all</p>
+             <p className="filterHeader">{t("map.typeOfWork")}</p>
+             <p onClick={()=>{setFiltersType(true)}} className="seeAllBtn">{t("map.seeAll")}</p>
            </div>
            <div className="filtersB G-flex">
              <span>Anti-corrosion treatment</span>
@@ -61,8 +63,8 @@ function ServiceFilterBlock (){
   
          <div className="filterC">
            <div className="filterHeader G-flex G-align-center G-justify-between">
-             <p className="filterHeader">Type</p>
-             <p onClick={()=>{setFiltersType(true)}} className="seeAllBtn">see all</p>
+             <p className="filterHeader">{t("map.type")}</p>
+             <p onClick={()=>{setFiltersType(true)}} className="seeAllBtn">{t("map.seeAll")}</p>
            </div>
            <div className="filtersB G-flex">
              <span>PUC center</span>
@@ -83,8 +85,8 @@ function ServiceFilterBlock (){
            
            <div onClick={()=>{setFiltersType(false)}} className="backButton G-flex G-align-center">
              <img src={ImagesData.chevronLeftBlue} alt=""/>
-             <span className="filtersSpan">Filters</span>
-             <span className="filterTypeSpan">Car brand</span>
+             <span className="filtersSpan">t{("map.filters")}</span>
+             <span className="filterTypeSpan">{t("map.carBrand")}</span>
            </div>
          </div>
          
@@ -110,8 +112,8 @@ function ServiceFilterBlock (){
 
        </div>
        
-       <div className="buttonBlock">
-         <button className="applyBtn">Apply</button>
+       <div className="buttonBlock1">
+         <button className="applyBtn">{t("map.applyBtn")}</button>
        </div>
      </div>
   )

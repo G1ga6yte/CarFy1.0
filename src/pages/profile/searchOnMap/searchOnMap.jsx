@@ -5,8 +5,10 @@ import {ImagesData} from "./images/imagesData";
 import ServiceMapBlock from "./serviceMapBlock/serviceMapBlock";
 import ServiceFilterBlock from "./serviceFilterBlock/serviceFilterBlock";
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 function SearchOnMap() {
+  const {t, i18n} = useTranslation()
   const {mapDialog, setMapDialog} = useCartContext();
   useEffect(() => {
     const handlePopstate = () => {
@@ -37,8 +39,8 @@ function SearchOnMap() {
                setMapDialog(false)
                setFilterBlock(false)
              }} className="closeIcon" src={ImagesData.xCloseIcon} alt=""/>
-             <p className="filterHeader">Search on map</p>
-             <p className="filterPrg">We have found for you more than 10000 car service centers in your city</p>
+             <p className="filterHeader">{t("map.header1")}</p>
+             <p className="filterPrg">{t("map.prg1")}</p>
              <div className="filtersButtons G-flex G-align-center">
                <div onClick={() => {
                  setFilterBlock(prevState => !prevState);
@@ -46,9 +48,9 @@ function SearchOnMap() {
                  <img style={{display: `${filterBlock ? "none" : "block"}`}} src={ImagesData.filterIcon} alt=""/>
                  <img style={{display: `${filterBlock ? "block" : "none"}`}} src={ImagesData.xCloseIcon} alt=""/>
                </div>
-               <div className="filterBtn">Price range</div>
-               <div className="filterBtn">Car brand</div>
-               <div className="resetBtn">Reset</div>
+               <div className="filterBtn">{t("map.btn1")}</div>
+               <div className="filterBtn">{t("map.btn2")}</div>
+               <div className="resetBtn">{t("map.btn3")}</div>
              </div>
            </div>
            
@@ -71,7 +73,7 @@ function SearchOnMap() {
          <div className="MapBlock">
            <div className="inputBlock">
              <img src={ImagesData.searchIcon} alt=""/>
-             <input placeholder="Search for service" type="text"/>
+             <input placeholder={t("map.placeholder")} type="text"/>
            </div>
            <div className="buttonsBlock G-flex">
              <div onClick={() => {
@@ -80,8 +82,8 @@ function SearchOnMap() {
                <img style={{display: `${filterBlock ? "none" : "block"}`}} src={ImagesData.filterIcon} alt=""/>
                <img style={{display: `${filterBlock ? "block" : "none"}`}} src={ImagesData.xCloseIcon} alt=""/>
              </div>
-             <div className="filterBtn">Price range</div>
-             <div className="filterBtn">Car brand</div>
+             <div className="filterBtn">{t("map.btn1")}</div>
+             <div className="filterBtn">{t("map.btn2")}</div>
            </div>
   
   

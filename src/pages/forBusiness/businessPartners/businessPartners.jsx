@@ -1,27 +1,30 @@
 import React from "react";
 import "./businessPartners.scss"
 import {BusinessSvg} from "../svgs/businessSvg";
+import {useTranslation} from "react-i18next";
 
 function BusinessPartners () {
+  const {t, i18n} = useTranslation()
+  
   return(
      <div className="BusinessPartners G-container">
-        <p className="header">Recommendations for <span>partners</span></p>
+        <p className="header">{t('business.header41')} <span>{t('business.header42')}</span></p>
        
        <div className="typesBlock G-justify-between">
           <div className="type">
             <img src={BusinessSvg.carService1} alt=""/>
-            <p className="miniHeader">Office availability</p>
-            <p className="prg">This will create a unified image of the company in the eyes of drivers</p>
+            <p className="miniHeader">{t('business.miniHeader41')}</p>
+            <p className="prg">{t('business.miniPrg41')}</p>
           </div>
          <div className="type">
            <img src={BusinessSvg.carService2} alt=""/>
-           <p className="miniHeader">Certified staff</p>
-           <p className="prg">In this way we create a high level of service for our customers and reduce the possible number of further requests for support.</p>
+           <p className="miniHeader">{t('business.miniHeader42')}</p>
+           <p className="prg">{t('business.miniPrg42')}</p>
          </div>
          <div className="type">
            <img src={BusinessSvg.carService3} alt=""/>
-           <p className="miniHeader">Remote support channel</p>
-           <p className="prg">The personnel of our partners should be able to solve the problem remotely, including on weekends</p>
+           <p className="miniHeader">{t('business.miniHeader43')}</p>
+           <p className="prg">{t('business.miniPrg43')}</p>
          </div>
        </div>
      </div>

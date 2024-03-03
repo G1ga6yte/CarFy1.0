@@ -1,8 +1,10 @@
 import React, {useEffect, useRef, useState} from "react";
 import {Images} from "./images/images";
 import "./chatBlock.scss"
+import {useTranslation} from "react-i18next";
 
 function ChatBlock (){
+  const {t, i18n} = useTranslation()
   const arr = Array.apply(null, Array(15))
   const [activeChat, setActiveChat] = useState(0)
   const [tabletChat, setTabletChat] = useState(false)
@@ -27,7 +29,7 @@ function ChatBlock (){
   return(
      <div className="ChatBlock G-container G-flex">
        <div className="headerBlock1">
-         <p style={{display: `${window.innerWidth <=992 ? tabletChat ? "none" : "block" : "block"}`}} className="header">Message</p>
+         <p style={{display: `${window.innerWidth <=992 ? tabletChat ? "none" : "block" : "block"}`}} className="header">{t("chat.header")}</p>
          <div onClick={()=>{
            setTabletChat(false)
            setActiveChat(999)
@@ -42,7 +44,7 @@ function ChatBlock (){
          
          <div className="searchInputBlock">
            <img src={Images.searchIcon} className="searchIcon" alt=""/>
-           <input type="text" className="searchInput" placeholder="Search"/>
+           <input type="text" className="searchInput" placeholder={t("chat.search")}/>
          </div>
          
          <div className="allUsersBlock">
@@ -74,10 +76,10 @@ function ChatBlock (){
               <img src={Images.serviceImg} className="serviceImg" alt=""/>
               <div className="textBlock">
                 <p className="serviceName">Autofavorīts</p>
-                <p className="statusTyping">Typing...</p>
+                <p className="statusTyping">{t("chat.typing")}...</p>
               </div>
             </div>
-            <button disabled={true} className="enrollBtn">Enroll</button>
+            <button disabled={true} className="enrollBtn">{t("chat.btn1")}</button>
           </div>
          
          <div ref={containerRef} id="messageBlock" className="messagesBlock">
@@ -129,17 +131,17 @@ function ChatBlock (){
                <div className="requestMainBlock">
                  <p className="typeOfWork">Exhaust system repair</p>
                  <div className="infoLine G-flex G-align-center G-justify-between">
-                   <span className="reqSpan">Total amount</span>
+                   <span className="reqSpan">{t("chat.totalAmount")}</span>
                    <span className="reqSpan reqVal">100€</span>
                  </div>
                  <div className="infoLine G-flex G-align-center G-justify-between">
-                   <span className="reqSpan">Date</span>
+                   <span className="reqSpan">{t("chat.date")}</span>
                    <span className="reqSpan reqVal">6 August</span>
                  </div>
                  
                  <div className="buttonsBlock G-flex G-justify-between">
-                   <button className="cancelBtn">Cancel</button>
-                   <button className="bookBtn">Book</button>
+                   <button className="cancelBtn">{t("chat.cancel")}</button>
+                   <button className="bookBtn">{t("chat.book")}</button>
                  </div>
                </div>
                
@@ -158,7 +160,7 @@ function ChatBlock (){
                </svg>
              </label>
   
-             <input type="text" className="chatInput" placeholder="Type a message"/>
+             <input type="text" className="chatInput" placeholder={t("chat.placeholder1")}/>
   
              <button className="sendBtn">
                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

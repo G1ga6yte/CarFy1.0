@@ -2,11 +2,13 @@ import React, {useState} from "react";
 import {ImgSvg} from "./imgSvg/ImgSvg";
 import {useCartContext} from "../../CartContext";
 import {useNavigate} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 
 
 
 function  ProfileServicesLine (){
+  const {t, i18n} = useTranslation()
   const {mapDialog, setMapDialog} = useCartContext()
   const Arr = new Array(20).fill('')
   const referralLink = "https://carfy.com/ref32749823hg239872"
@@ -30,41 +32,42 @@ function  ProfileServicesLine (){
        
        <div className="servicesBlock G-flex-column">
          <div className="services G-flex G-justify-between">
-           <p className="serviceHeader">Services</p>
+           <p className="serviceHeader">{t('profile.services')}</p>
+           
            <div className="ServiceBlock">
              <div className="textBlock">
                <img src={ImgSvg.shieldService} alt=""/>
-               <p className="serviceName">Car insurance</p>
-               <p className="desc">Insurance online in a couple of clicks</p>
+               <p className="serviceName">{t('profile.miniHeader1')}</p>
+               <p className="desc">{t('profile.miniPrg1')}</p>
              </div>
-             <button className="serviceBtn">Get started</button>
+             <button className="serviceBtn">{t('profile.btn1')}</button>
            </div>
   
            <div className="ServiceBlock">
              <div className="textBlock">
                <img src={ImgSvg.passportService} alt=""/>
-               <p className="serviceName">Vignette</p>
-               <p className="desc">Buy Toll & Vignettes online</p>
+               <p className="serviceName">{t('profile.miniHeader2')}</p>
+               <p className="desc">{t('profile.miniPrg2')}</p>
              </div>
-             <button className="serviceBtn">Buy vignette</button>
+             <button className="serviceBtn">{t('profile.btn2')}</button>
            </div>
   
            <div className="ServiceBlock">
              <div className="textBlock">
                <img src={ImgSvg.speedometerService} alt=""/>
-               <p className="serviceName">Auto parts</p>
-               <p className="desc">Buy spare parts from trusted suppliers</p>
+               <p className="serviceName">{t('profile.miniHeader3')}</p>
+               <p className="desc">{t('profile.miniPrg3')}</p>
              </div>
-             <button className="serviceBtn">Buy auto parts</button>
+             <button className="serviceBtn">{t('profile.btn3')}</button>
            </div>
   
            <div className="ServiceBlock">
              <div className="textBlock">
                <img src={ImgSvg.searchService} alt=""/>
-               <p className="serviceName">Reports</p>
-               <p className="desc">Check your car history in our app</p>
+               <p className="serviceName">{t('profile.miniHeader4')}</p>
+               <p className="desc">{t('profile.miniPrg4')}</p>
              </div>
-             <button className="serviceBtn">Check</button>
+             <button className="serviceBtn">{t('profile.btn4')}</button>
            </div>
   
          </div>
@@ -73,8 +76,8 @@ function  ProfileServicesLine (){
             <div className="mapBlock G-justify-between G-align-center">
               <div className="textBlock G-flex-column  G-justify-between">
                 <div className="text">
-                  <p className="searchPrg">Search on map</p>
-                  <p className="descPrg">Search for car services on the map</p>
+                  <p className="searchPrg">{t('profile.miniHeader5')}</p>
+                  <p className="descPrg">{t('profile.miniPrg5')}</p>
                 </div>
                 
                 <button onClick={()=>{
@@ -83,7 +86,7 @@ function  ProfileServicesLine (){
                   }else{
                     setMapDialog(true)
                   }
-                }} className="viewBtn">View on the map</button>
+                }} className="viewBtn">{t('profile.btn5')}</button>
                 
               </div>
               <div className="mapImgBlock">
@@ -96,9 +99,9 @@ function  ProfileServicesLine (){
            
            <div className="becomePartnerBlock">
              <img src={ImgSvg.starsService} alt=""/>
-             <p className="name">Become a partner</p>
-             <p className="desc">We can help grow up</p>
-             <a className="learnMoreLink" href="">Learn more</a>
+             <p className="name">{t('profile.miniHeader6')}</p>
+             <p className="desc">{t('profile.miniPrg6')}</p>
+             <a className="learnMoreLink" href="">{t('profile.learnMore')}</a>
            </div>
          </div>
          
@@ -121,13 +124,13 @@ function  ProfileServicesLine (){
                         <img src={ImgSvg.likeIcon} alt=""/>
                       </div>
   
-                      <button className="placeOrderBtn">Place an order</button>
+                      <button className="placeOrderBtn">{t('profile.placeAnOrder')}</button>
                     </div>
                  )
                } else if (index === 7){
                  return (
                     <div key={index} className="favoriteBlock G-flex-column flex-end">
-                      <p className="showMorePrg">Show more</p>
+                      <p className="showMorePrg">{t('profile.showMore')}</p>
                       <div className="images G-justify-between">
                         <img src={ImgSvg.img1} className="showMoreImg" alt=""/>
                         <img src={ImgSvg.img1} className="showMoreImg" alt=""/>

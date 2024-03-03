@@ -2,8 +2,10 @@ import React from "react";
 import {CarModelsData} from "../../../allRequests/allRequests/eachServiceBlock/carModels/carModelsData";
 import {ImagesData} from "../images/imagesData";
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 function ServiceMapBlock() {
+  const {t, i18n} = useTranslation()
   const skills = ["ABS repair", "ESR repair", "Cylinder head repair", "Clearance repair",
                   "Tire mounting and balancing", "Engine diagnostic", "Exhaust system repair",
                   "ASR repair", "Tire mounting and balancing"]
@@ -22,10 +24,10 @@ function ServiceMapBlock() {
          
          <button className="chatBtn G-flex G-align-center G-justify-center">
            <img src={ImagesData.messageIcon} alt=""/>
-           Chat
+           {t("map.chat")}
          </button>
          
-         <Link to={`/requests/response/:${111223}`} className="orderBtn">Place an order</Link>
+         <Link to={`/requests/response/:${111223}`} className="orderBtn">{t("map.placeOrder")}</Link>
        
        </div>
        
@@ -36,7 +38,7 @@ function ServiceMapBlock() {
              <p className="headerPrg">Autofavorīts</p>
              <img src={ImagesData.blueHeart} alt=""/>
            </div>
-           <p className="timePrg">Open till 21:00</p>
+           <p className="timePrg">{t("map.open")} 21:00</p>
          </div>
          
          <p className="servicePrg">Keep your car running smoothly with our on-demand car repair service. Our app
@@ -54,13 +56,13 @@ function ServiceMapBlock() {
                 <p className="skill" key={index}>{el}</p>
              )
            })}
-           <p className="skill showMore">+25 more</p>
+           <p className="skill showMore">+25 {t("map.more")}</p>
          </div>
        
        </div>
        
        <div className="serviceBrandBlock">
-         <p className="Brands">Brands</p>
+         <p className="Brands">{t("map.brands")}</p>
          <div className="brandsBlock">
            {CarModelsData.map((el, index) => {
              if (index < 10) {

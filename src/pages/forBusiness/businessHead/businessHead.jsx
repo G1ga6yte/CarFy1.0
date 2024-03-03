@@ -2,26 +2,29 @@ import React from "react";
 import {BusinessImg} from "../images/businessImg";
 import {BusinessSvg} from "../svgs/businessSvg";
 import "./businessHead.scss"
+import {useTranslation} from "react-i18next";
 
 function BusinessHead (){
+  const {t, i18n} = useTranslation()
+  
   return(
      <div className="BusinessHead G-justify-between G-align-center">
         <div className="TextBlock">
           <div className="textCont">
-            <p className="header">Become <span>a CarFy partner</span></p>
-            <p className="prg">At our company, we are committed to providing the tools and support you need to succeed. Our powerful software solutions are designed to help you establish and grow your business, and we are always by your side to offer guidance and assistance.</p>
+            <p className="header">{t('business.header11')} <span>{t('business.header12')}</span></p>
+            <p className="prg">{t('business.prg11')}</p>
             
             <div className="btnBlock G-justify-between">
               <div className="button">
-                Become a partner
+                {t('business.btn11')}
               </div>
               <div className="button G-align-center G-justify-center">
                 <img src={BusinessSvg.PlayCircle} alt=""/>
-                View demo
+                {t('business.btn12')}
               </div>
             </div>
   
-            <p className="underText">Car services that have already joined us</p>
+            <p className="underText">{t('business.underText')}</p>
   
             <div className="partners G-flex">
               <img className="partnerLogo" src={BusinessSvg.company1} alt=""/>
@@ -37,7 +40,7 @@ function BusinessHead (){
         
         </div>
        <div className="BckBlock">
-         <p className="header">Become <span>a CarFy partner</span></p>
+         <p className="header">{t('business.header11')} <span>{t('business.header12')}</span></p>
          <img className="BckVector" src={BusinessSvg.bckVector} alt=""/>
          <img className="dashboard1" src={BusinessImg.dashboard1} alt=""/>
          <img className="dashboard2" src={BusinessImg.dashboard2} alt=""/>

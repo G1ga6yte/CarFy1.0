@@ -1,6 +1,8 @@
 import React,{useState} from "react";
+import {useTranslation} from "react-i18next";
 
 function Profile (){
+  const {t, i18n} = useTranslation()
   const [image, setImage] = useState(null);
   
   
@@ -21,8 +23,8 @@ function Profile (){
   return(
      <div className="settings">
        <div className="headerBlock G-flex G-justify-between G-align-center">
-         <p className="miniHeader">Contact information</p>
-         <span className="saved">Saved</span>
+         <p className="miniHeader">{t("settings.header1")}</p>
+         <span className="saved">{t("settings.saved")}</span>
        </div>
        
        <div className="imgInputCont G-flex">
@@ -47,9 +49,9 @@ function Profile (){
         </div>
          
          <div className="inputsBlock G-flex">
-           <input type="text" className="profileInput" placeholder="Name"/>
-           <input type="number" className="profileInput" placeholder="Phone"/>
-           <input type="email" className="profileInput" placeholder="Email"/>
+           <input type="text" className="profileInput" placeholder={t("settings.placeholder1")}/>
+           <input type="number" className="profileInput" placeholder={t("settings.placeholder2")}/>
+           <input type="email" className="profileInput" placeholder={t("settings.placeholder3")}/>
 
          </div>
         
@@ -58,18 +60,17 @@ function Profile (){
        </div>
        
        <div className="headerBlock">
-         <p className="miniHeader">Password</p>
+         <p className="miniHeader">{t("settings.header6")}</p>
        </div>
        
        <div className="inputsBlock G-flex G-flex-column">
-         <input type="password" className="profileInput" placeholder="Current password"/>
-         <input type="password" className="profileInput" placeholder="New password"/>
-         <input type="password" className="profileInput" placeholder="New password"/>
+         <input type="password" className="profileInput" placeholder={t("settings.placeholder4")}/>
+         <input type="password" className="profileInput" placeholder={t("settings.placeholder5")}/>
+         <input type="password" className="profileInput" placeholder={t("settings.placeholder6")}/>
 
 
        </div>
-  
-       <button className="saveBtn">Save</button>
+       <button className="saveBtn">{t("settings.save")}</button>
 
 
      </div>

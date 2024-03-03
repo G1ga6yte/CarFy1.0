@@ -1,11 +1,13 @@
 import React, {useState} from "react";
 import {ImgSvg} from "./imgSvg/ImgSvg";
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 function ProfileAccLine() {
   const [accountStatus, setAccountStatus] = useState("premium+"); // premium+ , premium , basic
   const [rangeVal, setRangeVal] = useState(30)
   const referralLink = "https://carfy.com/ref32749823hg239872"
+  const {t, i18n} = useTranslation()
   
   const [copied, setCopied] = useState(false)
   const copyToClipboard = () => {
@@ -27,7 +29,7 @@ function ProfileAccLine() {
          <div className="AccountBlock G-align-center">
            <img className="userImg" src={ImgSvg.userImg} alt=""/>
            <div className="userText">
-             <p className="userName">Hi, Kris!</p>
+             <p className="userName">{t('profile.hi')}, Kris!</p>
              <p className="userMail">kris@gmail.com</p>
            </div>
            <Link to="/profile/settings" className="settingsLogo" >
@@ -35,7 +37,7 @@ function ProfileAccLine() {
            </Link>
          </div>
          <div className="accountLevel">
-           <p className="prg20">Account level</p>
+           <p className="prg20">{t('profile.accountLvl')}</p>
            <div style={{display: `${accountStatus === "premium" ? "flex" : "none"}`}}
                 className="statusBlock G-align-center">
              <img className="statusIcon" src={ImgSvg.statusCrown} alt=""/>
@@ -58,7 +60,7 @@ function ProfileAccLine() {
            </div>
          </div>
          <div className="CarCont">
-           <p className="prg20">Car</p>
+           <p className="prg20">{t('profile.car')}</p>
            <div className="CarBlock">
              <div className="carInfoLine G-align-center">
                <img src={ImgSvg.carLogo} alt=""/>
@@ -78,15 +80,15 @@ function ProfileAccLine() {
            </div>
          </div>
          <div className="requestBlock">
-          <p className="prg20">Car repair in a couple of clicks</p>
-           <button className="requestBtn">+ New request</button>
+          <p className="prg20">{t('profile.carRepair')}</p>
+           <button className="requestBtn">+ {t('profile.newRequest')}</button>
          </div>
        </div>
        <div className="locationBlock">
-        <p className="prg16">Location</p>
-         <input placeholder="Start typing your city" type="text" className="inputCity"/>
+        <p className="prg16">{t('profile.location')}</p>
+         <input placeholder={t('profile.placeholder1')} type="text" className="inputCity"/>
          <div className="distancePrg G-align-center G-justify-between">
-            <p className="prg16">Max distance to the service</p>
+            <p className="prg16">{t('profile.maxDistance')}</p>
             <span className="distance">{rangeVal}km</span>
          </div>
          <div className="rangeBlock">
@@ -95,23 +97,23 @@ function ProfileAccLine() {
          </div>
        </div>
        <div className="referralBlock">
-          <p className="referralHeader">Invite your friends and get 5€ for each</p>
-          <p className="earnedMoney">Total referrals fee:<span>0€</span></p>
+          <p className="referralHeader">{t('profile.inviteHeader')}</p>
+          <p className="earnedMoney">{t('profile.totalRefs')}:<span>0€</span></p>
          <div className="linkBlock G-align-center G-justify-between">
            <p className="link">{referralLink}</p>
-           <button onClick={copyToClipboard} className="copyBtn">Copy</button>
+           <button onClick={copyToClipboard} className="copyBtn">{t('profile.copy')}</button>
            <span style={{display: `${copied ? "block" : "none"}`}} className="copied">Copied !</span>
          
          </div>
        
        </div>
        <div className="statisticsBlock">
-         <p className="miniHeader">Statistics</p>
-         <p className="desc1">Total requests</p>
+         <p className="miniHeader">{t('profile.statistic')}</p>
+         <p className="desc1">{t('profile.total')}</p>
          <p className="num">20</p>
-         <p className="desc1">Canceled requests</p>
+         <p className="desc1">{t('profile.canceled')}</p>
          <p className="num">2</p>
-         <p className="desc1">Invited friends</p>
+         <p className="desc1">{t('profile.invited')}</p>
          <p className="num">1</p>
 
        </div>

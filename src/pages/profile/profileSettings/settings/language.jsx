@@ -26,8 +26,8 @@ function Language (){
   return(
      <div className="settings">
        <div className="headerBlock G-flex G-align-center G-justify-between">
-         <p className="miniHeader">Language</p>
-         <span className="saved">Saved</span>
+         <p className="miniHeader">{t("settings.header2")}</p>
+         <span className="saved">{t("settings.saved")}</span>
        </div>
        
        <div className="Select">
@@ -54,7 +54,7 @@ function Language (){
        </div>
        
         <div className="headerBlock">
-          <p className="miniHeader">Time zone</p>
+          <p className="miniHeader">{t("settings.header3")}</p>
         </div>
        
        <div className="Select">
@@ -173,6 +173,8 @@ function Language (){
          </div>
   
        </div>
+  
+       <button className="saveBtn">{t("settings.save")}</button>
 
 
      </div>

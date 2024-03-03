@@ -2,10 +2,12 @@ import React, {useState} from "react";
 import {LoginImg} from "./ImgSvg/loginImg";
 import {useCartContext} from "../../../CartContext";
 import {useNavigate} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 
 function SignInClient (){
   const {setTypeLogIn} = useCartContext()
+  const {t, i18n} = useTranslation()
   const navigate = useNavigate();
   const goBack = () => {
     navigate(-1);
@@ -29,27 +31,27 @@ function SignInClient (){
        <div className="loginBlock">
          <div className="toggleBlock G-flex">
            <div onClick={()=> setTypeLogIn("SignUp")} className="toggle">
-             Sign up
+             {t("login.signUp")}
            </div>
            <div onClick={()=> setTypeLogIn("SignIn")} className="toggle marked">
-             Sign in
+             {t("login.signIn")}
            </div>
          </div>
-         <input onKeyUp={OnKeyUp} placeholder="Email or phone number" type="text" className="input"/>
+         <input onKeyUp={OnKeyUp} placeholder={t("login.placeholder1")} type="text" className="input"/>
          <button disabled={BtnCont} onClick={()=>{
            if (!BtnCont){
              setStep("step2")
            }
-         }}  className="continueBtn">Continue</button>
+         }}  className="continueBtn">{t("login.continue")}</button>
          <div className="line">
-           <span className="lineText">or continue with</span>
+           <span className="lineText">{t("login.underText")}</span>
          </div>
          <div className="authorizationSystems G-justify-between">
            <div className="authBlock G-justify-center G-align-center"><img src={LoginImg.apple} alt=""/></div>
            <div className="authBlock G-justify-center G-align-center"><img src={LoginImg.googleP} alt=""/></div>
            <div className="authBlock G-justify-center G-align-center"><img src={LoginImg.facebook} alt=""/></div>
          </div>
-         <p onClick={()=>setTypeLogIn("SignInPartner")} className="becomeAPartner">Become a partner</p>
+         <p onClick={()=>setTypeLogIn("SignInPartner")} className="becomeAPartner">{t("login.partnerPrg")}</p>
        </div>
     )
     
@@ -62,7 +64,7 @@ function SignInClient (){
          <div className="account G-flex G-align-center">
            <div className="userImg"><img src="" alt=""/></div>
            <div className="infoBlock">
-             <p className="userName">Hi, Kris!</p>
+             <p className="userName">{t("login.hi")}, Kris!</p>
              <p className="mailPhone">kris@gmail.com</p>
            </div>
            <img onClick={()=>setStep("step1")} className="deleteAccount" src={LoginImg.deleteC} alt=""/>
@@ -71,16 +73,16 @@ function SignInClient (){
          
          <button onClick={()=>{
            setStep("step3")
-         }}  className="continueBtn">Continue</button>
+         }}  className="continueBtn">{t("login.continue")}</button>
          <div className="line">
-           <span className="lineText">or continue with</span>
+           <span className="lineText">{t("login.underText")}</span>
          </div>
          <div className="authorizationSystems G-justify-between">
            <div className="authBlock G-justify-center G-align-center"><img src={LoginImg.apple} alt=""/></div>
            <div className="authBlock G-justify-center G-align-center"><img src={LoginImg.googleP} alt=""/></div>
            <div className="authBlock G-justify-center G-align-center"><img src={LoginImg.facebook} alt=""/></div>
          </div>
-         <p onClick={()=>setTypeLogIn("SignInPartner")} className="becomeAPartner">Become a partner</p>
+         <p onClick={()=>setTypeLogIn("SignInPartner")} className="becomeAPartner">{t("login.partnerPrg")}</p>
        </div>
     )
   }
@@ -100,14 +102,14 @@ function SignInClient (){
     return(
        <div className="loginBlock">
          
-         <input onKeyUp={OnKeyUp} placeholder="Password" type="password" className="input"/>
+         <input onKeyUp={OnKeyUp} placeholder={t("login.password")} type="password" className="input"/>
          <button disabled={BtnCont} onClick={()=>{
            if (!BtnCont){
              goBack()
            }
-         }}  className="continueBtn">Continue</button>
+         }}  className="continueBtn">{t("login.continue")}</button>
          
-         <p  onClick={()=>setTypeLogIn("SignInPartner")} className="becomeAPartner">Become a partner</p>
+         <p  onClick={()=>setTypeLogIn("SignInPartner")} className="becomeAPartner">{t("login.partnerPrg")}</p>
        </div>
     )
   }
@@ -140,8 +142,8 @@ function SignInClient (){
        
        <div className="ImgBlock G-flex-column G-align-center">
          <img src={LoginImg.lockImg} alt=""/>
-         <p className="headText">Welcome back!</p>
-         <span className="underText">Sign in</span>
+         <p className="headText">{t("login.bHeader1")}</p>
+         <span className="underText">{t("login.signIn")}</span>
        </div>
   
        {<Main/>}

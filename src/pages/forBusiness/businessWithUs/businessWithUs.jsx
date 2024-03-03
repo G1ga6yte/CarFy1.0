@@ -3,36 +3,39 @@ import "./businessWithUs.scss"
 import {BusinessImg} from "../images/businessImg";
 import {BusinessSvg} from "../svgs/businessSvg";
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 function BusinessWithUs (){
+  const {t, i18n} = useTranslation()
+  
   return(
      <div className="BusinessWithUs G-container G-justify-between G-align-center">
         <div className="textBlock">
-            <p className="header">Advantages of working <span>with us</span></p>
+            <p className="header">{t('business.header31')} <span>{t('business.header32')}</span></p>
           
           <div className="advantages G-flex">
             <img src={BusinessSvg.arrowBlock} alt=""/>
             <div className="text">
-              <p className="miniHeader">Low service fee</p>
-              <p className="prg">CarFy keeps a low commission on orders and gives partners the opportunity to reduce it</p>
+              <p className="miniHeader">{t('business.miniHeader31')}</p>
+              <p className="prg">{t('business.miniPrg31')}</p>
             </div>
           </div>
           <div className="advantages G-flex">
             <img src={BusinessSvg.headphones} alt=""/>
             <div className="text">
-              <p className="miniHeader">24/7 driver support</p>
-              <p className="prg">Our specialists take questions and solve drivers' problems at any time</p>
+              <p className="miniHeader">{t('business.miniHeader32')}</p>
+              <p className="prg">{t('business.miniPrg32')}</p>
             </div>
           </div>
           <div className="advantages G-flex">
             <img src={BusinessSvg.bankCash} alt=""/>
             <div className="text">
-              <p className="miniHeader">Transparent withdrawal system</p>
-              <p className="prg">Partners decide when and how much to withdraw</p>
+              <p className="miniHeader">{t('business.miniHeader33')}</p>
+              <p className="prg">{t('business.miniPrg33')}</p>
             </div>
           </div>
           
-          <Link className="LinkToBlog G-flex G-justify-center G-align-center" to="/blog">Learn more</Link>
+          <Link className="LinkToBlog G-flex G-justify-center G-align-center" to="/blog">{t('business.learnMore')}</Link>
         </div>
        
        <div className="imgBlock">

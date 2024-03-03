@@ -1,7 +1,9 @@
 import React, {useState} from "react";
 import {ImgSvg} from "../../imgSvg/ImgSvg";
+import {useTranslation} from "react-i18next";
 
 function Subscription (){
+  const {t, i18n} = useTranslation()
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('visaCard');
   
   function handleChangePaymentMethod(event) {
@@ -12,48 +14,48 @@ function Subscription (){
   return(
      <div className="settings">
         <div className="headerBlock  G-flex G-align-center G-justify-between">
-          <p className="miniHeader">Plan and billing</p>
-          <span className="saved">Saved</span>
+          <p className="miniHeader">{t("settings.header4")}</p>
+          <span className="saved">{t("settings.saved")}</span>
         </div>
        
        <div className="planCont G-flex G-justify-between">
          <div className="planBlock">
-           <span className="miniSpan">Plan</span>
+           <span className="miniSpan">{t("settings.plan")}</span>
            <div className="miniPrg G-flex G-align-center">
              <img src={ImgSvg.statusRocket} alt=""/>
              Premium+
            </div>
            
-           <p className="advantage G-flex G-align-center"><img src={ImgSvg.greenCheck} alt=""/>Advantage</p>
-           <p className="advantage G-flex G-align-center"><img src={ImgSvg.greenCheck} alt=""/>Advantage</p>
-           <p className="advantage G-flex G-align-center"><img src={ImgSvg.greenCheck} alt=""/>Advantage</p>
-           <p className="advantage G-flex G-align-center"><img src={ImgSvg.greenCheck} alt=""/>Advantage</p>
-           <p className="advantage G-flex G-align-center"><img src={ImgSvg.greenCheck} alt=""/>Advantage</p>
+           <p className="advantage G-flex G-align-center"><img src={ImgSvg.greenCheck} alt=""/>{t("settings.advantage")}</p>
+           <p className="advantage G-flex G-align-center"><img src={ImgSvg.greenCheck} alt=""/>{t("settings.advantage")}</p>
+           <p className="advantage G-flex G-align-center"><img src={ImgSvg.greenCheck} alt=""/>{t("settings.advantage")}</p>
+           <p className="advantage G-flex G-align-center"><img src={ImgSvg.greenCheck} alt=""/>{t("settings.advantage")}</p>
+           <p className="advantage G-flex G-align-center"><img src={ImgSvg.greenCheck} alt=""/>{t("settings.advantage")}</p>
 
          </div>
  
         <div className="paymentBlock G-flex G-align-center">
             <div className="paymentCont">
-              <span className="miniSpan">Payment</span>
+              <span className="miniSpan">{t("settings.payment")}</span>
               <div className="priceMonth G-flex">
                 29€
-                <span className="priceMonthSpan">per month</span>
+                <span className="priceMonthSpan">{t("settings.perMonth")}</span>
               </div>
-              <p className="paidUp">Paid up to 21.09.2023</p>
+              <p className="paidUp">{t("settings.paidUpTo")} 21.09.2023</p>
               
             </div>
           
           <div className="changeCont G-flex G-align-center">
-            <p className="changePrg">Change plan</p>
-            <p className="cancelPrg">Cancel subscription</p>
+            <p className="changePrg">{t("settings.changePlan")}</p>
+            <p className="cancelPrg">{t("settings.cancelSub")}</p>
           </div>
         </div>
  
        </div>
        
        <p className="headerBlock subHeader G-flex G-justify-between G-align-center">
-         <p className="miniHeader">Payments method</p>
-         <span className="miniHeaderSpan">New payment method</span>
+         <p className="miniHeader">{t("settings.header5")}</p>
+         <span className="miniHeaderSpan">{t("settings.newPayment")}</span>
        </p>
        
        
@@ -97,7 +99,7 @@ function Subscription (){
        </div>
   
   
-       <button className="saveBtn">Save</button>
+       <button className="saveBtn">{t("settings.save")}</button>
        
      </div>
   )
