@@ -2,8 +2,10 @@ import React, {useState} from "react";
 import "./InsuranceStep2.scss";
 import {InsuranceSvg} from "../insuranceSvg/insuranceSvg";
 import {Link, useNavigate} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 function InsuranceStep2() {
+  const {t, i18n} = useTranslation()
   const navigate = useNavigate();
   const [checkbox1, setCheckbox1] = useState(false);
   const ExampleData = ["Latvia", "Bulgaria", "Germany", "French", "Latvia", "Bulgaria", "Germany", "French"];
@@ -55,19 +57,19 @@ function InsuranceStep2() {
   
   return (
      <div className="InsuranceStep2 G-container">
-       <p className="header">Registration of insurance <span>online</span></p>
+       <p className="header">{t("insurance.header21")} <span>{t("insurance.header22")}</span></p>
        
        <div className="RegCont">
          
          <div className="pageInfo">
            <Link className="linkToSTep1 G-align-center" to="/insurance/step1"><img src={InsuranceSvg.arrowLeft}
-                                                                             alt=""/>Back</Link>
-           <p className="VehicleInfo">Owner information:</p>
-           <span className="clearRefresh G-align-center"><img src={InsuranceSvg.clearIcon} alt=""/>Clear</span>
+                                                                             alt=""/>{t("insurance.back")}</Link>
+           <p className="VehicleInfo">{t("insurance.miniHeader7")}:</p>
+           <span className="clearRefresh G-align-center"><img src={InsuranceSvg.clearIcon} alt=""/>{t("insVig.clear")}</span>
            <div className="pagesOrdinary G-flex">
-             <span className="page  G-align-center"><span>1</span>Questionnaire</span>
-             <span className="page G-align-center"><span>2</span>Registration</span>
-             <span className="page active G-align-center"><span>3</span>Offers</span>
+             <span className="page  G-align-center"><span>1</span>{t("insurance.section1")}</span>
+             <span className="page G-align-center"><span>2</span>{t("insurance.section2")}</span>
+             <span className="page active G-align-center"><span>3</span>{t("insurance.section3")}</span>
            </div>
          </div>
          
@@ -75,33 +77,31 @@ function InsuranceStep2() {
            <div className="MainInputs">
              <div className="checkBox1 G-align-center">
                {CheckBox(checkbox1, setCheckbox1)}
-               <p>The vehicle does not have a Bulgarian registration number</p>
+               <p>{t("insurance.underText1")}</p>
              </div>
              <div className="Inputs">
                {Select("C,CA,CB Sofia-city", ExampleData, "Select full")}
              </div>
-             <p className="headerPrg">Address registration of vehicle be coupon</p>
+             <p className="headerPrg">{t("insurance.miniHeader8")}</p>
              <div className="Inputs">
-               {Select("District", ExampleData, "Select half")}
-               {Select("Municipality", ExampleData, "Select half")}
-               {Select("Populated place", ExampleData, "Select middle")}
+               {Select(`${t("insurance.district")}`, ExampleData, "Select half")}
+               {Select(`${t("insurance.municipality")}`, ExampleData, "Select half")}
+               {Select(`${t("insurance.populatedPlace")}`, ExampleData, "Select middle")}
              </div>
              
-             <p className="headerPrg">Vehicle insurance data</p>
+             <p className="headerPrg">{t("insurance.miniHeader9")}</p>
              <div className="Inputs">
-               {Select("Does the car have valid Casco insurance?", ExampleData, "Select full")}
-               {Select("What company had the vehicle's previous liability insurance?", ExampleData, "Select full")}
+               {Select(`${t("insurance.placeholder2")}`, ExampleData, "Select full")}
+               {Select(`${t("insurance.placeholder3")}`, ExampleData, "Select full")}
              </div>
              
              <div className="ImportantTextBlock">
-               <p className="ImportantPrg"><span>Important!</span> Enter the data of the owner and the address entered in the
-                 registration card of the motor vehicle, even in cases where the motor vehicle is driven with a power of
-                 attorney.</p>
+               <p className="ImportantPrg"><span>{t("insurance.important")}</span>{t("insurance.prg5")}</p>
              </div>
              
              <div className="AddressBlock">
-               <p className="headerPrg">Address</p>
-               {Select("Populated place", ExampleData, "Select full")}
+               <p className="headerPrg">{t("insurance.miniHeader10")}</p>
+               {Select(`${t("insurance.populatedPlace")}`, ExampleData, "Select full")}
                <input placeholder="Street" className="inputText middleInput" type="text"/>
                <input placeholder="No" className="inputText smallInput" type="text"/>
                <input placeholder="g.k./sq.m" className="inputText middleInput" type="text"/>
@@ -113,17 +113,17 @@ function InsuranceStep2() {
              </div>
              
              <div className="OwnersDocBlock">
-               <p className="headerPrg">Owner's document</p>
+               <p className="headerPrg">{t("insurance.miniHeader11")}</p>
                <div className="radioBlocks">
                  <div className="radioBlock">
                    <div className="radio">
                      <input type="radio" id="Individual" name="1stRadio" value="Individual" checked/>
-                     <label htmlFor="Individual">Individual</label>
+                     <label htmlFor="Individual">{t("insurance.type1")}</label>
                    </div>
   
                    <div className="radio">
                      <input type="radio" id="Legal entity" name="1stRadio" value="Legal entity"/>
-                     <label htmlFor="Legal entity">Legal entity</label>
+                     <label htmlFor="Legal entity">{t("insurance.type2")}</label>
                    </div>
                  </div>
                  
@@ -132,56 +132,56 @@ function InsuranceStep2() {
                  <div className="radioBlock">
                    <div className="radio">
                      <input type="radio" id="Bulgarian citizen" name="2stRadio" value="Bulgarian citizen" checked/>
-                     <label htmlFor="Bulgarian citizen">Bulgarian citizen</label>
+                     <label htmlFor="Bulgarian citizen">{t("insurance.type3")}</label>
                    </div>
     
                    <div className="radio">
                      <input type="radio" id="A foreigner" name="2stRadio" value="A foreigner"/>
-                     <label htmlFor="A foreigner">A foreigner</label>
+                     <label htmlFor="A foreigner">{t("insurance.type4")}</label>
                    </div>
                  </div>
                </div>
-               <input placeholder="Owner’s age" className="inputText halfInput" type="text"/>
-               {Select("Driving experience ", ExampleData, "Select halfSelect")}
+               <input placeholder={t("insurance.placeholder4")} className="inputText halfInput" type="text"/>
+               {Select(`${t("insurance.placeholder5")}`, ExampleData, "Select halfSelect")}
                <input placeholder="EGN/LNCH" className="inputText fullInput" type="text"/>
   
-               <input placeholder="Name" className="inputText halfInput" type="text"/>
-               <input placeholder="Surname" className="inputText halfInput" type="text"/>
+               <input placeholder={t("insurance.name")} className="inputText halfInput" type="text"/>
+               <input placeholder={t("insurance.surname")} className="inputText halfInput" type="text"/>
                
                <div className="CardCertificate">
-                 <span className="GreenText">Green card certificate</span>
+                 <span className="GreenText">{t("insurance.greenCard")}</span>
                  <input type="checkbox" checked/>
                </div>
   
-               <input placeholder="Name" className="inputText halfInput" type="text"/>
-               <input placeholder="Surname" className="inputText halfInput" type="text"/>
+               <input placeholder={t("insurance.name")} className="inputText halfInput" type="text"/>
+               <input placeholder={t("insurance.surname")} className="inputText halfInput" type="text"/>
              </div>
   
              <div className="tabletBlock">
                <button disabled={false} onClick={()=>{
                  navigate('/insurance/step3')
-               }} className="continueBtnInside">Continue</button>
-               <a className="linkPolicy" href="">What does the policy cover?</a>
+               }} className="continueBtnInside">{t("insurance.continue")}</button>
+               <a className="linkPolicy" href="">{t("insurance.link1")} </a>
              </div>
            
            
            </div>
            
            <div className="needBlock G-flex-column">
-             <p className="needHeader">The sections left to fill out are</p>
-             <p className="needPrg link">Vehicle data</p>
-             <p className="needPrg link">Motor vehicle insurance data</p>
-             <p className="needPrg link">Owner's document</p>
-             <p className="needPrg link">Address</p>
+             <p className="needHeader">{t("insurance.miniHeader12")}</p>
+             <p className="needPrg link">{t("insurance.prg6")}</p>
+             <p className="needPrg link">{t("insurance.prg7")}</p>
+             <p className="needPrg link">{t("insurance.prg8")}</p>
+             <p className="needPrg link">{t("insurance.prg9")}</p>
              
-             <p className="needHeader">You will need:</p>
-             <p className="needPrg">Documents for the car</p>
-             <p className="needPrg">Owner's document</p>
-             <p className="needPrg">Driver's license</p>
+             <p className="needHeader">{t("insurance.miniHeader13")}:</p>
+             <p className="needPrg">{t("insurance.prg10")}</p>
+             <p className="needPrg">{t("insurance.prg11")}</p>
+             <p className="needPrg">{t("insurance.prg12")}</p>
              
              <button disabled={false} onClick={() => {
                navigate("/insurance/step3");
-             }} className="continueBtn">Continue
+             }} className="continueBtn">{t("insurance.continue")}
              </button>
            </div>
          </div>

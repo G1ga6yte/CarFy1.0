@@ -2,13 +2,15 @@ import React, {useState} from "react";
 import "./Step1RegOnlineBlock.scss"
 import {InsuranceSvg} from "../../insuranceSvg/insuranceSvg";
 import {Link, useNavigate} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 function Step1RegOnlineBlock (){
   const navigate = useNavigate()
+  const {t, i18n} = useTranslation()
   
   
   function SelectCountry (){
-    const [selected, setSelected] = useState('Your country')
+    const [selected, setSelected] = useState(t("insurance.country"))
     const [selectActive, setSelectActive] = useState(false)
     
     function Selecting (event){
@@ -42,7 +44,7 @@ function Step1RegOnlineBlock (){
   }
   
   function SelectMark (){
-    const [selected, setSelected] = useState('Your Mark')
+    const [selected, setSelected] = useState(t("insurance.mark"))
     const [selectActive, setSelectActive] = useState(false)
     
     function Selecting (event){
@@ -78,7 +80,7 @@ function Step1RegOnlineBlock (){
   }
   
   function SelectModel (){
-    const [selected, setSelected] = useState('Model')
+    const [selected, setSelected] = useState(t("insurance.model"))
     const [selectActive, setSelectActive] = useState(false)
     
     function Selecting (event){
@@ -115,17 +117,17 @@ function Step1RegOnlineBlock (){
   
   return(
      <div className="Step1RegOnlineBlock">
-        <p className="header">Registration of insurance <span>online</span></p>
+        <p className="header">{t("insurance.header21")} <span>{t("insurance.header22")}</span></p>
        
        <div className="regBlock">
          
           <div className="pageInfo">
-            <p className="VehicleInfo">Vehicle information:</p>
-            <span className="clearRefresh G-align-center"><img src={InsuranceSvg.clearIcon} alt=""/>Clear</span>
+            <p className="VehicleInfo">{t("insurance.miniHeader5")}:</p>
+            <span className="clearRefresh G-align-center"><img src={InsuranceSvg.clearIcon} alt=""/>{t("insVig.clear")}</span>
             <div className="pagesOrdinary G-flex">
-              <span className="page  G-align-center"><span>1</span>Questionnaire</span>
-              <span className="page active G-align-center"><span>2</span>Registration</span>
-              <span className="page active G-align-center"><span>3</span>Offers</span>
+              <span className="page  G-align-center"><span>1</span>{t("insurance.section1")}</span>
+              <span className="page active G-align-center"><span>2</span>{t("insurance.section2")}</span>
+              <span className="page active G-align-center"><span>3</span>{t("insurance.section3")}</span>
             </div>
           </div>
          
@@ -137,35 +139,35 @@ function Step1RegOnlineBlock (){
               <div className="line2 G-flex">
                 <div className="InputCarNumber G-flex">
                   <img src={InsuranceSvg.logoLV} alt=""/>
-                  <input placeholder="Enter your car number" type="text"/>
+                  <input placeholder={t("insurance.carNumber")} type="text"/>
                 </div>
-                <input placeholder="Purpose of the vehicle" className="inputPurpose" type="text"/>
+                <input placeholder={t("insurance.purpose")} className="inputPurpose" type="text"/>
               </div>
               
               <div className="vehCharacter">
-                <p className="vehCharacterHeader">Vehicle Characteristics</p>
+                <p className="vehCharacterHeader">{t("insurance.miniHeader6")}</p>
                 <div className="OptionBlocks G-flex">
                   <SelectMark/>
                   <SelectModel/>
                 </div>
-                <input placeholder="Vehicle Characteristics" className="vehCharacterInput" type="text"/>
+                <input placeholder={t("insurance.placeholder1")} className="vehCharacterInput" type="text"/>
                 <button disabled={false} onClick={()=>{
                   navigate('/insurance/step2')
-                }} className="continueBtnInside">Continue</button>
-                <a className="linkPolicy" href="">What does the policy cover?</a>
+                }} className="continueBtnInside">{t("insurance.continue")}</button>
+                <a className="linkPolicy" href="">{t("insurance.link1")}</a>
               </div>
               
             </div>
            
            <div className="needBlock G-flex-column">
-              <p className="needHeader">You will need:</p>
-             <p className="needPrg">Documents for the car</p>
-             <p className="needPrg">Owner's document</p>
-             <p className="needPrg">Driver's license</p>
+              <p className="needHeader">{t("insurance.needH")}:</p>
+             <p className="needPrg">{t("insurance.need1")}</p>
+             <p className="needPrg">{t("insurance.need2")}</p>
+             <p className="needPrg">{t("insurance.need3")}</p>
 
              <button disabled={false} onClick={()=>{
                navigate('/insurance/step2')
-             }} className="continueBtn">Continue</button>
+             }} className="continueBtn">{t("insurance.continue")}</button>
            </div>
          </div>
          

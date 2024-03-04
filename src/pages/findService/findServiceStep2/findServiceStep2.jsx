@@ -6,15 +6,17 @@ import {InsuranceSvg} from "../../insurance/insuranceSvg/insuranceSvg";
 import {Link, useNavigate} from "react-router-dom";
 import {useCartContext} from "../../../CartContext";
 import Calendar from "react-calendar";
+import {useTranslation} from "react-i18next";
 
 function FindServiceStep2() {
+  const {t, i18n} = useTranslation()
   const navigate = useNavigate()
   const {checkedServices, setCheckedServices, handleDeleteCheck, authorization} = useCartContext();
   
-  const [selectedMark, setSelectedMark] = useState("Your Mark");
+  const [selectedMark, setSelectedMark] = useState(t("finds.mark"));
   const [selectMarkActive, setSelectMarkActive] = useState(false);
   
-  const [selectedModel, setSelectedModel] = useState("Model");
+  const [selectedModel, setSelectedModel] = useState(t("finds.model"));
   const [selectModelActive, setSelectModelActive] = useState(false);
   
   const [image1, setImage1] = useState(null);
@@ -116,9 +118,34 @@ function FindServiceStep2() {
   ///////////////// Calendar ////////////////////
   const [choseType, setChoseType] = useState(3);
   const [value, setValue] = useState(new Date());
-  const WeekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
-  const Months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
-                  "November", "December", "January"];
+  const WeekDays = [
+     t("finds.week1"),
+     t("finds.week2"),
+     t("finds.week3"),
+     t("finds.week4"),
+     t("finds.week5"),
+     t("finds.week6"),
+     t("finds.week7"),
+     t("finds.week1"),
+     t("finds.week2"),
+     t("finds.week3"),
+
+  ];
+  const Months = [
+    t("finds.month1"),
+    t("finds.month2"),
+    t("finds.month3"),
+    t("finds.month4"),
+    t("finds.month5"),
+    t("finds.month6"),
+    t("finds.month7"),
+    t("finds.month8"),
+    t("finds.month9"),
+    t("finds.month10"),
+    t("finds.month11"),
+    t("finds.month12"),
+    t("finds.month1"),
+  ];
   const Times = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
   const [activeTime, setActiveTime] = useState(9);
   
@@ -162,13 +189,13 @@ function FindServiceStep2() {
     <div className="headerBlock">
       <Link to="/findService" className="backBtnBlock G-flex G-align-center">
         <img src={ImgSvg.arrowLeft} alt=""/>
-        <span>Back</span>
+        <span>{t("finds.back")}</span>
       </Link>
       <div className="requestBlock G-flex G-justify-between G-align-center">
-        <p className="header">New request:</p>
+        <p className="header">{t("finds.newReq")}:</p>
         <div className="clearBlock">
           <img src={ImgSvg.clear} alt=""/>
-          <span>Clear</span>
+          <span>{t("finds.clear")}</span>
         </div>
       </div>
     </div>
@@ -178,10 +205,10 @@ function FindServiceStep2() {
       <div className="fillingBlock">
         <div className="InputCarNumber G-flex">
           <img src={InsuranceSvg.logoLV} alt=""/>
-          <input placeholder="Enter your car number" type="text"/>
+          <input placeholder={t("finds.placeholder2")} type="text"/>
         </div>
         
-        <p className="miniHeader">Vehicle Characteristics</p>
+        <p className="miniHeader">{t("finds.miniHeader1")}</p>
         
         <div className="carCharacteristic G-flex G-align-center">
           
@@ -241,7 +268,7 @@ function FindServiceStep2() {
           
           </div>
           
-          <textarea placeholder="Describe your issue" className="textArea" name="issueDescription"
+          <textarea placeholder={t("finds.placeholder3")} className="textArea" name="issueDescription"
                     id="issueDescription" cols="30" rows="10"></textarea>
         
         </div>
@@ -257,7 +284,7 @@ function FindServiceStep2() {
           })}
         </div>
         
-        <p className="miniHeader">Attach photo (if necessary)</p>
+        <p className="miniHeader">{t("finds.miniHeader2")}</p>
         
         <div className="picturesBlock G-flex G-align-center">
           <div className="imgBlock">
@@ -322,11 +349,11 @@ function FindServiceStep2() {
           </div>
         </div>
         
-        <p className="miniHeader pickupQuestion">Need pickup?</p>
+        <p className="miniHeader pickupQuestion">{t("finds.miniHeader3")}</p>
         
         <div className="switchersCont">
           <div className="switcherBlock G-flex G-align-center G-justify-between">
-            <p className="miniPrg">Departure to the place</p>
+            <p className="miniPrg">{t("finds.prg1")}</p>
             <div onClick={() => {
               setDepartureSwitch(prev => !prev);
             }} className={`switcher G-flex ${departureSwitch ? "activeSwitch" : ""}`}>
@@ -335,7 +362,7 @@ function FindServiceStep2() {
           </div>
           
           <div className="switcherBlock G-flex G-align-center G-justify-between">
-            <p className="miniPrg">Evacuator</p>
+            <p className="miniPrg">{t("finds.prg2")}</p>
             <div onClick={() => {
               setEvacuateSwitch(prev => !prev);
             }} className={`switcher G-flex ${evacuateSwitch ? "activeSwitch" : ""}`}>
@@ -346,7 +373,7 @@ function FindServiceStep2() {
         </div>
         
         <div className="locationBlock">
-          <p className="miniHeader">Choose location</p>
+          <p className="miniHeader">{t("finds.miniHeader4")}</p>
           <input className="inputMap" placeholder="Dzirnavu iela 33, Centra rajons, Rīga, LV-1010" type="text"/>
           <div className="mapBlock">
             <img src={ImgSvg.mapImg} alt=""/>
@@ -354,7 +381,7 @@ function FindServiceStep2() {
         </div>
         
         <div className="dateBlock">
-          <p className="miniHeader">Choose date</p>
+          <p className="miniHeader">{t("finds.miniHeader5")}</p>
           <div className="tableBlock G-flex G-justify-between G-align-center">
             
             <div onClick={() => {
@@ -390,7 +417,7 @@ function FindServiceStep2() {
                    d="M12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6Z"
                    fill="#0D172F"/>
               </svg>
-              <p className="timePrg">{new Date().getDate() === value.getDate() ? "Later Today" : "Tomorrow"} {new Date().getDate() === value.getDate() ? WeekDays[new Date().getDay()] : WeekDays[new Date().getDay() + 1]} {new Date().getDate() === value.getDate() ? activeTime === 9 ? "09:00" : `${activeTime}:00` : "09:00"}</p>
+              <p className="timePrg">{new Date().getDate() === value.getDate() ? t("finds.laterToday") : t("finds.tomorrow")} {new Date().getDate() === value.getDate() ? WeekDays[new Date().getDay()] : WeekDays[new Date().getDay() + 1]} {new Date().getDate() === value.getDate() ? activeTime === 9 ? "09:00" : `${activeTime}:00` : "09:00"}</p>
             </div>
             
             <div onClick={() => {
@@ -405,7 +432,7 @@ function FindServiceStep2() {
                    d="M3 17C3 16.4477 3.44772 16 4 16H17.5858L15.2929 13.7071C14.9024 13.3166 14.9024 12.6834 15.2929 12.2929C15.6834 11.9024 16.3166 11.9024 16.7071 12.2929L20.7071 16.2929C21.0976 16.6834 21.0976 17.3166 20.7071 17.7071L16.7071 21.7071C16.3166 22.0976 15.6834 22.0976 15.2929 21.7071C14.9024 21.3166 14.9024 20.6834 15.2929 20.2929L17.5858 18H4C3.44772 18 3 17.5523 3 17Z"
                    fill="#0D172F"/>
               </svg>
-              <p className="timePrg">{new Date().getDate() === value.getDate() ? "Tomorrow" : "After Tomorrow"} {new Date().getDate() === value.getDate() ? WeekDays[new Date().getDay() + 1] : WeekDays[new Date().getDay() + 2]} {"09:00"}</p>
+              <p className="timePrg">{new Date().getDate() === value.getDate() ? t("finds.tomorrow") : t("finds.afterTomorrow")} {new Date().getDate() === value.getDate() ? WeekDays[new Date().getDay() + 1] : WeekDays[new Date().getDay() + 2]} {"09:00"}</p>
             </div>
             
             <div onClick={() => {
@@ -419,7 +446,7 @@ function FindServiceStep2() {
                       d="M16 1C16.5523 1 17 1.44772 17 2V3.00163C17.4755 3.00489 17.891 3.01472 18.2518 3.04419C18.8139 3.09012 19.3306 3.18868 19.816 3.43597C20.5686 3.81947 21.1805 4.43139 21.564 5.18404C21.8113 5.66937 21.9099 6.18608 21.9558 6.74817C22 7.28936 22 7.95372 22 8.75868V13.2455C22 13.386 21.886 13.5 21.7455 13.5C21.6546 13.5 21.5713 13.4511 21.522 13.3747C20.9879 12.5476 20.0579 12 19 12C17.3431 12 16 13.3431 16 15C14.3431 15 13 16.3431 13 18C13 19.6569 14.3431 21 16 21C16 21.1376 16.0093 21.273 16.0272 21.4057C16.1317 22.1784 16.1839 22.5648 16.1358 22.6863C16.0784 22.8313 16.0519 22.8617 15.916 22.9381C15.8021 23.0021 15.5286 23.0024 14.9815 23.003C12.5739 23.0055 10.1663 23 7.75868 23C6.95372 23 6.28937 23 5.74818 22.9558C5.18608 22.9099 4.66938 22.8113 4.18404 22.564C3.43139 22.1805 2.81947 21.5686 2.43598 20.816C2.18868 20.3306 2.09012 19.8139 2.0442 19.2518C1.99998 18.7106 1.99999 18.0463 2 17.2413V8.7587C1.99999 7.95375 1.99998 7.28936 2.0442 6.74817C2.09012 6.18608 2.18868 5.66937 2.43598 5.18404C2.81947 4.43139 3.43139 3.81947 4.18404 3.43597C4.66938 3.18868 5.18608 3.09012 5.74818 3.04419C6.10898 3.01472 6.52454 3.00489 7 3.00163V2C7 1.44772 7.44772 1 8 1C8.55229 1 9 1.44772 9 2V3H15V2C15 1.44772 15.4477 1 16 1ZM7 5.00176V6C7 6.55228 7.44772 7 8 7C8.55229 7 9 6.55228 9 6V5H15V6C15 6.55228 15.4477 7 16 7C16.5523 7 17 6.55228 17 6V5.00176C17.4455 5.00489 17.7954 5.01357 18.089 5.03755C18.5274 5.07337 18.7516 5.1383 18.908 5.21799C19.2843 5.40973 19.5903 5.7157 19.782 6.09202C19.8617 6.24842 19.9266 6.47262 19.9624 6.91104C19.9992 7.36113 20 7.94342 20 8.8V9H4V8.8C4 7.94342 4.00078 7.36113 4.03755 6.91104C4.07337 6.47262 4.1383 6.24842 4.21799 6.09202C4.40974 5.7157 4.7157 5.40973 5.09202 5.21799C5.24842 5.1383 5.47262 5.07337 5.91104 5.03755C6.20463 5.01357 6.55447 5.00489 7 5.00176Z"
                       fill="black"/>
               </svg>
-              <p className="timePrg">Pick Date & Time</p>
+              <p className="timePrg">{t("finds.pickDate")}</p>
             </div>
           </div>
           
@@ -446,7 +473,7 @@ function FindServiceStep2() {
                 })}
               </div>
               <div className="meetingTimeBlock">
-                <p className="meetingPrg">Meeting time</p>
+                <p className="meetingPrg">{t("finds.meetingTime")}</p>
                 <p className="data">{value.getDate()} {Months[value.getMonth()]}, {activeTime === 9 ? "09:00" : `${activeTime}:00`}</p>
               
               </div>
@@ -462,40 +489,40 @@ function FindServiceStep2() {
             } else {
               navigate("/findService/logIn")
             }
-          }} className="continueBtn">Continue</button>
+          }} className="continueBtn">{t("finds.continue")}</button>
           
-          <p className="prgTerms">By filling out the form, I accept the <a href="">terms of transmission</a></p>
+          <p className="prgTerms">{t("finds.prg31")}<a href="">{t("finds.prg32")}</a></p>
         </div>
       
       </div>
       
       <div className="advantagesBlock">
         
-        <p className="miniHeader">Our advantages</p>
+        <p className="miniHeader">{t("finds.miniHeader6")}</p>
         
         <div className="advantageBlock G-flex G-align-center">
           <img src={ImgSvg.checkGreen} alt=""/>
-          <p className="prg">Saves time by finding the nearest repair shop and connecting drivers with it</p>
+          <p className="prg">{t("finds.prg4")}</p>
         </div>
         
         <div className="advantageBlock G-flex G-align-center">
           <img src={ImgSvg.checkGreen} alt=""/>
-          <p className="prg">Saves money with discounts at partner service centers</p>
+          <p className="prg">{t("finds.prg5")}</p>
         </div>
         
         <div className="advantageBlock G-flex G-align-center">
           <img src={ImgSvg.checkGreen} alt=""/>
-          <p className="prg">Provides quality service with reviews from other drivers</p>
+          <p className="prg">{t("finds.prg6")}</p>
         </div>
         
         <div className="advantageBlock G-flex G-align-center">
           <img src={ImgSvg.checkGreen} alt=""/>
-          <p className="prg">Offers convenience with easy scheduling and repair progress tracking</p>
+          <p className="prg">{t("finds.prg7")}</p>
         </div>
         
         <div className="advantageBlock G-flex G-align-center">
           <img src={ImgSvg.checkGreen} alt=""/>
-          <p className="prg">Ensures safety by quickly finding a repair shop in an emergency</p>
+          <p className="prg">{t("finds.prg8")}</p>
         </div>
         
         <button onClick={()=>{
@@ -504,9 +531,9 @@ function FindServiceStep2() {
           } else {
             navigate("/findService/logIn")
           }
-        }} className="continueBtn">Continue</button>
+        }} className="continueBtn">{t("finds.continue")}</button>
         
-        <p className="prgTerms">By filling out the form, I accept the <a href="">terms of transmission</a></p>
+        <p className="prgTerms">{t("finds.prg31")}<a href="">{t("finds.prg32")}</a></p>
       
       </div>
     

@@ -380,9 +380,9 @@
 
 
               .radio{
-                margin-right: 32px;
+                margin-right: 20px;
                 @include screen($tablet-l){
-                  margin-right: 20px;
+                  margin-right: 16px;
                 }
                 @include screen($mobile-m){
                   margin-right: 14px;
@@ -391,7 +391,7 @@
                 label{
                   white-space: nowrap;
                   font-family: 'Inter-Regular', sans-serif;
-                  font-size: 16px;
+                  font-size: 15px;
                   line-height: 130%;
                   cursor: pointer;
                   @include screen($tablet){

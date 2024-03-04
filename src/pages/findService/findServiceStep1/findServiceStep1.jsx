@@ -4,9 +4,11 @@ import {Link, useNavigate} from "react-router-dom";
 import {ImgSvg} from "./images/imgSvg";
 import {ServicesData} from "./servicesData";
 import {useCartContext} from "../../../CartContext";
+import {useTranslation} from "react-i18next";
 
 
 function FindServiceStep1() {
+  const {t, i18n} = useTranslation()
   const navigate = useNavigate();
   const {changeFindServiceStep, checkedServices, setCheckedServices, handleDeleteCheck} = useCartContext()
   
@@ -98,15 +100,15 @@ function FindServiceStep1() {
                  fill="#266EFE"/>
          </svg>
          
-         <span>Back</span>
+         <span>{t("finds.back")}</span>
        </div>
        
-       <p className="header">What needs <span>to be fixed?</span></p>
+       <p className="header">{t("finds.header11")}<span>{t("finds.header12")}</span></p>
        
        <div className="inputBlock G-flex">
          <img src={ImgSvg.search} className="searchIcon" alt=""/>
          <input value={searchVal} onChange={handleChange} className="searchInput" type="text"
-                placeholder={"Write down what needs to be fixed"}/>
+                placeholder={t("finds.placeholder1")}/>
          <img onClick={handleClear} style={{display: `${clearBtn ? "block" : "none"}`}} src={ImgSvg.close}
               className="closeIcon" alt=""/>
        </div>
@@ -114,15 +116,15 @@ function FindServiceStep1() {
          <p onClick={() => {
            setSearchVal("Engine repair");
            setClearBtn(true);
-         }} className="fastSearchLink">Engine repair</p>
+         }} className="fastSearchLink">{t("finds.fastSearch1")}</p>
          <p onClick={() => {
            setSearchVal("Engine diagnostic");
            setClearBtn(true);
-         }} className="fastSearchLink">Engine diagnostic</p>
+         }} className="fastSearchLink">{t("finds.fastSearch2")}</p>
          <p onClick={() => {
            setSearchVal("Engine tune-up");
            setClearBtn(true);
-         }} className="fastSearchLink">Engine tune-up</p>
+         }} className="fastSearchLink">{t("finds.fastSearch3")}</p>
        </div>
        
        
@@ -223,9 +225,9 @@ function FindServiceStep1() {
              <div className="bottomBlock">
                <button onClick={()=>handleClear()} className="backBtn">
                  <img src={ImgSvg.backArrow} alt=""/>
-                 <span>Back</span>
+                 <span>{t("finds.back")}</span>
                </button>
-               <Link to="/findService/newRequest"  className="continueBtn">Continue</Link>
+               <Link to="/findService/newRequest"  className="continueBtn">{t("finds.continue")}</Link>
              </div>
            </div>
          </div>

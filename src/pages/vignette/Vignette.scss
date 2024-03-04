@@ -41,6 +41,7 @@ padding-bottom: 100px;
         font-family: 'Inter-Bold', sans-serif;
         line-height: 140%;
         color: #0D172F;
+        text-align: start;
         @include screen($tablet-w) {
           text-align: center;
         }
@@ -695,6 +696,9 @@ padding-bottom: 100px;
             font-family: 'Inter-Regular', sans-serif;
             line-height: 130%;
 
+          }
+          .endText{
+            text-align: end;
           }
         }
 
