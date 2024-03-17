@@ -43,7 +43,7 @@ function MobileApp (){
             }}
          >
            {/*<CloseIcon />*/}
-           <p className="close">Close</p>
+           <p className="close">{t("review.close")}</p>
          </IconButton>
     
          <DialogContent className="dialog" dividers>
@@ -51,8 +51,8 @@ function MobileApp (){
            <div onClick={handleDialog} className="closeBtn">
   
            </div>
-           <p className="header">Get the Free App!</p>
-           <p className="prg">Get our car service app now for easy booking, real-time tracking, and hassle-free payments. Download today!</p>
+           <p className="header">{t("review.header2")}</p>
+           <p className="prg">{t("review.prg1")}</p>
   
            <a className="link G-align-center" href="https://play.google.com/store/games?hl=ru&gl=US">
              <img className="img1" src={MobileAppImg.gpIcon} alt=""/>

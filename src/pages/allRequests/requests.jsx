@@ -4,21 +4,23 @@ import "./requests.scss";
 import {useCartContext} from "../../CartContext";
 import ConfirmationDialog from "./allRequests/confirmationBlock/confirmationDialog";
 import ReviewBlock from "./allRequests/reviewBlock/reviewBlock";
+import {useTranslation} from "react-i18next";
 
 function Requests() {
+  const {t, i18n} = useTranslation()
   const location = useLocation();
   const [backBtnNavigation, setBackBtnNavigation] = useState("/profile");
   const [backBtnText, setBackBtnText] = useState("Dashboard");
   useEffect(() => {
     if (location.pathname.includes("requests/responses/")) {
       setBackBtnNavigation("/requests");
-      setBackBtnText("Requests");
+      setBackBtnText(t("req.btn3"));
     } else if (location.pathname.includes("requests/response/")) {
       setBackBtnNavigation(-1);
-      setBackBtnText("Responses");
+      setBackBtnText(t("req.btn2"));
     } else if (location.pathname.includes("/requests")) {
       setBackBtnNavigation("/profile");
-      setBackBtnText("Dashboard");
+      setBackBtnText(t("req.btn1"));
     }
   }, [location]);
   const navigate = useNavigate();
@@ -50,32 +52,32 @@ function Requests() {
              <button onClick={() => {
                setActiveLink("AllRequests");
                setReqStatus("sending");
-             }} className={`link ${activeLink === "AllRequests" ? "activeLink" : ""}`}>All requests
+             }} className={`link ${activeLink === "AllRequests" ? "activeLink" : ""}`}>{t("req.section1")}
              </button>
              <button onClick={() => {
                setActiveLink("Active");
                setReqStatus("gotResp");
-             }} className={`link ${activeLink === "Active" ? "activeLink" : ""}`}>Active
+             }} className={`link ${activeLink === "Active" ? "activeLink" : ""}`}>{t("req.section2")}
              </button>
              <button onClick={() => {
                setActiveLink("Scheduled");
                setReqStatus("scheduled");
-             }} className={`link ${activeLink === "Scheduled" ? "activeLink" : ""}`}>Scheduled
+             }} className={`link ${activeLink === "Scheduled" ? "activeLink" : ""}`}>{t("req.section3")}
              </button>
              <button onClick={() => {
                setActiveLink("InWork");
                setReqStatus("inWork");
-             }} className={`link ${activeLink === "InWork" ? "activeLink" : ""}`}>In work
+             }} className={`link ${activeLink === "InWork" ? "activeLink" : ""}`}>{t("req.section4")}
              </button>
              <button onClick={() => {
                setActiveLink("Finished");
                setReqStatus("finished");
-             }} className={`link ${activeLink === "Finished" ? "activeLink" : ""}`}>Finished
+             }} className={`link ${activeLink === "Finished" ? "activeLink" : ""}`}>{t("req.section5")}
              </button>
              <button onClick={() => {
                setActiveLink("Cancelled");
                setReqStatus("cancelled");
-             }} className={`link ${activeLink === "Cancelled" ? "activeLink" : ""}`}>Cancelled
+             }} className={`link ${activeLink === "Cancelled" ? "activeLink" : ""}`}>{t("req.section6")}
              </button>
            
            </div>

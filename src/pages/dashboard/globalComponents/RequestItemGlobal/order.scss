@@ -1,0 +1,104 @@
+@import "../../../../source/mixin";
+
+.Order{
+  width: 100%;
+  padding: 16px;
+
+  .headBlock{
+    margin-bottom: 16px;
+    .leftSide{
+      .customer{
+        img{
+          padding: 7px;
+          border-radius: 50%;
+          width: 24px;
+          height: 24px;
+          margin-right: 8px;
+          background-color: #D9E3FB;
+        }
+        .customerName{
+          font-size: 14px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #0D172F;
+          line-height: 120%;
+        }
+      }
+      .carName{
+        margin-left: 24px;
+        font-size: 14px;
+        font-family: 'Inter-Regular', sans-serif;
+        color: #0D172F;
+        line-height: 120%;
+      }
+    }
+    .rightSide{
+      .viewBtn{
+        font-size: 14px;
+        min-width: 90px;
+        color: white;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 130%;
+        padding: 4px;
+        text-align: center;
+        background-color: #266EFE;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-right: 8px;
+        &:hover{
+          background-color: #355ABC;
+        }
+      }
+      .hideBtn{
+        min-width: 90px;
+        font-size: 14px;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 130%;
+        padding: 4px;
+        text-align: center;
+        background-color: white;
+        border: 1px solid white;
+        outline: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-right: 8px;
+        &:hover{
+          border-color: #AEAEAE;
+        }
+      }
+    }
+  }
+  .messageBlock{
+    font-size: 14px;
+    font-family: 'Inter-Regular', sans-serif;
+    color: #0D172F;
+    line-height: 130%;
+    margin-bottom: 16px;
+    .moreBtn{
+      margin-left: 8px;
+      color: #828282;
+      text-decoration: underline;
+      text-underline-position: below;
+    }
+  }
+  .postTime{
+    font-size: 14px;
+    margin-bottom: 16px;
+    color: #AEAEAE;
+    font-family: 'Inter-Regular', sans-serif;
+    line-height: 130%;
+  }
+  .works{
+    flex-wrap: wrap;
+    .workItem{
+      font-size: 12px;
+      font-family: "Inter-Regular", sans-serif;
+      line-height: 120%;
+      margin-right: 8px;
+      margin-bottom: 4px;
+      color: #688DEF;
+    }
+  }
+
+}

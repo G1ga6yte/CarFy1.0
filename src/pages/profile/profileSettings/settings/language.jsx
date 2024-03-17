@@ -174,7 +174,7 @@ function Language (){
   
        </div>
   
-       <button className="saveBtn">{t("settings.save")}</button>
+       <button className="saveBtn">{t("settings.saveBtn")}</button>
 
 
      </div>

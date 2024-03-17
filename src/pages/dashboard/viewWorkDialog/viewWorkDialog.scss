@@ -1,0 +1,413 @@
+@import "../../../source/mixin.scss";
+
+.ViewWorkDialog{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+
+  .backgroundBlock{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .dialogCont{
+    max-width: 950px;
+    max-height: 100vh;
+    overflow: auto;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+
+    .DialogStep{
+      width: 100%;
+      border-radius: 24px;
+      background: white;
+      overflow: hidden;
+      .step3{
+        padding: 140px 40px 40px !important;
+      }
+      .mainCont{
+        padding: 30px 40px;
+        position: relative;
+
+        .backBtn{
+          cursor: pointer;
+          font-size: 20px;
+          font-family: 'Inter-Medium', sans-serif;
+          line-height: 140%;
+          color: #0D172F;
+          margin-bottom: 24px;
+          img{
+            margin-right: 16px;
+          }
+        }
+        .dateBlock{
+          margin: 0 0 10px;
+          border-bottom: 1px solid #F1F4F8;
+          padding-bottom: 12px;
+          .miniHeader{
+            font-size: 14px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: #0D172F;
+            line-height: 140%;
+            margin-bottom: 8px;
+          }
+          .date{
+            font-size: 16px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: #0D172F;
+            line-height: 140%;
+          }
+        }
+        .selectHeader{
+          font-size: 16px;
+          font-family: 'Inter-Medium', sans-serif;
+          color: #0D172F;
+          line-height: 140%;
+          margin-bottom: 16px;
+        }
+        .inputPrice{
+          padding: 16px;
+          font-size: 16px;
+          font-family: 'Inter-Regular', sans-serif;
+          line-height: 130%;
+          border-radius: 14px;
+          border: 1px solid #D9D9D9;
+          background: #FFF;
+          outline: none;
+          margin-bottom: 15px;
+          width: 340px;
+          &:focus-visible{
+            border-color: #266EFE;
+          }
+        }
+        .Select{
+          position: relative;
+          z-index: 5;
+          margin-bottom: 120px;
+          width: 340px;
+
+          .selectBlock{
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid;
+            background-color: #FFFFFF;
+            border-radius: 14px;
+            cursor: pointer;
+            &:hover{
+              border-color: #AEAEAE;
+            }
+            span{
+              font-size: 16px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 130%;
+            }
+          }
+          .optionsBlock{
+            width: 100%;
+            max-height: 180px;
+            overflow: scroll;
+            border-radius: 14px;
+            border: 1px solid #266EFE;
+            background-color: #FFFFFF;
+            padding: 4px;
+            margin-top: 4px;
+            position: absolute;
+            z-index: 20;
+
+            &::-webkit-scrollbar {
+              width: 25px;
+              height: 90% !important;
+            }
+            &::-webkit-scrollbar-track {
+              background: transparent;
+              border: 10px solid white;
+              border-radius: 20px;
+            }
+            &::-webkit-scrollbar-thumb {
+              background: #CCE0FF;
+              border: 10px solid white;
+              border-radius: 50px;
+            }
+            .option{
+              border-radius: 8px;
+              cursor: pointer;
+              padding: 12px 16px;
+              background-color: #FFFFFF;
+              font-size: 16px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 130%;
+              &:hover{
+                background-color: #266EFE;
+                color: #FFFFFF;
+              }
+            }
+          }
+        }
+
+        .closeX{
+          position: absolute;
+          right: 40px;
+          top: 30px;
+        }
+        .planeLogo{
+          margin-bottom: 30px;
+        }
+        .header{
+          font-size: 20px;
+          font-family: 'Inter-Medium', sans-serif;
+          color: #0D172F;
+          line-height: 140%;
+          margin-bottom: 16px;
+        }
+        .BackButton{
+          width: 340px;
+          padding: 8px;
+          background-color: #266EFE;
+          border-radius: 8px;
+          color: white;
+          font-family: 'Inter-Regular', sans-serif;
+          font-size: 16px;
+          cursor: pointer;
+          outline: none;
+          border: none;
+          margin-bottom: 30px;
+          &:hover{
+            background-color: #355ABC;
+          }
+        }
+        .underText{
+          font-size: 14px;
+          font-family: 'Inter-Medium', sans-serif;
+          color: #266EFE;
+          text-decoration: underline;
+          text-underline-position: under;
+          line-height: 140%;
+        }
+
+        .headerBlock{
+
+          .customerBlock{
+            img{
+              padding: 11px;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background-color: #D9E3FB;
+              margin-right: 8px;
+            }
+            .name{
+              font-size: 16px;
+              font-family: 'Inter-Medium', sans-serif;
+              color: #0D172F;
+              line-height: 140%;
+              margin-right: 16px;
+            }
+            .redText{
+              font-size: 16px;
+              font-family: 'Inter-Medium', sans-serif;
+              color: #FF7373;
+              line-height: 140%;
+            }
+          }
+          .closeIcon{
+            cursor: pointer;
+          }
+          .sentPrg{
+            min-width: 80px;
+            width: max-content;
+            text-align: center;
+            padding: 4px 16px;
+            border-radius: 50px;
+            border: 1px solid #266EFE;
+            color: #266EFE;
+            background: rgba(38, 110, 254, 0.10);
+            font-family: 'Inter-Regular', sans-serif;
+            line-height: 130%;
+            font-size: 12px;
+            margin-right: 24px;
+          }
+
+        }
+        .messageBlock{
+          margin: 24px 0;
+          width: 100%;
+          font-size: 14px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #0D172F;
+          line-height: 130%;
+        }
+        .postedDate{
+          width: 100%;
+          padding-bottom: 12px;
+          font-size: 14px;
+          color: #AEAEAE;
+          font-family: 'Inter-Medium', sans-serif;
+          border-bottom: 1px solid #F1F4F8;
+        }
+        .issuesBlock{
+          flex-wrap: wrap;
+          margin-top: 12px;
+          padding-bottom: 22px;
+          border-bottom: 1px solid #F1F4F8;
+          .miniHeader{
+            width: 100%;
+            font-size: 14px;
+            color: #0D172F;
+            font-family: 'Inter-Medium', sans-serif;
+            margin-bottom: 6px;
+          }
+          .issuesItem{
+            font-size: 12px;
+            line-height: 120%;
+            color: #688DEF;
+            font-family: 'Inter-Regular', sans-serif;
+            margin: 0 24px 18px 0;
+          }
+        }
+        .photosBlock{
+          padding: 12px 0;
+          border-bottom: 1px solid #F1F4F8;
+          flex-wrap: wrap;
+          .miniHeader{
+            width: 100%;
+            font-size: 14px;
+            color: #0D172F;
+            font-family: 'Inter-Medium', sans-serif;
+            margin-bottom: 6px;
+          }
+          .imageBlock{
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            margin-right: 8px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+        }
+        .nav{
+          padding: 12px 0 0;
+          .miniHeader{
+            width: 100%;
+            font-size: 14px;
+            color: #0D172F;
+            font-family: 'Inter-Medium', sans-serif;
+            margin-bottom: 6px;
+          }
+          .date{
+            font-size: 16px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: #0D172F;
+            line-height: 140%;
+            margin-bottom: 16px;
+          }
+          .buttonsBlock{
+            margin-bottom: 8px;
+            .btn{
+              width: 220px;
+              text-align: center;
+              padding: 8px;
+              border-radius: 8px;
+              font-size: 14px;
+              font-family: 'Inter-Medium', sans-serif;
+              line-height: 140%;
+              outline: none;
+              cursor: pointer;
+              margin-right: 8px;
+            }
+            .btnApply{
+              border: 1px solid #266EFE;
+              background-color: #266EFE;
+              color: white;
+              &:hover{
+                background-color: #355ABC;
+                border-color: #355ABC;
+              }
+            }
+            .btnHide{
+              border: 1px solid #F1F4F8;
+              color: #334155;
+              background-color: white;
+              &:hover{
+                border-color: #334155;
+              }
+
+            }
+          }
+          .flagBlock{
+            font-size: 14px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: #AEAEAE;
+            line-height: 140%;
+            img{
+              margin-right: 8px;
+            }
+          }
+
+        }
+
+      }
+
+      .historyCont{
+        padding: 12px 40px 65px;
+        background-color: #FBFDFF;
+
+        .header{
+          margin-bottom: 16px;
+          font-size: 14px;
+          color: #0D172F;
+          line-height: 130%;
+          font-family: 'Inter-Regular', sans-serif;
+        }
+        .historyBlock{
+          width: 100%;
+          max-height: 180px;
+          overflow: auto;
+          -ms-overflow-style: auto !important;  /* IE 10+ */
+          &::-webkit-scrollbar-thumb{
+            background-color: #CCE0FF !important;
+            border-radius: 15px;
+            border: 2px solid white;
+          }
+          &::-webkit-scrollbar {
+            width: 8px !important;
+            background: transparent !important;
+          }
+          .historyItem{
+            margin-bottom: 16px;
+            .itemDate{
+              margin-bottom: 8px;
+              font-size: 12px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 130%;
+              color: #0D172F;
+            }
+            .works{
+              flex-wrap: wrap;
+              .workItem{
+                margin: 0 24px 10px 0;
+                font-size: 12px;
+                color: #688DEF;
+                line-height: 120%;
+                font-family: 'Inter-Regular', sans-serif;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+
+  }
+
+
+}

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./navigation.scss";
 import {Link, useLocation} from "react-router-dom";
 import {SvgData} from "../../source/svgs/svgsData";
@@ -6,6 +6,8 @@ import {useCartContext} from "../../CartContext";
 import {ImgData} from "../../source/images/imgData";
 import EachNotifications from "./eachNote/eachNotifications";
 import {useTranslation} from "react-i18next";
+import { useCookies } from 'react-cookie';
+
 
 const locales = {
   en: {title: "English"},
@@ -21,19 +23,125 @@ function Navigation() {
   const [notes, setNotes] = useState(false); // false
   const [menuBar, setMenuBar] = useState(false);
   const [lngMenu, setLngMenu] = useState(false);
-  console.log(location.pathname);
+  
+  const [saleBlock, setSaleBlock] = useCookies(['saleBlock'])
   function handleNotBar() {
     setNotBar(false);
+    setSaleBlock('saleBlock', true)
   }
+  useEffect(()=>{
+    console.log(saleBlock.saleBlock);
+    if (saleBlock.saleBlock){
+      setNotBar(false)
+    }
+  }, [])
   
   function handleNotesBlock() {
-    setNotes(prevState => !prevState);
   }
   
+  useEffect(() => {
+    let timeoutId;
+    
+    const handleMouseEnter = () => {
+      setProducts(true);
+      clearTimeout(timeoutId);
+    };
+    
+    const handleMouseLeave = () => {
+      timeoutId = setTimeout(() => {
+        setProducts(false);
+      }, 3000);
+    };
+    
+    const cleanup = () => {
+      clearTimeout(timeoutId);
+    };
+    
+    const block = document.getElementById('productsBlock');
+    const block1 = document.getElementById('productsCont')
+    
+   
+    if (block) {
+      block.addEventListener('click', handleMouseEnter);
+      block.addEventListener('mouseleave', handleMouseLeave);
+    }
+    if (block1) {
+      block1.addEventListener('click', ()=>{setProducts(false)});
+      block1.addEventListener('mouseenter', handleMouseEnter);
+      block1.addEventListener('mouseleave', handleMouseLeave);
+    }
+    
+    return () => {
+      cleanup();
+      if (block) {
+        block.removeEventListener('mouseenter', handleMouseEnter);
+        block.removeEventListener('mouseleave', handleMouseLeave);
+      }
+      if (block1) {
+        block1.removeEventListener('click', ()=>{setProducts(false)});
+        block1.removeEventListener('mouseenter', handleMouseEnter);
+        block1.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, []);
+  
+  const [opc, setOpc] = useState(true)
+  useEffect(() => {
+    let timeoutId;
+    let timeoutId2;
+    
+    const handleMouseEnter = () => {
+      setNotes(true);
+      clearTimeout(timeoutId);
+      clearTimeout(timeoutId2);
+      setOpc(true)
+    };
+    
+    const handleMouseLeave = () => {
+      timeoutId = setTimeout(() => {
+        setNotes(false);
+      }, 3000);
+      timeoutId2 = setTimeout(() => {
+        setOpc(false)
+      }, 1000);
+    };
+    
+    const cleanup = () => {
+      clearTimeout(timeoutId);
+      clearTimeout(timeoutId2)
+    };
+    
+    // Получим ссылку на блок
+    const block = document.getElementById('messages');
+    const block1 = document.getElementById('messagesBlock')
+    
+    // Добавим обработчики событий только для этого блока
+    if (block) {
+      block.addEventListener('click', handleMouseEnter)
+      block.addEventListener('mouseleave', handleMouseLeave);
+    }
+    if (block1) {
+      block1.addEventListener('mouseenter', handleMouseEnter);
+      block1.addEventListener('mouseleave', handleMouseLeave);
+    }
+    
+    // Очистка при размонтировании компонента
+    return () => {
+      cleanup();
+      if (block) {
+        block.removeEventListener('click', handleMouseEnter)
+        block.removeEventListener('mouseleave', handleMouseLeave);
+      }
+      if (block1) {
+        block1.removeEventListener('mouseenter', handleMouseEnter);
+        block1.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, []);
   
   return (
-     <div style={{display: `${location.pathname === "/profile/map" ? "none" : location.pathname === "/chat" ? "none" : "block"}`}} className="Navigation">
-       <div style={{height: `${notBar ? "auto" : "0"}`}} className="notification">
+     <div style={{display: `${location.pathname === "/profile/map" ? "none" : location.pathname === "/chat" ? "none" : location.pathname.includes("partner") ? "none" : "block"}`}} className="Navigation">
+       <div style={{display: `${notBar ? "flex" : "none"}`}} className="notification">
          <p className="text">🧨 {t('navigator.sms')}</p>
          
          <svg onClick={handleNotBar} className="closeButton" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -57,7 +165,7 @@ function Navigation() {
          <div className="pageLinks G-justify-between G-align-center">
            <Link className={`LinkToPage ${Call("/") ? "activeLink" : " "} ${Call("/home") ? "activeLink" : " "}`}
                  to="/home">{t('navigator.link1')}</Link>
-           <div onClick={() => setProducts(prev => !prev)} className="ProductsLink G-align-center">
+           <div id="productsBlock" onClick={() => setProducts(true)} className="ProductsLink G-align-center">
              <span>{t('navigator.link2')}</span>
              <img style={{transform: `${products ? "rotate(180deg)" : "rotate(0deg)"}`}} src={SvgData.arrowDown}
                   alt=""/>
@@ -105,11 +213,11 @@ function Navigation() {
                  to="/logIn"><img src={SvgData.userLogo} alt=""/>{t('navigator.logIn')}</Link>
            <Link style={{display: `${authorization ? "none" : "block"}`}} className="LinkToService G-button"
                  to="/findService">{t('navigator.findService')}</Link>
-           <Link style={{display: `${authorization ? "block" : "none"}`}} className="LinkToMessages" to="/messages"><img
+           <Link style={{display: `${authorization ? "block" : "none"}`}} className="LinkToMessages" to="/chat"><img
               src={SvgData.message} alt=""/>
              <div className="newMessage"></div>
            </Link>
-           <div style={{display: `${authorization ? "block" : "none"}`}} onClick={handleNotesBlock}
+           <div id="messages" style={{display: `${authorization ? "block" : "none"}`}} onClick={handleNotesBlock}
                 className="LinkToNotifications"><img
               src={SvgData.notification} alt=""/>
              <div className="newMessage"></div>
@@ -162,7 +270,7 @@ function Navigation() {
        
        </div>
        
-       <div style={{display: `${notes ? "flex" : "none"}`}} className="notificationsBlock G-flex-column">
+       <div id="messagesBlock" style={{display: `${notes ? "flex" : "none"}`, opacity: `${opc ? 1 : 0}`}} className="notificationsBlock G-flex-column">
          <div className="buttons-block G-justify-between G-align-center">
            <div className="notesBlock G-align-center">
              <img src={SvgData.notification} alt=""/>
@@ -176,8 +284,10 @@ function Navigation() {
        
        
        </div>
-       
-       <div onClick={() => {
+       <div onClick={()=>{setNotes(false)}} style={{display:`${notes ? "block" : "none"}`, opacity:`${opc ? 1 : 0}`}} className="backgroundBlock"></div>
+  
+  
+       <div id="productsCont" onClick={() => {
          setProducts(false);
          setNotes(false);
        }} style={{display: `${products ? "flex" : "none"}`}} className="ProductsBlock G-container">

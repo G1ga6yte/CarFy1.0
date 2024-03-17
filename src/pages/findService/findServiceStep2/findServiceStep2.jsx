@@ -457,12 +457,12 @@ function FindServiceStep2() {
             <div>
               <Calendar onChange={(event) => {
                 handleChangeDate(event);
-              }} locale="en-GB" value={value}/>
+              }} locale={i18n.resolvedLanguage.toLowerCase()} value={value}/>
             
             </div>
             <div className="calendarSideBlock">
               <div className="timeBlock">
-                <p className="timePrg">Time</p>
+                <p className="timePrg">{t("finds.time")}</p>
                 
                 {Times.map((el, index) => {
                   return (<div onClick={() => {

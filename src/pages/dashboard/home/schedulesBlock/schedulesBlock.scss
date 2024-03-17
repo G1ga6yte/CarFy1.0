@@ -1,0 +1,325 @@
+@import "../../../../source/mixin.scss";
+
+.SchedulesBlock{
+  background-color: white;
+  width: 100%;
+  border: 1px solid #D9D9D9;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 400px;
+  min-height: 400px;
+  max-height: 400px;
+  @include screen($wide){
+
+  }
+
+  .react-calendar {
+    border: none;
+    position: relative;
+    border-right: 1px solid #D9D9D9;
+    width: 330px;
+    @include screen($wide){
+      width: 300px;
+    }
+
+    .react-calendar__navigation{
+      border-bottom: 1px solid #D9D9D9;
+      padding: 15px 10px 30px 10px !important;
+    }
+    .react-calendar__viewContainer{
+      padding: 15px 10px;
+    }
+
+    .react-calendar__navigation__label {
+      font-size: 15px;
+      font-family: 'Inter-Medium', sans-serif;
+      color: black;
+      pointer-events: none;
+
+      span {
+        width: 100%;
+        display: block;
+        text-align: start;
+      }
+    }
+    .react-calendar__month-view__weekdays__weekday{
+      margin-bottom: 15px !important;
+      abbr{
+        text-decoration: none;
+        font-family: 'Inter-Regular', sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 400 !important;
+        color: black;
+      }
+    }
+    .react-calendar__month-view__days__day--weekend{
+      color: black;
+      font-size: 14px;
+      font-family: 'Inter-Regular', sans-serif;
+    }
+    .react-calendar__tile--now{
+      background-color: transparent;
+      color: black !important;
+    }
+    .react-calendar__tile--active{
+      color: white !important;
+      background-color: #266EFE !important;
+    }
+    .react-calendar__tile{
+      border-radius: 8px;
+      margin: 5px 0;
+      padding: 12px 6px;
+    }
+    .react-calendar__month-view__days__day--neighboringMonth, .react-calendar__decade-view__years__year--neighboringDecade, .react-calendar__century-view__decades__decade--neighboringCentury{
+      color: rgba(24, 24, 25, 0.32) !important;
+    }
+    .react-calendar__navigation__prev-button {
+      position: absolute;
+      right: 50px;
+      top: 8px;
+      background-color: #FBFDFF;
+      border-radius: 8px;
+      width: 32px !important;
+      height: 32px !important;
+      line-height: 19% !important;
+      rotate: -90deg;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Inter-Regular', sans-serif;
+      font-size: 24px;
+      min-width: unset !important;
+      &:hover{
+        background-color: #266EFE;
+        color: white;
+      }
+    }
+    .react-calendar__navigation__next-button {
+      position: absolute;
+      right: 15px;
+      top: 8px;
+      background-color: #FBFDFF;
+      border-radius: 8px;
+      width: 32px !important;
+      height: 32px !important;
+      line-height: 19% !important;
+      rotate: -90deg;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Inter-Regular', sans-serif;
+      font-size: 24px;
+      min-width: unset !important;
+      &:hover{
+        background-color: #266EFE;
+        color: white;
+      }
+
+    }
+    .react-calendar__navigation__prev2-button, .react-calendar__navigation__next2-button {
+      display: none;
+    }
+
+  }
+  .Schedules{
+    flex-grow: 1;
+    height: 100%;
+    position: relative;
+
+
+
+    .headerBlock{
+      background-color: white;
+      position: absolute !important;
+      z-index: 5;
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding: 4.5px 16px !important;
+      border-bottom: 1px solid #D9D9D9;
+      @include screen($wide){
+        padding: 4.5px 8px !important;
+      }
+
+      .dateBlock{
+        font-size: 14px;
+        font-family: 'Inter-Regular', sans-serif;
+        color: #0D172F;
+        line-height: 130%;
+        @include screen($wide){
+          font-size: 12px;
+        }
+      }
+      .rightSide{
+
+        .inputBlock{
+          width: 280px;
+          position: relative;
+          @include screen($wide){
+            width: 250px;
+          }
+          svg{
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+          input{
+            padding: 8px 16px 8px 56px;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #F1F4F8;
+            font-size: 14px;
+            line-height: 130%;
+            font-family: 'Inter-Regular', sans-serif;
+            outline: none;
+            &:focus-visible{
+              border-color: #266EFE;
+            }
+          }
+        }
+        .headerButton{
+          width: 90px;
+          border-radius: 8px;
+          border: 1px solid #F1F4F8;
+          background: #FFF;
+          margin-left: 8px;
+          color: #AEAEAE;
+          line-height: 130%;
+          font-family: 'Inter-Regular', sans-serif;
+          cursor: pointer;
+          padding: 8px;
+          &:hover{
+            background-color: #F1F4F8;
+            color: black;
+          }
+        }
+
+
+      }
+
+    }
+    .schedulesCont{
+      height: 100%;
+      max-height: 100%;
+      overflow: auto;
+      padding-top: 45px;
+
+      -ms-overflow-style: auto !important;  /* IE 10+ */
+      &::-webkit-scrollbar-thumb{
+        background-color: #CCE0FF !important;
+        border-radius: 15px;
+        border: 2px solid white;
+      }
+      &::-webkit-scrollbar {
+        width: 8px !important;
+        background: white !important;
+      }
+
+      .EveryReq{
+        padding: 6px 16px;
+        @include screen($wide){
+          padding: 6px;
+        }
+
+        .customerBlock{
+          img{
+            width: 33px;
+            height: 33px;
+            background-color: #D9E3FB;
+            border-radius: 50%;
+            padding: 9px;
+            margin-right: 8px;
+          }
+          .textBlock{
+            .name{
+              font-size: 14px;
+              font-family: 'Inter-Regular', sans-serif;
+              color: #0D172F;
+              line-height: 130%;
+              margin-bottom: 2px;
+            }
+            .car{
+              font-size: 10px;
+              font-family: 'Inter-Regular', sans-serif;
+              color: #AEAEAE;
+              line-height: 130%;
+            }
+          }
+        }
+        .dateBlock{
+          .circle{
+            width: 6px;
+            height: 6px;
+            background-color: #00CC9A;
+            border-radius: 50%;
+            margin-right: 5px;
+          }
+          .date{
+            font-size: 12px;
+            font-family: 'Inter-Regular', sans-serif;
+            color: #0D172F;
+            line-height: 130%;
+          }
+        }
+        .workBlock{
+            .work{
+              color: #688DEF;
+              font-size: 12px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 130%;
+            }
+        }
+        .buttonsBlock{
+          .getStarted{
+            padding: 8px 40px;
+            border-radius: 8px;
+            border: 1px solid #F1F4F8;
+            background: #FFF;
+            font-size: 14px;
+            font-family: 'Inter-Medium', sans-serif;
+            line-height: 140%;
+            color: #334155;
+            cursor: pointer;
+            &:hover{
+              border-color: #334155;
+            }
+            @include screen($wide){
+              padding: 8px 16px;
+              white-space: nowrap;
+              margin-left: 6px;
+            }
+
+          }
+          .LinkToChat{
+            display: block;
+            padding: 4px 10px;
+            position: relative;
+            border-radius: 8px;
+            border: 1px solid #F1F4F8;
+            background: #FFF;
+            margin-left: 8px;
+            &:hover{
+              border-color: #334155;
+            }
+            .notesCircle{
+              position: absolute;
+              z-index: 2;
+              right: 8px;
+              top: 3px;
+              background-color: #FF7373;
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              outline: 3px solid white;
+            }
+          }
+        }
+      }
+
+
+    }
+
+
+  }
+}

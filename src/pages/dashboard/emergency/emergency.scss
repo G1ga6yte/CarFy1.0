@@ -1,0 +1,160 @@
+@import "../../../source/mixin.scss";
+
+
+.Emergency{
+  padding: 16px 40px;
+  @include screen($wide){
+    padding: 16px 24px;
+  }
+
+  .miniHeader{
+    font-size: 14px;
+    color: #334155;
+    line-height: 140%;
+    font-family: 'Inter-Medium', sans-serif;
+    margin-bottom: 8px;
+    .requestsCount{
+      color: #266EFE;
+      margin-left: 8px;
+    }
+  }
+
+  .mainCont{
+    border-radius: 16px;
+    border: 1px solid #F1F4F8;
+    background: #FFF;
+    overflow: hidden;
+    padding-bottom: 50px;
+
+    .sortButtonsBlock{
+      position: relative;
+      z-index: 10;
+      padding: 8px 16px;
+      border-bottom: 1px solid #F1F4F8;
+
+      .distanceButtons{
+        .sortHeader{
+          font-size: 14px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #0D172F;
+          line-height: 130%;
+          margin-right: 8px;
+        }
+        .sortBtn{
+          padding: 8px;
+          margin-right: 8px;
+          font-size: 14px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #AEAEAE;
+          line-height: 130%;
+          cursor: pointer;
+          border-radius: 8px;
+          border: 1px solid #F1F4F8;
+          background: #FFF;
+          &:hover{
+            background-color: #F1F4F8;
+            color: #0D172F;
+          }
+        }
+        .activeBtn{
+          color: #0D172F;
+          background-color: #F1F4F8;
+        }
+      }
+
+      .buttonsBlock{
+        .sortBtn{
+          padding: 6px 8px;
+          border-radius: 8px;
+          border: 1px solid #F1F4F8;
+          cursor: pointer;
+          margin-left: 8px;
+          font-size: 14px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #AEAEAE;
+          line-height: 130%;
+          position: relative;
+          &:nth-child(1){
+            img{
+              margin-left: 8px;
+            }
+          }
+          &:hover{
+            background-color: #FBFDFF;
+          }
+
+          .sortList{
+            width: max-content;
+            transform: translateX(-50%);
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #F1F4F8;
+            box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            z-index: 3;
+            left: 50%;
+            top: 35px;
+            background-color: white;
+            label{
+              display: block;
+              cursor: pointer;
+              font-size: 16px;
+              font-family: 'Inter-Regular', sans-serif;
+              color: black;
+              line-height: 130%;
+              margin: 2px 0;
+              input{
+                margin-right: 10px;
+                scale: 1.2;
+                cursor: pointer;
+              }
+            }
+          }
+
+          .clearCont{
+            font-size: 16px;
+            color: #1C2430;
+            width: max-content;
+            white-space: nowrap;
+            position: absolute;
+            top: 35px;
+            right: 0;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #F1F4F8;
+            background: #FFF;
+            box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+          }
+
+        }
+      }
+
+    }
+
+    .RequestsBlock{
+      max-height: 800px;
+      overflow: auto;
+      width: 100%;
+      -ms-overflow-style: auto !important;  /* IE 10+ */
+      &::-webkit-scrollbar-thumb{
+        background-color: #CCE0FF !important;
+        border-radius: 15px;
+        border: 2px solid white;
+      }
+      &::-webkit-scrollbar {
+        width: 8px !important;
+        background: white !important;
+      }
+
+
+      .EachReqBlock{
+
+      }
+
+
+    }
+  }
+
+}

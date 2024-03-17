@@ -1,8 +1,10 @@
 import React, {useState} from "react";
 import {LoginImg} from "../../../navigation/logIn/ImgSvg/loginImg";
 import {useCartContext} from "../../../../CartContext";
+import {useTranslation} from "react-i18next";
 
 function LogInStep1 (){
+  const {t, i18n} = useTranslation()
   const {logInStep, setLogInStep} = useCartContext()
   const [BtnCont, setBtnCont] = useState(true)
   const [logInType, setLogInType] = useState("SignUp")
@@ -19,25 +21,25 @@ function LogInStep1 (){
   
   return(
      <div className="logInStep">
-       <p className="header">Last step!</p>
-       <p className="underHeader">You need to sign in</p>
+       <p className="header">{t("login.bHeader3")}</p>
+       <p className="underHeader">{t("login.miniHeader1")}</p>
        <div className="loginBlock">
          <div className="toggleBlock G-flex">
            <div onClick={()=> setLogInType("SignUp")} className={`toggle ${logInType === "SignUp" ? "marked" : ""}`}>
-             Sign up
+             {t("login.signUp")}
            </div>
            <div onClick={()=> setLogInType("SignIn")} className={`toggle ${logInType === "SignIn" ? "marked" : ""}`}>
-             Sign in
+             {t("login.signIn")}
            </div>
          </div>
-         <input onKeyUp={OnKeyUp} placeholder="Email or phone number" type="text" className="input"/>
+         <input onKeyUp={OnKeyUp} placeholder={t("login.placeholder1")} type="text" className="input"/>
          <button disabled={BtnCont} onClick={()=>{
            if (!BtnCont){
              setLogInStep(2)
            }
-         }}  id="MailBtn" className="continueBtn">Continue</button>
+         }}  id="MailBtn" className="continueBtn">{t("login.continue")}</button>
          <div className="line">
-           <span className="lineText">or continue with</span>
+           <span className="lineText">{t("login.underText")}</span>
          </div>
          <div className="authorizationSystems G-justify-between">
            <div className="authBlock G-justify-center G-align-center"><img src={LoginImg.apple} alt=""/></div>

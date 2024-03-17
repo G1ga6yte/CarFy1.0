@@ -1,0 +1,255 @@
+@import "../../../source/mixin.scss";
+
+.RequestsHistory{
+  padding: 16px 40px;
+  width: 100%;
+
+  .miniHeader{
+    font-size: 14px;
+    color: #334155;
+    font-family: 'Inter-Medium', sans-serif;
+    line-height: 140%;
+    margin-bottom: 8px;
+  }
+
+  .mainCont{
+    border-radius: 16px;
+    border: 1px solid  #F1F4F8;
+    background: #FFF;
+    max-height: 800px;
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+
+    .headerCont{
+      width: 100%;
+      position: absolute !important;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      .headCont{
+        padding: 8px 16px;
+        background-color: white;
+        .sortButtons{
+          .sortBtn{
+            border-radius: 8px;
+            border: 1px solid #F1F4F8;
+            background: #FFF;
+            min-width: 90px;
+            padding: 8px;
+            text-align: center;
+            outline: none;
+            cursor: pointer;
+            margin-right: 8px;
+            font-size: 14px;
+            font-family: 'Inter-Regular', sans-serif;
+            line-height: 130%;
+            color: #AEAEAE;
+            &:hover{
+              color: black;
+              background-color: #F1F4F8;
+            }
+          }
+          .activeBtn{
+            color: black !important;
+            background-color: #F1F4F8 !important;
+          }
+        }
+        .inputBlock{
+          max-width: 340px;
+          position: relative;
+
+          svg{
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          .searchInput{
+            padding: 8px 16px 8px 56px;
+            border-radius: 8px;
+            width: 340px;
+            border: 1px solid #F1F4F8;
+            outline: none;
+            font-family: 'Inter-Regular', sans-serif;
+            font-size: 14px;
+            line-height: 130%;
+            &:focus-visible{
+              border-color: #266EFE;
+            }
+          }
+        }
+      }
+      .sectionsCont{
+        padding: 8px 16px;
+        background-color: #F1F4F8;
+        .sectionHeader{
+          font-size: 12px;
+          color: #828282;
+          font-family: 'Inter-SemiBold',sans-serif;
+          line-height: 140%;
+          &:nth-child(1){
+            width: 25%;
+          }
+          &:nth-child(2){
+            width: 8%;
+          }
+          &:nth-child(3){
+            width: 23%;
+          }
+          &:nth-child(4){
+            width: 8%;
+          }
+          &:nth-child(5){
+            width: 15%;
+          }
+          &:nth-child(6){
+            width: 21%;
+          }
+        }
+      }
+    }
+
+    .requestsBlock{
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+      padding-top: 90px;
+      -ms-overflow-style: auto !important;  /* IE 10+ */
+      &::-webkit-scrollbar-thumb{
+        background-color: #CCE0FF !important;
+        border-radius: 15px;
+        border: 2px solid white;
+      }
+      &::-webkit-scrollbar {
+        width: 8px !important;
+        background: white !important;
+      }
+      .EachReqBlock{
+        padding: 4px 16px;
+        .customerBlock{
+          width: 25%;
+          img{
+            width: 32px;
+            height: 32px;
+            padding: 9px;
+            border-radius: 50%;
+            background-color: #D9E3FB;
+            margin-right: 8px;
+          }
+          .textBlock{
+            .name{
+              font-size: 14px;
+              font-family: 'Inter-Regular', sans-serif;
+              color: #0D172F;
+              line-height: 130%;
+              margin-bottom: 2px;
+            }
+            .carName{
+              font-size: 10px;
+              color: #AEAEAE;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 130%;
+            }
+          }
+        }
+        .date{
+          width: 8%;
+          font-size: 12px;
+          color: #0D172F;
+          font-family: 'Inter-Regular', sans-serif;
+          line-height: 120%;
+        }
+        .issue{
+          width: 23%;
+          color: #688DEF;
+          font-size: 12px;
+          font-family: 'Inter-Regular', sans-serif;
+          line-height: 130%;
+        }
+        .price{
+          width: 8%;
+          font-size: 12px;
+          line-height: 120%;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #0D172F;
+        }
+
+        .status{
+          width:15%;
+          p{
+            text-align: center;
+            display: block;
+            width: max-content;
+            min-width: 80px;
+            border: 1px solid;
+            padding: 4px 6px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-family: 'Inter-Regular', sans-serif;
+            line-height: 120%;
+          }
+          .Sent{
+            color: #266EFE;
+            background: rgba(38, 110, 254, 0.10);
+            border-color: #266EFE;
+          }
+          .Approved{
+            background: rgba(243, 154, 49, 0.10);
+            color: #F39A31;
+            border-color: #F39A31;
+          }
+          .Completed{
+            background: rgba(0, 204, 154, 0.10);
+            color: #00CC9A;
+            border-color: #00CC9A;
+          }
+          .Canceled{
+            color: #FF7373;
+            border-color: #FF7373;
+            background: rgba(255, 115, 115, 0.10);
+          }
+        }
+        .buttonsBlock{
+          width: 21%;
+          justify-content: end;
+          .btn{
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            border: 1px solid #F1F4F8;
+            background: #FFF;
+            text-align: center;
+            font-size: 14px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: #334155;
+            line-height: 140%;
+            &:hover{
+              cursor: pointer;
+              border-color: #334155;
+            }
+          }
+          .detailsBtn{
+            flex-grow: 1;
+            max-width: 160px;
+          }
+          .messageBtn{
+            padding: 0 10px;
+            margin-left: 8px;
+          }
+
+
+        }
+
+
+
+
+
+      }
+    }
+
+  }
+}

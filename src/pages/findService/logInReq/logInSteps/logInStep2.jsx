@@ -1,7 +1,9 @@
 import React, {useState} from "react";
 import {useCartContext} from "../../../../CartContext";
+import {useTranslation} from "react-i18next";
 
 function LogInStep2 (){
+  const {t, i18n} = useTranslation()
   const {logInStep, setLogInStep} = useCartContext()
   
   const [BtnCont2, setBtnCont2] = useState(true)
@@ -19,17 +21,17 @@ function LogInStep2 (){
   return(
      <div className="logInStep">
   
-       <p className="header">Last step!</p>
-       <p className="underHeader">You need to sign in</p>
-       <p className="desc">We sent you the secret code enter it below</p>
+       <p className="header">{t("login.bHeader3")}</p>
+       <p className="underHeader">{t("login.miniHeader1")}</p>
+       <p className="desc">{t("login.prg1")}</p>
   
        <div className="loginBlock">
-         <input onKeyUp={OnKeyUp2} placeholder="Code" type="number" className="input"/>
+         <input onKeyUp={OnKeyUp2} placeholder={t("login.code")} type="number" className="input"/>
          <button disabled={BtnCont2} onClick={()=>{
            if (!BtnCont2){
              setLogInStep(3)
            }
-         }}  id="MailBtn" className="continueBtn">Continue</button>
+         }}  id="MailBtn" className="continueBtn">{t("login.continue")}</button>
        </div>
        
      </div>

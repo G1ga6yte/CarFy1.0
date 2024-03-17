@@ -1,0 +1,343 @@
+@import "../../source/mixin.scss";
+
+
+.Dashboard{
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: #FBFDFF;
+  position: relative;
+
+  .navBlock{
+    width: 15%;
+    background-color: white;
+    height: 100vh;
+    position: relative;
+    .fixedBlock{
+      position: fixed;
+      width: 15%;
+      height: 100%;
+      top: 0;
+      left: 0;
+
+      .homeLogo{
+        display: block;
+        cursor: pointer;
+        text-decoration: none;
+        margin: 35px 40% 35px auto;
+        width: 50%;
+
+        img{
+          width: 100%;
+        }
+      }
+      .switcherBlock {
+        width: 80%;
+        margin: 0 auto 24px auto;
+        @include screen($tablet){
+          width: 100%;
+        }
+
+        .miniPrg {
+          font-size: 14px;
+          line-height: 140%;
+          color: #AEAEAE;
+          font-family: 'Inter-SemiBold', sans-serif;
+          cursor: pointer;
+        }
+
+        .switcher {
+          transition: 0.2s ease-in-out all;
+          width: 46px;
+          height: 24px;
+          background-color: #787880;
+          opacity: 0.16;
+          border-radius: 50px;
+          padding: 2px;
+          justify-content: start;
+          cursor: pointer;
+
+          .circle {
+            transition: 0.2s ease-in-out all;
+            height: 21px;
+            width: 21px;
+            border-radius: 50%;
+            background-color: white;
+          }
+        }
+
+        .activeSwitch {
+          background-color: #266EFE;
+          opacity: 1;
+          transition: 0.2s ease-in-out all;
+
+          .circle {
+            transform: translateX(20px);
+          }
+        }
+      }
+
+      .pageLinks{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .link{
+          width: 100%;
+          display: flex;
+          align-items: center;
+          background-color: white;
+          text-decoration: none;
+          margin-top: 8px;
+          .markLine{
+            height: 50px;
+            width: 5px;
+            background-color: transparent;
+          }
+          svg{
+            margin-left: 16px;
+          }
+          span{
+            font-size: 14px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: #AEAEAE;
+            line-height: 140%;
+            display: block;
+            margin: 0 16px 0 8px;
+          }
+          .countBlock{
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+            background-color: #F39A31;
+            color: white;
+            font-size: 10px;
+            font-family: 'Inter-Bold', sans-serif;
+            line-height: 130%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          &:hover{
+            background-color: #D9E3FB;
+            cursor: pointer;
+            span{
+              color: #266EFE;
+            }
+            path{
+              fill: #266EFE;
+            }
+          }
+        }
+
+
+        .activeLink{
+          background-color: #D9E3FB;
+
+          span{
+            color: #266EFE;
+          }
+          svg{
+            path{
+              fill: #266EFE !important;
+            }
+          }
+          .markLine{
+            background-color: #266EFE;
+          }
+        }
+      }
+
+
+
+    }
+  }
+  .mainBlock{
+    width: 85%;
+    .headerBlock{
+      width: 100%;
+      padding: 35px 40px 10px;
+      position: relative;
+
+      .sectionPrg{
+        font-size: 28px;
+        font-family: 'Inter-Medium', sans-serif;
+        color: black;
+        line-height: 140%;
+      }
+
+      .buttonsBlock{
+        .helpLink{
+          margin-right: 40px;
+          font-size: 14px;
+          font-family: 'Inter-Medium', sans-serif;
+          color: #266EFE;
+          text-decoration: none;
+          &:hover{
+            color: #355ABC;
+            cursor: pointer;
+          }
+        }
+        .LinkToMessages{
+          margin: 0 10px;
+          position: relative;
+          .newMessage{
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            width: 12px;
+            height: 12px;
+            background-color: #FF7373;
+            border-radius: 50%;
+            outline: 2px solid white;
+            font-size: 8px;
+            font-family: 'Inter-Bold', sans-serif;
+            color: white;
+            line-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        .LinkToNotifications{
+          margin: 0 10px;
+          cursor: pointer;
+          position: relative;
+          z-index: 2;
+          .newMessage{
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            width: 12px;
+            height: 12px;
+            background-color: #266EFE;
+            border-radius: 50%;
+            outline: 2px solid white;
+            font-size: 8px;
+            font-family: 'Inter-Bold', sans-serif;
+            color: white;
+            line-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        .linkToCart{
+          position: relative;
+          cursor: pointer;
+          text-decoration: none;
+          margin: 0 10px;
+          .CartCount{
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            width: 12px;
+            height: 12px;
+            background-color: #00CC9A;
+            border-radius: 50%;
+            outline: 2px solid white;
+            font-size: 8px;
+            font-family: 'Inter-Bold', sans-serif;
+            color: white;
+            line-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        .notificationsBlock{
+          transition: 3s ease-in-out all !important;
+          width: 50%;
+          position: absolute;
+          z-index: 5;
+          top: 100px;
+          right: 20px;
+          padding: 25px;
+          background-color: white;
+          border-radius: 20px;
+          box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+
+          @include screen($wide){
+            width: 60%;
+            right: 5%;
+            top: 140px;
+          }
+          @include screen($wide-s){
+            width: 70%;
+            right: 2%;
+            top: 120px;
+          }
+          @include screen($tablet-l){
+            width: 100%;
+            right: 0;
+            top: 100px;
+          }
+
+
+          .buttons-block{
+            width: 100%;
+            font-family: 'Inter-Medium', sans-serif;
+            .spanNotification{
+              font-size: 16px;
+              margin: 0 15px;
+              @include screen($tablet){
+                font-size: 15px;
+              }
+            }
+            .num{
+              font-size: 16px;
+              color: #266EFE;
+              @include screen($tablet){
+                font-size: 15px;
+              }
+
+            }
+            .closeButton{
+              cursor: pointer;
+            }
+          }
+
+
+        }
+        .backgroundBlock{
+          transition: 3s ease-in-out all;
+          position: fixed;
+          z-index: 1;
+          background-color: rgba(0, 0, 0, 0.2);
+          width: 100vw;
+          height: 100vh;
+          left: 0;
+          top: 0;
+        }
+        .profileBlock{
+          margin-left: 20px;
+          .imgCircle{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #D9E3FB;
+            margin-right: 8px;
+          }
+          .name{
+            font-size: 14px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: black;
+            line-height: 140%;
+          }
+        }
+      }
+
+
+    }
+    .copyRightText{
+      margin: 200px auto 16px;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      font-family: 'Inter-Regular', sans-serif;
+      color: #828282;
+      @include screen($wide-l){
+        font-size: 10px;
+      }
+    }
+  }
+}

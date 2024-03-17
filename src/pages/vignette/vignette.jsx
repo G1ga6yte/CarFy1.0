@@ -97,35 +97,26 @@ function Vignette () {
   const [formattedValue, setFormattedValue] = useState('');
   
   const formatBankAccount = (e) => {
-    // Удаляем все нецифровые символы из введенного значения
-    const input = e.target.value.replace(/\D/g, ''); // Remove non-digit characters
-    const formattedInput = input.replace(/(\d{4})/g, '$1 ').trim(); // Add space every 4 digits
-  
-    // Обновляем значение в состоянии
+    const input = e.target.value.replace(/\D/g, '');
+    const formattedInput = input.replace(/(\d{4})/g, '$1 ').trim();
     setFormattedValue(formattedInput);
   };
   
   const [cvcValue, setCvcValue] = useState('');
   
   const handleInputChange = (event) => {
-    // Удаляем все символы, кроме цифр
     const cleanedValue = event.target.value.replace(/[^\d]/g, '');
-    
-    // Ограничиваем длину ввода 3 символами
     const limitedValue = cleanedValue.slice(0, 3);
-    
-    // Обновляем значение в состоянии
     setCvcValue(limitedValue);
   };
   
   const [expiryValue, setExpiryValue] = useState('');
   
   const handleInputChange2 = (e) => {
-    let input = e.target.value.replace(/\D/g, ''); // Remove non-digit characters
+    let input = e.target.value.replace(/\D/g, '');
   
-    // Format expiration date MM/YY
     if (input.length > 2) {
-      const month = Math.min(parseInt(input.slice(0, 2), 10), 12); // Ensure month is between 1 and 12
+      const month = Math.min(parseInt(input.slice(0, 2), 10), 12);
       const year = input.slice(2, 4);
       input = `${String(month).padStart(2, '0')}/${year}`;
     }

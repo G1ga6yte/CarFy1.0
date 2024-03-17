@@ -4,8 +4,10 @@ import "./eachServiceBlock.scss";
 import {CarModelsData} from "./carModels/carModelsData";
 import {useNavigate} from "react-router-dom";
 import {useCartContext} from "../../../../CartContext";
+import {useTranslation} from "react-i18next";
 
 function EachServiceBlock() {
+  const {t, i18n} = useTranslation()
   const navigate = useNavigate()
   const {confirmationDialog, setConfirmationDialog} = useCartContext()
   
@@ -45,7 +47,7 @@ function EachServiceBlock() {
              })}
            </div>
            <div className="photosBlock">
-             <p className="miniHeader">Photos</p>
+             <p className="miniHeader">{t("req.miniHeader1")}</p>
              <div className="photos G-flex">
                {imgData.map((el, index)=>{
                  return(
@@ -53,12 +55,12 @@ function EachServiceBlock() {
                  )
                })}
                <div className="showMoreBlock G-flex G-justify-center G-align-center">
-                 <span>Show more</span>
+                 <span>{t("req.showMore")}</span>
                </div>
              </div>
            </div>
            <div className="specializationBlock">
-            <p className="miniHeader">Specialization</p>
+            <p className="miniHeader">{t("req.miniHeader2")}</p>
              <div className="modelsCont G-flex G-align-center">
                {CarModelsData.map((el, index)=>{
                  return(
@@ -69,9 +71,9 @@ function EachServiceBlock() {
            </div>
            <div className="feedbackCont">
              <div className="headerCont G-flex G-align-center G-justify-between">
-               <p className="header">Feedback from our customers</p>
+               <p className="header">{t("req.miniHeader3")}</p>
                <div className="ratingBlock G-flex G-align-center">
-                 Average rate 4.3
+                 {t("req.prg7")} 4.3
                  <img src={Images.starIcon} alt=""/>
                </div>
              </div>
@@ -98,15 +100,15 @@ function EachServiceBlock() {
          
          <div className="priceCont">
           <div className="costBlock G-flex G-justify-between G-align-center">
-            <p className="costPrg">Cost of work</p>
+            <p className="costPrg">{t("req.costOfWork")}</p>
             <p className="costPrice">100€</p>
           </div>
            <div className="totalBlock G-flex G-align-center G-justify-between">
-             <p className="totalPrg">Total amount</p>
+             <p className="totalPrg">{t("req.totalAmount")}</p>
              <p className="totalPrice">100€</p>
            </div>
            <div className="buttonsCont G-flex G-justify-between">
-             <button className="chatBtn"><img src={Images.messageIcon} alt=""/>Chat</button>
+             <button className="chatBtn"><img src={Images.messageIcon} alt=""/>{t("req.btn10")}</button>
              <button onClick={()=>{
                if (window.innerWidth <=995){
                  navigate(`/request/confirmation/:${id}`)
@@ -114,7 +116,7 @@ function EachServiceBlock() {
                   setConfirmationDialog(true)
                }
                window.scrollTo(0, 0)
-             }} className="responsesBtn">Enroll</button>
+             }} className="responsesBtn">{t("req.btn16")}</button>
            </div>
            
            <div style={{backgroundImage: `url("${Images.mapImg}")`}} className="mapImg">

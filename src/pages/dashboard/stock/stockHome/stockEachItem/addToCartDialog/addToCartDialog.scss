@@ -1,0 +1,351 @@
+@import "../../../../../../source/mixin.scss";
+
+.AddToCartDialog{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .backgroundBlock{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .dialogBlock{
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid #F1F4F8;
+    background: #FFF;
+    max-width: 950px;
+    width: 100%;
+    box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+
+    .dialogHeader{
+      margin-bottom: 16px;
+
+      .header{
+        font-size: 28px;
+        line-height: 140%;
+        font-family: 'Inter-Medium', sans-serif;
+        color: #0D172F;
+      }
+      img{
+        cursor: pointer;
+      }
+    }
+    .itemBlock{
+
+
+      .itemImage{
+        margin-right: 16px;
+        border-radius: 16px;
+        border: 1px solid  #F1F4F8;
+        width: max-content;
+        overflow: hidden;
+      }
+      .textBlock{
+        .name{
+          font-size: 16px;
+          color: #0D172F;
+          font-family: 'Inter-Medium', sans-serif;
+          line-height: 140%;
+          margin-bottom: 8px;
+        }
+        .seller{
+          margin-bottom: 8px;
+          .grayText{
+            font-size: 16px;
+            color: #828282;
+            line-height: 130%;
+            margin-right: 40px;
+            font-family: 'Inter-Regular', sans-serif;
+          }
+          .blueText{
+            font-size: 16px;
+            color: #266EFE;
+            line-height: 130%;
+            font-family: 'Inter-Regular', sans-serif;
+          }
+        }
+        .priceBlock{
+          margin-bottom: 8px;
+
+          .price{
+            font-size: 30px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: #0D172F;
+            line-height: 130%;
+          }
+          .salePercent{
+            font-size: 12px;
+            color: white;
+            font-family: 'Inter-Regular', sans-serif;
+            line-height: 120%;
+            display: block;
+            padding: 2px 8px;
+            border-radius: 6px;
+            background-color: #FF7373;
+            margin: 0 8px 0 16px;
+          }
+          .oldPrice{
+            font-size: 16px;
+            font-family: 'Inter-Regular', sans-serif;
+            color: #0D172F;
+            line-height: 130%;
+            display: block;
+            position: relative;
+            &:before{
+              content: '';
+              width: 100%;
+              height: 2px;
+              background-color: #FF7373;
+              position: absolute;
+              bottom: 50%;
+              left: 0;
+              rotate: -12deg;
+            }
+          }
+        }
+        .underText{
+          margin-bottom: 16px;
+          .greenText{
+            color: #00CC9A;
+            font-family: 'Inter-Regular', sans-serif;
+            font-size: 16px;
+            line-height: 130%;
+            margin-right: 8px;
+          }
+          .grayText{
+            font-size: 16px;
+            line-height: 130%;
+            font-family: 'Inter-Regular', sans-serif;
+            color: #828282;
+          }
+        }
+        .buttonsBlock{
+          .countingBlock{
+            width: 170px;
+            border: 1px solid #F1F4F8;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            .count{
+              font-size: 16px;
+              line-height: 140%;
+              text-align: center;
+              font-family: 'Inter-Medium', sans-serif;
+              color: #0D172F;
+              flex-grow: 1;
+            }
+            .countBtn{
+              background-color: white;
+              border: none;
+              padding: 6px 8px;
+              &:nth-child(1){
+                border-right: 1px solid #F1F4F8;
+              }
+              &:nth-child(3){
+                border-left: 1px solid #F1F4F8;
+              }
+              &:hover{
+                cursor: pointer;
+                background-color: #F9FDFF;
+              }
+              img{
+                width: 24px;
+              }
+            }
+          }
+          .goToCartBtn{
+            padding: 8px;
+            min-width: 220px;
+            border-radius: 8px;
+            background-color: #00CC9A;
+            border: none;
+            color: white;
+            font-size: 14px;
+            font-family: 'Inter-Medium', sans-serif;
+            line-height: 140%;
+            cursor: pointer;
+            margin: 0 24px;
+            &:hover{
+              background-color: #23DDB3;
+            }
+          }
+          .continueBtn{
+            padding: 8px;
+            min-width: 220px;
+            border-radius: 8px;
+            background-color: white;
+            border: 1px solid white;
+            color: #00CC9A;
+            font-size: 14px;
+            font-family: 'Inter-Medium', sans-serif;
+            line-height: 140%;
+            cursor: pointer;
+            &:hover{
+              border-color: #23DDB3;
+            }
+          }
+        }
+      }
+
+    }
+    .recommendingBlock{
+      width: 100%;
+      .miniHeader{
+        margin-top: 64px;
+        font-size: 20px;
+        font-family: 'Inter-Medium', sans-serif;
+        line-height: 140%;
+        color: #0D172F;
+      }
+
+      .recommendedItems{
+        max-width: 100%;
+        width: 100%;
+        overflow: auto !important;
+        -ms-overflow-style: auto !important;  /* IE 10+ */
+        &::-webkit-scrollbar-thumb{
+          background-color: #CCE0FF !important;
+          border-radius: 15px;
+          border: 2px solid white;
+        }
+        &::-webkit-scrollbar {
+          width: 8px !important;
+          height: 12px !important;
+          background: white !important;
+        }
+        .scrollBlock{
+          display: flex;
+          align-items: center;
+          width: min-content;
+          padding: 16px 0;
+        }
+
+        .RecommendedItem{
+          overflow: hidden;
+          width: 470px;
+          margin-right: 16px;
+          border-radius: 16px;
+          border: 1px solid #F1F4F8;
+          background: #FFF;
+          box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+          padding-right: 16px;
+
+          .ImageBlock{
+            height: 140px;
+            width: 180px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: 16px;
+          }
+          .textBlock{
+            flex-grow: 1;
+
+            .markHeart{
+              margin-bottom: 8px;
+              span{
+                font-size: 12px;
+                line-height: 130%;
+                font-family: 'Inter-Regular', sans-serif;
+                color: #AEAEAE;
+              }
+            }
+            .priceBlock{
+              margin-bottom: 8px;
+              .price{
+                font-size: 16px;
+                font-family: 'Inter-SemiBold', sans-serif;
+                color: #0D172F;
+                line-height: 140%;
+              }
+              .starIcon{
+                margin: 0 8px 0 16px;
+              }
+              .grayText{
+                font-family: 'Inter-Bold', sans-serif;
+                font-size: 10px;
+                color: #AEAEAE;
+                line-height: 130%;
+              }
+            }
+            .itemName{
+              font-size: 12px;
+              font-family: 'Inter-SemiBold', sans-serif;
+              line-height: 140%;
+              color: #0D172F;
+              margin-bottom: 12px;
+            }
+            .statusBuyBtn{
+              .status{
+                font-size: 10px;
+                font-family: 'Inter-Bold',sans-serif;
+                color: #AEAEAE;
+                line-height: 130%;
+                img{
+                  margin-right: 8px;
+                }
+              }
+
+
+              .countingBlock{
+                width: 120px;
+                border: 1px solid #F1F4F8;
+                background-color: white;
+                border-radius: 8px;
+                overflow: hidden;
+                .count{
+                  font-size: 16px;
+                  line-height: 140%;
+                  text-align: center;
+                  font-family: 'Inter-Medium', sans-serif;
+                  color: #0D172F;
+                  flex-grow: 1;
+                }
+                .countBtn{
+                  background-color: white;
+                  border: none;
+                  padding: 0 8px;
+                  &:nth-child(1){
+                    border-right: 1px solid #F1F4F8;
+                  }
+                  &:nth-child(3){
+                    border-left: 1px solid #F1F4F8;
+                  }
+                  &:hover{
+                    cursor: pointer;
+                    background-color: #F9FDFF;
+                  }
+                  img{
+                    width: 16px;
+                  }
+                }
+              }
+
+
+            }
+
+
+          }
+
+
+        }
+      }
+    }
+
+
+  }
+}

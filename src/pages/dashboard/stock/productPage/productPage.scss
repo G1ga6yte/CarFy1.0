@@ -1,0 +1,358 @@
+@import "../../../../source/mixin.scss";
+
+.ProductPage {
+  padding: 16px 16px 40px;
+
+  .productName{
+    margin-bottom: 10px;
+    font-size: 28px;
+    color: #0D172F;
+    line-height: 140%;
+    font-family: 'Inter-Medium', sans-serif;
+  }
+  .artCode{
+    margin-bottom: 20px;
+    .artCodePrg{
+      color: #828282;
+      font-family: 'Inter-Regular', sans-serif;
+      line-height: 130%;
+      font-size: 16px;
+      margin-right: 45px;
+    }
+  }
+
+  .imagesDescBlock{
+
+    .imgBlock{
+      flex-wrap: wrap;
+      width: 450px;
+
+      .activeImg{
+        width: 100%;
+        height: 450px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 16px;
+        border: 1px solid #F1F4F8;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .activeImage{
+        border-color: #266EFE !important;
+      }
+
+      .miniImg{
+        width: 24%;
+        height: 105px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 1px solid #F1F4F8;
+        border-radius: 8px;
+        &:hover{
+          cursor: pointer;
+          border-color: #266EFE;
+        }
+      }
+
+    }
+
+    .descBlock{
+      flex-grow: 1;
+      margin: 0 5%;
+
+      .evaluations{
+        margin-bottom: 16px;
+        font-size: 16px;
+        font-family: 'Inter-Regular', sans-serif;
+        color: #AEAEAE;
+        line-height: 130%;
+        img{
+          margin-right: 14px;
+        }
+      }
+      .firmName{
+        margin-bottom: 16px;
+        color: #266EFE;
+        font-family: 'Inter-Regular', sans-serif;
+        font-size: 16px;
+        line-height: 130%;
+      }
+      .sellerDelivery{
+        margin-bottom: 8px;
+        .grayText{
+          width: 160px;
+          text-align: start;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #828282;
+          line-height: 130%;
+          font-size: 16px;
+        }
+        .sellerName{
+          font-family: 'Inter-Regular', sans-serif;
+          color: #266EFE;
+          line-height: 130%;
+          font-size: 16px;
+        }
+        .deliveryTime{
+          font-family: 'Inter-Regular', sans-serif;
+          color: black;
+          line-height: 130%;
+          font-size: 16px;
+        }
+      }
+      .miniHeader{
+        margin: 32px 0 16px;
+        font-size: 20px;
+        font-family: 'Inter-Medium', sans-serif;
+        color: #0D172F;
+        line-height: 140%;
+      }
+      .featuresBlock{
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        font-size: 16px;
+        font-family: 'Inter-Regular', sans-serif;
+        color: #0D172F;
+        line-height: 130%;
+        img{
+          margin-right: 8px;
+        }
+        span{
+          width: 200px;
+          display: block;
+          font-family: 'Inter-Regular', sans-serif;
+          font-size: 16px;
+          line-height: 130%;
+          color: #828282;
+        }
+      }
+      .seasonBlock{
+        color: #266EFE;
+      }
+      .linkAllFeatures{
+        font-size: 16px;
+        color: #266EFE;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 130%;
+      }
+
+
+
+
+    }
+
+  }
+  .deliveryType{
+    margin: 16px 0;
+    width: 100%;
+    .labelBlock{
+      width: 100%;
+      display: block;
+      padding: 24px;
+      border-radius: 24px;
+      border: 1px solid #F1F4F8;
+      background: #FFF;
+      box-shadow: 0 4px 24px 5px rgba(194, 194, 194, 0.14);
+      margin-bottom: 8px;
+      cursor: pointer;
+
+      .inputPrg{
+        input{
+          margin-right: 12px;
+        }
+
+        font-size: 16px;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 130%;
+        color: #1C2430;
+        margin-bottom: 12px;
+      }
+      .saleOldPrice{
+        margin-bottom: 8px;
+        .salePercent{
+          padding: 1px 8px;
+          background-color: #FF7373;
+          border-radius: 4px;
+          color: white;
+          font-size: 12px;
+          font-family: 'Inter-Regular', sans-serif;
+          line-height: 120%;
+          margin-right: 10px;
+        }
+        .oldPrice{
+          font-size: 16px;
+          line-height: 130%;
+          color: #0D172F;
+          font-family: 'Inter-Regular', sans-serif;
+          display: block;
+          position: relative;
+          &:before{
+            content: '';
+            position: absolute;
+            bottom: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #FF7373;
+            rotate: -10deg;
+          }
+        }
+      }
+      .price{
+        font-size: 30px;
+        font-family: 'Inter-Medium', sans-serif;
+        color: #0D172F;
+        line-height: 130%;
+        margin-bottom: 10px;
+      }
+      .deliveryPrg{
+        font-family: 'Inter-Regular', sans-serif;
+        font-size: 16px;
+        color: #0D172F;
+        line-height: 130%;
+        margin-bottom: 8px;
+      }
+      .hours{
+        margin-bottom: 8px;
+        color: #AEAEAE;
+        font-size: 16px;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 130%;
+      }
+      .paymentMethodBlock{
+        font-size: 16px;
+        color: #AEAEAE;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 130%;
+        margin-bottom: 12px;
+        img{
+          margin-right: 8px;
+        }
+      }
+      .buyBtn{
+        text-decoration: none;
+        width: 100%;
+        margin-top: 16px;
+        background-color: #00CC9A;
+        border-radius: 12px;
+        padding: 16px;
+        text-align: center;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-family: 'Inter-Medium', sans-serif;
+        font-size: 16px;
+        line-height: 140%;
+        &:hover{
+          background-color: #23DDB3;
+        }
+      }
+
+
+    }
+  }
+  .aboutCharacteristic{
+    margin: 16px 0;
+    .links{
+      margin-bottom: 40px;
+
+      .linkPrg{
+        font-size: 20px;
+        color: #0D172F;
+        cursor: pointer;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 140%;
+        margin-right: 24px;
+        &:hover{
+          color: #266EFE;
+        }
+      }
+      .activeLink{
+        color: #266EFE !important;
+      }
+    }
+
+    .descBlock{
+
+      .headerBlockD{
+        margin-bottom: 20px;
+        .header{
+          font-size: 28px;
+          font-family: 'Inter-SemiBold', sans-serif;
+          color: #0D172F;
+          line-height: 120%;
+        }
+        .matchBtn{
+          padding: 8px;
+          cursor: pointer;
+          border: none;
+          background-color: #F1F4F8;
+          border-radius: 8px;
+          font-size: 14px;
+          color: #0D172F;
+          line-height: 140%;
+          font-family: 'Inter-Medium', sans-serif;
+          img{
+            margin-left: 8px;
+          }
+        }
+      }
+      .prg100{
+        font-size: 16px;
+        color: #0D172F;
+        font-family: 'Inter-Regular', sans-serif;
+        line-height: 130%;
+        margin-bottom: 24px;
+      }
+      .miniHeader{
+        font-size: 20px;
+        font-family: 'Inter-Medium', sans-serif;
+        color: #0D172F;
+        line-height: 140%;
+        margin-bottom: 16px;
+      }
+      .prgMax{
+        line-height: 130%;
+        font-family: 'Inter-Regular', sans-serif;
+        color: #0D172F;
+        font-size: 16px;
+      }
+
+      .settingsBlock{
+        flex-wrap: wrap;
+
+        .itemLine{
+          width: 45%;
+          margin-bottom: 16px;
+          .itemHeader{
+            font-size: 16px;
+            color: #AEAEAE;
+            line-height: 130%;
+            font-family: 'Inter-Regular', sans-serif;
+          }
+          div{
+            height: 16px;
+            flex-grow: 1;
+            border-bottom: 1px dotted #AEAEAE;
+          }
+          .itemVal{
+            font-size: 16px;
+            color: #0D172F;
+            line-height: 130%;
+            font-family: 'Inter-Regular', sans-serif;
+          }
+        }
+      }
+
+
+    }
+
+
+  }
+
+}

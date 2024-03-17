@@ -1,7 +1,9 @@
 import React,{useState} from "react";
 import {useCartContext} from "../../../../CartContext";
+import {useTranslation} from "react-i18next";
 
 function LogInStep3 (){
+  const {t, i18n} = useTranslation()
   const {logInStep, setLogInStep} = useCartContext()
   
   const [BtnCont3, setBtnCont3] = useState(true)
@@ -24,19 +26,19 @@ function LogInStep3 (){
   }
   return(
      <div className="logInStep">
-       <p className="header">Almost done!</p>
-       <p className="desc">Make up your own password</p>
+       <p className="header">{t("login.bHeader4")}</p>
+       <p className="desc">{t("login.miniHeader2")}</p>
   
   
        <div className="loginBlock">
-         <input onKeyUp={OnKeyUp3} placeholder="Password" type="password" className="input"/>
-         <input onKeyUp={OnKeyUp33} placeholder="Retry" type="password" className="input"/>
+         <input onKeyUp={OnKeyUp3} placeholder={t("login.password")} type="password" className="input"/>
+         <input onKeyUp={OnKeyUp33} placeholder={t("login.retry")} type="password" className="input"/>
     
          <button disabled={BtnCont3} onClick={()=>{
            if (!BtnCont3){
              setLogInStep(4)
            }
-         }}  id="MailBtn" className="continueBtn">Continue</button>
+         }}  id="MailBtn" className="continueBtn">{t("login.continue")}</button>
        </div>
      </div>
   )

@@ -1,0 +1,23 @@
+@import "../../../source/mixin.scss";
+
+
+.Requests{
+  padding: 16px 40px;
+  @include screen($wide){
+    padding: 16px 24px;
+  }
+  .miniHeader{
+    font-size: 14px;
+    font-family: 'Inter-Medium', sans-serif;
+    color: #334155;
+    line-height: 140%;
+    margin-bottom: 8px;
+    .countSpan{
+      color: #266EFE !important;
+      display: block;
+      margin-left: 8px;
+    }
+  }
+
+
+}

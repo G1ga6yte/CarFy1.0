@@ -10,7 +10,6 @@ import Article from "./pages/blog/Article/article";
 import ForBusiness from "./pages/forBusiness/forBusiness";
 import Help from "./pages/navigation/help/help";
 import LogIn from "./pages/navigation/logIn/logIn";
-import Insurance from "./pages/insurance/insurance";
 import InsuranceStep2 from "./pages/insurance/InsuranceStep2/InsuranceStep2";
 import InsuranceStep3 from "./pages/insurance/InsuranceStep3/InsuranceStep3";
 import InsuranceVignette from "./pages/InsuranceVignette/insuranceVignette";
@@ -18,7 +17,6 @@ import Vignette from "./pages/vignette/vignette";
 import Profile from "./pages/profile/profile";
 import {useCartContext} from "./CartContext";
 import Shops from "./pages/Shops/shops";
-import FindService from "./pages/findService/findService";
 import {useTranslation} from "react-i18next";
 import FindServiceStep1 from "./pages/findService/findServiceStep1/findServiceStep1";
 import FindServiceStep2 from "./pages/findService/findServiceStep2/findServiceStep2";
@@ -34,7 +32,21 @@ import ReviewBlock from "./pages/allRequests/allRequests/reviewBlock/reviewBlock
 import SearchOnMap from "./pages/profile/searchOnMap/searchOnMap";
 import ProfileSettings from "./pages/profile/profileSettings/profileSettings";
 import ChatBlock from "./pages/chatBlock/chatBlock";
-// import { withTranslation } from 'react-i18next';
+import Dashboard from "./pages/dashboard/dashboard";
+import {DashboardProvider} from "./pages/dashboard/dashboardContext";
+import PartnerHome from "./pages/dashboard/home/partnerHome";
+import RequestsHistory from "./pages/dashboard/requestsHistory/requestsHistory";
+import Balance from "./pages/dashboard/balance/balance";
+import Emergency from "./pages/dashboard/emergency/emergency";
+import RequestsPartner from "./pages/dashboard/requests/requests";
+import Stock from "./pages/dashboard/stock/stock";
+import StockHome from "./pages/dashboard/stock/stockHome/stockHome";
+import ProductPage from "./pages/dashboard/stock/productPage/productPage";
+import CartBlock from "./pages/dashboard/cartBlock/cartBlock";
+import Checkout from "./pages/dashboard/checkout/checkout";
+import Sent from "./pages/dashboard/checkout/sent";
+import Statistics from "./pages/dashboard/statistics/statistics";
+import Reviews from "./pages/dashboard/statistics/reviews";
 
 
 function App() {
@@ -69,6 +81,27 @@ function App() {
         <Route path="/profile/settings" element={<ProfileSettings/>}/> // Settings
         <Route path="/chat" element={<ChatBlock/>}/>
         
+        <Route path="/partner" element={
+          <DashboardProvider>
+            <Dashboard/>
+          </DashboardProvider>
+        }>
+          <Route exact path="/partner/" element={<PartnerHome/>}/>
+          <Route path="/partner/requests&history" element={<RequestsHistory/>}/>
+          <Route path="/partner/balance" element={<Balance/>}/>
+          <Route path="/partner/emergency" element={<Emergency/>}/>
+          <Route path="/partner/requests" element={<RequestsPartner/>}/>
+          <Route path="/partner/stock" element={<Stock/>}>
+            <Route exact path="/partner/stock/" element={<StockHome/>} />
+            <Route path="/partner/stock/product/:id" element={<ProductPage/>} />
+          </Route>
+          <Route path="/partner/cart" element={<CartBlock/>}/>
+          <Route path="/partner/checkout" element={<Checkout/>}/>
+          <Route path="/partner/checkout/sent" element={<Sent/>}/>
+          <Route path="/partner/statistics" element={<Statistics/>}/>
+          <Route path="/partner/statistics/reviews" element={<Reviews/>}/>
+        </Route>
+        
         <Route path="/insurance&vignette" element={<InsuranceVignette/>} /> // Insurance & Vignette Mutual +scroll
         <Route path="/vignette" element={<Vignette/>} /> // Vignette
         <Route path="/insurance/step1" element={<InsuranceStep1/>} /> // Insurances step1
@@ -78,7 +111,7 @@ function App() {
         <Route path="/findService" element={<FindServiceStep1/>} /> // Find Service Step 1
         <Route path="/findService/newRequest" element={<FindServiceStep2/>} /> // Find Service Step 2
         <Route path="/findService/logIn" element={<LogInReq/>} /> // Find Service Log In ?
-        {/*<Route path="/findService/request" element={} /> // Sending Request... */}
+        
         
         <Route path="/requests" element={<Requests/>} >
           <Route exact path="/requests/" element={<AllRequests/>} />

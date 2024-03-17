@@ -2,8 +2,10 @@ import React, {useEffect, useState} from "react";
 import {useCartContext} from "../../../../CartContext";
 import "./reviewBlock.scss"
 import {Images} from "./images/images";
+import {useTranslation} from "react-i18next";
 
 function ReviewBlock (){
+  const {t, i18n} = useTranslation()
   const {reviewBlock, setReviewBlock, activeRequestId} = useCartContext()
   const [starsChecked, setStarsChecked] = useState(false)
   const [starsCount, setStarsCount] = useState(null)
@@ -80,7 +82,7 @@ function ReviewBlock (){
        
        <div className="reviewCont G-flex G-align-center G-flex-column">
          <div className="leaveReviewBlock G-flex G-justify-between G-align-center">
-            <p className="header">Leave a review</p>
+            <p className="header">{t("review.header")}</p>
            <div className="idCloseBtn G-flex G-align-center">
              <span>#{activeRequestId}</span>
              <img onClick={()=>{
@@ -105,8 +107,8 @@ function ReviewBlock (){
            })}
            
          </div>
-         <textarea className="textAreaReview" placeholder="Leave a review" name="reviewArea" id="reviewArea" cols="30" rows="10"></textarea>
-        <button className="saveBtn">Save</button>
+         <textarea className="textAreaReview" placeholder={t("review.placeholder")} name="reviewArea" id="reviewArea" cols="30" rows="10"></textarea>
+        <button className="saveBtn">{t("review.btn1")}</button>
        
        </div>
      </div>

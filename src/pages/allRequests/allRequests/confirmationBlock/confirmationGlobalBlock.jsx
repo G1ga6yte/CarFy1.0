@@ -3,8 +3,10 @@ import {Images} from "./images/images";
 import {useCartContext} from "../../../../CartContext";
 import {useNavigate} from "react-router-dom";
 import {ImgSvg} from "../../../vignette/img-svg/img-svg";
+import {useTranslation} from "react-i18next";
 
 function ConfirmationGlobalBlock() {
+  const {t, i18n} = useTranslation()
   const {confirmationDialog, setConfirmationDialog} = useCartContext();
   const navigate = useNavigate();
   
@@ -61,19 +63,19 @@ function ConfirmationGlobalBlock() {
        </div>
        
        <div className="mainCont">
-         <p className="header">Request info</p>
+         <p className="header">{t("req.miniHeader4")}</p>
          <div className="headerBlock G-flex G-justify-between G-align-center">
-           <p className="headerPrg">Customer</p>
+           <p className="headerPrg">{t("req.prg8")}</p>
            <p className="headerName">Kris Surname</p>
          </div>
          
          <div className="itemInfo G-flex G-justify-between">
-           <p className="itemPrg">Car:</p>
+           <p className="itemPrg">{t("req.car")}:</p>
            <p className="itemName">Citroen C5, 2005</p>
          </div>
          
          <div className="itemInfo G-flex G-justify-between">
-           <p className="itemPrg">City:</p>
+           <p className="itemPrg">{t("req.city")}:</p>
            <p className="itemName">Rīga</p>
          </div>
          
@@ -87,35 +89,35 @@ function ConfirmationGlobalBlock() {
          </div>
          
          <div className="headerBlock G-flex G-justify-between G-align-center">
-           <p className="headerPrg">Service</p>
+           <p className="headerPrg">{t("req.miniHeader5")}</p>
            <p className="headerName">Autofavorīts</p>
          </div>
          
          <div className="itemInfo G-flex G-justify-between">
-           <p className="itemPrg">Location:</p>
+           <p className="itemPrg">{t("req.location")}:</p>
            <p className="itemName">Brīvības iela 61, Centra rajons, Rīga, LV-1010</p>
          </div>
          
          <div className="itemInfo G-flex G-justify-between">
-           <p className="itemPrg">Scheduled date:</p>
+           <p className="itemPrg">{t("req.scheduled")}:</p>
            <p className="itemName">23 March, 11:00</p>
          </div>
          
          <div className="paymentBlock">
-           <p className="paymentHeader">Payment method</p>
+           <p className="paymentHeader">{t("req.miniHeader6")}</p>
            
            <div className="radioBlock">
              <div className="radio G-flex G-align-center">
                <input type="radio" id="onlinePay" name="paymentMethod" value="onlinePay" checked/>
-               <label htmlFor="onlinePay">Online
-                 <span>By bank card</span>
+               <label htmlFor="onlinePay">{t("req.online")}
+                 <span>{t("req.cash")}</span>
                </label>
              </div>
              
              <div className="radio G-flex G-align-center">
                <input type="radio" id="cashPay" name="paymentMethod" value="cashPay"/>
-               <label htmlFor="cashPay">Cash
-                 <span>On receipt</span>
+               <label htmlFor="cashPay">{t("req.underText7")}
+                 <span>{t("req.underText8")}</span>
                </label>
              </div>
            </div>
@@ -164,8 +166,7 @@ function ConfirmationGlobalBlock() {
              <div className="paymentInfoBlock">
                <div className="prgBlock G-flex">
                  <img src={ImgSvg.miniShield} alt=""/>
-                 <p className="prg">Payment is protected. Card data is transmitted only in encrypted form via the SSL
-                   protocol, protected and processed according to the PCI DSS security standard.</p>
+                 <p className="prg">{t("req.paymentPrg")}</p>
                </div>
                <div className="paymentTypes G-flex">
                  <img src={ImgSvg.visa} alt=""/>
@@ -177,7 +178,7 @@ function ConfirmationGlobalBlock() {
            </div>
            <div className="saveCardBlock G-align-center">
              <input id="saveCard" type="checkbox" defaultChecked/>
-             <label htmlFor="saveCard">Save card</label>
+             <label htmlFor="saveCard">{t("req.saveCard")}</label>
            
            </div>
          
@@ -188,34 +189,34 @@ function ConfirmationGlobalBlock() {
        
        <div className="promoCont">
          <div className="promoBlock">
-           <p className="miniHeader">Apply promo code</p>
+           <p className="miniHeader">{t("req.miniHeader7")}</p>
            <div className="inputBlock">
-             <input type="text" placeholder="Promocode"/>
-             <button className="ApplyBtn">Apply</button>
+             <input type="text" placeholder={t("req.placeholder1")}/>
+             <button className="ApplyBtn">{t("req.btn17")}</button>
            </div>
          </div>
          <div className="totalPriceBlock">
            <div className="itemBlock G-justify-between G-flex G-align-center">
-             <p className="itemName">Scheduled date</p>
+             <p className="itemName">{t("req.scheduled")}</p>
              <p className="itemValue">23 March, 11:00</p>
            </div>
            
            <div className="itemBlock G-justify-between G-flex G-align-center">
-             <p className="itemName">Cost of work</p>
+             <p className="itemName">{t("req.costOfWork")}</p>
              <p className="itemValue">100€</p>
            </div>
            
            <div className="totalPrice G-flex G-align-center G-justify-between">
-             <p className="totalName">Total amount</p>
+             <p className="totalName">{t("req.totalAmount")}</p>
              <p className="totalValue">100€</p>
            </div>
          
          </div>
          
-         <button className="enrollBtn">Enrollment by 23 March, 11:00</button>
+         <button className="enrollBtn">{t("req.btn18")} 23 March, 11:00</button>
          
-         <p className="privacyTextPrg">By clicking the "Enroll" button, I agree to agree with <a href="/">Terms of order and delivery</a>, as well as to the processing of personal data in accordance with the updated <a
-            href="/">Personal Data Processing Policy</a></p>
+         <p className="privacyTextPrg">{t("req.terms1")} <a href="/">{t("req.terms2")}</a>{t("req.terms3")}<a
+            href="/">{t("req.terms4")}</a></p>
        </div>
      </div>
   );

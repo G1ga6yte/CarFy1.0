@@ -1,8 +1,10 @@
 import React from "react";
 import {Images} from "./images/images";
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 function ResponseItem() {
+  const {t, i18n} = useTranslation()
   const respServices =  ["ABS repair", "ESR repair", "Cylinder head repair", "Clearance repair",
         "Tire mounting and balancing",  "Engine diagnostic", "Exhaust system repair", "ASR repair", "Tire mounting and balancing"
         ]
@@ -18,12 +20,12 @@ function ResponseItem() {
        <div className="textBlock">
          <div className="headerBlockResp G-flex G-justify-between">
            <div className="priceBlock">
-             <p className="overPriceText">Total amount</p>
+             <p className="overPriceText">{t("req.totalAmount")}</p>
              <p className="price">100€</p>
            </div>
            <div className="btnBlock G-flex ">
-             <button className="chatBtn"><img src={Images.messageIcon} alt=""/>Chat</button>
-             <Link to={`/requests/response/:${id}`} className="responsesBtn">Enroll</Link>
+             <button className="chatBtn"><img src={Images.messageIcon} alt=""/>{t("req.btn10")}</button>
+             <Link to={`/requests/response/:${id}`} className="responsesBtn">{t("req.btn16")}</Link>
            </div>
          </div>
          <div className="prgMapBlock G-flex G-justify-between">

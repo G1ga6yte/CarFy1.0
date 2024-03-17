@@ -2,9 +2,11 @@ import React from "react";
 import {ImgSvg} from "../../images/imgSvg";
 import {Link, useNavigate} from "react-router-dom";
 import {useCartContext} from "../../../../CartContext";
+import {useTranslation} from "react-i18next";
 
 
 function RequestBlock (props){
+  const {t, i18n} = useTranslation()
   const {setReviewBlock, activeRequestId, setActiveRequestId} = useCartContext()
   const reqStatus = props.reqstatus
   const navigate = useNavigate()
@@ -23,7 +25,7 @@ function RequestBlock (props){
              <span className="requestID">#{id}</span>
              <span className="requestRegTime">06.04.2023 11:52 </span>
              <a style={{display: `${reqStatus !== "finished" ? "none" : "block"}`}} className="reportLink"
-                href="/carfy/src/pages">Report</a>
+                href="/">{t("req.btn4")}</a>
            </div>
          
            <div className="buttonsBlock G-flex">
@@ -36,12 +38,12 @@ function RequestBlock (props){
                     d="M19.2071 6.70711C19.5976 6.31658 19.5976 5.68342 19.2071 5.29289C18.8166 4.90237 18.1834 4.90237 17.7929 5.29289L12.5 10.5858L7.20711 5.29289C6.81658 4.90237 6.18342 4.90237 5.79289 5.29289C5.40237 5.68342 5.40237 6.31658 5.79289 6.70711L11.0858 12L5.79289 17.2929C5.40237 17.6834 5.40237 18.3166 5.79289 18.7071C6.18342 19.0976 6.81658 19.0976 7.20711 18.7071L12.5 13.4142L17.7929 18.7071C18.1834 19.0976 18.8166 19.0976 19.2071 18.7071C19.5976 18.3166 19.5976 17.6834 19.2071 17.2929L13.9142 12L19.2071 6.70711Z"
                     fill="#AEAEAE"/>
                </svg>
-               <span className="Cancel">Cancel</span>
+               <span className="Cancel">{t("req.btn5")}</span>
              </button>
            
              <button
                 style={{display: `${reqStatus === "sending" ? "flex" : reqStatus === "gotResp" ? "flex" : "none"}`}}
-                className="editBtn button-g">Edit request
+                className="editBtn button-g">{t("req.btn6")}
              </button>
            
              <button style={{display: `${reqStatus === "sending" ? "flex" : "none"}`}} className="loadBtn button-g">
@@ -50,17 +52,17 @@ function RequestBlock (props){
            
              <Link to={`/requests/responses/:${id}`} style={{display: `${reqStatus === "gotResp" ? "flex" : "none"}`}}
                      className="responsesBtn button-g">
-               <span>44 responses</span>
+               <span>44 {t("req.btn7")}</span>
              </Link>
            
              <button style={{display: `${reqStatus === "scheduled" ? "flex" : "none"}`}}
                      className="manageBtn button-g">
-               <span>Manage</span>
+               <span>{t("req.btn8")}</span>
              </button>
            
              <button style={{display: `${reqStatus === "finished" ? "flex" : "none"}`}}
                      className="leaveReviewBtn button-g">
-               <span>Leave a review</span>
+               <span>{t("req.btn9")}</span>
              </button>
            
              <button style={{display: `${reqStatus === "inWork" ? "flex" : "none"}`}} className="chatBtn button-g">
@@ -72,12 +74,12 @@ function RequestBlock (props){
                     d="M5.64754 8.3726C6.42512 8.13071 7.25395 8 8.11788 8C12.8313 8 16.5001 11.8907 16.5001 16.5C16.5001 17.3136 16.3858 18.1049 16.1716 18.8563C16.7136 18.759 17.2393 18.6136 17.7438 18.4246C17.815 18.3979 17.886 18.3707 17.9579 18.3461C18.0159 18.3528 18.0737 18.3619 18.1315 18.3703L21.3444 18.8413C21.4961 18.8636 21.6682 18.8889 21.8182 18.8974C21.9843 18.9069 22.2426 18.9058 22.5162 18.7882C22.8579 18.6412 23.1328 18.3726 23.2876 18.0343C23.4115 17.7635 23.4185 17.5054 23.4129 17.3391C23.4078 17.1888 23.3865 17.0162 23.3677 16.864L22.9617 13.5661C22.9512 13.4804 22.9457 13.4354 22.9425 13.4024C22.9601 13.3301 22.9931 13.2602 23.0195 13.1909C23.3983 12.1979 23.6053 11.1219 23.6053 10C23.6053 5.02326 19.5461 1 14.5526 1C10.1169 1 6.4183 4.17483 5.64754 8.3726Z"
                     fill="#266EFE"/>
                </svg>
-               <span>Chat</span>
+               <span>{t("req.btn10")}</span>
              </button>
            
              <button style={{display: `${reqStatus === "cancelled" ? "flex" : "none"}`}}
                      className="reapplyBtn button-g">
-               <span>Reapply</span>
+               <span>{t("req.btn11")}</span>
              </button>
          
            </div>
@@ -105,7 +107,7 @@ function RequestBlock (props){
               alt=""/>
          
            <div className="headerTextBlock">
-             <p className="header">{reqStatus === "sending" ? "Sending request" : reqStatus === "gotResp" ? "We got responses from the services" : reqStatus === "scheduled" ? "Scheduled 23 March, 11:00 " : reqStatus === "inWork" ? "In work" : reqStatus === "finished" ? "Finished" : reqStatus === "cancelled" ? "Cancelled" : "Sending request"}</p>
+             <p className="header">{reqStatus === "sending" ? `${t("req.prg1")}` : reqStatus === "gotResp" ? `${t("req.prg2")}` : reqStatus === "scheduled" ? `${t("req.prg3")} 23 March, 11:00 ` : reqStatus === "inWork" ? `${t("req.prg4")}` : reqStatus === "finished" ? `${t("req.prg5")}` : reqStatus === "cancelled" ? `${t("req.prg6")}` : `${t("req.prg1")}`}</p>
              <p onClick={()=>{
                if (reqStatus === "finished"){
                  setActiveRequestId(id)
@@ -119,7 +121,7 @@ function RequestBlock (props){
                color         : `${reqStatus === "sending" ? "#AEAEAE" : reqStatus === "gotResp" ? "#00CC9A" : reqStatus === "scheduled" ? "#F39A31" : reqStatus === "inWork" ? "#F39A31" : reqStatus === "finished" ? "#00CC9A" : reqStatus === "cancelled" ? "#FF7373" : "#AEAEAE"}`,
                textDecoration: `${reqStatus === "finished" ? "underline" : "none"}`,
              }}
-                className={`underHeader ${reqStatus === "finished" ? "leaveReview" : ""}`}>{reqStatus === "sending" ? "Waiting for a reply from the car service" : reqStatus === "gotResp" ? "Average price ~100€ " : reqStatus === "scheduled" ? "Appointment is scheduled " : reqStatus === "inWork" ? "Completion in 2 days" : reqStatus === "finished" ? "Leave a review" : reqStatus === "cancelled" ? "The request was canceled" : "Waiting for a reply from the car service"}</p>
+                className={`underHeader ${reqStatus === "finished" ? "leaveReview" : ""}`}>{reqStatus === "sending" ? `${t("req.underText1")}` : reqStatus === "gotResp" ? `${t("req.underText2")} ~100€` : reqStatus === "scheduled" ? `${t("req.underText3")}` : reqStatus === "inWork" ? `${t("req.underText4")}` : reqStatus === "finished" ? `${t("req.underText5")}` : reqStatus === "cancelled" ? `${t("req.underText6")}` : `${t("req.underText1")}`}</p>
            </div>
          </div>
          <div style={{display: `${reqStatus === "cancelled" ? "none" : "flex"}`}}
@@ -155,9 +157,9 @@ function RequestBlock (props){
          }} className="reqInfoBlock G-flex G-align-center">
          
            <div className="infoBlock">
-             <p className="line">Car: <span>Citroen C5, 2005</span></p>
-             <p className="line">City: <span>Rīga</span></p>
-             <p className="line">Scheduled date: <span>23 March, 11:00</span></p>
+             <p className="line">{t("req.car")}: <span>Citroen C5, 2005</span></p>
+             <p className="line">{t("req.city")}: <span>Rīga</span></p>
+             <p className="line">{t("req.scheduled")}: <span>23 March, 11:00</span></p>
            </div>
          
            <div className="smsBlock">
@@ -183,8 +185,8 @@ function RequestBlock (props){
            </div>
            <div className="infoBlock">
              <p className="serviceTextLine">Autofavorīts</p>
-             <p className="serviceTextLine"><span>Location:</span>Brīvības iela 61, Centra rajons, Rīga, LV-1010</p>
-             <p className="serviceTextLine"><span>Scheduled date:</span>23 March, 11:00</p>
+             <p className="serviceTextLine"><span>{t("req.location")}:</span>Brīvības iela 61, Centra rajons, Rīga, LV-1010</p>
+             <p className="serviceTextLine"><span>{t("req.scheduled")}:</span>23 March, 11:00</p>
            </div>
            <div style={{backgroundImage: `url("${ImgSvg.mapImg}")`}} className="mapBlock">
              <img src={ImgSvg.markerIcon} alt=""/>
@@ -202,12 +204,12 @@ function RequestBlock (props){
                   d="M19.2071 6.70711C19.5976 6.31658 19.5976 5.68342 19.2071 5.29289C18.8166 4.90237 18.1834 4.90237 17.7929 5.29289L12.5 10.5858L7.20711 5.29289C6.81658 4.90237 6.18342 4.90237 5.79289 5.29289C5.40237 5.68342 5.40237 6.31658 5.79289 6.70711L11.0858 12L5.79289 17.2929C5.40237 17.6834 5.40237 18.3166 5.79289 18.7071C6.18342 19.0976 6.81658 19.0976 7.20711 18.7071L12.5 13.4142L17.7929 18.7071C18.1834 19.0976 18.8166 19.0976 19.2071 18.7071C19.5976 18.3166 19.5976 17.6834 19.2071 17.2929L13.9142 12L19.2071 6.70711Z"
                   fill="#AEAEAE"/>
              </svg>
-             <span className="Cancel">Cancel</span>
+             <span className="Cancel">{t("req.btn5")}</span>
            </button>
          
            <button
               style={{display: `${reqStatus === "sending" ? "flex" : reqStatus === "gotResp" ? "flex" : "none"}`}}
-              className="editBtn button-g">Edit request
+              className="editBtn button-g">{t("req.btn6")}
            </button>
          
            <button style={{display: `${reqStatus === "sending" ? "flex" : "none"}`}} className="loadBtn button-g">
@@ -216,17 +218,17 @@ function RequestBlock (props){
          
            <Link to={`/requests/responses/:${id}`} style={{display: `${reqStatus === "gotResp" ? "flex" : "none"}`}}
                    className="responsesBtn button-g">
-             <span>44 responses</span>
+             <span>44 {t("req.btn7")}</span>
            </Link>
          
            <button style={{display: `${reqStatus === "scheduled" ? "flex" : "none"}`}}
                    className="manageBtn button-g">
-             <span>Manage</span>
+             <span>{t("req.btn8")}</span>
            </button>
          
            <button style={{display: `${reqStatus === "finished" ? "flex" : "none"}`}}
                    className="leaveReviewBtn button-g">
-             <span>Leave a review</span>
+             <span>{t("req.btn9")}</span>
            </button>
          
            <button style={{display: `${reqStatus === "inWork" ? "flex" : "none"}`}} className="chatBtn button-g">
@@ -238,12 +240,12 @@ function RequestBlock (props){
                   d="M5.64754 8.3726C6.42512 8.13071 7.25395 8 8.11788 8C12.8313 8 16.5001 11.8907 16.5001 16.5C16.5001 17.3136 16.3858 18.1049 16.1716 18.8563C16.7136 18.759 17.2393 18.6136 17.7438 18.4246C17.815 18.3979 17.886 18.3707 17.9579 18.3461C18.0159 18.3528 18.0737 18.3619 18.1315 18.3703L21.3444 18.8413C21.4961 18.8636 21.6682 18.8889 21.8182 18.8974C21.9843 18.9069 22.2426 18.9058 22.5162 18.7882C22.8579 18.6412 23.1328 18.3726 23.2876 18.0343C23.4115 17.7635 23.4185 17.5054 23.4129 17.3391C23.4078 17.1888 23.3865 17.0162 23.3677 16.864L22.9617 13.5661C22.9512 13.4804 22.9457 13.4354 22.9425 13.4024C22.9601 13.3301 22.9931 13.2602 23.0195 13.1909C23.3983 12.1979 23.6053 11.1219 23.6053 10C23.6053 5.02326 19.5461 1 14.5526 1C10.1169 1 6.4183 4.17483 5.64754 8.3726Z"
                   fill="#266EFE"/>
              </svg>
-             <span>Chat</span>
+             <span>{t("req.btn10")}</span>
            </button>
          
            <button style={{display: `${reqStatus === "cancelled" ? "flex" : "none"}`}}
                    className="reapplyBtn button-g">
-             <span>Reapply</span>
+             <span>{t("req.btn11")}</span>
            </button>
        
          </div>
