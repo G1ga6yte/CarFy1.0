@@ -1,0 +1,310 @@
+@import "../../../../source/mixin.scss";
+
+
+.AddDialog{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  .backgroundBlock{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .scrollBlock{
+    padding: 50px 0;
+    max-height: 100vh;
+    overflow: auto;
+  }
+
+  .DialogBlock{
+    position: relative;
+    z-index: 2;
+    padding: 30px 40px;
+    background-color: white;
+    border-radius: 24px;
+    width: 950px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .closeIcon{
+      position: absolute;
+      right: 40px;
+      top: 30px;
+      cursor: pointer;
+    }
+
+    .header{
+      font-size: 20px;
+      font-family: "Inter-Medium", sans-serif;
+      color: #0D172F;
+      line-height: 140%;
+      margin-bottom: 24px;
+    }
+    .miniHeader{
+      font-size: 16px;
+      font-family: 'Inter-Medium', sans-serif;
+      color: #0D172F;
+      line-height: 140%;
+      margin-bottom: 14px;
+      width: 100%;
+
+    }
+    .workingMiniHeader{
+      img{
+        cursor: pointer;
+      }
+
+    }
+
+    .selectCont{
+      margin-right: 8px;
+      margin-bottom: 16px;
+      width: 340px;
+      position: relative;
+      .selectBlock{
+        width: 100%;
+        border-radius: 14px;
+        border: 1px solid #D9D9D9;
+        padding:  16px;
+        cursor: pointer;
+        &:hover{
+          border-color: #266EFE;
+        }
+        .valSpan{
+          font-size: 14px;
+          font-family: 'Inter-Regular', sans-serif;
+          line-height: 130%;
+          margin-right: 8px;
+        }
+        .activeIcon{
+          rotate: 180deg;
+          path{
+            fill: #266EFE !important;
+          }
+        }
+      }
+      .optionsBlock{
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        background-color: white;
+        border-radius: 8px;
+        border: 1px solid #266EFE;
+        max-height: 180px;
+        padding: 4px;
+        overflow: auto;
+        -ms-overflow-style: auto !important;  /* IE 10+ */
+        &::-webkit-scrollbar-thumb{
+          background-color: #CCE0FF !important;
+          border-radius: 15px;
+          border: 2px solid white;
+        }
+        &::-webkit-scrollbar {
+          width: 8px !important;
+          background: transparent !important;
+        }
+
+        .option{
+          padding: 12px 16px;
+          font-size: 14px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #0D172F;
+          border-radius: 8px;
+          cursor: pointer;
+          &:hover{
+            background-color: #266EFE;
+            color: white;
+          }
+        }
+
+      }
+    }
+
+    .buttonBlock{
+      width: 100%;
+      margin-top: 24px;
+      .submitBtn{
+        min-width: 220px;
+        background-color: #266EFE;
+        border-radius: 8px;
+        cursor: pointer;
+        padding: 8px;
+        color: white;
+        font-size: 14px;
+        font-family: 'Inter-Medium', sans-serif;
+        line-height: 140%;
+        border: none;
+        &:hover{
+          background-color: #355ABC;
+        }
+      }
+    }
+
+    .workingHoursBlock{
+      width: 100%;
+
+      .workingHoursDay{
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid #D9D9D9;
+        width: 60%;
+        margin-bottom: 8px;
+        cursor: pointer;
+        position: relative;
+
+        .headBlock{
+          .switchBlock{
+            width: 50px;
+            height: 30px;
+            min-width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            background-color: #787880;
+            border-radius: 50px;
+            cursor: pointer;
+            opacity: 0.15;
+            padding: 0 2px;
+            .switcher{
+              transition: 0.2s ease-in-out all;
+              background-color: white;
+              height: 26px;
+              width: 26px;
+              border-radius: 50%;
+            }
+          }
+          .activeSwitch{
+            opacity: 1 !important;
+            justify-content: end !important;
+            background-color: #266EFE !important;
+          }
+          .day{
+            min-width: 100px;
+            margin: 0 8px;
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: #0D172F;
+            line-height: 140%;
+          }
+          .times{
+            flex-grow: 1;
+            color: #AEAEAE;
+            font-size: 14px;
+            font-family: 'Inter-Regular', sans-serif;
+            line-height: 130%;
+            span{
+              margin-right: 10px;
+            }
+          }
+        }
+
+        .blockMain{
+          .selectsLine{
+            margin-top: 24px;
+
+            .selectBlock{
+              min-width: 170px;
+              width: 170px;
+              position: relative;
+              z-index: 10;
+              .selectedBlock{
+                padding: 4px 16px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: 1px solid #F1F4F8;
+                border-radius: 8px;
+                cursor: pointer;
+                &:hover{
+                  border-color: #266EFE;
+                }
+
+                .selectedTime{
+                  font-size: 14px;
+                  font-family: 'Inter-Regular', sans-serif;
+                  color: #0D172F;
+                  line-height: 130%;
+                }
+
+              }
+              .optionsBlock{
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                border: 1px solid #266EFE;
+                border-radius: 8px;
+                padding: 4px;
+                max-height: 140px;
+                overflow: auto;
+                left: 0;
+                top: 45px;
+                background-color: white;
+                input{
+                  width: 100%;
+                  background-color: white;
+                  border-radius: 4px;
+                  margin-bottom: 2px;
+                  cursor: pointer;
+                  padding: 2px 8px;
+                  text-align: start;
+                  font-family: 'Inter-Regular', sans-serif;
+                  font-size: 14px;
+                  line-height: 130%;
+                  color: #0D172F;
+                  border: none;
+                  &:hover{
+                    background-color: #266EFE;
+                    color: white;
+                  }
+                }
+              }
+
+
+            }
+
+            .middleWord{
+              margin: 0 20px;
+              font-size: 14px;
+              font-family: 'Inter-Regular', sans-serif;
+              color: #AEAEAE;
+              line-height: 130%;
+            }
+            .actionBlock{
+              display: flex;
+              align-items: center;
+              margin-left: 24px;
+            }
+
+          }
+        }
+
+
+
+
+      }
+
+    }
+
+
+
+  }
+
+
+
+}

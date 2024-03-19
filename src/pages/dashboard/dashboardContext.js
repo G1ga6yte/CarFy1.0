@@ -18,6 +18,7 @@ export const DashboardProvider = ({children}) => {
   
   
   useEffect(()=>{
+    setActivePage("Home")
     if (location.pathname.includes("requests&history")){
       setActivePage("Requests History")
     }
@@ -39,10 +40,24 @@ export const DashboardProvider = ({children}) => {
     if (location.pathname.includes("checkout")){
       setActivePage("Checkout")
     }
+    if (location.pathname.includes("statistics")){
+      setActivePage("Statistics")
+    }
+    if (location.pathname.includes("reviews")){
+      setActivePage("ManageReviews")
+    }
+    if (location.pathname.includes("promotion")){
+      setActivePage("Promotion")
+    }
+    if (location.pathname.includes("settings")){
+      setActivePage("Settings")
+    }
+    if (location.pathname.includes("help")){
+      setActivePage("Help")
+    }
     
     
-    
-  }, [])
+  }, [location])
   
   
   ///////////////////Calendar ////////////////////

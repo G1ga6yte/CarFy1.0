@@ -1,0 +1,201 @@
+@import "../../../source/mixin.scss";
+
+.PartnerHelp{
+  padding: 16px 40px;
+  @include screen($wide){
+    padding: 16px 24px;
+  }
+
+  .mainCont{
+    background-color: white;
+    border: 1px solid #F1F4F8;
+    border-radius: 16px;
+    flex-wrap: wrap;
+
+    .headBlock{
+      width: 100%;
+      border-bottom: 1px solid #F1F4F8;
+
+      .inputBlock{
+        width: 340px;
+        border-right: 1px solid #F1F4F8;
+        padding: 8px 16px;
+        position: relative;
+        @include screen($wide){
+          width: 300px;
+        }
+        @include screen($wide-s){
+          width: 250px;
+        }
+        svg{
+          pointer-events: none;
+          position: absolute;
+          left: 32px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        input{
+          outline: none;
+          width: 100%;
+          padding: 8px 16px 8px 56px;
+          border-radius: 8px;
+          background-color: white;
+          border: 1px solid #F1F4F8;
+          font-size: 14px;
+          font-family: 'Inter-Regular', sans-serif;
+          line-height: 130%;
+          &:focus-visible{
+            border-color: #266EFE;
+          }
+        }
+      }
+
+    }
+
+    .sectionsBlock{
+      width: 340px;
+      min-width: 340px;
+      border-right: 1px solid #F1F4F8;
+      padding: 8px 16px;
+      @include screen($wide){
+        width: 300px;
+        min-width: 300px;
+      }
+      @include screen($wide-s){
+        width: 250px;
+        min-width: 250px;
+      }
+
+      .helpSection{
+        padding: 8px 0;
+        .helpHeadBlock{
+          width: 100%;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 16px;
+          font-family: 'Inter-Medium', sans-serif;
+          color: #0D172F;
+          line-height: 140%;
+          user-select: none;
+          @include screen($wide-s){
+            font-size: 14px;
+          }
+
+
+        }
+        .helpMainBlock{
+          padding: 4px 0;
+          .sectionItem{
+            padding: 4px 0;
+            cursor: pointer;
+            color: #0D172F;
+            font-size: 12px;
+            font-family: 'Inter-Regular', sans-serif;
+            line-height: 130%;
+            user-select: none;
+            &:hover{
+              color: #266EFE;
+            }
+          }
+          .activeItem{
+            color: #266EFE !important;
+          }
+        }
+      }
+
+
+
+
+    }
+
+    .viewBlock{
+      flex-grow: 1;
+      min-height: 500px;
+
+      .defaultBlock{
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 16px;
+        justify-content: space-between;
+
+        .defaultBlockLine{
+          width: 46%;
+
+          .helpBlock{
+            align-items: start;
+            margin-bottom: 25px;
+            max-width: 350px;
+            img{
+              margin-right: 16px;
+              width: 24px;
+            }
+            .textBlock{
+              .blockHeader{
+                font-size: 16px;
+                font-family: 'Inter-Medium', sans-serif;
+                color: #0D172F;
+                line-height: 140%;
+                margin-bottom: 25px;
+              }
+              .blockItem{
+                font-size: 12px;
+                font-family: 'Inter-Regular', sans-serif;
+                color: #266EFE;
+                line-height: 130%;
+                margin-bottom: 8px;
+                cursor: pointer;
+                &:hover{
+                  color: #355ABC;
+                }
+              }
+            }
+          }
+
+        }
+
+      }
+
+      .activeBlock{
+        padding: 40px 30px;
+        .header{
+          margin-bottom: 24px;
+          font-size: 20px;
+          font-family: 'Inter-SemiBold', sans-serif;
+          color: #0D172F;
+          line-height: 140%;
+        }
+        .text{
+          margin-bottom: 8px;
+          font-size: 14px;
+          font-family: 'Inter-Regular', sans-serif;
+          line-height: 130%;
+          color: #0D172F;
+        }
+        .underText{
+          font-size: 14px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #0D172F;
+          line-height: 140%;
+          .bold{
+            font-family: 'Inter-SemiBold', sans-serif;
+          }
+          .blueUnderline{
+            color: #266EFE;
+            text-decoration: underline;
+            cursor: pointer;
+            &:hover{
+              color: #355ABC;
+            }
+          }
+        }
+      }
+
+    }
+
+
+
+
+  }
+}

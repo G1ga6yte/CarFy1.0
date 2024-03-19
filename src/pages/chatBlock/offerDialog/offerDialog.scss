@@ -1,0 +1,455 @@
+@import "../../../source/mixin.scss";
+
+.OfferDialog{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  left: 0;
+  top: 0;
+
+  .backgroundBlock{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .scrollCont{
+    height: 100%;
+    margin: 0 auto;
+    width: 950px;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    .mainCont{
+      width: 100%;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 24px;
+
+
+      .closeIcon{
+        position: absolute;
+        right: 40px;
+        top: 30px;
+        cursor: pointer;
+      }
+      .header{
+        margin-bottom: 8px;
+        font-size: 20px;
+        font-family: 'Inter-Medium', sans-serif;
+        color: #0D172F;
+        line-height: 140%;
+      }
+      .prg{
+        font-size: 14px;
+        font-family: 'Inter-Regular', sans-serif;
+        color: #0D172F;
+        line-height: 130%;
+        margin-bottom: 4px;
+      }
+      .miniHeaderS{
+        margin-bottom: 8px !important;
+        font-family: 'Inter-Medium', sans-serif;
+      }
+      .miniHeader{
+        font-size: 16px;
+        font-family: 'Inter-Medium', sans-serif;
+        color: #0D172F;
+        line-height: 140%;
+        margin: 16px 0;
+        width: 100%;
+      }
+
+      .sectionsBlock{
+        flex-wrap: wrap;
+
+        .selectCont{
+          margin-right: 24px;
+          width: 340px;
+          position: relative;
+          .selectBlock{
+            width: 100%;
+            border-radius: 14px;
+            border: 1px solid #D9D9D9;
+            padding:  16px;
+            cursor: pointer;
+            &:hover{
+              border-color: #266EFE;
+            }
+            .valSpan{
+              font-size: 14px;
+              font-family: 'Inter-Regular', sans-serif;
+              line-height: 130%;
+              margin-right: 8px;
+            }
+            .activeIcon{
+              rotate: 180deg;
+              path{
+                fill: #266EFE !important;
+              }
+            }
+          }
+          .optionsBlock{
+            position: absolute;
+            z-index: 100;
+            width: 100%;
+            top: 60px;
+            left: 0;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #266EFE;
+            max-height: 180px;
+            padding: 4px;
+            overflow: auto;
+            -ms-overflow-style: auto !important;  /* IE 10+ */
+            &::-webkit-scrollbar-thumb{
+              background-color: #CCE0FF !important;
+              border-radius: 15px;
+              border: 2px solid white;
+            }
+            &::-webkit-scrollbar {
+              width: 8px !important;
+              background: transparent !important;
+            }
+
+            .option{
+              padding: 12px 16px;
+              font-size: 14px;
+              font-family: 'Inter-Regular', sans-serif;
+              color: #0D172F;
+              border-radius: 8px;
+              cursor: pointer;
+              &:hover{
+                background-color: #266EFE;
+                color: white;
+              }
+            }
+
+          }
+        }
+        .bidInput{
+          margin-right: 24px;
+          width: 340px;
+          border-radius: 14px;
+          border: 1px solid #D9D9D9;
+          padding:  16px;
+          font-size: 16px;
+          line-height: 130%;
+          outline: none;
+          font-family: 'Inter-Regular', sans-serif;
+
+          &:focus-visible{
+            border-color: #266EFE;
+          }
+        }
+
+      }
+
+      .tableBlock {
+        border-radius: 16px;
+        border: 1px solid #D9D9D9;
+        background: #FFF;
+        padding: 16px;
+        width: 90%;
+        @include screen($tablet){
+          flex-direction: column;
+          justify-content: start;
+          align-items: start;
+          border: none;
+        }
+        .activeTime{
+          .timePrg{
+            color: #266EFE !important;
+          }
+          path{
+            fill: #266EFE !important;
+          }
+        }
+
+        .meetingTime {
+          margin: 0 10px;
+          @include screen($tablet){
+            margin: 10px;
+          }
+          &:hover {
+            cursor: pointer;
+
+            path {
+              fill: #266EFE !important;
+            }
+
+            .timePrg {
+              color: #266EFE;
+            }
+          }
+
+          .timePrg {
+            color: black;
+            font-size: 16px;
+            font-family: 'Inter-Medium', sans-serif;
+            margin-left: 8px;
+          }
+        }
+      }
+
+      .calendarCont {
+        border-radius: 16px;
+        border: 1px solid #D9D9D9;
+        background: #FFF;
+        width: max-content;
+        overflow: hidden;
+        display: flex;
+        margin-top: 5px;
+        @include screen($tablet-m){
+          flex-direction: column;
+          margin: 0 auto;
+          width: 100%;
+        }
+
+        .react-calendar {
+          border: none;
+          padding: 15px 10px;
+          position: relative;
+          border-right: 1px solid #D9D9D9;
+          @include screen($tablet-m){
+            border: none;
+            margin: 0 auto;
+          }
+
+          .react-calendar__navigation__label {
+            font-size: 15px;
+            font-family: 'Inter-Medium', sans-serif;
+            color: black;
+            pointer-events: none;
+
+            span {
+              width: 100%;
+              display: block;
+              text-align: start;
+            }
+          }
+          .react-calendar__month-view__weekdays__weekday{
+            margin-bottom: 15px !important;
+            abbr{
+              text-decoration: none;
+              font-family: 'Inter-Regular', sans-serif !important;
+              font-size: 12px !important;
+              font-weight: 400 !important;
+              color: black;
+            }
+          }
+          .react-calendar__month-view__days__day--weekend{
+            color: black;
+            font-size: 14px;
+            font-family: 'Inter-Regular', sans-serif;
+          }
+          .react-calendar__tile--now{
+            background-color: transparent;
+            color: black !important;
+          }
+          .react-calendar__tile--active{
+            color: white !important;
+            background-color: #266EFE !important;
+          }
+          .react-calendar__tile{
+            border-radius: 8px;
+          }
+          .react-calendar__month-view__days__day--neighboringMonth, .react-calendar__decade-view__years__year--neighboringDecade, .react-calendar__century-view__decades__decade--neighboringCentury{
+            color: rgba(24, 24, 25, 0.32) !important;
+          }
+          .react-calendar__navigation__prev-button {
+            position: absolute;
+            right: 50px;
+            top: 20px;
+            background-color: #FBFDFF;
+            border-radius: 8px;
+            width: 32px !important;
+            height: 32px !important;
+            line-height: 19% !important;
+            rotate: -90deg;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Inter-Regular', sans-serif;
+            font-size: 24px;
+            min-width: unset !important;
+            &:hover{
+              background-color: #266EFE;
+              color: white;
+            }
+          }
+          .react-calendar__navigation__next-button {
+            position: absolute;
+            right: 15px;
+            top: 20px;
+            background-color: #FBFDFF;
+            border-radius: 8px;
+            width: 32px !important;
+            height: 32px !important;
+            line-height: 19% !important;
+            rotate: -90deg;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Inter-Regular', sans-serif;
+            font-size: 24px;
+            min-width: unset !important;
+            &:hover{
+              background-color: #266EFE;
+              color: white;
+            }
+
+          }
+          .react-calendar__navigation__prev2-button, .react-calendar__navigation__next2-button {
+            display: none;
+          }
+
+        }
+        .calendarSideBlock{
+          width: 220px;
+          @include screen($tablet-m){
+            width: 320px;
+            margin: 0 auto;
+          }
+          @include screen($mobile-m){
+            width: 100%;
+          }
+
+          .timeBlock{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border-bottom: 1px solid #D9D9D9;
+            padding: 20px 8px 10px;
+            @include screen($tablet-m){
+              align-items: start;
+              justify-content: start;
+            }
+
+
+            .timePrg{
+              font-size: 15px;
+              font-family: 'Inter-Medium', sans-serif;
+              color: black;
+              line-height: 140%;
+              margin: 5px 0 12px;
+              width: 100%;
+            }
+            .timeItem{
+              width: 30%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 6px;
+              color: black;
+              margin-top: 10px;
+              padding: 8px;
+              font-family: 'Inter-Regular', sans-serif;
+              font-size: 14px;
+              cursor: pointer;
+              @include screen($tablet-m){
+                width: 24%;
+                margin-right: 1%;
+
+              }
+              &:hover{
+                background-color: #e6e6e6;
+              }
+            }
+            .active{
+              background-color: #266EFE !important;
+              color: white !important;
+            }
+
+          }
+          .meetingTimeBlock{
+            padding: 14px 26px;
+            @include screen($tablet-m){
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .meetingPrg{
+              font-size: 10px;
+              font-family: 'Inter-Bold', sans-serif;
+              color: black;
+              margin-bottom: 5px;
+              @include screen($tablet-m){
+                font-size: 16px;
+                margin-right: 10px;
+                font-family: 'Inter-Medium', sans-serif;
+              }
+              @include screen($mobile-m){
+                font-size: 14px;
+              }
+            }
+            .data{
+              font-size: 18px;
+              color: #266EFE;
+              font-family: 'Inter-Medium', sans-serif;
+              line-height: 140%;
+              @include screen($tablet-m){
+                font-size: 16px;
+              }
+              @include screen($mobile-m){
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+
+      .buttonsBlock{
+        margin: 40px 0 10px;
+
+        .sendBtn{
+          margin-right: 16px;
+          border-radius: 8px;
+          background-color: #266EFE;
+          cursor: pointer;
+          outline: none;
+          border:none;
+          color: white;
+          width: 200px;
+          padding: 8px;
+          font-size: 14px;
+          font-family: 'Inter-Medium', sans-serif;
+          line-height: 140%;
+          &:hover{
+            background-color: #355ABC;
+          }
+        }
+        .cancelBtn{
+          border-radius: 8px;
+          background-color: white;
+          cursor: pointer;
+          outline: none;
+          border: 1px solid #F1F4F8;
+          color: #334155;
+          width: 200px;
+          padding: 8px;
+          font-size: 14px;
+          font-family: 'Inter-Medium', sans-serif;
+          line-height: 140%;
+          &:hover{
+            border-color: #334155;
+          }
+        }
+
+      }
+
+    }
+  }
+
+}

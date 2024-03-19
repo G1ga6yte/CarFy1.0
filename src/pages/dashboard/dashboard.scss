@@ -157,6 +157,7 @@
       width: 100%;
       padding: 35px 40px 10px;
       position: relative;
+      z-index: 99999;
 
       .sectionPrg{
         font-size: 28px;
@@ -202,7 +203,7 @@
           margin: 0 10px;
           cursor: pointer;
           position: relative;
-          z-index: 2;
+          z-index: 99999;
           .newMessage{
             position: absolute;
             top: -3px;
@@ -248,7 +249,7 @@
           transition: 3s ease-in-out all !important;
           width: 50%;
           position: absolute;
-          z-index: 5;
+          z-index: 99999;
           top: 100px;
           right: 20px;
           padding: 25px;
@@ -301,7 +302,7 @@
         .backgroundBlock{
           transition: 3s ease-in-out all;
           position: fixed;
-          z-index: 1;
+          z-index: 99998;
           background-color: rgba(0, 0, 0, 0.2);
           width: 100vw;
           height: 100vh;

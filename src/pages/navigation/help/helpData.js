@@ -35,7 +35,7 @@ export const HelpData = [
     ]
   },
   {
-    name: "Payment and documents",
+    name: "Changing and canceling order",
     status: false,
     icon: pencil,
     source: [

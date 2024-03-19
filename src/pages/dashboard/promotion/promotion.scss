@@ -1,0 +1,194 @@
+@import "../../../source/mixin.scss";
+
+.Promotion{
+  padding: 16px 40px;
+  @include screen($wide){
+    padding: 16px 24px;
+  }
+
+  .header{
+    font-size: 14px;
+    font-family: 'Inter-Medium', sans-serif;
+    line-height: 140%;
+    color: #334155;
+    margin-bottom: 8px;
+    span{
+      margin-left: 8px;
+      color: #266EFE;
+    }
+  }
+
+  .mainCont{
+    border-radius: 16px;
+    border: 1px solid #F1F4F8;
+    background: #FFF;
+
+    .headBlock{
+      padding: 16px 16px 12px;
+      .saleIcon{
+        margin-right: 12px;
+      }
+      .miniHeader{
+        font-size: 14px;
+        line-height: 140%;
+        font-family: 'Inter-Medium', sans-serif;
+        color: #0D172F;
+        flex-grow: 1;
+      }
+      .addBtn{
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+        font-size: 14px;
+        font-family: 'Inter-Medium', sans-serif;
+        color: #266EFE;
+        line-height: 140%;
+        svg{
+          margin-right: 4px;
+        }
+        &:hover{
+          color: #355ABC;
+          path{
+            fill: #355ABC !important;
+          }
+        }
+      }
+    }
+    .typesBlock{
+      padding: 8px 16px;
+      background-color: #F1F4F8;
+      justify-content: space-between;
+      .typePrg{
+        font-size: 12px;
+        font-family: 'Inter-SemiBold', sans-serif;
+        line-height: 140%;
+        color: #828282;
+        white-space: nowrap;
+        &:nth-child(1){
+          width: 5%;
+        }
+        &:nth-child(2){
+          width: 15%;
+        }
+        &:nth-child(3){
+          width: 10%;
+        }
+        &:nth-child(4){
+          width: 10%;
+        }
+        &:nth-child(5){
+          width: 15%;
+        }
+        &:nth-child(6){
+          width: 10%;
+        }
+        &:nth-child(7){
+          width: 10%;
+        }
+        &:nth-child(8){
+          width: 5%;
+        }
+        &:nth-child(9){
+          width: 15%;
+        }
+
+      }
+    }
+    .promotionsBlock{
+      padding: 16px;
+
+      .PromotionItem{
+        width: 100%;
+        .imgBlock{
+          width: 5%;
+        }
+        .typeBlock{
+          width: 15%;
+
+          .name{
+            font-size: 12px;
+            font-family: 'Inter-Regular', sans-serif;
+            color: #0D172F;
+            line-height: 130%;
+            @include screen($wide){
+              font-size: 10px;
+            }
+          }
+          .underText{
+            font-size: 12px;
+            font-family: 'Inter-Regular', sans-serif;
+            color: #AEAEAE;
+            line-height: 130%;
+            @include screen($wide){
+              font-size: 10px;
+            }
+          }
+        }
+        .views{
+          width: 10%;
+          line-height: 120%;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #0D172F;
+          font-size: 12px;
+        }
+        .orders{
+          width: 10%;
+          line-height: 120%;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #0D172F;
+          font-size: 12px;
+        }
+        .date{
+          width: 15%;
+          line-height: 120%;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #0D172F;
+          font-size: 12px;
+        }
+        .actionDate{
+          width: 10%;
+          line-height: 120%;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #0D172F;
+          font-size: 12px;
+        }
+        .discount{
+          width: 10%;
+          font-size: 12px;
+          font-family: 'Inter-SemiBold', sans-serif;
+          color: #0D172F;
+          line-height: 140%;
+        }
+        .status{
+          width: 5%;
+          cursor: pointer;
+        }
+
+        .manageBtn{
+          width: 15%;
+          button{
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #F1F4F8;
+            border-radius: 8px;
+            background-color: white;
+            color: #334155;
+            font-size: 14px;
+            line-height: 140%;
+            font-family: 'Inter-Medium', sans-serif;
+            cursor: pointer;
+            &:hover{
+              border-color: #334155;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+
+  }
+
+}

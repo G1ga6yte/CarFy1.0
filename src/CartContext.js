@@ -24,6 +24,7 @@ export const CartProvider = ({children}) => {
   const [authorization, setAuthorization] = useState(true)
   const [typeLogIn, setTypeLogIn] = useState("SignUp");
   const [mapDialog, setMapDialog] = useState(false)
+  const [partner, setPartner] = useState(true) // true - account off partner
   
   
   /////////////////Find Service //////////////////////////////
@@ -64,7 +65,7 @@ export const CartProvider = ({children}) => {
     confirmationDialog, setConfirmationDialog,
     reviewBlock, setReviewBlock,
     activeRequestId, setActiveRequestId,
-    mapDialog, setMapDialog
+    mapDialog, setMapDialog, partner, setPartner
   }}>
     {children}
   </CartContext.Provider>);

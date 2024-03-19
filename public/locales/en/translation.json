@@ -358,7 +358,7 @@
 
   },
   "chat": {
-    "header": "Message",
+    "header": "Messages",
     "search": "Search",
     "typing": "Typing",
     "btn1": "Enroll",
@@ -366,7 +366,20 @@
     "totalAmount": "Total amount",
     "date": "Date",
     "cancel": "Cancel",
-    "book": "Book"
+    "book": "Book",
+    "back": "Back",
+    "btn2": "Make an appointment",
+    "underText1": "Offer the customer a service that will solve their problem. Generate a customized proposal",
+    "header1": "Offer an appointment",
+    "prg1": "You can send the buyer a customized offer of your services",
+    "prg2": "Indicate what services will be provided to the customer and to what extent.",
+    "prg3": "Specify the price for your services.",
+    "miniHeader1": "Category",
+    "miniHeader2": "Your bid",
+    "miniHeader3": "Due date",
+    "miniHeader4": "Choose date",
+    "btn3": "Send",
+    "btn4": "Cancel"
   },
   "insVig": {
     "header11": "Protect Your Car with Reliable ",
@@ -1177,5 +1190,92 @@
     "placeholder1": "All transactions",
     "btn1": "Export",
     "btn2": "Cancel"
+  },
+  "promo": {
+    "header1": "Service promotion",
+    "miniHeader1": "Your offers",
+    "btn1": "Add offer",
+    "type1": "Type",
+    "type2": "Views",
+    "type3": "Total orders",
+    "type4": "Date of Addition",
+    "type5": "Action time",
+    "type6": "Discount",
+    "type7": "Status",
+    "off": "OFF",
+    "btn2": "Manage",
+    "miniHeader2": "Category",
+    "miniHeader3": "Discount",
+    "miniHeader4": "Working hours",
+    "select1Def": "General maintenance",
+    "select2Def": "Cylinder head repair",
+    "select3Def": "20% off",
+    "week1": "Monday",
+    "week2": "Tuesday",
+    "week3": "Wednesday",
+    "week4": "Thursday",
+    "week5": "Friday",
+    "week6": "Saturday",
+    "week7": "Sunday",
+    "btn3": "Submit",
+    "to": "to"
+  },
+  "partnerS": {
+    "header1": "Main information",
+    "header2": "Language",
+    "header3": "Account settings",
+    "miniHeader1": "Service information",
+    "miniHeader2": "Maximum emergency distance",
+    "miniHeader3": "Working hours",
+    "miniHeader4": "Service photo",
+    "miniHeader5": "Services",
+    "miniHeader6": "Cars brands",
+    "miniHeader7": "Time zone",
+    "miniHeader8": "Mail address",
+    "miniHeader9": "Phone number",
+    "miniHeader10": "Change password",
+    "helpText1": "To change these settings, ",
+    "helpText2": "contact support",
+    "service1": {
+      "name": "General maintenance",
+      "item1": "Cylinder head repair",
+      "item2": "Tire mounting and balancing",
+      "item3": "Oil and filter change",
+      "item4": "Exhaust system repair"
+    },
+    "service2": {
+      "name": "Brake services"
+    },
+    "service3": {
+      "name": "Suspension and steering services"
+    },
+    "service4": {
+      "name": "Engine services"
+    },
+    "service5": {
+      "name": "Transmission services"
+    },
+    "service6": {
+      "name": "Heating and cooling services"
+    },
+    "service7": {
+      "name": "Electrical services"
+    },
+    "service8": {
+      "name": "Exhaust services"
+    },
+    "service9": {
+      "name": "Tires and wheels services"
+    },
+    "service10": {
+      "name": "Bodywork services"
+    },
+    "brand": "Brand",
+    "btn1": "Save",
+    "placeholder1": "Current password",
+    "placeholder2": "New password"
+  },
+  "help": {
+    "search": "Search"
   }
 }

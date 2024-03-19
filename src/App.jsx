@@ -47,6 +47,9 @@ import Checkout from "./pages/dashboard/checkout/checkout";
 import Sent from "./pages/dashboard/checkout/sent";
 import Statistics from "./pages/dashboard/statistics/statistics";
 import Reviews from "./pages/dashboard/statistics/reviews";
+import Promotion from "./pages/dashboard/promotion/promotion";
+import Settings from "./pages/dashboard/settings/settings";
+import PartnerHelp from "./pages/dashboard/partnerHelp/partnerHelp";
 
 
 function App() {
@@ -100,6 +103,9 @@ function App() {
           <Route path="/partner/checkout/sent" element={<Sent/>}/>
           <Route path="/partner/statistics" element={<Statistics/>}/>
           <Route path="/partner/statistics/reviews" element={<Reviews/>}/>
+          <Route path="/partner/promotion" element={<Promotion/>}/>
+          <Route path="/partner/settings" element={<Settings/>}/>
+          <Route path="/partner/help" element={<PartnerHelp/>}/>
         </Route>
         
         <Route path="/insurance&vignette" element={<InsuranceVignette/>} /> // Insurance & Vignette Mutual +scroll

@@ -3,6 +3,8 @@
 .PartnerHome{
   width: 100%;
   padding: 12px 40px;
+  position: relative;
+  z-index: 1;
   @include screen($wide-l){
     padding: 12px 24px;
   }
