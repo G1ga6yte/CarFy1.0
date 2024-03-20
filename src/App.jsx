@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useLocation} from "react-router-dom";
 import './App.scss';
 import Home from "./pages/home/home";
 import Navigation from "./pages/navigation/navigation";
@@ -55,9 +55,10 @@ import PartnerHelp from "./pages/dashboard/partnerHelp/partnerHelp";
 function App() {
   const {authorization} = useCartContext()
   const {t, i18n} = useTranslation()
-  
+  const location = useLocation()
   useEffect(()=>{
-  }, [])
+    window.scrollTo(0, 0)
+  }, [location])
   
   return (
     <div className="App">
