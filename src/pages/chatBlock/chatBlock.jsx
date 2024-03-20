@@ -32,7 +32,7 @@ function ChatBlock (){
   
   const [opc, setOpc] = useState(true)
   const [appointBtn, setAppointBtn] = useState(false); // false
-  const [offerDialog, setOfferDialog] = useState(true)
+  const [offerDialog, setOfferDialog] = useState(false)
   useEffect(() => {
     let timeoutId;
     let timeoutId2;
