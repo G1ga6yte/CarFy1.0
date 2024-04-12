@@ -1,13 +1,15 @@
 import service1 from "./images/mechanic-2804536.svg"
-import service2 from "./images/puncture-repair-2804532.svg"
-import service3 from "./images/steering-2804527.svg"
-import service4 from "./images/engine-2804548.svg"
-import service5 from "./images/car-gear-2804564.svg"
-import service6 from "./images/car-fan-2804557.svg"
-import service7 from "./images/multimeter-2804534.svg"
-import service8 from "./images/exhaust-pipe-2804567.svg"
-import service9 from "./images/tire-2804521.svg"
-import service10 from "./images/car-painting-2804569.svg"
+import service2 from "./images/service2.png"
+import service3 from "./images/tire-2804521.svg"
+import service4 from "./images/multimeter-2804534.svg"
+import service5 from "./images/car-fan-2804557.svg"
+import service6 from "./images/service6.png"
+import service7 from "./images/service7.png"
+import service8 from "./images/service8.png"
+import service9 from "./images/service9.png"
+import service10 from "./images/service10.png"
+import service11 from "./images/service11.png"
+import service12 from "./images/service12.png"
 
 
 export const ServicesData = [
@@ -104,6 +106,26 @@ export const ServicesData = [
   {
     name: "Bodywork services",
     logo: service10,
+    services: [
+      "Cylinder head repair10",
+      "Tire mounting and balancing10",
+      "Oil and filter change10",
+      "Exhaust system repair10"
+    ]
+  },
+  {
+    name: "Bodywork services",
+    logo: service11,
+    services: [
+      "Cylinder head repair10",
+      "Tire mounting and balancing10",
+      "Oil and filter change10",
+      "Exhaust system repair10"
+    ]
+  },
+  {
+    name: "Bodywork services",
+    logo: service12,
     services: [
       "Cylinder head repair10",
       "Tire mounting and balancing10",

@@ -25,7 +25,11 @@ function HomeMaintenance() {
            <div className="accept G-align-center"><img src={HomeSvg.accept} alt=""/><span>{t('home.text43')}</span></div>
            <div className="accept G-align-center"><img src={HomeSvg.accept} alt=""/><span>{t('home.text44')}</span></div>
            <div className="accept G-align-center"><img src={HomeSvg.accept} alt=""/><span>{t('home.text45')}</span></div>
-         
+           <div className="accept G-align-center"><img src={HomeSvg.accept} alt=""/><span>{t('home.text46')}</span></div>
+           <div className="accept G-align-center"><img src={HomeSvg.accept} alt=""/><span>{t('home.text47')}</span></div>
+           <div className="accept G-align-center"><img src={HomeSvg.accept} alt=""/><span>{t('home.text48')}</span></div>
+
+
          </div>
          
          <div className="buttonsBlock">

@@ -1,119 +1,138 @@
 import React, {useState} from "react";
-import "./Step1RegOnlineBlock.scss"
+import "./Step1RegOnlineBlock.scss";
 import {InsuranceSvg} from "../../insuranceSvg/insuranceSvg";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import SelectBlock from "./selectBlock/selectBlock";
 
 function Step1RegOnlineBlock (){
   const navigate = useNavigate()
   const {t, i18n} = useTranslation()
+  const [render, setRender] = useState(false)
   
+  const [selectItems, setSelectItems] = useState([
+     "Latvia",
+     "Bulgaria",
+     "Germany",
+     "French",
+     "Latvia",
+     "Bulgaria",
+     "Germany",
+     "French"
+  ])
   
-  function SelectCountry (){
-    const [selected, setSelected] = useState(t("insurance.country"))
-    const [selectActive, setSelectActive] = useState(false)
-    
-    function Selecting (event){
-      setSelected(event.target.innerHTML)
-      setSelectActive(false)
+  const [selectsDate, setSelectsDate] = useState([
+    {
+      id:1,
+      name: "Country",
+      placeholder: t("insurance.country"),
+      state: false,
+      selected: "",
+      selectItems: selectItems
+    },
+    {
+      id:2,
+      name: "Mark",
+      placeholder: t("insurance.mark"),
+      state: false,
+      selected: "",
+      selectItems: selectItems
+    },
+    {
+      id:3,
+      name: "Model",
+      placeholder: t("insurance.model"),
+      state: false,
+      selected: "",
+      selectItems: selectItems
+    },
+    {
+      id:4,
+      name: "Characteristics",
+      placeholder: t("insurance.characteristics"),
+      state: false,
+      selected: "",
+      selectItems: selectItems
+    },
+    {
+      id:5,
+      name: "Engine",
+      placeholder: t("insurance.engine"),
+      state: false,
+      selected: "",
+      selectItems: selectItems
+    },
+    {
+      id:6,
+      name: "Fuel",
+      placeholder: t("insurance.fuel"),
+      state: false,
+      selected: "",
+      selectItems: selectItems
+    },
+    {
+      id:7,
+      name: "Power",
+      placeholder: t("insurance.power"),
+      state: false,
+      selected: "",
+      selectItems: selectItems
+    },
+    {
+      id:8,
+      name: "First Registration",
+      placeholder: t("insurance.registration"),
+      state: false,
+      selected: "",
+      selectItems: selectItems
+    },
+    {
+      id:9,
+      name: "Used For",
+      placeholder: t("insurance.used"),
+      state: false,
+      selected: "",
+      selectItems: selectItems
+    },
+    {
+      id:10,
+      name       : "Right Hand Drive",
+      placeholder: t("insurance.rightHand"),
+      state      : false,
+      selected   : "",
+      selectItems: selectItems
     }
+  ])
+  
+  function handleChangeSelectDate (date){
+    const newDate = selectsDate
+    newDate.map((el)=>{
+      if (el.id === date.id){
+        el = date
+      }
+    })
     
-    return(
-       <div className="Select">
-         <div style={{borderColor: `${selectActive ? "#266EFE" : "#D9D9D9"}`}} onClick={()=>setSelectActive(prev => !prev)} className="selectBlock G-justify-between G-align-center">
-           <span style={{color: `${selected !== 'Your country' ? "black" : "#AEAEAE"}`}}>{selected}</span>
-           <svg style={{transform: `rotate(${selectActive ? "180" : "0"}deg)`}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-             <path style={{stroke: `${selectActive ? "#266EFE" : "#AEAEAE"}`}} d="M6 9L12 15L18 9" stroke="#AEAEAE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-           </svg>
-         </div>
-         
-         <div style={{display: `${selectActive ? "block" : "none"}`}} className="optionsBlock">
-           <p onClick={Selecting} className="option">Latvia</p>
-           <p onClick={Selecting} className="option">Bulgaria</p>
-           <p onClick={Selecting} className="option">Germany</p>
-           <p onClick={Selecting} className="option">French</p>
-           <p onClick={Selecting} className="option">Latvia</p>
-           <p onClick={Selecting} className="option">Bulgaria</p>
-           <p onClick={Selecting} className="option">Germany</p>
-           <p onClick={Selecting} className="option">French</p>
-
-         </div>
-       
-       </div>
-    )
+    setSelectsDate(newDate)
+    setRender(prevState => !prevState)
   }
   
-  function SelectMark (){
-    const [selected, setSelected] = useState(t("insurance.mark"))
-    const [selectActive, setSelectActive] = useState(false)
+  function handleSelectBlock (selectName){
+    let date = selectsDate
+  
+    date.map((el)=>{
     
-    function Selecting (event){
-      setSelected(event.target.innerHTML)
-      setSelectActive(false)
-    }
+      if (el.name === selectName){
+        el.state = !el.state
+      } else {
+        el.state = false
+      }
     
-    return(
-       <div className="Select">
-         <div style={{borderColor: `${selectActive ? '#266EFE' : "#D9D9D9"}`}} onClick={()=>setSelectActive(prev => !prev)} className="selectBlock G-justify-between G-align-center">
-           <span style={{color: `${selected !== 'Your Mark' ? "black" : "#AEAEAE"}`}}>{selected}</span>
-           <svg style={{transform: `rotate(${selectActive ? "180" : "0"}deg)`}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-             <path style={{stroke: `${selectActive ? "#266EFE" : "#AEAEAE"}`}} d="M6 9L12 15L18 9" stroke="#AEAEAE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-           </svg>
-         </div>
-         
-         <div style={{display: `${selectActive ? "block" : "none"}`}} className="optionsBlock">
-           <p onClick={Selecting} className="option">Aston Martin</p>
-           <p onClick={Selecting} className="option">BMW</p>
-           <p onClick={Selecting} className="option">Mercedes</p>
-           <p onClick={Selecting} className="option">Ford</p>
-           <p onClick={Selecting} className="option">Volvo</p>
-           <p onClick={Selecting} className="option">Lexus</p>
-           <p onClick={Selecting} className="option">Toyota</p>
-           <p onClick={Selecting} className="option">Nissan</p>
-           <p onClick={Selecting} className="option">Audi</p>
-
-
-         </div>
-       
-       </div>
-    )
+    })
+    setSelectsDate(date)
+    setRender(prevState => !prevState)
   }
   
-  function SelectModel (){
-    const [selected, setSelected] = useState(t("insurance.model"))
-    const [selectActive, setSelectActive] = useState(false)
-    
-    function Selecting (event){
-      setSelected(event.target.innerHTML)
-      setSelectActive(false)
-    }
-    
-    return(
-       <div className="Select">
-         <div style={{borderColor: `${selectActive ? '#266EFE' : "#D9D9D9"}`}} onClick={()=>setSelectActive(prev => !prev)} className="selectBlock G-justify-between G-align-center">
-           <span style={{color: `${selected !== 'Model' ? "black" : "#AEAEAE"}`}}>{selected}</span>
-           <svg style={{transform: `rotate(${selectActive ? "180" : "0"}deg)`}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-             <path style={{stroke: `${selectActive ? "#266EFE" : "#AEAEAE"}`}} d="M6 9L12 15L18 9" stroke="#AEAEAE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-           </svg>
-         </div>
-         
-         <div style={{display: `${selectActive ? "block" : "none"}`}} className="optionsBlock">
-           <p onClick={Selecting} className="option">Aston Martin</p>
-           <p onClick={Selecting} className="option">BMW</p>
-           <p onClick={Selecting} className="option">Mercedes</p>
-           <p onClick={Selecting} className="option">Ford</p>
-           <p onClick={Selecting} className="option">Volvo</p>
-           <p onClick={Selecting} className="option">Lexus</p>
-           <p onClick={Selecting} className="option">Toyota</p>
-           <p onClick={Selecting} className="option">Nissan</p>
-           <p onClick={Selecting} className="option">Audi</p>
-         
-         
-         </div>
-       
-       </div>
-    )
-  }
+  
   
   return(
      <div className="Step1RegOnlineBlock">
@@ -134,7 +153,12 @@ function Step1RegOnlineBlock (){
          <div className="pageInputs G-justify-between G-align-center">
             <div className="inputsBlock">
                 <div className="line1">
-                  <SelectCountry/>
+                  <SelectBlock
+                     index={0}
+                    mainSelect={selectsDate}
+                    handleChangeSelectDate={handleChangeSelectDate}
+                    handleSelectBlock={handleSelectBlock}
+                  />
                 </div>
               <div className="line2 G-flex">
                 <div className="InputCarNumber G-flex">
@@ -147,10 +171,65 @@ function Step1RegOnlineBlock (){
               <div className="vehCharacter">
                 <p className="vehCharacterHeader">{t("insurance.miniHeader6")}</p>
                 <div className="OptionBlocks G-flex">
-                  <SelectMark/>
-                  <SelectModel/>
+                  <SelectBlock
+                     index={1}
+                     mainSelect={selectsDate}
+                     handleChangeSelectDate={handleChangeSelectDate}
+                     handleSelectBlock={handleSelectBlock}
+                  />
+                  <SelectBlock
+                     index={2}
+                     mainSelect={selectsDate}
+                     handleChangeSelectDate={handleChangeSelectDate}
+                     handleSelectBlock={handleSelectBlock}
+                  />
                 </div>
-                <input placeholder={t("insurance.placeholder1")} className="vehCharacterInput" type="text"/>
+                
+                <div className="longInputs">
+                  <SelectBlock
+                     index={3}
+                     mainSelect={selectsDate}
+                     handleChangeSelectDate={handleChangeSelectDate}
+                     handleSelectBlock={handleSelectBlock}
+                  />
+                  <SelectBlock
+                     index={4}
+                     mainSelect={selectsDate}
+                     handleChangeSelectDate={handleChangeSelectDate}
+                     handleSelectBlock={handleSelectBlock}
+                  />
+                  <SelectBlock
+                     index={5}
+                     mainSelect={selectsDate}
+                     handleChangeSelectDate={handleChangeSelectDate}
+                     handleSelectBlock={handleSelectBlock}
+                  />
+                  <SelectBlock
+                     index={6}
+                     mainSelect={selectsDate}
+                     handleChangeSelectDate={handleChangeSelectDate}
+                     handleSelectBlock={handleSelectBlock}
+                  />
+                  <SelectBlock
+                     index={7}
+                     mainSelect={selectsDate}
+                     handleChangeSelectDate={handleChangeSelectDate}
+                     handleSelectBlock={handleSelectBlock}
+                  />
+                  <SelectBlock
+                     index={8}
+                     mainSelect={selectsDate}
+                     handleChangeSelectDate={handleChangeSelectDate}
+                     handleSelectBlock={handleSelectBlock}
+                  />
+                  <SelectBlock
+                     index={9}
+                     mainSelect={selectsDate}
+                     handleChangeSelectDate={handleChangeSelectDate}
+                     handleSelectBlock={handleSelectBlock}
+                  />
+                </div>
+                {/*<input placeholder={t("insurance.placeholder1")} className="vehCharacterInput" type="text"/>*/}
                 <button disabled={false} onClick={()=>{
                   navigate('/insurance/step2')
                 }} className="continueBtnInside">{t("insurance.continue")}</button>

@@ -2,15 +2,142 @@ import React, {useEffect, useState} from "react";
 import "./findServiceStep1.scss";
 import {Link, useNavigate} from "react-router-dom";
 import {ImgSvg} from "./images/imgSvg";
-import {ServicesData} from "./servicesData";
+// import {ServicesData} from "./servicesData";
 import {useCartContext} from "../../../CartContext";
 import {useTranslation} from "react-i18next";
+import service1 from "./images/mechanic-2804536.svg";
+import service2 from "./images/service2.png";
+import service3 from "./images/tire-2804521.svg";
+import service4 from "./images/multimeter-2804534.svg";
+import service5 from "./images/car-fan-2804557.svg";
+import service6 from "./images/service6.png";
+import service7 from "./images/service7.png";
+import service8 from "./images/service8.png";
+import service9 from "./images/service9.png";
+import service10 from "./images/service10.png";
+import service11 from "./images/service11.png";
+import service12 from "./images/service12.png";
 
 
 function FindServiceStep1() {
   const {t, i18n} = useTranslation()
   const navigate = useNavigate();
   const {changeFindServiceStep, checkedServices, setCheckedServices, handleDeleteCheck} = useCartContext()
+  
+  const ServicesData = [
+    {
+      name: t("services.header1"),
+      logo: service1,
+      services: [
+        t("services.service1"),
+        t("services.service2"),
+        t("services.service3"),
+        t("services.service4"),
+        t("services.service5"),
+        t("services.service6"),
+        t("services.service7"),
+        t("services.service8")
+      ]
+    },
+    {
+      name: t("services.header2"),
+      logo: service2,
+      services: [
+        t("services.service9"),
+        t("services.service10"),
+
+      ]
+    },
+    {
+      name: t("services.header3"),
+      logo: service3,
+      services: [
+        t("services.service11"),
+        t("services.service12")
+
+      ]
+    },
+    {
+      name: t("services.header4"),
+      logo: service4,
+      services: [
+        t("services.service13"),
+        t("services.service14"),
+        t("services.service15"),
+        t("services.service16"),
+        t("services.service17"),
+        t("services.service18")
+      ]
+    },
+    {
+      name: t("services.header5"),
+      logo: service5,
+      services: [
+        t("services.service19"),
+        t("services.service20"),
+
+      ]
+    },
+    {
+      name: t("services.header6"),
+      logo: service6,
+      services: [
+        t("services.service21"),
+        t("services.service22"),
+      ]
+    },
+    {
+      name: t("services.header7"),
+      logo: service7,
+      services: [
+        t("services.service23"),
+        t("services.service24"),
+      ]
+    },
+    {
+      name: t("services.header8"),
+      logo: service8,
+      services: [
+        t("services.service25"),
+        t("services.service26"),
+      ]
+    },
+    {
+      name: t("services.header9"),
+      logo: service9,
+      services: [
+        t("services.service27"),
+        t("services.service28"),
+      ]
+    },
+    {
+      name: t("services.header10"),
+      logo: service10,
+      services: [
+        t("services.service29"),
+        t("services.service30"),
+        t("services.service31")
+      ]
+    },
+    {
+      name: t("services.header11"),
+      logo: service11,
+      services: [
+        t("services.service32"),
+        t("services.service33"),
+      ]
+    },
+    {
+      name: t("services.header12"),
+      logo: service12,
+      services: [
+        t("services.service34"),
+        t("services.service35"),
+      ]
+    }
+  ]
+  
+  
   
   const [searchVal, setSearchVal] = useState("");
   const [clearBtn, setClearBtn] = useState(false);

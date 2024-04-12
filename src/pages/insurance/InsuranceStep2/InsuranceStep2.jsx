@@ -150,7 +150,7 @@ function InsuranceStep2() {
                
                <div className="CardCertificate">
                  <span className="GreenText">{t("insurance.greenCard")}</span>
-                 <input type="checkbox" checked/>
+                 <input type="checkbox" defaultChecked={true}/>
                </div>
   
                <input placeholder={t("insurance.name")} className="inputText halfInput" type="text"/>

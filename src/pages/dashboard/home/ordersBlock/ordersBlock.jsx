@@ -3,12 +3,41 @@ import "./ordersBlock.scss"
 import {useTranslation} from "react-i18next";
 import {Images} from "../images/images";
 import Order from "../../globalComponents/RequestItemGlobal/order";
+import FiltersDialog from "../../filtersDialog/filtersDialog";
 
 function OrdersBlock (){
   const {t, i18n} = useTranslation()
-  const [inputIsFocused, setInputIsFocused] = useState(false)
   const [sortBlock, setSortBlock] = useState(false)
   const [fillOutBlock, setFillOutBlock] = useState(false)
+  const [filter, setFilter] = useState(false)
+  const [mainFilters, setMainFilters] = useState([])
+  const [render, setRender] = useState(false)
+  
+  // function handleFilterBlock (){
+  //   setFilter(false)
+  //   setRender(prev=>!prev)
+  // }
+  //
+  // function addNewFilter (newFilter){
+  //   let date = filters
+  //   date.push(newFilter)
+  //   setFilters(date)
+  //   setRender(prev=>!prev)
+  // }
+  //
+  // function removeOldFilter (oldFilter){
+  //   let date = filters.filter((el)=>{
+  //     return el !== oldFilter
+  //   })
+  //   setFilters(date)
+  //   setRender(prev=>!prev)
+  // }
+  //
+  // function clearAllFilters (){
+  //   setFilters([])
+  //   setRender(prev=>!prev)
+  // }
+  
   
   useEffect(() => {
     let timeoutId;
@@ -44,33 +73,6 @@ function OrdersBlock (){
     };
   }, []);
   
-  const [searchInputVal, setSearchInputVal] = useState("")
-  const [searchedBlock, setSearchedBlock] = useState(false)
-  function handleInputChange (event){
-    setSearchInputVal(event.target.value)
-  }
-  
-  const [filters, setFilters] = useState(["citroen", "Exhaust system", "Exhaust system", "Exhaust system", "Exhaust system", "Exhaust system"])
-  function handleRemoveFilter (el){
-    const indexToRemove = filters.findIndex(item => item === el);
-  
-    if (indexToRemove !== -1) {
-      const newArray = [...filters.slice(0, indexToRemove), ...filters.slice(indexToRemove + 1)];
-      setFilters(newArray);
-    }
-  }
-  
-  
-  
-  const [filtersHideAfter, setFiltersHideAfter] =useState(4)
-  useEffect(()=>{
-    if (window.innerWidth <= 1440){
-      setFiltersHideAfter(3)
-    }
-    if (window.innerWidth <= 1256){
-      setFiltersHideAfter(2)
-    }
-  }, [])
   
   const [filterInput, setFilterInput] = useState({
     checkbox1: false,
@@ -86,7 +88,7 @@ function OrdersBlock (){
       return acc;
     }, {});
     setFilterInput(clearedFilters);
-    setFilters([])
+    setMainFilters([])
   }
   const updateFilter = (filterName, value) => {
     setFilterInput((prevFilters) => ({
@@ -95,69 +97,55 @@ function OrdersBlock (){
     }));
   };
   
+  function removeOldFilter (oldFilter){
+    let date = mainFilters.filter((el)=>{
+      return el !== oldFilter
+    })
+    setMainFilters(date)
+    setRender(prev=>!prev)
+  }
   
   return(
      <div className="OrdersBlock">
         <div className="headerBlock G-flex G-align-center G-justify-between">
           
-          <div className="leftSide G-flex G-align-center">
-            <div className="inputBlock">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                <path fillRule="evenodd" clipRule="evenodd" d="M10 2.5C5.58172 2.5 2 6.08172 2 10.5C2 14.9183 5.58172 18.5 10 18.5C11.8487 18.5 13.551 17.8729 14.9056 16.8199L20.2929 22.2071C20.6834 22.5976 21.3166 22.5976 21.7071 22.2071C22.0976 21.8166 22.0976 21.1834 21.7071 20.7929L16.3199 15.4056C17.3729 14.051 18 12.3487 18 10.5C18 6.08172 14.4183 2.5 10 2.5ZM4 10.5C4 7.18629 6.68629 4.5 10 4.5C13.3137 4.5 16 7.18629 16 10.5C16 13.8137 13.3137 16.5 10 16.5C6.68629 16.5 4 13.8137 4 10.5Z" fill={`${inputIsFocused ? "#266EFE" : "#AEAEAE"}`}/>
-              </svg>
-              <input value={searchInputVal} onChange={handleInputChange} onFocus={()=>setInputIsFocused(true)} onBlur={()=>setInputIsFocused(false)} className="searchInput" type="text" placeholder={t("homeP.search")}/>
-              <div style={{display: `${searchedBlock ? "block" : "none"}`}} className="searchedBlock">
-                <span className="searchedItem">Oil filter</span>
-                <span className="searchedItem">Exhaust system</span>
-                <span className="searchedItem">Exhaust system</span>
-                <span className="searchedItem">Exhaust system</span>
-                <span className="searchedItem">Exhaust system</span>
-                <span className="searchedItem">Exhaust system</span>
-                <span className="searchedItem">Exhaust system</span>
-                <span className="searchedItem">Exhaust system</span>
-                <span className="searchedItem">Exhaust system</span>
-                <span className="searchedItem">Exhaust system</span>
-              </div>
-  
-            </div>
-  
-            <div className="filters G-flex G-align-center">
-              {filters.map((el, index)=>{
-                if (filters.length >filtersHideAfter){
-                  if (index <filtersHideAfter){
-                    return(
-                       <div key={index} className="filteredItem G-flex G-align-center">
-                         {el}
-                         <img src={Images.closeIconGray} onClick={()=>{handleRemoveFilter(el)}} alt=""/>
-                       </div>
-                    )
-                  } else if (index === filtersHideAfter){
-                    return (
-                       <div key={index} className="filteredItem G-flex G-align-center">
-                          +{filters.length-filtersHideAfter}
-                       </div>
-                    )
-                  }
-                } else {
-                  return (
-                     <div key={index} className="filteredItem G-flex G-align-center">
-                       {el}
-                       <img src={Images.closeIconGray} onClick={()=>{handleRemoveFilter(el)}} alt=""/>
-                     </div>
-                  )
-                }
-                
-              })}
-            </div>
+          <div className="filters G-flex G-align-center">
+            {mainFilters.map((el, index)=>{
+              return(
+                 <div className="filteredItem G-flex G-align-center">
+                   {el}
+                   <img src={Images.closeIconGray} onClick={()=>{removeOldFilter(el)}} alt=""/>
+                 </div>
+              )
+            })}
           </div>
-  
-  
+          
           <div className="buttonsBlock G-flex G-align-center">
+            
+            <div className="sortBtn">
+              <div className="G-flex G-align-center" onClick={()=>{
+                setFilter(prev=>!prev)
+              }}>
+                <span>{t("homeP.filter")}</span>
+                <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.41739 3.49984L1.00004 3.49984C0.631851 3.49984 0.333374 3.20136 0.333374 2.83317C0.333374 2.46498 0.631851 2.1665 1.00004 2.1665L8.41739 2.1665C8.71341 1.01635 9.75748 0.166504 11 0.166504C12.4728 0.166504 13.6667 1.36041 13.6667 2.83317C13.6667 4.30593 12.4728 5.49984 11 5.49984C9.75748 5.49984 8.71342 4.64999 8.41739 3.49984Z" fill="#AEAEAE"/>
+                  <path d="M3.00004 5.49984C1.52728 5.49984 0.333374 6.69374 0.333374 8.1665C0.333374 9.63926 1.52728 10.8332 3.00004 10.8332C4.2426 10.8332 5.28667 9.98332 5.5827 8.83317L13 8.83317C13.3682 8.83317 13.6667 8.53469 13.6667 8.1665C13.6667 7.79831 13.3682 7.49984 13 7.49984L5.5827 7.49984C5.28667 6.34969 4.2426 5.49984 3.00004 5.49984Z" fill="#AEAEAE"/>
+                </svg>
+              </div>
+              
+              <FiltersDialog
+                 state={filter}
+                 setState={setFilter}
+                 mainFilters={mainFilters}
+                 setMainFilters={setMainFilters}
+              />
+            </div>
+            
             <div onClick={() => {
               setSortBlock(prevState => !prevState);
               setClearBlock(false);
             }} className="sortBtn G-flex G-align-center">
-              {t("homeP.sort")}
+              <span>{t("homeP.sort")}</span>
               <img src={Images.sortIcon} alt=""/>
               <div id="sortBlock" style={{display: `${sortBlock ? "flex" : "none"}`}} className="sortList">
                 <label htmlFor="mostRecent">
@@ -192,8 +180,7 @@ function OrdersBlock (){
                    className="clearCont">{t("emergency.clearFilters")}</div>
             </div>
           </div>
-
-
+          
         </div>
         <div className="mainBlock">
           

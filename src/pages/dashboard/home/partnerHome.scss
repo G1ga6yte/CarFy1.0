@@ -36,11 +36,14 @@
         color: black;
         font-family: 'Inter-Medium', sans-serif;
         line-height: 140%;
-        span{
+        a{
           color: #266EFE !important;
           text-decoration: underline;
           cursor: pointer;
           text-underline-position: under;
+          &:hover{
+            color: #355ABC !important;
+          }
         }
       }
     }
@@ -51,6 +54,7 @@
     color: #334155;
     line-height: 140%;
     margin-bottom: 8px;
+    text-decoration: none;
     img{
       margin-left: 8px;
     }

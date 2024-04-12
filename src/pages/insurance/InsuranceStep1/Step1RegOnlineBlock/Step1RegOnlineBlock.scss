@@ -126,6 +126,7 @@
     }
 
     .pageInputs{
+      align-items: start;
 
       .inputsBlock{
         width: 74%;
@@ -362,6 +363,20 @@
             margin-top: 40px;
             text-decoration: none;
             display: block;
+          }
+          .longInputs{
+            width: 73%;
+            margin-top: 20px;
+            @include screen($wide){
+              width: 94%;
+            }
+            @include screen($tablet-l){
+              width: 100%;
+            }
+            .Select{
+              width: 100%;
+              margin-bottom: 16px;
+            }
           }
 
         }

@@ -11,7 +11,7 @@ export const DashboardProvider = ({children}) => {
   const location = useLocation()
   const [activePage, setActivePage] = useState("Home")
   
-  
+
   
   
   
@@ -76,7 +76,7 @@ export const DashboardProvider = ({children}) => {
   const [historyDetailsDialog, setHistoryDetailsDialog] = useState(false)
   
   
-  
+
   /////////////////Order Block ////////////////////////////
   const [orderState, setOrderState] = useState("home")
   // home, history, emergency

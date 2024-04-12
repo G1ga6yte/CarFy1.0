@@ -110,6 +110,15 @@
       width: 100%;
     }
 
+    .mainLine{
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      @include screen($tablet-m){
+        width: 100%;
+      }
+    }
+
     .mainBlock{
       flex-wrap: wrap;
       width: 100%;
@@ -127,7 +136,49 @@
         font-size: 14px;
         font-family: 'Inter-Regular', sans-serif;
         line-height: 130%;
+        margin-bottom: 12px;
       }
+      .underText{
+        margin-top: 20px;
+      }
+
+      .dottedBlock{
+        padding: 10px;
+        .dottedPrg{
+          margin-bottom: 6px;
+          font-size: 14px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #0D172F;
+          line-height: 130%;
+          padding-left: 20px;
+          position: relative;
+          &:before{
+            content: " ";
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+          }
+        }
+      }
+
+      .numericBlock{
+        padding:10px 20px;
+        .numericLi{
+          margin-bottom: 6px;
+          font-size: 14px;
+          font-family: 'Inter-Regular', sans-serif;
+          color: #0D172F;
+          line-height: 130%;
+          padding-left: 10px;
+        }
+
+      }
+
       .WriteUs{
         font-family: 'Inter-SemiBold', sans-serif;
         font-size: 14px;
@@ -142,15 +193,14 @@
       }
 
       .mainItem{
-        width: 45%;
         align-items: start;
         margin-top: 30px;
-        @include screen($wide-s){
-          width: 50%;
-        }
-        @include screen($tablet-w){
-          width: 45%;
-        }
+        //@include screen($wide-s){
+        //  width: 50%;
+        //}
+        //@include screen($tablet-w){
+        //  width: 45%;
+        //}
         @include screen($tablet-m){
           width: 100%;
         }
